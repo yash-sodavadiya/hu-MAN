@@ -33,7 +33,8 @@
 
     <!-- bottom left  -->
     <div class="bottom-left">
-        <h1>logo</h1>
+        <img src="images/icons/logo.png" alt="logo" class="logo">
+        <img src="images/icons/logo-txt.png" alt="logo" class="logo-txt">
     </div>
 
     <!-- bottom middle  -->
@@ -41,7 +42,7 @@
     <nav class="dropdownmenu">
         <ul>
             <li><a href="">HOME</a></li>
-            <li><a href="">SHOP</a> 
+            <li><a href="">SHOP <i class="fa-solid fa-angle-down"></i></a>  
             <ul id="submenu">
                 <li><a href="">SHIRT</a></li>
                 <li><a href="">PENTS</a></li>

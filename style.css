@@ -9,6 +9,7 @@ body{
     float: left;
     background: #000;
     color: #fff;
+    height: 43px;
     align-content: space-around;
     justify-content: space-between;
     align-items: stretch;
@@ -46,14 +47,17 @@ body{
     float: left;
     display: flex;
     justify-content: flex-end;
-    align-items: stretch;
+    align-items: center;
 }
 .navbar-top .top-right .account{
     margin-right: 40px;
     display: flex;
+    align-items: center;
+}
+.navbar-top .top-right .account p{
+    margin: 0px;
 }
 .navbar-top .top-right .account .ac-icon{
-    margin-top: 15px;
     margin-left: 4px;
 }
 .navbar-top .top-right .account img{
@@ -70,12 +74,27 @@ body{
     height: 97px;
 }
 
+/* .bottom-left  */
 .bottom-left{
-    width: 15%;
+    width: 18%;
+    float: left;
+    display: flex;
+    align-items: center;
+    background: black;
+    justify-content: space-around;
     float: left;
     display: flex;
     align-items: center;
 }
+.bottom-left img.logo{
+    height: 50px;
+}
+.bottom-left img.logo-txt{
+    height: 45px;
+}
+
+
+
 .bottom-middle{
     width: 55%;
     float: left;
@@ -112,7 +131,7 @@ body{
     font-family: montserrat;
 }
 .dropdownmenu li:hover a{
-    color: bisque;
+    color: #ff8a00;
 }
 
 #submenu{
@@ -178,3 +197,8 @@ li:hover ul#submenu{
 
 
 
+
+
+
+
+        
