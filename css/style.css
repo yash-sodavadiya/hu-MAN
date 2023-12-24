@@ -1,6 +1,7 @@
 body{
     margin: 0px;
     padding: 0px;
+    height: auto;
 }
 
 .navbar-top{
@@ -129,6 +130,7 @@ body{
     text-decoration: none;
     transition: all 0.25s ease;
     font-family: montserrat;
+    letter-spacing: 3px;
 }
 .dropdownmenu li:hover a{
     color: #ff8a00;

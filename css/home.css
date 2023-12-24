@@ -1,0 +1,33 @@
+.row{
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+.cover1{
+    background: #e0f0ff;
+    /* margin-top: 13px; */
+    border-radius: 12px;
+    box-shadow: 3px 2px 20px #c2daf0;
+    height: 550px;
+    padding-top: 20px;
+    display: flex;
+}
+.cover-img img{
+    width: 100%;
+    height: 510px;
+}
+
+.cover-txt{
+    width: 46%;
+    padding-top: 295px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.cover-txt p{
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0px;
+    padding: 0px;
+}
