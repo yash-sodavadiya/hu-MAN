@@ -1,3 +1,7 @@
+:root {
+    --color: #c88737;
+    --white: #ffffff;
+  }
 body{
     margin: 0px;
     padding: 0px;
@@ -133,7 +137,8 @@ body{
     letter-spacing: 3px;
 }
 .dropdownmenu li:hover a{
-    color: #ff8a00;
+    /* color: #ff8a00; */
+    color: var(--color);
 }
 
 #submenu{
