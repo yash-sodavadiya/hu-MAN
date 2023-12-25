@@ -9,7 +9,7 @@
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./home.css">
+    <link rel="stylesheet" href="./css/home.css">
 </head>
 <body>
     <?php require('./components/navbar.php') ?>
@@ -49,7 +49,7 @@
                 <div class="row cover3">
                     <div class="col-sm-6 cover3-1">
                     <div class="cover3-img">
-                <img src="cover1.png" alt="">
+                <img src="images/cover-photo/cover1.png" alt="">
                </div>
                <div class="cover3-txt">
                 <p><span>MAN'S </span> FASHION</p>
@@ -63,8 +63,8 @@
                 
                 <a href="#">Shop Now</a>
                </div>
-                    <div class="cover3-img">
-                <img src="cover2.png" alt="">
+                    <div class="cover3-img cover3-1-img">
+                <img src="images/cover-photo/cover4.png" alt="">
                </div>
                
                     </div>
