@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Piazzolla:ital,wght@0,200;0,300;0,400;1,400&family=Playfair+Display&family=Zilla+Slab:wght@300;400;700&display=swap');
+
 :root {
     --color: #c88737;
     --bgcolor: #c9bab4;
@@ -9,7 +11,11 @@
     margin-top: 20px;
     padding-bottom: 20px;
 }
-
+.hero-section{
+    /* margin-top: 20px; */
+    padding: 15px;
+    margin-left: 5px;
+}
 
 .cover1{
     background: var(--bgcolor);
@@ -66,6 +72,7 @@
     margin-top: 0px;
     height: 225px;
     display: flex;
+    width: 98%;
     flex-wrap: nowrap;
 }
 .cover2:hover img{
@@ -114,7 +121,7 @@
 }
 
 .cover3-1:hover .cover3-img{
-    height: 274px;
+    height: 292px;
 } 
 .cover3-img{
     background: var(--bgcolor);
@@ -145,4 +152,54 @@
 }
 .cover3-txt a:hover{
     color: var(--color);
+}
+
+
+/* category section  */
+/* catagory select  */
+.row .category-select{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 130px;
+}
+
+.row .category-select a{
+    color: black;
+    padding: 28px;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;;
+}
+.row .category-select .single-line{
+    color: black;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.row .category-select a:hover span{
+    color: var(--color);
+}
+.row .category-select a.active{
+    color: var(--color);
+}
+
+/* collection card  */
+.collection-card{
+    padding: 35px;
+    margin-left: 5px;
+}
+
+
+
+/* discount css  */
+.discount-banner{
+    height: 250px;
+    background-color: var(--bgcolor);
+    
+}
+.discount{
+    padding: 35px;
+    margin-left: 5px;
 }

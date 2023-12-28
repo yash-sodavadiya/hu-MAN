@@ -9,13 +9,15 @@
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./home.css">
+    <link rel="stylesheet" href="./css/card.css">
 </head>
 <body>
     <?php require('./components/navbar.php') ?>
 
-    <div class="container">
-        <div class="row">
+    <!-- hero section  -->
+    <div class="container-fluid">
+        <div class="row hero-section">
 
         <!-- left side of cover  -->
             <div class="col-sm-7 cover1">
@@ -72,5 +74,30 @@
             </div>
         </div>
     </div>
+
+    <!-- catagory section in home  -->
+
+    <div class="row">
+        <div class="category-select">
+            <a href="#" aria-expanded="true" class="active"><span>Men's Fashion</span></a><span class="single-line">|</span>
+            <a href="#"><span>Accesories</span></a><span class="single-line">|</span>
+            <a href="#"><span>Shoes</span></a>
+        </div>
+    </div>
+
+    <div class="container-fluid collection-card">
+        <div class="row">
+        <?php require("components/card.php") ?>
+        <?php require("components/card.php") ?>
+        <?php require("components/card.php") ?>
+        <?php require("components/card.php") ?>
+            
+        </div>
+    </div>
+
+    <div class="container-fluid discount">
+        <div class="discount-banner"></div>
+    </div>
+
 </body>
 </html>
