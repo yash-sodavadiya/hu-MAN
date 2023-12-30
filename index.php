@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./home.css">
-    <link rel="stylesheet" href="./css/card.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./card.css">
+    <link rel="stylesheet" href="./brand.css">
 </head>
 <body>
-    <?php require('./components/navbar.php') ?>
+    <?php require("components/navbar.php") ?>
 
     <!-- hero section  -->
     <div class="container-fluid">
@@ -73,7 +74,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> 
 
     <!-- catagory section in home  -->
 
@@ -99,5 +100,29 @@
         <div class="discount-banner"></div>
     </div>
 
+
+    <!-- brand section  -->
+    <div class="container-fluid" style="background-color:#000; height: 626px;">
+        <div class="row  brands">
+            <div class="col-sm-4 brand-txt">
+                <p>OUR PARTNERS</p>
+                <h2>BRANDS WE ARE AFFILIATED WITH</h2>
+                <span>Integer suscipit urna metus, in efficitur turpis ullamcorper in. Cras nec tincidunt mi. Donec in dapibus ex. Morbi malesuada lorem rutrum, scelerisque risus et</span><br>
+                <button class="button">
+  EXPLORE MORE
+</button>
+            </div>
+            <div class="col-sm-8">
+                <div class="row" style="margin-top: 0px;" >
+
+                <?php require("components/brand-logo.php") ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- footer  -->
+    <?php require("components/footer.php") ?>
 </body>
 </html>
