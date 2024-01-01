@@ -281,5 +281,38 @@
     scale: 1;
   }
   
-  
-  
+  /* support  */
+  .aboutus{
+    background: var(--bs-black);
+    height: 150px;
+  }
+  .support{
+    display: flex;
+    border-right: 5px solid var(--color);
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+  }
+  .support i{
+    font-size: 56px;
+    color: var(--color);
+  }
+  .support-txt{
+    color: #fff;
+    margin-left: 20px;
+  }
+.support .support-top{
+    margin: 0px;
+    font-size: 12px;
+    font-weight: 800;
+}
+.support-txt .support-bottom{
+    font-size: 20px;
+    font-family: math;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.support img{
+    height:90px
+}

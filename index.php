@@ -9,7 +9,7 @@
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./home.css">
     <link rel="stylesheet" href="./card.css">
     <link rel="stylesheet" href="./brand.css">
 </head>
@@ -96,6 +96,43 @@
         </div>
     </div>
 
+     <!-- support  -->
+     <div class="container-fluid aboutus">
+        <div class="row " style="margin:0px; margin-left:16px" >
+            <div class="col-sm-3 support">
+                <i class="fa-solid fa-truck-fast"></i>
+                <div class="support-txt">
+                <p class="support-top" >SHIPPING</p>
+                <P class="support-bottom">Free Shipping Contry wide</P>
+                </div>
+            </div>
+            <div class="col-sm-3 support">
+                <img src="images/icons/customer-care.jpg" alt="" >
+                <div class="support-txt">
+                <p class="support-top" >CUSTOMER CARE</p>
+                <P class="support-bottom">24/7 Customer Support</P>
+                </div>
+            </div>
+            <div class="col-sm-3 support">
+                <img src="images/icons/return.jpg" alt="" >
+                <div class="support-txt">
+                <p class="support-top" >7 DAY</p>
+                <P class="support-bottom">Free & Easy Return</P>
+                </div>
+            </div>
+            <div class="col-sm-3 support" style="border:none">
+                <img src="images/icons/quality.jpg" alt="" >
+                <div class="support-txt">
+                <p class="support-top" >QUALITY PRODUCT</p>
+                <P class="support-bottom">100% Guarantee</P>
+                </div>
+            </div>
+            
+
+        </div>
+    </div>
+
+
     <div class="container-fluid discount">
         <div class="discount-banner"></div>
     </div>
@@ -120,6 +157,9 @@
             </div>
         </div>
     </div>
+
+
+   
 
 
     <!-- footer  -->
