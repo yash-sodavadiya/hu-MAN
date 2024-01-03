@@ -1,0 +1,66 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600;);
+.main-logo {
+  background-color: #000;
+  display: inline-block;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  margin: 10px;
+  max-width: 315px;
+  min-width: 230px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+.main-logo *,
+.main-logo *:before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+ .main-logo img {
+  backface-visibility: hidden;
+  max-width: 100%;
+  vertical-align: top;
+  opacity: 0.1;
+} 
+.brand-logo {
+    bottom: 25px;
+    position: absolute;
+    z-index: 1;
+    left: 37px;
+    margin-right: 45px;
+}
+
+.brand-logo img {
+    opacity: 1;
+  /* background-color: #c73232; */
+  color: #fff;
+  font-size: 0.9em;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin: 0;
+  padding: 5px 10px !important;
+  text-transform: uppercase;
+  z-index: 1;
+}
+.main-logo a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+.main-logo:hover > img,
+.main-logo.hover > img {
+  opacity: 1;
+  transition: 2s all;
+}
+.main-logo:hover figcaption:before,
+.main-logo.hover figcaption:before {
+  right: -5px;
+}
+
+

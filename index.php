@@ -8,14 +8,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./home.css">
+    <link rel="stylesheet" href="./card.css">
+    <link rel="stylesheet" href="./brand.css">
 </head>
 <body>
-    <?php require('./components/navbar.php') ?>
+    <?php require("components/navbar.php") ?>
 
-    <div class="container">
-        <div class="row">
+    <!-- hero section  -->
+    <div class="container-fluid">
+        <div class="row hero-section">
 
         <!-- left side of cover  -->
             <div class="col-sm-7 cover1">
@@ -71,6 +74,95 @@
                 </div>
             </div>
         </div>
+    </div> 
+
+    <!-- catagory section in home  -->
+
+    <div class="row">
+        <div class="category-select">
+            <a href="#" aria-expanded="true" class="active"><span>Men's Fashion</span></a><span class="single-line">|</span>
+            <a href="#"><span>Accesories</span></a><span class="single-line">|</span>
+            <a href="#"><span>Shoes</span></a>
+        </div>
     </div>
+
+    <div class="container-fluid collection-card">
+        <div class="row">
+        <?php require("components/card.php") ?>
+        <?php require("components/card.php") ?>
+        <?php require("components/card.php") ?>
+        <?php require("components/card.php") ?>
+            
+        </div>
+    </div>
+
+     <!-- support  -->
+     <div class="container-fluid aboutus">
+        <div class="row " style="margin:0px; margin-left:16px" >
+            <div class="col-sm-3 support">
+                <i class="fa-solid fa-truck-fast"></i>
+                <div class="support-txt">
+                <p class="support-top" >SHIPPING</p>
+                <P class="support-bottom">Free Shipping Contry wide</P>
+                </div>
+            </div>
+            <div class="col-sm-3 support">
+                <img src="images/icons/customer-care.jpg" alt="" >
+                <div class="support-txt">
+                <p class="support-top" >CUSTOMER CARE</p>
+                <P class="support-bottom">24/7 Customer Support</P>
+                </div>
+            </div>
+            <div class="col-sm-3 support">
+                <img src="images/icons/return.jpg" alt="" >
+                <div class="support-txt">
+                <p class="support-top" >7 DAY</p>
+                <P class="support-bottom">Free & Easy Return</P>
+                </div>
+            </div>
+            <div class="col-sm-3 support" style="border:none">
+                <img src="images/icons/quality.jpg" alt="" >
+                <div class="support-txt">
+                <p class="support-top" >QUALITY PRODUCT</p>
+                <P class="support-bottom">100% Guarantee</P>
+                </div>
+            </div>
+            
+
+        </div>
+    </div>
+
+
+    <div class="container-fluid discount">
+        <div class="discount-banner"></div>
+    </div>
+
+
+    <!-- brand section  -->
+    <div class="container-fluid" style="background-color:#000; height: 626px;">
+        <div class="row  brands">
+            <div class="col-sm-4 brand-txt">
+                <p>OUR PARTNERS</p>
+                <h2>BRANDS WE ARE AFFILIATED WITH</h2>
+                <span>Integer suscipit urna metus, in efficitur turpis ullamcorper in. Cras nec tincidunt mi. Donec in dapibus ex. Morbi malesuada lorem rutrum, scelerisque risus et</span><br>
+                <button class="button">
+  EXPLORE MORE
+</button>
+            </div>
+            <div class="col-sm-8">
+                <div class="row" style="margin-top: 0px;" >
+
+                <?php require("components/brand-logo.php") ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+   
+
+
+    <!-- footer  -->
+    <?php require("components/footer.php") ?>
 </body>
 </html>
