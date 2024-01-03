@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Piazzolla:ital,wght@0,200;0,300;0,400;1,400&family=Playfair+Display&family=Roboto+Slab:wght@700&family=Zilla+Slab:wght@300;400;700&display=swap');
+
+:root {
+    --color: #c88737;
+    --bgcolor: #c9bab4;
+  }
+.shop-banner{
+    background-image: linear-gradient(45deg, 
+    rgba(34,34,34, 75%), 
+    rgba(34,34,34, 75%)), url(../images/shop/shop-bg.jpg) ;
+    height: 205px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shop-banner h1{
+    font-size: 52px;
+    font-weight: 700;
+    font-family: 'Roboto Slab', serif;
+    color: #fff;
+}
+.shop-banner a{
+    color: #fff;
+    font-size: 20px;
+}
+
+.shop-banner a:hover{
+    color: var(--color);
+}
+.shop-banner span{
+    font-size: 20px;
+    color: #fff;
+}
+.shop-banner .active{
+    color: var(--color);
+}
+
+/* main content  */
+.main-content{
+    width: 100%;
+    height: 200px;
+    background: antiquewhite;
+    padding: 20px;
+}
+
+/* left side shop  */
+.shop-left{
+    width: 25%;
+    background: aliceblue;
+    height: 200px;
+    float: left;
+}
+
+/* right side shop  */
+.shop-right{
+    width: 73%;
+    height: 200px;
+    background: black;
+    float: left;
+    margin-left: 20px;
+}
