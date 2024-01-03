@@ -9,9 +9,9 @@
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./home.css">
+    <link rel="stylesheet" href="./css/home.css">
     <link rel="stylesheet" href="./css/card.css">
-    <link rel="stylesheet" href="./brand.css">
+    <link rel="stylesheet" href="./css/brand.css">
 </head>
 <body>
     <?php require("components/navbar.php") ?>
