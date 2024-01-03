@@ -157,12 +157,12 @@
 .product-grid .add-to-cart{
     color: #fff;
     background-color: var(--color);
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 500;
     text-transform: uppercase;
     line-height: 40px;
     width: 140px;
-    height: 40px;
+    height: 38px;
     border-radius: 50px;
     opacity: 0;
     transform: translateX(-50%);

@@ -4,7 +4,7 @@
                 <div class="product-image">
                     <a href="#" class="image">
                         <img class="pic-1" src="images/cover-photo/cover1.png">
-                        <img class="pic-2" src="images/cover-photo/cover2.png">
+                        <img class="pic-2" src="images/cover-photo/cover1.png">
                     </a>
                     <span class="product-discount-label">-33%</span>
                     <ul class="product-links">

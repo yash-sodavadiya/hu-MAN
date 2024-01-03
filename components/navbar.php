@@ -41,8 +41,8 @@
     <div class="bottom-middle">
     <nav class="dropdownmenu">
         <ul>
-            <li><a href="">HOME</a></li>
-            <li><a href="">SHOP <i class="fa-solid fa-angle-down"></i></a>  
+            <li><a href="index.php">HOME</a></li>
+            <li><a href="shop.php">SHOP <i class="fa-solid fa-angle-down"></i></a>  
             <ul id="submenu">
                 <li><a href="">SHIRT</a></li>
                 <li><a href="">PENTS</a></li>

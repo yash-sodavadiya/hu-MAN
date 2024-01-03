@@ -126,10 +126,7 @@
                 <?php require("components/card.php") ?>
                 <?php require("components/card.php") ?>
                 <?php require("components/card.php") ?>
-                <?php require("components/card.php") ?>
-                <?php require("components/card.php") ?>
-                <?php require("components/card.php") ?>
-                <?php require("components/card.php") ?>
+              
             </div>
 
           <!-- pagination  -->
