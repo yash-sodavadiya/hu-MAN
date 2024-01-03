@@ -6,7 +6,7 @@
                         <img class="pic-1" src="images/cover-photo/cover1.png">
                         <img class="pic-2" src="images/cover-photo/cover2.png">
                     </a>
-                    <span class="product-hot-label">hot</span>
+                    <span class="product-discount-label">-33%</span>
                     <ul class="product-links">
                         <li><a href="#" data-tip="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                         <li><a href="#" data-tip="Compare"><i class="fa fa-random"></i></a></li>
@@ -22,7 +22,7 @@
                         <li class="far fa-star"></li>
                     </ul>
                     <h3 class="title"><a href="#">Women's Shirt</a></h3>
-                    <div class="price">$79.90</div>
+                    <div class="price"> $66.00 <span>$90.00</span></div>
                     <a class="add-to-cart" href="#">add to cart</a>
                 </div>
             </div>

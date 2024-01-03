@@ -151,6 +151,7 @@
     color: #999;
     font-weight: 500;
     text-decoration: line-through;
+    font-size: 12px;
 }
 .product-grid:hover .price{ opacity: 0; }
 .product-grid .add-to-cart{
@@ -177,4 +178,16 @@
 }
 a{
     text-decoration: none;
+}
+.product-grid .product-discount-label{
+    color: #fff;
+    background: var(--color);
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 5px;
+    position: absolute;
+    top: 12px;
+    left: 12px;
 }
