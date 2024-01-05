@@ -50,8 +50,8 @@
                 <li><a href="">WATCH</a></li>
             </ul>
         </li>
-        <li><a href="">ABOUT US</a></li>
-        <li><a href="">CONTACT US</a></li>
+        <li><a href="about-us.php">ABOUT US</a></li>
+        <li><a href="contact-us.php">CONTACT US</a></li>
         </ul>
     </nav>
     </div>
