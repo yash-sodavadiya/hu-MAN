@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Teko:wght@500&display=swap');
+*{
+    font-family: "Noto sans";
+}
 :root {
     --color: #c88737;
     --white: #ffffff;
