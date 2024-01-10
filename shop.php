@@ -12,7 +12,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/card.css">
-    <link rel="stylesheet" href="./shop.css">
+    <link rel="stylesheet" href="./css/shop.css">
     <link rel="stylesheet" href="./css/pagination.css">
 
 </head>
@@ -122,14 +122,12 @@
         </div>
         <div class="shop-right">
             <div class="row">
-                <?php require("components/card.php") ?>
-                <?php require("components/card.php") ?>
-                <?php require("components/card.php") ?>
-                <?php require("components/card.php") ?>
-                <?php require("components/card.php") ?>
-                <?php require("components/card.php") ?>
-                <?php require("components/card.php") ?>
-                <?php require("components/card.php") ?>
+                <?php require("components/shop-card.php") ?>
+                <?php require("components/shop-card.php") ?>
+                <?php require("components/shop-card.php") ?>
+                <?php require("components/shop-card.php") ?>
+                <?php require("components/shop-card.php") ?>
+                <?php require("components/shop-card.php") ?>
             </div>
 
           <!-- pagination  -->
