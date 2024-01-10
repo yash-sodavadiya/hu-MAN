@@ -123,11 +123,6 @@
         <div class="shop-right">
             <div class="row">
                 <?php require("components/shop-card.php") ?>
-                <?php require("components/shop-card.php") ?>
-                <?php require("components/shop-card.php") ?>
-                <?php require("components/shop-card.php") ?>
-                <?php require("components/shop-card.php") ?>
-                <?php require("components/shop-card.php") ?>
             </div>
 
           <!-- pagination  -->

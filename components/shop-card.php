@@ -1,9 +1,15 @@
-<div class="col-sm-4">
+<?php 
+    $sql = "select * from product_tbl";
+    $result = mysqli_query($conn,$sql);
+    if($result)
+    {
+        foreach($result as $row){ ?>
+            <div class="col-sm-4">
     <div class="product-grid">
         <div class="product-image">
             <a href="#" class="image">
-                <img class="pic-1" src="images/cover-photo/cover1.png">
-                <img class="pic-2" src="images/cover-photo/cover1.png">
+                <img class="pic-1" src="images/cover-photo/<?php echo $row["product_img"]?> ">
+                <img class="pic-2" src="images/cover-photo/<?php echo $row["product_img"]?>">
             </a>
             <span class="product-discount-label">-33%</span>
             <ul class="product-links">
@@ -20,9 +26,15 @@
                 <li class="fas fa-star"></li>
                 <li class="far fa-star"></li>
             </ul>
-            <h3 class="title"><a href="#">Women's Shirt</a></h3>
-            <div class="price"> $66.00 <span>$90.00</span></div>
+            <h3 class="title"><a href="#"><?php echo $row["product_name"]?></a></h3>
+            <div class="price"> $<?php echo $row["product_price"]?> <span>$90.00</span></div>
             <a class="add-to-cart" href="#">add to cart</a>
         </div>
     </div>
 </div>
+       
+
+       <?php }
+    }
+?>
+       

@@ -89,9 +89,6 @@
     <div class="container-fluid collection-card">
         <div class="row">
         <?php require("components/card.php") ?>
-        <?php require("components/card.php") ?>
-        <?php require("components/card.php") ?>
-        <?php require("components/card.php") ?>
             
         </div>
     </div>

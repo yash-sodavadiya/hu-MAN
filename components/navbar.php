@@ -1,3 +1,4 @@
+<?php require("database/config.php") ?>
 <!-- navbar top  -->
 
 <div class="navbar-top">

@@ -44,8 +44,30 @@
                         <i class="fa-solid fa-trash"></i>
                     </div>
                 </div>
+                <div class="product-details">
+                    <div class="product-img">
+                        <img src="./images/cover-photo/cover1.png" alt="">
+                    </div>
+                    <div class="product-detail">
+                        <p>Lorem ipsum</p>
+                        <h5>₹350</h5>
+                        <span>Size: <span>L</span></span><br>
+                        <span>Color: <span>Blue</span></span><br>
+                    </div>
+                    <div class="product-quantity">
+                        <input type="number" min="1" step="1" value="1">
+                    </div>
+                    <div class="product-total-price">
+                        <h5>₹350</h5>
+                    </div>
+                    <div class="product-delete">
+                        <i class="fa-solid fa-trash"></i>
+                    </div>
+                </div>
                 
             </div>
+            
+            
                 <div class="col-sm-3 cart-right">
                     <div class="product-item-price">
                         <div class="item">
