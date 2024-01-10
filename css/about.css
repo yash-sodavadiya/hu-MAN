@@ -4,6 +4,7 @@
     --color: #c88737;
     --bgcolor: #c9bab4;
   }
+  
 
   /* top about banner  */
   .about-banner{
@@ -139,4 +140,208 @@ padding-bottom: 20px;
     opacity: 1;
     filter: brightness(1);
     transform: rotate(45deg);
+}
+.brand-info .main-logo:hover h3{
+    color: var(--color);
+}
+
+/* company information  */
+.company-info .main-cm-info{
+    background-image: linear-gradient(45deg, 
+    rgba(34,34,34, 35%), 
+    rgba(34,34,34, 60%)), url(../images/shop/shop-bg.jpg) ;
+}
+.company-info-1{
+    height: 100%;
+    width: 100%;
+}
+.company-info .row .col-sm-4 h6{
+    position: relative;
+    font-size: 20px;
+    font-family: math;
+    margin-top: 50px;
+    margin-left: 20px;
+    color: #fff;
+}
+.company-info .row .col-sm-4 h3{
+    font-size: 35px;
+    font-family: unset;
+    margin-left: 20px;
+    color: #fff;
+}
+
+
+.company-info .info-num .cm-num{
+    background: rgb(0,0,0,.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 125px;
+    transition: color 3s;
+}
+.company-info .info-num .cm-num h1{
+    color: var(--color);
+    transition: 1.5s;
+}
+.company-info .info-num .cm-num h5{
+    color:#fff;
+    transition: 1.5s;
+}
+.company-info .info-num .cm-num:hover h1{
+    color:#fff;
+}
+.company-info .info-num .cm-num:hover h5{
+    color: var(--color);
+}
+.company-info .info-num .cm-num-1 h1{
+    color: #fff;
+    transition: 1.5s;
+}
+.company-info .info-num .cm-num-1 h5{
+    color:var(--color);
+    transition: 1.5s;
+}
+.company-info .info-num .cm-num-1:hover h1{
+    color:var(--color);
+}
+.company-info .info-num .cm-num-1:hover h5{
+    color:#fff;
+}
+.company-info .info-num .cm-num-1{
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 125px;
+}
+/* buy now buttton */
+.button {
+    cursor: pointer;
+    position: relative;
+    padding: 10px 24px;
+    font-size: 13px;
+    color: rgb(193, 163, 98);
+    border: 2px solid rgb(193, 163, 98);
+   
+    background-color: transparent;
+    font-weight: 700;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+    overflow: hidden;
+    width: 150px;
+  }
+  
+  .button::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+   
+    scale: 0;
+    z-index: -1;
+    background-color: rgb(193, 163, 98);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .button:hover::before {
+    scale: 3;
+  }
+  
+  .button:hover {
+    color: #212121;
+    scale: 1.1;
+    box-shadow: 0 0px 20px rgba(193, 163, 98,0.4);
+  }
+  
+  .button:active {
+    scale: 1;
+  }
+
+  /* third part  */
+.company-info .cm-info-3{
+    margin-top: 50px;
+    font-size: 15px;
+   color: #fff;
+  }
+.rating-photo{
+margin-top: 30px;
+}
+.rating-photo img{
+    height: 60px;
+}
+.model-photo{
+    margin-top: 30px;
+    }
+.model-photo img{
+    height: 260px;
+    width: 97%;
+}
+/* about-brand-logo  */
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600;);
+.main-logo-1 {
+  background-color: #000;
+  display: inline-block;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  border-left: 1px solid var(--color);
+  max-width: 315px;
+  min-width: 230px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+.main-logo-1 *,
+.main-logo-1 *:before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+ .main-logo-1 img {
+  backface-visibility: hidden;
+  max-width: 100%;
+  vertical-align: top;
+  opacity: 0.1;
+} 
+.brand-logo-1 {
+    bottom: 25px;
+    position: absolute;
+    z-index: 1;
+    left: 37px;
+    margin-right: 45px;
+}
+
+.brand-logo-1 img {
+    opacity: 1;
+  /* background-color: #c73232; */
+  color: #fff;
+  font-size: 0.9em;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin: 0;
+  padding: 5px 10px !important;
+  text-transform: uppercase;
+  z-index: 1;
+}
+.main-logo-1 a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+.main-logo-1:hover > img,
+.main-logo-1.hover > img {
+  opacity: 1;
+  transition: 2s all;
+}
+.main-logo-1:hover figcaption:before,
+.main-logo-1.hover figcaption:before {
+  right: -5px;
 }
