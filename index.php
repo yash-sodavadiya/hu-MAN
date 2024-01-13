@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/home.css">
-    <link rel="stylesheet" href="./css/card.css">
-    <link rel="stylesheet" href="./css/brand.css">
+    <link rel="stylesheet" href="./css/style.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="./css/home.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="./css/card.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="./css/brand.css?v=<?php echo time(); ?>">
 </head>
 <body>
     <?php require("components/navbar.php") ?>
@@ -88,6 +88,7 @@
 
     <div class="container-fluid collection-card">
         <div class="row">
+        <?php require("components/card.php") ?>
         <?php require("components/card.php") ?>
             
         </div>

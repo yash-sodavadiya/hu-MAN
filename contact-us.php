@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/contact.css">
+    <link rel="stylesheet" href="./css/style.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="./css/contact.css?v=<?php echo time(); ?>">
 </head>
 <body>
 
@@ -56,15 +56,15 @@
                             <h4>Contact Info</h4>
                             <div class="d-flex info_single align-items-center">
                                 <i class="fas fa-headset"></i>
-                                <span>+91 8009 054294</span>
+                                <span>+91 9824873685</span>
                             </div>
                             <div class="d-flex info_single align-items-center">
                                 <i class="fas fa-envelope-open-text"></i>
-                                <span>info@flightmantra.com</span>
+                                <span>human@gmail.com</span>
                             </div>
                             <div class="d-flex info_single align-items-center">
                                 <i class="fas fa-map-marked-alt"></i>
-                                <span>1000+ Travel partners and 65+ Service city across India, USA, Canada & UAE</span>
+                                <span>10+ E-commerce partners and 6+ Service city across India</span>
                             </div>
             
                         </div>

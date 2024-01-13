@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./css/cart.css">
+    <link rel="stylesheet" href="./css/style.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="./css/cart.css?v=<?php echo time(); ?>">
 </head>
 
 <body>
@@ -35,10 +35,11 @@
                         <span>Color: <span>Blue</span></span><br>
                     </div>
                     <div class="product-quantity">
-                        <input type="number" min="1" step="1" value="1">
+                        <input type="number" min="1" step="1" value="1" disabled id="count" onchange="calc(this)">
                     </div>
                     <div class="product-total-price">
-                        <h5>₹350</h5>
+                        <h5 id="price">₹350</h5>
+                        <input type="hidden" id="p_price" value="350">
                     </div>
                     <div class="product-delete">
                         <i class="fa-solid fa-trash"></i>
@@ -54,73 +55,79 @@
                         <span>Size: <span>L</span></span><br>
                         <span>Color: <span>Blue</span></span><br>
                     </div>
+                    
                     <div class="product-quantity">
-                        <input type="number" min="1" step="1" value="1">
+                        <input  type="number" min="1" step="1" value="1" disabled id="count" name="count" onchange="calc(this)">
                     </div>
                     <div class="product-total-price">
-                        <h5>₹350</h5>
+                        <h5 id="price">₹350</h5>
+                        <input type="hidden" id="p_price" name="p_price" value="350" onchange="calc(this)">
                     </div>
+                   
                     <div class="product-delete">
                         <i class="fa-solid fa-trash"></i>
                     </div>
                 </div>
-                
+
             </div>
-            
-            
-                <div class="col-sm-3 cart-right">
-                    <div class="product-item-price">
-                        <div class="item">
-                            <div class="item-num">
+
+
+            <div class="col-sm-3 cart-right">
+                <div class="product-item-price">
+                    <div class="item">
+                        <div class="item-num">
                             <p>1 Item</p>
-                            </div>
-                            <div class="item-price">
-                            <h5>₹350</h5>
-                            </div>
                         </div>
-                        <div class="item">
-                            <div class="item-num">
-                            <p>shipping</p>
-                            </div>
-                            <div class="item-price">
-                            <h5>₹350</h5>
-                            </div>
+                        <div class="item-price">
+                            <h5 id="total_price">₹350</h5>
                         </div>
                     </div>
-                    <div class="product-item-price">
-                        <div class="item">
-                            <div class="item-num">
-                            <p>1 Item</p>
-                            </div>
-                            <div class="item-price">
-                            <h5>₹350</h5>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="item-num">
+                    <div class="item">
+                        <div class="item-num">
                             <p>shipping</p>
-                            </div>
-                            <div class="item-price">
-                            <h5>₹350</h5>
-                            </div>
                         </div>
-                    </div>
-                    <div class="shopping-btn">
-                    <button class="button">
-  EXPLORE MORE
-</button>
+                        <div class="item-price">
+                            <h5>₹350</h5>
+                        </div>
                     </div>
                 </div>
+                <div class="product-item-price">
+                    <div class="item">
+                        <div class="item-num">
+                            <p>1 Item</p>
+                        </div>
+                        <div class="item-price">
+                            <h5>₹350</h5>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item-num">
+                            <p>shipping</p>
+                        </div>
+                        <div class="item-price">
+                            <h5>₹350</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="shopping-btn">
+                    <button class="button">
+                        Proceed to checkout
+                    </button>
+                </div>
+            </div>
            
         </div>
         <div class="cart-bottom">
-        <a href="shop.php">
-        <i class="fa-solid fa-angle-down shopping-arow"></i>
-        <p>Continue shopping</p>
-        </a>
-        <div class="cart-txt">
-        <p>The order will only be confirmed when you click on the button 'Order with an obligation to pay' at the end of the checkout!</p>
-        </div>
+            <div class="shopping">
+            <a href="shop.php">
+                <i class="fa-solid fa-angle-down shopping-arow"></i>
+                <p>Continue shopping</p>
+            </a>
+            </div>
+            <!-- <div class="cart-txt">
+                <p>The order will only be confirmed when you click on the button 'Order with an obligation to pay' at
+                    the end of the checkout!</p>
+            </div> -->
         </div>
     </div>
 
@@ -150,6 +157,7 @@
                     let newVal;
                     if (oldValue >= max) {
                         newVal = oldValue;
+                    
                     } else {
                         newVal = oldValue + step;
                     }
@@ -170,7 +178,37 @@
                 });
 
             });
+            
+            // $("#count").change(function(){
+            //     var count = document.getElementById("count").value;
+            //     var price=document.getElementById("p_price").value;
+            //     var count_price = price * count;
+            //     document.getElementById("price").innerHTML = "₹"+count_price; 
+            // })
+            
+
         });
+        var total = document.getElementById("total_price");
+        var p = document.getElementById("price");
+        
+        function calc(v){
+                // var index = $(v).parent().parent().parent().index();
+               console.log(p.length);
+                var count = v.parentElement.children[0].value;
+                if(count < 0)
+                {
+                    window.location.href = "index.php";
+                }
+
+                var price = v.parentElement.parentElement.parentElement.children[3].children[1].value
+                var count_price = price * count;
+                var cprice = v.parentElement.parentElement.parentElement.children[3].children[0]
+                cprice.innerHTML = "₹"+count_price;
+                
+                
+               
+            }
+        
     </script>
 
 </body>

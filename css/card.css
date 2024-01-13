@@ -10,6 +10,11 @@
     border-radius: 15px;
     margin-bottom: 22px;
 }
+.product-image{
+    min-height: 354px;
+    display: flex;
+    align-items: center;
+}
 .product-grid:hover{ box-shadow: 0 0 10px rgba(0,0,0,0.15),10px 10px rgba(0,0,0,0.05); }
 .product-grid .product-image{
     overflow: hidden;

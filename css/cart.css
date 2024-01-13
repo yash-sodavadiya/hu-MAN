@@ -252,7 +252,7 @@
     font-weight: 600;
     transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
     overflow: hidden;
-    width: 150px;
+    width: 174px;
   }
   
   .button::before {
@@ -260,7 +260,7 @@
     position: absolute;
     inset: 0;
     margin: auto;
-    width: 50px;
+    width: 60px;
     height: 50px;
     border-radius: inherit;
     scale: 0;
@@ -284,11 +284,15 @@
   }
   
   .cart .cart-bottom{
-    display: flex;
-    justify-content: space-between;
+    width: 100%;
+  }
+  .cart .cart-bottom .shopping{
+    width: 70%;
+    float: left;
   }
   .cart .cart-bottom .cart-txt{
     width: 27%;
+    float: left;
     font-size: 12px;
     text-align: justify;
     margin-top: -32px;

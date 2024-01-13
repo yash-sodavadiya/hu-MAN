@@ -10,10 +10,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/card.css">
-    <link rel="stylesheet" href="./css/shop.css">
-    <link rel="stylesheet" href="./css/pagination.css">
+    <link rel="stylesheet" href="./css/style.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="./css/card.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="./css/shop.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="./css/pagination.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="./css/cart-popup.css?v=<?php echo time(); ?>">
 
 </head>
 
@@ -123,12 +124,17 @@
         <div class="shop-right">
             <div class="row">
                 <?php require("components/shop-card.php") ?>
+                <?php require("components/shop-card.php") ?>
+                <?php require("components/shop-card.php") ?>
             </div>
-
-          <!-- pagination  -->
-          <?php require("components/pagination.php") ?>
+            
+            <!-- pagination  -->
+            <?php require("components/pagination.php") ?>
         </div>
     </div>
+    <?php require("components/cart-popup.php") ?>
+
+   
 </body>
 
 </html>

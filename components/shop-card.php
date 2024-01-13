@@ -28,7 +28,7 @@
             </ul>
             <h3 class="title"><a href="#"><?php echo $row["product_name"]?></a></h3>
             <div class="price"> $<?php echo $row["product_price"]?> <span>$90.00</span></div>
-            <a class="add-to-cart" href="#">add to cart</a>
+            <a class="add-to-cart link-1" href="#modal-opened" id="modal-closed">add to cart</a>
         </div>
     </div>
 </div>

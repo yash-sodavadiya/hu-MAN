@@ -46,7 +46,7 @@ body{
     color:#fff
   }
   .right_conatct_social_icon{
-       background: linear-gradient(to top right, #1325e8 -5%, #8f10b7 100%);
+       background: linear-gradient(to top right, #fff -5%, #c1a362 100%);
   }
   .contact_us{
       background-color: #f1f1f1;
@@ -122,7 +122,7 @@ body{
   }
   
   button.contact_form_submit {
-      background: linear-gradient(to top right, #1325e8 -5%, #8f10b7 100%);
+      background: linear-gradient(to top right, #fff -5%, #c1a362 100%);
       border: none;
       color: #fff;
       padding: 10px 15px;

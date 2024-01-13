@@ -4,7 +4,7 @@
   <!-- Footer -->
   <footer
           class="text-center text-lg-start text-white"
-          style="background-color: #929fba"
+          style="background-color: #4c4c4c;"
           >
     <!-- Grid container -->
     <div class="container p-4 pb-0">
@@ -15,7 +15,7 @@
           <!-- Grid column -->
           <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
             <h6 class="text-uppercase mb-4 font-weight-bold">
-              Company name
+              hu-MAN
             </h6>
             <p>
               Here you can use rows and columns to organize your footer
@@ -29,19 +29,21 @@
 
           <!-- Grid column -->
           <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-            <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
+            <h6 class="text-uppercase mb-4 font-weight-bold">QUICK LINK</h6>
+            
             <p>
-              <a class="text-white">MDBootstrap</a>
+              <a class="text-white">About us</a>
             </p>
             <p>
-              <a class="text-white">MDWordPress</a>
+              <a class="text-white">Contact us</a>
             </p>
             <p>
-              <a class="text-white">BrandFlow</a>
+              <a class="text-white">Shop</a>
             </p>
             <p>
-              <a class="text-white">Bootstrap Angular</a>
+              <a class="text-white">Cart</a>
             </p>
+         
           </div>
           <!-- Grid column -->
 
@@ -53,10 +55,10 @@
           <!-- Grid column -->
           <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
             <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
-            <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
-            <p><i class="fas fa-envelope mr-3"></i> info@gmail.com</p>
-            <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-            <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+            <p><i class="fas fa-home mr-3"></i> Surat, IN 395006, India</p>
+            <p><i class="fas fa-envelope mr-3"></i> human@gmail.com</p>
+            <p><i class="fas fa-phone mr-3"></i> + 91 6353376834</p>
+            <p><i class="fas fa-print mr-3"></i> + 91 9724873685</p>
           </div>
           <!-- Grid column -->
 
@@ -129,9 +131,9 @@
          class="text-center p-3"
          style="background-color: rgba(0, 0, 0, 0.2)"
          >
-      © 2020 Copyright:
-      <a class="text-white" href="https://mdbootstrap.com/"
-         >MDBootstrap.com</a
+      © 2023 Copyright:
+      <a class="text-white" href="index.php"
+         >hu-MAN.com</a
         >
     </div>
     <!-- Copyright -->
