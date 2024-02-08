@@ -21,7 +21,7 @@
   <link href="../../../../../cdn.jsdelivr.net/npm/%40mdi/font%404.4.95/css/materialdesignicons.min.css" rel="stylesheet" />
 
   <!-- Ekka CSS -->
-  <link id="ekka-css" rel="stylesheet" href="assets/css/ekka.css" />
+  <link id="ekka-css" rel="stylesheet" href="assets/css/ekka.css?v=<?php echo time(); ?>" />
 
   <!-- FAVICON -->
   <link href="assets/img/favicon.png" rel="shortcut icon" />
@@ -35,7 +35,9 @@
           <div class="card-header bg-primary">
             <div class="ec-brand">
               <a href="index.html" title="Ekka">
-                <img class="ec-brand-icon" src="assets/img/logo/logo-login.png" alt="" />
+              <img class="ec-brand-icon" src="assets/img/logo.png" alt="" style="width: 50px;
+    padding-bottom: 13px;"/>
+						<span class="ec-brand-name text-truncate">hu-MAN</span>
               </a>
             </div>
           </div>

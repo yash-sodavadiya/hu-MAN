@@ -6,7 +6,7 @@
 			<div id="sidebar" class="sidebar ec-sidebar-footer">
 
 				<div class="ec-brand">
-					<a href="index.php" title="Ekka">
+					<a href="index" title="Ekka">
 						<img class="ec-brand-icon" src="assets/img/logo.png" alt="" />
 						<span class="ec-brand-name text-truncate">hu-MAN</span>
 					</a>
@@ -18,7 +18,7 @@
 					<ul class="nav sidebar-inner" id="sidebar-menu">
 						<!-- Dashboard -->
 						<li class="active">
-							<a class="sidenav-item-link" href="index.php">
+							<a class="sidenav-item-link" href="dashboard">
 								<i class="fa-solid fa-border-all"></i>
 								<span class="nav-text">Dashboard</span>
 							</a>
@@ -35,12 +35,12 @@
 							<div class="collapse">
 								<ul class="sub-menu" id="categorys" data-parent="#sidebar-menu">
 									<li class="">
-										<a class="sidenav-item-link" href="main-category.php">
+										<a class="sidenav-item-link" href="main-category">
 											<span class="nav-text">Main Category</span>
 										</a>
 									</li>
 									<li class="">
-										<a class="sidenav-item-link" href="sub-category.php">
+										<a class="sidenav-item-link" href="sub-category">
 											<span class="nav-text">Sub Category</span>
 										</a>
 									</li>
@@ -58,12 +58,12 @@
 							<div class="collapse">
 								<ul class="sub-menu" id="products" data-parent="#sidebar-menu">
 									<li class="">
-										<a class="sidenav-item-link" href="product-add.php">
+										<a class="sidenav-item-link" href="product-add">
 											<span class="nav-text">Add Product</span>
 										</a>
 									</li>
 									<li class="">
-										<a class="sidenav-item-link" href="product-list.php">
+										<a class="sidenav-item-link" href="product-list">
 											<span class="nav-text">List Product</span>
 										</a>
 									</li>
@@ -81,22 +81,22 @@
 							<div class="collapse">
 								<ul class="sub-menu" id="orders" data-parent="#sidebar-menu">
 									<li class="">
-										<a class="sidenav-item-link" href="new-order.php">
+										<a class="sidenav-item-link" href="new-order">
 											<span class="nav-text">New Order</span>
 										</a>
 									</li>
 									<li class="">
-										<a class="sidenav-item-link" href="order-history.php">
+										<a class="sidenav-item-link" href="order-history">
 											<span class="nav-text">Order History</span>
 										</a>
 									</li>
 									<li class="">
-										<a class="sidenav-item-link" href="order-detail.php">
+										<a class="sidenav-item-link" href="order-detail">
 											<span class="nav-text">Order Detail</span>
 										</a>
 									</li>
 									<li class="">
-										<a class="sidenav-item-link" href="invoice.php">
+										<a class="sidenav-item-link" href="invoice">
 											<span class="nav-text">Invoice</span>
 										</a>
 									</li>
@@ -106,7 +106,7 @@
 
 						<!-- employee -->
 						<li >
-							<a class="sidenav-item-link" href="employee-list.php">
+							<a class="sidenav-item-link" href="employee-list">
 								<i class="fa-solid fa-user"></i>
 								<span class="nav-text">Employee</span>
 							</a>
@@ -115,7 +115,7 @@
 
 						<!-- Users -->
 						<li >
-							<a class="sidenav-item-link" href="user-list.php">
+							<a class="sidenav-item-link" href="user-list">
 								<i class="fa-solid fa-user"></i>
 								<span class="nav-text">User</span>
 							</a>
@@ -132,12 +132,12 @@
 							<div class="collapse">
 								<ul class="sub-menu" id="authentication" data-parent="#sidebar-menu">
 									<li class="">
-										<a href="sign-in.php">
+										<a href="sign-in">
 											<span class="nav-text">Sign In</span>
 										</a>
 									</li>
 									<li class="">
-										<a href="sign-up.php">
+										<a href="sign-up">
 											<span class="nav-text">Sign Up</span>
 										</a>
 									</li>
@@ -193,17 +193,19 @@
 										</div>
 									</li>
 									<li>
-										<a href="user-profile.php">
+										<a href="user-profile">
 											<i class="mdi mdi-account"></i> My Profile
 										</a>
 									</li>
 									
 									<li class="dropdown-footer">
-										<a href="index.php"> <i class="mdi mdi-logout"></i> Log Out </a>
+										<a href="index"> <i class="mdi mdi-logout"></i> Log Out </a>
 									</li>
 								</ul>
 							</li>
-							
+							<li class="right-sidebar-in right-sidebar-2-menu">
+							<i class="fa-solid fa-gear"></i>
+													</li>
 						</ul>
 					</div>
 				</nav>

@@ -42,36 +42,36 @@
 						<div class="col-xl-3 col-sm-6 p-b-15 lbl-card">
 							<div class="card card-mini dash-card card-1">
 								<div class="card-body">
-									<h2 class="mb-1">1,503</h2>
-									<p>Daily Signups</p>
-									<span class="mdi mdi-account-arrow-left"></span>
+									<h2 class="mb-1">1,000</h2>
+									<p>Users</p>
+									<span><i class="fa-solid fa-user" style="font-size:20px;"></i></span>
 								</div>
 							</div>
 						</div>
 						<div class="col-xl-3 col-sm-6 p-b-15 lbl-card">
 							<div class="card card-mini dash-card card-2">
 								<div class="card-body">
-									<h2 class="mb-1">79,503</h2>
-									<p>Daily Visitors</p>
-									<span class="mdi mdi-account-clock"></span>
+									<h2 class="mb-1">150+</h2>
+									<p>Product</p>
+									<span><i class="fa-solid fa-box" style="font-size:20px;"></i></span>
 								</div>
 							</div>
 						</div>
 						<div class="col-xl-3 col-sm-6 p-b-15 lbl-card">
 							<div class="card card-mini dash-card card-3">
 								<div class="card-body">
-									<h2 class="mb-1">15,503</h2>
-									<p>Daily Order</p>
-									<span class="mdi mdi-package-variant"></span>
+									<h2 class="mb-1">15,000</h2>
+									<p> Order</p>
+									<span><i class="fa-solid fa-cart-shopping" style="font-size:20px;"></i></span>
 								</div>
 							</div>
 						</div>
 						<div class="col-xl-3 col-sm-6 p-b-15 lbl-card">
 							<div class="card card-mini dash-card card-4">
 								<div class="card-body">
-									<h2 class="mb-1">$98,503</h2>
-									<p>Daily Revenue</p>
-									<span class="mdi mdi-currency-usd"></span>
+									<h2 class="mb-1">₹ 5M+</h2>
+									<p>Revenue</p>
+									<span ><i class="fa-solid fa-indian-rupee-sign" style="font-size:20px;"></i></span>
 								</div>
 							</div>
 						</div>
@@ -194,142 +194,7 @@
 						</div>
 					</div>
 
-					<div class="row">
-						<div class="col-xl-8 col-12 p-b-15">
-							<!-- World Chart -->
-							<div class="card card-default" id="analytics-country">
-								<div class="card-header justify-content-between">
-									<h2>Purchased by Country</h2>
-									<div class="date-range-report ">
-										<span></span>
-									</div>
-								</div>
-								<div class="card-body vector-map-world-2">
-									<div id="regions_purchase" style="height: 100%; width: 100%;"></div>
-								</div>
-								<div class="border-top mt-3">
-									<div class="row no-gutters">
-										<div class="col-lg-6">
-											<div class="world-data-chart border-bottom pt-15px pb-15px">
-												<canvas id="hbar1" class="chartjs"></canvas>
-											</div>
-										</div>
-										<div class="col-lg-6">
-											<div class="world-data-chart pt-15px pb-15px">
-												<canvas id="hbar2" class="chartjs"></canvas>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="card-footer d-flex flex-wrap bg-white">
-									<a href="#" class="text-uppercase py-3">In-Detail Overview</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-4 col-12 p-b-15">
-							<!-- Top Sell Table -->
-							<div class="card card-default Sold-card-table">
-								<div class="card-header justify-content-between">
-									<h2>Sold by Items</h2>
-									<div class="tools">
-										<button class="text-black-50 mr-2 font-size-20"><i
-												class="mdi mdi-cached"></i></button>
-										<div class="dropdown show d-inline-block widget-dropdown">
-											<a class="dropdown-toggle icon-burger-mini" href="#" role="button"
-												id="dropdown-units" data-bs-toggle="dropdown" aria-haspopup="true"
-												aria-expanded="false" data-display="static"></a>
-											<ul class="dropdown-menu dropdown-menu-right">
-												<li class="dropdown-item"><a href="#">Action</a></li>
-												<li class="dropdown-item"><a href="#">Another action</a></li>
-												<li class="dropdown-item"><a href="#">Something else here</a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-								<div class="card-body py-0 compact-units" data-simplebar style="height: 534px;">
-									<table class="table ">
-										<tbody>
-											<tr>
-												<td class="text-dark">Backpack</td>
-												<td class="text-center">9</td>
-												<td class="text-right">33% <i
-														class="mdi mdi-arrow-up-bold text-success pl-1 font-size-12"></i>
-												</td>
-											</tr>
-											<tr>
-												<td class="text-dark">T-Shirt</td>
-												<td class="text-center">6</td>
-												<td class="text-right">150% <i
-														class="mdi mdi-arrow-up-bold text-success pl-1 font-size-12"></i>
-												</td>
-											</tr>
-											<tr>
-												<td class="text-dark">Coat</td>
-												<td class="text-center">3</td>
-												<td class="text-right">50% <i
-														class="mdi mdi-arrow-up-bold text-success pl-1 font-size-12"></i>
-												</td>
-											</tr>
-											<tr>
-												<td class="text-dark">Necklace</td>
-												<td class="text-center">7</td>
-												<td class="text-right">150% <i
-														class="mdi mdi-arrow-up-bold text-success pl-1 font-size-12"></i>
-												</td>
-											</tr>
-											<tr>
-												<td class="text-dark">Jeans Pant</td>
-												<td class="text-center">10</td>
-												<td class="text-right">300% <i
-														class="mdi mdi-arrow-down-bold text-danger pl-1 font-size-12"></i>
-												</td>
-											</tr>
-											<tr>
-												<td class="text-dark">Shoes</td>
-												<td class="text-center">5</td>
-												<td class="text-right">100% <i
-														class="mdi mdi-arrow-up-bold text-success pl-1 font-size-12"></i>
-												</td>
-											</tr>
-											<tr>
-												<td class="text-dark">T-Shirt</td>
-												<td class="text-center">6</td>
-												<td class="text-right">150% <i
-														class="mdi mdi-arrow-up-bold text-success pl-1 font-size-12"></i>
-												</td>
-											</tr>
-											<tr>
-												<td class="text-dark">Watches</td>
-												<td class="text-center">18</td>
-												<td class="text-right">160% <i
-														class="mdi mdi-arrow-up-bold text-success pl-1 font-size-12"></i>
-												</td>
-											</tr>
-											<tr>
-												<td class="text-dark">Inner</td>
-												<td class="text-center">156</td>
-												<td class="text-right">120% <i
-														class="mdi mdi-arrow-up-bold text-success pl-1 font-size-12"></i>
-												</td>
-											</tr>
-											<tr>
-												<td class="text-dark">T-Shirt</td>
-												<td class="text-center">6</td>
-												<td class="text-right">150% <i
-														class="mdi mdi-arrow-up-bold text-success pl-1 font-size-12"></i>
-												</td>
-											</tr>
-										</tbody>
-									</table>
-
-								</div>
-								<div class="card-footer d-flex flex-wrap bg-white">
-									<a href="#" class="text-uppercase py-3">View Report</a>
-								</div>
-							</div>
-						</div>
-					</div>
-
+					
 					<div class="row">
 						<div class="col-12 p-b-15">
 							<!-- Recent Order Table -->
@@ -351,149 +216,74 @@
 												<th class="d-none d-lg-table-cell">Order Date</th>
 												<th class="d-none d-lg-table-cell">Order Cost</th>
 												<th>Status</th>
-												<th></th>
+											
 											</tr>
 										</thead>
 										<tbody>
 											<tr>
-												<td>24541</td>
+												<td>01</td>
 												<td>
-													<a class="text-dark" href="#"> Coach Swagger</a>
+													<a class="text-dark" href="#">black suit</a>
 												</td>
-												<td class="d-none d-lg-table-cell">1 Unit</td>
-												<td class="d-none d-lg-table-cell">Oct 20, 2018</td>
-												<td class="d-none d-lg-table-cell">$230</td>
+												<td class="d-none d-lg-table-cell">1</td>
+												<td class="d-none d-lg-table-cell">01/01/2024</td>
+												<td class="d-none d-lg-table-cell">₹ 3000</td>
 												<td>
 													<span class="badge badge-success">Completed</span>
 												</td>
-												<td class="text-right">
-													<div class="dropdown show d-inline-block widget-dropdown">
-														<a class="dropdown-toggle icon-burger-mini" href="#"
-															role="button" id="dropdown-recent-order1"
-															data-bs-toggle="dropdown" aria-haspopup="true"
-															aria-expanded="false" data-display="static"></a>
-														<ul class="dropdown-menu dropdown-menu-right">
-															<li class="dropdown-item">
-																<a href="#">View</a>
-															</li>
-															<li class="dropdown-item">
-																<a href="#">Remove</a>
-															</li>
-														</ul>
-													</div>
-												</td>
+												
 											</tr>
 											<tr>
-												<td>24541</td>
+												<td>02</td>
 												<td>
-													<a class="text-dark" href="#"> Toddler Shoes, Gucci Watch</a>
+													<a class="text-dark" href="#"> Toddler Shoes,rado whatch</a>
 												</td>
 												<td class="d-none d-lg-table-cell">2 Units</td>
-												<td class="d-none d-lg-table-cell">Nov 15, 2018</td>
-												<td class="d-none d-lg-table-cell">$550</td>
+												<td class="d-none d-lg-table-cell">02/01/2024</td>
+												<td class="d-none d-lg-table-cell">₹ 4550</td>
 												<td>
 													<span class="badge badge-primary">Delayed</span>
 												</td>
-												<td class="text-right">
-													<div class="dropdown show d-inline-block widget-dropdown">
-														<a class="dropdown-toggle icon-burger-mini" href="#"
-															role="button" id="dropdown-recent-order2"
-															data-bs-toggle="dropdown" aria-haspopup="true"
-															aria-expanded="false" data-display="static"></a>
-														<ul class="dropdown-menu dropdown-menu-right">
-															<li class="dropdown-item">
-																<a href="#">View</a>
-															</li>
-															<li class="dropdown-item">
-																<a href="#">Remove</a>
-															</li>
-														</ul>
-													</div>
-												</td>
+												
 											</tr>
 											<tr>
-												<td>24541</td>
+												<td>03</td>
 												<td>
-													<a class="text-dark" href="#"> Hat Black Suits</a>
+													<a class="text-dark" href="#">blue Suit</a>
 												</td>
 												<td class="d-none d-lg-table-cell">1 Unit</td>
-												<td class="d-none d-lg-table-cell">Nov 18, 2018</td>
-												<td class="d-none d-lg-table-cell">$325</td>
+												<td class="d-none d-lg-table-cell">01/01/2024</td>
+												<td class="d-none d-lg-table-cell">₹ 2500</td>
 												<td>
 													<span class="badge badge-warning">On Hold</span>
 												</td>
-												<td class="text-right">
-													<div class="dropdown show d-inline-block widget-dropdown">
-														<a class="dropdown-toggle icon-burger-mini" href="#"
-															role="button" id="dropdown-recent-order3"
-															data-bs-toggle="dropdown" aria-haspopup="true"
-															aria-expanded="false" data-display="static"></a>
-														<ul class="dropdown-menu dropdown-menu-right">
-															<li class="dropdown-item">
-																<a href="#">View</a>
-															</li>
-															<li class="dropdown-item">
-																<a href="#">Remove</a>
-															</li>
-														</ul>
-													</div>
-												</td>
+											
 											</tr>
 											<tr>
-												<td>24541</td>
+												<td>04</td>
 												<td>
-													<a class="text-dark" href="#"> Backpack Gents, Swimming Cap Slin</a>
+													<a class="text-dark" href="#"> Backpack Gents</a>
 												</td>
 												<td class="d-none d-lg-table-cell">5 Units</td>
-												<td class="d-none d-lg-table-cell">Dec 13, 2018</td>
-												<td class="d-none d-lg-table-cell">$200</td>
+												<td class="d-none d-lg-table-cell">10/01/2024</td>
+												<td class="d-none d-lg-table-cell">₹10,000</td>
 												<td>
 													<span class="badge badge-success">Completed</span>
 												</td>
-												<td class="text-right">
-													<div class="dropdown show d-inline-block widget-dropdown">
-														<a class="dropdown-toggle icon-burger-mini" href="#"
-															role="button" id="dropdown-recent-order4"
-															data-bs-toggle="dropdown" aria-haspopup="true"
-															aria-expanded="false" data-display="static"></a>
-														<ul class="dropdown-menu dropdown-menu-right">
-															<li class="dropdown-item">
-																<a href="#">View</a>
-															</li>
-															<li class="dropdown-item">
-																<a href="#">Remove</a>
-															</li>
-														</ul>
-													</div>
-												</td>
+												
 											</tr>
 											<tr>
-												<td>24541</td>
+												<td>05</td>
 												<td>
-													<a class="text-dark" href="#"> Speed 500 Ignite</a>
+													<a class="text-dark" href="#"> watchs</a>
 												</td>
 												<td class="d-none d-lg-table-cell">1 Unit</td>
-												<td class="d-none d-lg-table-cell">Dec 23, 2018</td>
-												<td class="d-none d-lg-table-cell">$150</td>
+												<td class="d-none d-lg-table-cell">01/01/2024</td>
+												<td class="d-none d-lg-table-cell">₹ 2000</td>
 												<td>
 													<span class="badge badge-danger">Cancelled</span>
 												</td>
-												<td class="text-right">
-													<div class="dropdown show d-inline-block widget-dropdown">
-														<a class="dropdown-toggle icon-burger-mini" href="#"
-															role="button" id="dropdown-recent-order5"
-															data-bs-toggle="dropdown" aria-haspopup="true"
-															aria-expanded="false" data-display="static"></a>
-														<ul class="dropdown-menu dropdown-menu-right">
-															<li class="dropdown-item">
-																<a href="#">View</a>
-															</li>
-															<li class="dropdown-item">
-																<a href="#">Remove</a>
-															</li>
-														</ul>
-													</div>
-												</td>
+											
 											</tr>
 										</tbody>
 									</table>
@@ -508,22 +298,7 @@
 							<div class="card ec-cust-card card-table-border-none card-default">
 								<div class="card-header justify-content-between ">
 									<h2>New Customers</h2>
-									<div>
-										<button class="text-black-50 mr-2 font-size-20">
-											<i class="mdi mdi-cached"></i>
-										</button>
-										<div class="dropdown show d-inline-block widget-dropdown">
-											<a class="dropdown-toggle icon-burger-mini" href="#" role="button"
-												id="dropdown-customar" data-bs-toggle="dropdown" aria-haspopup="true"
-												aria-expanded="false" data-display="static">
-											</a>
-											<ul class="dropdown-menu dropdown-menu-right">
-												<li class="dropdown-item"><a href="#">Action</a></li>
-												<li class="dropdown-item"><a href="#">Another action</a></li>
-												<li class="dropdown-item"><a href="#">Something else here</a></li>
-											</ul>
-										</div>
-									</div>
+								
 								</div>
 								<div class="card-body pt-0 pb-15px">
 									<table class="table ">
@@ -539,15 +314,14 @@
 														</div>
 														<div class="media-body align-self-center">
 															<a href="profile.html">
-																<h6 class="mt-0 text-dark font-weight-medium">Selena
-																	Wagner</h6>
+																<h6 class="mt-0 text-dark font-weight-medium"> smit ranpariya</h6>
 															</a>
-															<small>@selena.oi</small>
+															<small>smit@gmail.com</small>
 														</div>
 													</div>
 												</td>
 												<td>2 Orders</td>
-												<td class="text-dark d-none d-md-block">$150</td>
+												<td class="text-dark d-none d-md-block">₹1500</td>
 											</tr>
 											<tr>
 												<td>
@@ -560,15 +334,14 @@
 														</div>
 														<div class="media-body align-self-center">
 															<a href="profile.html">
-																<h6 class="mt-0 text-dark font-weight-medium">Walter
-																	Reuter</h6>
+																<h6 class="mt-0 text-dark font-weight-medium">yash sodavdiya</h6>
 															</a>
-															<small>@walter.me</small>
+															<small>yash12@gmail.com</small>
 														</div>
 													</div>
 												</td>
 												<td>5 Orders</td>
-												<td class="text-dark d-none d-md-block">$200</td>
+												<td class="text-dark d-none d-md-block">₹4200</td>
 											</tr>
 											<tr>
 												<td>
@@ -581,15 +354,14 @@
 														</div>
 														<div class="media-body align-self-center">
 															<a href="profile.html">
-																<h6 class="mt-0 text-dark font-weight-medium">Larissa
-																	Gebhardt</h6>
+																<h6 class="mt-0 text-dark font-weight-medium">meet goti</h6>
 															</a>
-															<small>@larissa.gb</small>
+															<small>meet12433@gmail.com</small>
 														</div>
 													</div>
 												</td>
-												<td>1 Order</td>
-												<td class="text-dark d-none d-md-block">$50</td>
+												<td>2 Order</td>
+												<td class="text-dark d-none d-md-block">₹550</td>
 											</tr>
 											<tr>
 												<td>
@@ -602,58 +374,16 @@
 														</div>
 														<div class="media-body align-self-center">
 															<a href="profile.html">
-																<h6 class="mt-0 text-dark font-weight-medium">Albrecht
-																	Straub</h6>
+																<h6 class="mt-0 text-dark font-weight-medium">zeel vaghani</h6>
 															</a>
-															<small>@albrech.as</small>
+															<small>zeel32e@gmail.com</small>
 														</div>
 													</div>
 												</td>
 												<td>2 Orders</td>
-												<td class="text-dark d-none d-md-block">$100</td>
+												<td class="text-dark d-none d-md-block">₹1100</td>
 											</tr>
-											<tr>
-												<td>
-													<div class="media">
-														<div class="media-image mr-3 rounded-circle">
-															<a href="profile.html"><img
-																	class="profile-img rounded-circle w-45"
-																	src="assets/img/user/u5.jpg"
-																	alt="customer image"></a>
-														</div>
-														<div class="media-body align-self-center">
-															<a href="profile.html">
-																<h6 class="mt-0 text-dark font-weight-medium">Leopold
-																	Ebert</h6>
-															</a>
-															<small>@leopold.et</small>
-														</div>
-													</div>
-												</td>
-												<td>1 Order</td>
-												<td class="text-dark d-none d-md-block">$60</td>
-											</tr>
-											<tr>
-												<td>
-													<div class="media">
-														<div class="media-image mr-3 rounded-circle">
-															<a href="profile.html"><img
-																	class="profile-img rounded-circle w-45"
-																	src="assets/img/user/u3.jpg"
-																	alt="customer image"></a>
-														</div>
-														<div class="media-body align-self-center">
-															<a href="profile.html">
-																<h6 class="mt-0 text-dark font-weight-medium">Larissa
-																	Gebhardt</h6>
-															</a>
-															<small>@larissa.gb</small>
-														</div>
-													</div>
-												</td>
-												<td>1 Order</td>
-												<td class="text-dark d-none d-md-block">$50</td>
-											</tr>
+											
 										</tbody>
 									</table>
 								</div>
@@ -665,22 +395,7 @@
 							<div class="card card-default ec-card-top-prod">
 								<div class="card-header justify-content-between">
 									<h2>Top Products</h2>
-									<div>
-										<button class="text-black-50 mr-2 font-size-20"><i
-												class="mdi mdi-cached"></i></button>
-										<div class="dropdown show d-inline-block widget-dropdown">
-											<a class="dropdown-toggle icon-burger-mini" href="#" role="button"
-												id="dropdown-product" data-bs-toggle="dropdown" aria-haspopup="true"
-												aria-expanded="false" data-display="static">
-											</a>
-											<ul class="dropdown-menu dropdown-menu-right">
-												<li class="dropdown-item"><a href="#">Update Data</a></li>
-												<li class="dropdown-item"><a href="#">Detailed Log</a></li>
-												<li class="dropdown-item"><a href="#">Statistics</a></li>
-												<li class="dropdown-item"><a href="#">Clear Data</a></li>
-											</ul>
-										</div>
-									</div>
+									
 								</div>
 								<div class="card-body mt-10px mb-10px py-0">
 									<div class="row media d-flex pt-15px pb-15px">
@@ -690,14 +405,15 @@
 										</div>
 										<div class="col-lg-9 col-md-9 col-10 media-body align-self-center ec-pos">
 											<a href="#">
-												<h6 class="mb-10px text-dark font-weight-medium">Baby cotton shoes</h6>
+												<h6 class="mb-10px text-dark font-weight-medium"> shoes</h6>
 											</a>
-											<p class="float-md-right sale"><span class="mr-2">58</span>Sales</p>
-											<p class="d-none d-md-block">Statement belting with double-turnlock hardware
-												adds “swagger” to a simple.</p>
+											<p class="float-md-right sale"><span class="mr-2">50</span>Sales</p>
+											<p class="d-none d-md-block">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium voluptatem ipsa sed commodi similique distinctio sequi quae ex.
+
+											</p>
 											<p class="mb-0 ec-price">
-												<span class="text-dark">$520</span>
-												<del>$580</del>
+												<span class="text-dark">₹1500</span>
+												<del>₹1800</del>
 											</p>
 										</div>
 									</div>
@@ -708,14 +424,13 @@
 										</div>
 										<div class="col-lg-9 col-md-9 col-10 media-body align-self-center ec-pos">
 											<a href="#">
-												<h6 class="mb-10px text-dark font-weight-medium">Hoodies for men</h6>
+												<h6 class="mb-10px text-dark font-weight-medium">suit for men</h6>
 											</a>
-											<p class="float-md-right sale"><span class="mr-2">20</span>Sales</p>
-											<p class="d-none d-md-block">Statement belting with double-turnlock hardware
-												adds “swagger” to a simple.</p>
+											<p class="float-md-right sale"><span class="mr-2">75</span>Sales</p>
+											<p class="d-none d-md-block">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium voluptatem ipsa sed commodi similique distinctio sequi quae ex.</p>
 											<p class="mb-0 ec-price">
-												<span class="text-dark">$250</span>
-												<del>$300</del>
+												<span class="text-dark">₹2500</span>
+												<del>₹3000</del>
 											</p>
 										</div>
 									</div>
@@ -726,14 +441,13 @@
 										</div>
 										<div class="col-lg-9 col-md-9 col-10 media-body align-self-center ec-pos">
 											<a href="#">
-												<h6 class="mb-10px text-dark font-weight-medium">Long slive t-shirt</h6>
+												<h6 class="mb-10px text-dark font-weight-medium">watch</h6>
 											</a>
-											<p class="float-md-right sale"><span class="mr-2">10</span>Sales</p>
-											<p class="d-none d-md-block">Statement belting with double-turnlock hardware
-												adds “swagger” to a simple.</p>
+											<p class="float-md-right sale"><span class="mr-2">25</span>Sales</p>
+											<p class="d-none d-md-block">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium voluptatem ipsa sed commodi similique distinctio sequi quae ex.</p>
 											<p class="mb-0 ec-price">
-												<span class="text-dark">$480</span>
-												<del>$654</del>
+												<span class="text-dark">₹4000</span>
+												<del>₹5000</del>
 											</p>
 										</div>
 									</div>
@@ -744,15 +458,7 @@
 				</div> <!-- End Content -->
 			</div> <!-- End Content Wrapper -->
 
-			<!-- Footer -->
-			<footer class="footer mt-auto">
-				<div class="copyright bg-white">
-					<p>
-						Copyright &copy; <span id="ec-year"></span><a class="text-primary"
-						href="https://themeforest.net/user/ashishmaraviya" target="_blank"> Ekka Admin Dashboard</a>. All Rights Reserved.
-					  </p>
-				</div>
-			</footer>
+			<?php require("components/footer.php") ?>
 
 		</div> <!-- End Page Wrapper -->
 	</div> <!-- End Wrapper -->

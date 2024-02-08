@@ -9,7 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="description" content="Ekka - Admin Dashboard HTML Template.">
 
-	<title>Ekka - Admin Dashboard HTML Template.</title>
+	<title>hu-MAN | Sub-Category</title>
 
 	<!-- GOOGLE FONTS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -28,7 +28,7 @@
 	<link href='assets/plugins/data-tables/responsive.datatables.min.css' rel='stylesheet'>
 
 	<!-- ekka CSS -->
-	<link id="ekka-css" rel="stylesheet" href="assets/css/ekka.css" />
+	<link id="ekka-css" rel="stylesheet" href="assets/css/ekka.css?v=<?php echo time(); ?>" />
 
 	<!-- FAVICON -->
 	<link href="assets/img/favicon.png" rel="shortcut icon" />
@@ -151,21 +151,10 @@
 													<td>ACTIVE</td>
 													<td><span class="badge badge-success">Top</span></td>
 													<td>
-														<div class="btn-group">
-															<button type="button"
-																class="btn btn-outline-success">Info</button>
-															<button type="button"
-																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
-																data-bs-toggle="dropdown" aria-haspopup="true"
-																aria-expanded="false" data-display="static">
-																<span class="sr-only">Info</span>
-															</button>
-
-															<div class="dropdown-menu">
-																<a class="dropdown-item" href="#">Edit</a>
-																<a class="dropdown-item" href="#">Delete</a>
-															</div>
-														</div>
+														<div class="action-icon">
+														<div class="edit"><i class="fa-solid fa-pen"></i></div>
+													<div class="delete"><i class="fa-solid fa-trash"></i></div>
+</div>
 													</td>
 												</tr>
 												<tr>
@@ -181,21 +170,10 @@
 													<td>ACTIVE</td>
 													<td><span class="badge bg-primary">Medium</span></td>
 													<td>
-														<div class="btn-group">
-															<button type="button"
-																class="btn btn-outline-success">Info</button>
-															<button type="button"
-																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
-																data-bs-toggle="dropdown" aria-haspopup="true"
-																aria-expanded="false" data-display="static">
-																<span class="sr-only">Info</span>
-															</button>
-
-															<div class="dropdown-menu">
-																<a class="dropdown-item" href="#">Edit</a>
-																<a class="dropdown-item" href="#">Delete</a>
-															</div>
-														</div>
+														<div class="action-icon">
+														<div class="edit"><i class="fa-solid fa-pen"></i></div>
+													<div class="delete"><i class="fa-solid fa-trash"></i></div>
+</div>
 													</td>
 												</tr>
 												<tr>
@@ -211,21 +189,10 @@
 													<td><span class="inactive">Inactive</span></td>
 													<td><span class="badge badge-success">Top</span></td>
 													<td>
-														<div class="btn-group">
-															<button type="button"
-																class="btn btn-outline-success">Info</button>
-															<button type="button"
-																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
-																data-bs-toggle="dropdown" aria-haspopup="true"
-																aria-expanded="false" data-display="static">
-																<span class="sr-only">Info</span>
-															</button>
-
-															<div class="dropdown-menu">
-																<a class="dropdown-item" href="#">Edit</a>
-																<a class="dropdown-item" href="#">Delete</a>
-															</div>
-														</div>
+														<div class="action-icon">
+														<div class="edit"><i class="fa-solid fa-pen"></i></div>
+													<div class="delete"><i class="fa-solid fa-trash"></i></div>
+</div>
 													</td>
 												</tr>
 												<tr>
@@ -241,293 +208,32 @@
 													<td>ACTIVE</td>
 													<td><span class="badge bg-primary">Medium</span></td>
 													<td>
-														<div class="btn-group">
-															<button type="button"
-																class="btn btn-outline-success">Info</button>
-															<button type="button"
-																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
-																data-bs-toggle="dropdown" aria-haspopup="true"
-																aria-expanded="false" data-display="static">
-																<span class="sr-only">Info</span>
-															</button>
-
-															<div class="dropdown-menu">
-																<a class="dropdown-item" href="#">Edit</a>
-																<a class="dropdown-item" href="#">Delete</a>
-															</div>
-														</div>
+														<div class="action-icon">
+														<div class="edit"><i class="fa-solid fa-pen"></i></div>
+													<div class="delete"><i class="fa-solid fa-trash"></i></div>
+</div>
 													</td>
 												</tr>
 												<tr>
-													<td><img class="cat-thumb" src="assets/img/category/cosmetics.png" alt="product image" /></td>
-													<td>Makeup kit</td>
+													<td><img class="cat-thumb" src="assets/img/category/watch.jpg" alt="product image" /></td>
+													<td>smart watch</td>
 													<td>
 														<span class="ec-sub-cat-list">
-															<span class="ec-sub-cat-tag">Cosmatics</span>
+															<span class="ec-sub-cat-tag">watch</span>
 														</span>
 													</td>
 													<td>18</td>
-													<td>1061</td>
+													<td>1000</td>
 													<td>ACTIVE</td>
 													<td><span class="badge bg-danger">Low</span></td>
 													<td>
-														<div class="btn-group">
-															<button type="button"
-																class="btn btn-outline-success">Info</button>
-															<button type="button"
-																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
-																data-bs-toggle="dropdown" aria-haspopup="true"
-																aria-expanded="false" data-display="static">
-																<span class="sr-only">Info</span>
-															</button>
-
-															<div class="dropdown-menu">
-																<a class="dropdown-item" href="#">Edit</a>
-																<a class="dropdown-item" href="#">Delete</a>
-															</div>
-														</div>
+														<div class="action-icon">
+														<div class="edit"><i class="fa-solid fa-pen"></i></div>
+													<div class="delete"><i class="fa-solid fa-trash"></i></div>
+</div>
 													</td>
 												</tr>
-												<tr>
-													<td><img class="cat-thumb" src="assets/img/category/glasses.png" alt="product image" /></td>
-													<td>Lenses</td>
-													<td>
-														<span class="ec-sub-cat-list">
-															<span class="ec-sub-cat-tag">Glasses</span>
-														</span>
-													</td>
-													<td>82</td>
-													<td>10061</td>
-													<td><span class="inactive">Inactive</span></td>
-													<td><span class="badge bg-primary">Medium</span></td>
-													<td>
-														<div class="btn-group">
-															<button type="button"
-																class="btn btn-outline-success">Info</button>
-															<button type="button"
-																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
-																data-bs-toggle="dropdown" aria-haspopup="true"
-																aria-expanded="false" data-display="static">
-																<span class="sr-only">Info</span>
-															</button>
-
-															<div class="dropdown-menu">
-																<a class="dropdown-item" href="#">Edit</a>
-																<a class="dropdown-item" href="#">Delete</a>
-															</div>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td><img class="cat-thumb" src="assets/img/category/bag.png" alt="product image" /></td>
-													<td>Shopping Bag</td>
-													<td>
-														<span class="ec-sub-cat-list">
-															<span class="ec-sub-cat-tag">Bags</span>
-														</span>
-													</td>
-													<td>18</td>
-													<td>3061</td>
-													<td>ACTIVE</td>
-													<td><span class="badge badge-success">Top</span></td>
-													<td>
-														<div class="btn-group">
-															<button type="button"
-																class="btn btn-outline-success">Info</button>
-															<button type="button"
-																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
-																data-bs-toggle="dropdown" aria-haspopup="true"
-																aria-expanded="false" data-display="static">
-																<span class="sr-only">Info</span>
-															</button>
-
-															<div class="dropdown-menu">
-																<a class="dropdown-item" href="#">Edit</a>
-																<a class="dropdown-item" href="#">Delete</a>
-															</div>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td><img class="cat-thumb" src="assets/img/category/bag.png" alt="product image" /></td>
-													<td>Gym Backpack</td>
-													<td>
-														<span class="ec-sub-cat-list">
-															<span class="ec-sub-cat-tag">Bags</span>
-														</span>
-													</td>
-													<td>68</td>
-													<td>5161</td>
-													<td>ACTIVE</td>
-													<td><span class="badge bg-primary">Medium</span></td>
-													<td>
-														<div class="btn-group">
-															<button type="button"
-																class="btn btn-outline-success">Info</button>
-															<button type="button"
-																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
-																data-bs-toggle="dropdown" aria-haspopup="true"
-																aria-expanded="false" data-display="static">
-																<span class="sr-only">Info</span>
-															</button>
-
-															<div class="dropdown-menu">
-																<a class="dropdown-item" href="#">Edit</a>
-																<a class="dropdown-item" href="#">Delete</a>
-															</div>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td><img class="cat-thumb" src="assets/img/category/glasses.png" alt="product image" /></td>
-													<td>Sunglasses</td>
-													<td>
-														<span class="ec-sub-cat-list">
-															<span class="ec-sub-cat-tag">Glasses</span>
-														</span>
-													</td>
-													<td>82</td>
-													<td>10061</td>
-													<td><span class="inactive">Inactive</span></td>
-													<td><span class="badge bg-primary">Medium</span></td>
-													<td>
-														<div class="btn-group">
-															<button type="button"
-																class="btn btn-outline-success">Info</button>
-															<button type="button"
-																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
-																data-bs-toggle="dropdown" aria-haspopup="true"
-																aria-expanded="false" data-display="static">
-																<span class="sr-only">Info</span>
-															</button>
-
-															<div class="dropdown-menu">
-																<a class="dropdown-item" href="#">Edit</a>
-																<a class="dropdown-item" href="#">Delete</a>
-															</div>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td><img class="cat-thumb" src="assets/img/category/jewelry.png" alt="product image" /></td>
-													<td>Earing</td>
-													<td>
-														<span class="ec-sub-cat-list">
-															<span class="ec-sub-cat-tag">Jewellry</span>
-														</span>
-													</td>
-													<td>68</td>
-													<td>5161</td>
-													<td><span class="inactive">Inactive</span></td>
-													<td><span class="badge badge-success">Top</span></td>
-													<td>
-														<div class="btn-group">
-															<button type="button"
-																class="btn btn-outline-success">Info</button>
-															<button type="button"
-																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
-																data-bs-toggle="dropdown" aria-haspopup="true"
-																aria-expanded="false" data-display="static">
-																<span class="sr-only">Info</span>
-															</button>
-
-															<div class="dropdown-menu">
-																<a class="dropdown-item" href="#">Edit</a>
-																<a class="dropdown-item" href="#">Delete</a>
-															</div>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td><img class="cat-thumb" src="assets/img/category/perfume.png" alt="product image" /></td>
-													<td>Deodorant</td>
-													<td>
-														<span class="ec-sub-cat-list">
-															<span class="ec-sub-cat-tag">Perfume</span>
-														</span>
-													</td>
-													<td>38</td>
-													<td>1561</td>
-													<td>ACTIVE</td>
-													<td><span class="badge bg-primary">Medium</span></td>
-													<td>
-														<div class="btn-group">
-															<button type="button"
-																class="btn btn-outline-success">Info</button>
-															<button type="button"
-																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
-																data-bs-toggle="dropdown" aria-haspopup="true"
-																aria-expanded="false" data-display="static">
-																<span class="sr-only">Info</span>
-															</button>
-
-															<div class="dropdown-menu">
-																<a class="dropdown-item" href="#">Edit</a>
-																<a class="dropdown-item" href="#">Delete</a>
-															</div>
-														</div>
-													</td>
-												</tr>
-												<tr>
-												<td><img class="cat-thumb" src="assets/img/category/clothes.png" alt="product image" /></td>
-													<td>Tops</td>
-													<td>
-														<span class="ec-sub-cat-list">
-															<span class="ec-sub-cat-tag">Clothes</span>
-														</span>
-													</td>
-													<td>38</td>
-													<td>1561</td>
-													<td>ACTIVE</td>
-													<td><span class="badge bg-primary">Medium</span></td>
-													<td>
-														<div class="btn-group">
-															<button type="button"
-																class="btn btn-outline-success">Info</button>
-															<button type="button"
-																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
-																data-bs-toggle="dropdown" aria-haspopup="true"
-																aria-expanded="false" data-display="static">
-																<span class="sr-only">Info</span>
-															</button>
-
-															<div class="dropdown-menu">
-																<a class="dropdown-item" href="#">Edit</a>
-																<a class="dropdown-item" href="#">Delete</a>
-															</div>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td><img class="cat-thumb" src="assets/img/category/cosmetics.png" alt="product image" /></td>
-													<td>Skin care kit</td>
-													<td>
-														<span class="ec-sub-cat-list">
-															<span class="ec-sub-cat-tag">Cosmatics</span>
-														</span>
-													</td>
-													<td>18</td>
-													<td>1061</td>
-													<td>ACTIVE</td>
-													<td><span class="badge bg-danger">Low</span></td>
-													<td>
-														<div class="btn-group">
-															<button type="button"
-																class="btn btn-outline-success">Info</button>
-															<button type="button"
-																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
-																data-bs-toggle="dropdown" aria-haspopup="true"
-																aria-expanded="false" data-display="static">
-																<span class="sr-only">Info</span>
-															</button>
-
-															<div class="dropdown-menu">
-																<a class="dropdown-item" href="#">Edit</a>
-																<a class="dropdown-item" href="#">Delete</a>
-															</div>
-														</div>
-													</td>
-												</tr>
+												
 											</tbody>
 										</table>
 									</div>
@@ -539,14 +245,7 @@
 			</div> <!-- End Content Wrapper -->
 
 			<!-- Footer -->
-			<footer class="footer mt-auto">
-				<div class="copyright bg-white">
-					<p>
-						Copyright &copy; <span id="ec-year"></span><a class="text-primary"
-						href="https://themeforest.net/user/ashishmaraviya" target="_blank"> Ekka Admin Dashboard</a>. All Rights Reserved.
-					  </p>
-				</div>
-			</footer>
+			<?php require("components/footer.php") ?>
 
 		</div> <!-- End Page Wrapper -->
 

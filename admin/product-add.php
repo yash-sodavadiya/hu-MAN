@@ -9,7 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="description" content="Ekka - Admin Dashboard HTML Template.">
 
-	<title>Ekka - Admin Dashboard HTML Template.</title>
+	<title>hu-MAN | Product-Add</title>
 
 	<!-- GOOGLE FONTS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -24,7 +24,7 @@
 	<link href="assets/plugins/simplebar/simplebar.css" rel="stylesheet" />
 
 	<!-- ekka CSS -->
-	<link id="ekka-css" rel="stylesheet" href="assets/css/ekka.css" />
+	<link id="ekka-css" rel="stylesheet" href="assets/css/ekka.css?v=<?php echo time(); ?>" />
 
 	<!-- FAVICON -->
 	<link href="assets/img/favicon.png" rel="shortcut icon" />
@@ -293,14 +293,7 @@
 			</div> <!-- End Content Wrapper -->
 
 			<!-- Footer -->
-			<footer class="footer mt-auto">
-				<div class="copyright bg-white">
-					<p>
-						Copyright &copy; <span id="ec-year"></span><a class="text-primary"
-						href="https://themeforest.net/user/ashishmaraviya" target="_blank"> Ekka Admin Dashboard</a>. All Rights Reserved.
-					  </p>
-				</div>
-			</footer>
+			<?php require("components/footer.php") ?>
 
 		</div> <!-- End Page Wrapper -->
 	</div> <!-- End Wrapper -->

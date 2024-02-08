@@ -9,7 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="description" content="Ekka - Admin Dashboard HTML Template.">
 
-	<title>Ekka - Admin Dashboard HTML Template.</title>
+	<title>hu-MAN | New-Order</title>
 
 	<!-- GOOGLE FONTS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -28,7 +28,7 @@
 	<link href='assets/plugins/data-tables/responsive.datatables.min.css' rel='stylesheet'>
 
 	<!-- Ekka CSS -->
-	<link id="ekka-css" rel="stylesheet" href="assets/css/ekka.css" />
+	<link id="ekka-css" rel="stylesheet" href="assets/css/ekka.css?v=<?php echo time(); ?>" />
 
 	<!-- FAVICON -->
 	<link href="assets/img/favicon.png" rel="shortcut icon" />
@@ -69,51 +69,20 @@
 											</thead>
 
 											<tbody>
+												
 												<tr>
-													<td>1050</td>
-													<td><img class="product-img tbl-img" src="assets/img/products/p1.jpg" alt="product"></td>
-													<td>Baby Pink Shoes</td>
-													<td><strong>John Deo</strong><br>
-														johny@example.com
-													</td>
-													<td>3</td>
-													<td>$80</td>
-													<td>PAID</td>
-													<td><span class="mb-2 mr-2 badge badge-secondary">Pending</span>
-													</td>
-													<td>2021-10-30</td>
-													<td>
-														<div class="btn-group mb-1">
-															<button type="button"
-																class="btn btn-outline-success">Info</button>
-															<button type="button"
-																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
-																data-bs-toggle="dropdown" aria-haspopup="true"
-																aria-expanded="false" data-display="static">
-																<span class="sr-only">Info</span>
-															</button>
-
-															<div class="dropdown-menu">
-																<a class="dropdown-item" href="#">Detail</a>
-																<a class="dropdown-item" href="#">Track</a>
-																<a class="dropdown-item" href="#">Cancel</a>
-															</div>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td>1049</td>
+													<td>01</td>
 													<td><img class="product-img tbl-img" src="assets/img/products/p2.jpg" alt="product"></td>
 													<td>Tee-Shirt For Men</td>
-													<td><strong>Kethan Komary</strong><br>
-														ktn@example.com
+													<td><strong>smit ranpariya</strong><br>
+														smit4@gmai.com
 													</td>
-													<td>10</td>
-													<td>$280</td>
+													<td>1</td>
+													<td>₹1000</td>
 													<td>COD</td>
 													<td><span class="mb-2 mr-2 badge badge-warning">Redy To Ship</span>
 													</td>
-													<td>2021-10-30</td>
+													<td>01/01/2024</td>
 													<td>
 														<div class="btn-group mb-1">
 															<button type="button"
@@ -133,146 +102,23 @@
 														</div>
 													</td>
 												</tr>
+												
+												
+												
+												
 												<tr>
-													<td>1048</td>
-													<td><img class="product-img tbl-img" src="assets/img/products/p3.jpg" alt="product"></td>
-													<td>Tee-Shirt For Girl</td>
-													<td><strong>Mehul Markue</strong><br>
-														mehul@example.com
-													</td>
-													<td>5</td>
-													<td>$100</td>
-													<td>COD</td>
-													<td><span class="mb-2 mr-2 badge badge-info">On The Way</span></td>
-													<td>2021-10-30</td>
-													<td>
-														<div class="btn-group mb-1">
-															<button type="button"
-																class="btn btn-outline-success">Info</button>
-															<button type="button"
-																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
-																data-bs-toggle="dropdown" aria-haspopup="true"
-																aria-expanded="false" data-display="static">
-																<span class="sr-only">Info</span>
-															</button>
-
-															<div class="dropdown-menu">
-																<a class="dropdown-item" href="#">Detail</a>
-																<a class="dropdown-item" href="#">Track</a>
-																<a class="dropdown-item" href="#">Cancel</a>
-															</div>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td>1047</td>
-													<td><img class="product-img tbl-img" src="assets/img/products/p4.jpg" alt="product"></td>
-													<td>Cowboy Hat</td>
-													<td><strong>Bhavesh Markue</strong><br>
-														Bhavesh@example.com
-													</td>
-													<td>8</td>
-													<td>$140</td>
-													<td>PAID</td>
-													<td><span class="mb-2 mr-2 badge badge-success">Delivered</span>
-													</td>
-													<td>2021-10-30</td>
-													<td>
-														<div class="btn-group mb-1">
-															<button type="button"
-																class="btn btn-outline-success">Info</button>
-															<button type="button"
-																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
-																data-bs-toggle="dropdown" aria-haspopup="true"
-																aria-expanded="false" data-display="static">
-																<span class="sr-only">Info</span>
-															</button>
-
-															<div class="dropdown-menu">
-																<a class="dropdown-item" href="#">Detail</a>
-																<a class="dropdown-item" href="#">Track</a>
-																<a class="dropdown-item" href="#">Cancel</a>
-															</div>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td>1046</td>
-													<td><img class="product-img tbl-img" src="assets/img/products/p5.jpg" alt="product"></td>
-													<td>Womens Purse</td>
-													<td><strong>Morgus Markue</strong><br>
-														morgus@example.com
-													</td>
-													<td>3</td>
-													<td>$80</td>
-													<td>PAID</td>
-													<td><span class="mb-2 mr-2 badge badge-secondary">Pending</span>
-													</td>
-													<td>2021-10-30</td>
-													<td>
-														<div class="btn-group mb-1">
-															<button type="button"
-																class="btn btn-outline-success">Info</button>
-															<button type="button"
-																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
-																data-bs-toggle="dropdown" aria-haspopup="true"
-																aria-expanded="false" data-display="static">
-																<span class="sr-only">Info</span>
-															</button>
-
-															<div class="dropdown-menu">
-																<a class="dropdown-item" href="#">Detail</a>
-																<a class="dropdown-item" href="#">Track</a>
-																<a class="dropdown-item" href="#">Cancel</a>
-															</div>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td>1045</td>
-													<td><img class="product-img tbl-img" src="assets/img/products/p6.jpg" alt="product"></td>
-													<td>Baby toy doctor kit</td>
-													<td><strong>Merry Donesk</strong><br>
-														Merry07@example.com
-													</td>
-													<td>10</td>
-													<td>$280</td>
-													<td>COD</td>
-													<td><span class="mb-2 mr-2 badge badge-warning">Redy To Ship</span>
-													</td>
-													<td>2021-10-30</td>
-													<td>
-														<div class="btn-group mb-1">
-															<button type="button"
-																class="btn btn-outline-success">Info</button>
-															<button type="button"
-																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
-																data-bs-toggle="dropdown" aria-haspopup="true"
-																aria-expanded="false" data-display="static">
-																<span class="sr-only">Info</span>
-															</button>
-
-															<div class="dropdown-menu">
-																<a class="dropdown-item" href="#">Detail</a>
-																<a class="dropdown-item" href="#">Track</a>
-																<a class="dropdown-item" href="#">Cancel</a>
-															</div>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td>1095</td>
+													<td>02</td>
 													<td><img class="product-img tbl-img" src="assets/img/products/p7.jpg" alt="product"></td>
 													<td>Mens Shirt</td>
-													<td><strong>Sin Cinaty</strong><br>
-														cinaty@example.com
+													<td><strong>meet goti</strong><br>
+														meet23224@gmail.com
 													</td>
 													<td>10</td>
-													<td>$280</td>
+													<td>₹20000</td>
 													<td>COD</td>
 													<td><span class="mb-2 mr-2 badge badge-warning">Redy To Ship</span>
 													</td>
-													<td>2021-10-30</td>
+													<td>10/10/2024</td>
 													<td>
 														<div class="btn-group mb-1">
 															<button type="button"
@@ -293,18 +139,18 @@
 													</td>
 												</tr>
 												<tr>
-													<td>354</td>
+													<td>03</td>
 													<td><img class="product-img tbl-img" src="assets/img/products/p8.jpg" alt="product"></td>
 													<td>Smart Watch</td>
-													<td><strong>Tokyo Naikra</strong><br>
-														naikra@example.com
+													<td><strong>raj shsh</strong><br>
+														raj@gmail.com
 													</td>
 													<td>10</td>
-													<td>$280</td>
+													<td>₹12456</td>
 													<td>COD</td>
 													<td><span class="mb-2 mr-2 badge badge-warning">Redy To Ship</span>
 													</td>
-													<td>2021-10-30</td>
+													<td01/>01/2024</td>
 													<td>
 														<div class="btn-group mb-1">
 															<button type="button"
@@ -325,18 +171,18 @@
 													</td>
 												</tr>
 												<tr>
-													<td>654</td>
+													<td>04</td>
 													<td><img class="product-img tbl-img" src="assets/img/products/p9.jpg" alt="product"></td>
 													<td>Tee-Shirt For Men</td>
 													<td><strong>Hardik Patel</strong><br>
-														patel000777@example.com
+														patel000777@gmail.com
 													</td>
 													<td>2</td>
-													<td>$50</td>
+													<td>₹4000</td>
 													<td>PAID</td>
 													<td><span class="mb-2 mr-2 badge badge-info">On The Way</span>
 													</td>
-													<td>2021-10-30</td>
+													<td>10/10/2024</td>
 													<td>
 														<div class="btn-group mb-1">
 															<button type="button"
@@ -357,18 +203,18 @@
 													</td>
 												</tr>
 												<tr>
-													<td>785</td>
+													<td>05</td>
 													<td><img class="product-img tbl-img" src="assets/img/products/p10.jpg" alt="product"></td>
 													<td>Men casual shoes</td>
-													<td><strong>Pintos Martino</strong><br>
-														martino0777@example.com
+													<td><strong>smit</strong><br>
+														smit@gmail.com
 													</td>
-													<td>10</td>
-													<td>$280</td>
+													<td>5</td>
+													<td>₹2355</td>
 													<td>COD</td>
 													<td><span class="mb-2 mr-2 badge badge-success">Delivered</span>
 													</td>
-													<td>2021-10-30</td>
+													<td>0/10/2024</td>
 													<td>
 														<div class="btn-group mb-1">
 															<button type="button"
@@ -399,15 +245,7 @@
 			</div> <!-- End Content Wrapper -->
 
 			<!-- Footer -->
-			<footer class="footer mt-auto">
-				<div class="copyright bg-white">
-					<p>
-						Copyright &copy; <span id="ec-year"></span><a class="text-primary"
-							href="https://themeforest.net/user/ashishmaraviya" target="_blank"> Ekka Admin
-							Dashboard</a>. All Rights Reserved.
-					</p>
-				</div>
-			</footer>
+			<?php require("components/footer.php") ?>
 
 		</div> <!-- End Page Wrapper -->
 	</div> <!-- End Wrapper -->

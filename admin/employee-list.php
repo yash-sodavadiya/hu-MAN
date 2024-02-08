@@ -27,7 +27,7 @@
 	<link href='assets/plugins/data-tables/responsive.datatables.min.css' rel='stylesheet'>
 
 	<!-- ekka CSS -->
-	<link id="ekka-css" rel="stylesheet" href="assets/css/ekka.css" />
+	<link id="ekka-css" rel="stylesheet" href="assets/css/ekka.css?v=<?php echo time(); ?>" />
 
 	<!-- FAVICON -->
 	<link href="assets/img/logo.png" rel="shortcut icon" />
@@ -72,127 +72,72 @@
 											<tbody>
 												<tr>
 													<td><img class="vendor-thumb" src="assets/img/vendor/u1.jpg" alt="vendor image" /></td>
-													<td>Marlee Rena</td>
-													<td>marleerena@gmail.com</td>
+													<td>smit ranpariya</td>
+													<td>smit@gmail.com</td>
 													<td>manager</td>
 													<td>ACTIVE</td>
-													<td>2021-10-30</td>
+													<td>01/01/2023</td>
 													<td>
-														<div class="btn-group">
-															<button type="button"
-																class="btn btn-outline-success">Info</button>
-															<button type="button"
-																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
-																data-bs-toggle="dropdown" aria-haspopup="true"
-																aria-expanded="false" data-display="static">
-																<span class="sr-only">Info</span>
-															</button>
-
-															<div class="dropdown-menu">
-																<a class="dropdown-item" href="#">Edit</a>
-																<a class="dropdown-item" href="#">Delete</a>
-															</div>
-														</div>
+														<div class="action-icon">
+														<div class="edit"><i class="fa-solid fa-pen"></i></div>
+													<div class="delete"><i class="fa-solid fa-trash"></i></div>
+</div>
 													</td>
 												</tr>
 												<tr>
 													<td><img class="vendor-thumb" src="assets/img/vendor/u2.jpg" alt="vendor image" /></td>
-													<td>Johnee Bolbi</td>
-													<td>johneebolbi@gmail.com</td>
+													<td>yash sodavadiya</td>
+													<td>yash@gmail.com</td>
 													<td>Advatise manager</td>
 													<td>ACTIVE</td>
-													<td>2021-10-25</td>
+													<td>212/12/2024</td>
 													<td>
-														<div class="btn-group">
-															<button type="button"
-																class="btn btn-outline-success">Info</button>
-															<button type="button"
-																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
-																data-bs-toggle="dropdown" aria-haspopup="true"
-																aria-expanded="false" data-display="static">
-																<span class="sr-only">Info</span>
-															</button>
-
-															<div class="dropdown-menu">
-																<a class="dropdown-item" href="#">Edit</a>
-																<a class="dropdown-item" href="#">Delete</a>
-															</div>
-														</div>
+														<div class="action-icon">
+														<div class="edit"><i class="fa-solid fa-pen"></i></div>
+													<div class="delete"><i class="fa-solid fa-trash"></i></div>
+</div>
 													</td>
 												</tr>
 												<tr>
 													<td><img class="vendor-thumb" src="assets/img/vendor/u3.jpg" alt="vendor image" /></td>
-													<td>Johnee Bolbi</td>
-													<td>johneebolbi@gmail.com</td>
+													<td>zeel vaghani</td>
+													<td>zel2@gmail.com</td>
 													<td>Sales manager</td>
 													<td>ACTIVE</td>
-													<td>2021-10-25</td>
+													<td>12/05/2023</td>
 													<td>
-														<div class="btn-group">
-															<button type="button"
-																class="btn btn-outline-success">Info</button>
-															<button type="button"
-																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
-																data-bs-toggle="dropdown" aria-haspopup="true"
-																aria-expanded="false" data-display="static">
-																<span class="sr-only">Info</span>
-															</button>
-
-															<div class="dropdown-menu">
-																<a class="dropdown-item" href="#">Edit</a>
-																<a class="dropdown-item" href="#">Delete</a>
-															</div>
-														</div>
+														<div class="action-icon">
+														<div class="edit"><i class="fa-solid fa-pen"></i></div>
+													<div class="delete"><i class="fa-solid fa-trash"></i></div>
+</div>
 													</td>
 												</tr>
 												<tr>
 													<td><img class="vendor-thumb" src="assets/img/vendor/u4.jpg" alt="vendor image" /></td>
-													<td>Mohini Marlo</td>
-													<td>mohinimarlo@gmail.com</td>
+													<td>meet goti</td>
+													<td>meet213@gmail.com</td>
 													<td>Accountant</td>
 													<td>ACTIVE</td>
-													<td>2021-10-21</td>
+													<td>19/12/2023</td>
 													<td>
-														<div class="btn-group">
-															<button type="button"
-																class="btn btn-outline-success">Info</button>
-															<button type="button"
-																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
-																data-bs-toggle="dropdown" aria-haspopup="true"
-																aria-expanded="false" data-display="static">
-																<span class="sr-only">Info</span>
-															</button>
-
-															<div class="dropdown-menu">
-																<a class="dropdown-item" href="#">Edit</a>
-																<a class="dropdown-item" href="#">Delete</a>
-															</div>
-														</div>
+														<div class="action-icon">
+														<div class="edit"><i class="fa-solid fa-pen"></i></div>
+													<div class="delete"><i class="fa-solid fa-trash"></i></div>
+</div>
 													</td>
 												</tr>
 												<tr>
 													<td><img class="vendor-thumb" src="assets/img/vendor/u5.jpg" alt="vendor image" /></td>
-													<td>Nitilo Kathilo</td>
-													<td>nitilokathilo@gmail.com</td>
+													<td>raj kathiriya</td>
+													<td>raj2@gmail.com</td>
 													<td>sales man</td>
 													<td>ACTIVE</td>
-													<td>2021-10-18</td>
+													<td>02/06/2023</td>
 													<td>
-														<div class="btn-group">
-															<button type="button"
-																class="btn btn-outline-success">Info</button>
-															<button type="button"
-																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
-																data-bs-toggle="dropdown" aria-haspopup="true"
-																aria-expanded="false" data-display="static">
-																<span class="sr-only">Info</span>
-															</button>
-
-															<div class="dropdown-menu">
-																<a class="dropdown-item" href="#">Edit</a>
-																<a class="dropdown-item" href="#">Delete</a>
-															</div>
-														</div>
+														<div class="action-icon">
+														<div class="edit"><i class="fa-solid fa-pen"></i></div>
+													<div class="delete"><i class="fa-solid fa-trash"></i></div>
+</div>
 													</td>
 												</tr>
 												
@@ -282,14 +227,7 @@
 			</div> <!-- End Content Wrapper -->
 
 			<!-- Footer -->
-			<footer class="footer mt-auto">
-				<div class="copyright bg-white">
-					<p>
-						Copyright &copy; <span id="ec-year"></span><a class="text-primary"
-						href="https://themeforest.net/user/ashishmaraviya" target="_blank"> Ekka Admin Dashboard</a>. All Rights Reserved.
-					  </p>
-				</div>
-			</footer>
+			<?php require("components/footer.php") ?>
 
 		</div> <!-- End Page Wrapper -->
 
