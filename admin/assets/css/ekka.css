@@ -20598,7 +20598,7 @@ div.copied {
 
 /* light Header */
 .ec-header-light .navbar {
-  background-color: #1a283e;
+  background-color: #ffffff;
 }
 .ec-header-light .navbar .sidebar-toggle {
   border-color: #f3f3f3;
@@ -21871,7 +21871,7 @@ div.copied {
 
 /* Sidebar Light */
 .ec-sidebar-light .ec-left-sidebar {
-  background-color: #1a283e;
+  background-color: #ffffff;
 }
 .ec-sidebar-light .sidebar {
   border-right: 1px solid #f3f3f3;
