@@ -210,3 +210,4 @@
 					</div>
 				</nav>
 			</header>
+<?php require("database/config.php") ?>
