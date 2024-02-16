@@ -50,12 +50,12 @@
 				<div>
 					<h1>Employee List</h1>
 					<p class="breadcrumbs"><span><a href="index.html">Home</a></span>
-						<span><i class="mdi mdi-chevron-right"></i></span>Vendor
+						<span><i class="mdi mdi-chevron-right"></i></span>Employee
 					</p>
 				</div>
 				<div>
 					<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addVendor">
-						Add Vendor
+						Add Employee
 					</button>
 				</div>
 			</div>
@@ -84,7 +84,7 @@
 										foreach ($result as $row) { ?>
 											<tr>
 												<td><img class="vendor-thumb"
-														src="assets/img/vendor/<?php echo $row['emp_img'] ?>"
+														src="./assets/img/user/<?php echo $row['emp_img'] ?>"
 														alt="vendor image" /></td>
 												<td>
 													<?php echo $row['emp_name'] ?>
@@ -135,19 +135,20 @@
 				aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 				<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
 					<div class="modal-content">
-						<form>
+						<form action="php/add_emp.php" method="post" enctype="multipart/form-data">
 							<div class="modal-header px-4">
-								<h5 class="modal-title" id="exampleModalCenterTitle">Add New Vendor</h5>
+								<h5 class="modal-title" id="exampleModalCenterTitle">Add New Employee</h5>
 							</div>
 
 							<div class="modal-body px-4">
 								<div class="form-group row mb-6">
-									<label for="coverImage" class="col-sm-4 col-lg-2 col-form-label">Vendor
-										Image</label>
+									<label for="coverImage" class="col-sm-4 col-lg-2 col-form-label">Employee
+										Image: </label>
+										
 
 									<div class="col-sm-8 col-lg-10">
 										<div class="custom-file mb-1">
-											<input type="file" class="custom-file-input" id="coverImage" required>
+											<input type="file" class="custom-file-input" id="coverImage" name="emp_img" required>
 											<label class="custom-file-label" for="coverImage">Choose file...</label>
 											<div class="invalid-feedback">Example invalid custom file feedback</div>
 										</div>
@@ -157,53 +158,55 @@
 								<div class="row mb-2">
 									<div class="col-lg-6">
 										<div class="form-group">
-											<label for="firstName">First name</label>
-											<input type="text" class="form-control" id="firstName" value="John">
+											<label for="emp_name">Employee name: </label>
+											<input type="text" class="form-control" name="emp_name" id="emp_name" placeholder="Enter Name:">
 										</div>
 									</div>
 
 									<div class="col-lg-6">
 										<div class="form-group">
-											<label for="lastName">Last name</label>
-											<input type="text" class="form-control" id="lastName" value="Deo">
+											<label for="emp_email">Email: </label>
+											<input type="text" class="form-control" id="emp_email" name="emp_email" placeholder="Enter email:">
 										</div>
 									</div>
 
 									<div class="col-lg-6">
 										<div class="form-group mb-4">
-											<label for="userName">User name</label>
-											<input type="text" class="form-control" id="userName" value="johndoe">
+											<label for="phone">Phone No.: </label>
+											<input type="text" class="form-control" id="phone" name="phone" placeholder="Enter Phone no:">
 										</div>
 									</div>
 
 									<div class="col-lg-6">
 										<div class="form-group mb-4">
-											<label for="email">Email</label>
-											<input type="email" class="form-control" id="email"
-												value="johnexample@gmail.com">
+											<label for="designation">Designation</label>
+											<select name="designation" id="" class="form-control">
+												<option value="">Please select Designation...</option>
+												<option value="Manager">Manager</option>
+												<option value="Saleman">Saleman</option>
+												<option value="Accountant">Accountant</option>
+												<option value="Marketing Manager">Marketing Manager</option>
+												<option value="Business Analyst">Business Analyst</option>
+												<option value="Product Manager">Product Manager</option>
+											</select>
 										</div>
 									</div>
 
 									<div class="col-lg-6">
 										<div class="form-group mb-4">
-											<label for="Birthday">Birthday</label>
-											<input type="text" class="form-control" id="Birthday" value="10-12-1991">
+											<label for="DOJ">Date Of Join</label>
+											<input type="text"  class="form-control" id="DOJ" name="DOJ" value="<?php $currentDate = date("D-m-y"); echo $currentDate;?>">
 										</div>
 									</div>
 
-									<div class="col-lg-6">
-										<div class="form-group mb-4">
-											<label for="event">Address</label>
-											<input type="text" class="form-control" id="event" value="Address here">
-										</div>
-									</div>
+									
 								</div>
 							</div>
 
 							<div class="modal-footer px-4">
 								<button type="button" class="btn btn-secondary btn-pill"
 									data-bs-dismiss="modal">Cancel</button>
-								<button type="button" class="btn btn-primary btn-pill">Save Contact</button>
+								<button type="submit" name="save" class="btn btn-primary btn-pill">Save</button>
 							</div>
 						</form>
 					</div>
