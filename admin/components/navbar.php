@@ -122,6 +122,14 @@
 							
 						</li>
 
+                        <!-- Coupons -->
+                        <li >
+							<a class="sidenav-item-link" href="coupons">
+							<i class="fa-solid fa-ticket"></i>
+								<span class="nav-text">Coupons</span>
+							</a>
+							
+						</li>
 						
 						<!-- Authentication -->
 						<li class="has-sub">

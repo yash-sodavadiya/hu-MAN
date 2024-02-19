@@ -195,7 +195,7 @@
 									<div class="col-lg-6">
 										<div class="form-group mb-4">
 											<label for="DOJ">Date Of Join</label>
-											<input type="text"  class="form-control" id="DOJ" name="DOJ" value="<?php $currentDate = date("D-m-y"); echo $currentDate;?>">
+											<input type="text"  class="form-control" id="DOJ" name="DOJ" value="<?php $currentDate = date("d-m-Y"); echo $currentDate;?>">
 										</div>
 									</div>
 
