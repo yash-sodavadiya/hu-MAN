@@ -1,9 +1,7 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 
-<!-- Mirrored from maraviyainfotech.com/projects/ekka/ekka-v37/ekka-html/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 18 Jan 2024 05:20:02 GMT -->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
@@ -146,7 +144,7 @@
                                     <ul style="display: block;">
                                         <li>
                                             <div class="ec-sidebar-sub-item"><a
-                                                    href="shop-left-sidebar-col-3.html">Shirt <span
+                                                    href="shop-left-sidebar-col-3.html">Formal <span
                                                         title="Available Stock">- 25</span></a>
                                             </div>
                                         </li>
@@ -158,16 +156,11 @@
                                         </li>
                                         <li>
                                             <div class="ec-sidebar-sub-item"><a
-                                                    href="shop-left-sidebar-col-3.html">jacket<span
+                                                    href="shop-left-sidebar-col-3.html">suit<span
                                                         title="Available Stock">- 500</span></a>
                                             </div>
                                         </li>
-                                        <li>
-                                            <div class="ec-sidebar-sub-item"><a
-                                                    href="shop-left-sidebar-col-3.html">dress & frock <span
-                                                        title="Available Stock">- 35</span></a>
-                                            </div>
-                                        </li>
+                                        
                                     </ul>
                                 </li>
                             </ul>
@@ -196,12 +189,7 @@
                                                         title="Available Stock">- 40</span></a>
                                             </div>
                                         </li>
-                                        <li>
-                                            <div class="ec-sidebar-sub-item"><a
-                                                    href="shop-left-sidebar-col-3.html">safety shoes <span
-                                                        title="Available Stock">- 35</span></a>
-                                            </div>
-                                        </li>
+                                       
                                     </ul>
                                 </li>
                             </ul>
@@ -210,144 +198,17 @@
                             <ul>
                                 <li>
                                     <div class="ec-sidebar-block-item"><img src="assets/images/icons/jewelry-8.png"
-                                            class="svg_img" alt="drink" />jewelry</div>
+                                            class="svg_img" alt="drink" />Watches</div>
                                     <ul>
                                         <li>
                                             <div class="ec-sidebar-sub-item"><a
-                                                    href="shop-left-sidebar-col-3.html">Earrings <span
+                                                    href="shop-left-sidebar-col-3.html">Smart Watch <span
                                                         title="Available Stock">- 50</span></a>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="ec-sidebar-sub-item"><a
-                                                    href="shop-left-sidebar-col-3.html">Couple Rings <span
-                                                        title="Available Stock">- 35</span></a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="ec-sidebar-sub-item"><a
-                                                    href="shop-left-sidebar-col-3.html">Necklace <span
-                                                        title="Available Stock">- 40</span></a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="ec-sb-block-content">
-                            <ul>
-                                <li>
-                                    <div class="ec-sidebar-block-item"><img src="assets/images/icons/perfume-8.png"
-                                            class="svg_img" alt="drink" />perfume</div>
-                                    <ul>
-                                        <li>
-                                            <div class="ec-sidebar-sub-item"><a
-                                                    href="shop-left-sidebar-col-3.html">Clothes perfume<span
-                                                        title="Available Stock">- 4 pcs</span></a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="ec-sidebar-sub-item"><a
-                                                    href="shop-left-sidebar-col-3.html">deodorant <span
-                                                        title="Available Stock">- 52 pcs</span></a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="ec-sidebar-sub-item"><a
-                                                    href="shop-left-sidebar-col-3.html">Flower fragrance <span
-                                                        title="Available Stock">- 10 pack</span></a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="ec-sidebar-sub-item"><a href="shop-left-sidebar-col-3.html">Air
-                                                    Freshener<span title="Available Stock">- 35 pack</span></a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="ec-sb-block-content">
-                            <ul>
-                                <li>
-                                    <div class="ec-sidebar-block-item"><img src="assets/images/icons/cosmetics-8.png"
-                                            class="svg_img" alt="drink" />cosmetics</div>
-                                    <ul>
-                                        <li>
-                                            <div class="ec-sidebar-sub-item"><a
-                                                    href="shop-left-sidebar-col-3.html">shampoo<span
-                                                        title="Available Stock"></span></a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="ec-sidebar-sub-item"><a
-                                                    href="shop-left-sidebar-col-3.html">Sunscreen<span
-                                                        title="Available Stock"></span></a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="ec-sidebar-sub-item"><a href="shop-left-sidebar-col-3.html">body
-                                                    wash<span title="Available Stock"></span></a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="ec-sidebar-sub-item"><a
-                                                    href="shop-left-sidebar-col-3.html">makeup kit<span
-                                                        title="Available Stock"></span></a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="ec-sb-block-content">
-                            <ul>
-                                <li>
-                                    <div class="ec-sidebar-block-item"><img src="assets/images/icons/glasses-8.png"
-                                            class="svg_img" alt="drink" />glasses</div>
-                                    <ul>
-                                        <li>
-                                            <div class="ec-sidebar-sub-item"><a
-                                                    href="shop-left-sidebar-col-3.html">Sunglasses <span
-                                                        title="Available Stock">- 20</span></a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="ec-sidebar-sub-item"><a
-                                                    href="shop-left-sidebar-col-3.html">Lenses <span
-                                                        title="Available Stock">- 52</span></a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="ec-sb-block-content">
-                            <ul>
-                                <li>
-                                    <div class="ec-sidebar-block-item"><img src="assets/images/icons/bag-8.png"
-                                            class="svg_img" alt="drink" />bags</div>
-                                    <ul>
-                                        <li>
-                                            <div class="ec-sidebar-sub-item"><a
-                                                    href="shop-left-sidebar-col-3.html">shopping bag <span
-                                                        title="Available Stock">- 25</span></a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="ec-sidebar-sub-item"><a href="shop-left-sidebar-col-3.html">Gym
-                                                    backpack <span title="Available Stock">- 52</span></a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="ec-sidebar-sub-item"><a
-                                                    href="shop-left-sidebar-col-3.html">purse <span
-                                                        title="Available Stock">- 40</span></a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="ec-sidebar-sub-item"><a
-                                                    href="shop-left-sidebar-col-3.html">wallet <span
+                                                    href="shop-left-sidebar-col-3.html">Casual Watch <span
                                                         title="Available Stock">- 35</span></a>
                                             </div>
                                         </li>
@@ -355,6 +216,7 @@
                                 </li>
                             </ul>
                         </div>
+                        
                     </div>
                     <!-- Sidebar Category Block -->
                 </div>
@@ -588,14 +450,11 @@
                 <!-- Tab Start -->
                 <div class="col-md-12 text-center">
                     <ul class="ec-pro-tab-nav nav justify-content-center">
-                        <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#tab-pro-for-all">For
+                        <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#tab-pro-for-all">
                                 All</a></li>
-                        <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#tab-pro-for-men">For
-                                Men</a></li>
-                        <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#tab-pro-for-women">For
-                                Women</a></li>
-                        <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#tab-pro-for-child">For
-                                Children</a></li>
+                        <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#tab-pro-for-men">Clothes</a></li>
+                        <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#tab-pro-for-women">Shoes</a></li>
+                        <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#tab-pro-for-child">Watches</a></li>
                     </ul>
                 </div>
                 <!-- Tab End -->
@@ -3052,12 +2911,7 @@
                                         alt="cat-icon"></div>
                                 <div class="cat-desc"><span>Watches</span><span>510 Products</span></div>
                             </a></li>
-                        <li class="cat-item"><a class="cat-link" data-bs-toggle="tab" href="#tab-cat-3">
-                                <div class="cat-icons"><img class="cat-icon" src="assets/images/icons/cat_3.png"
-                                        alt="cat-icon"><img class="cat-icon-hover" src="assets/images/icons/cat_3_1.png"
-                                        alt="cat-icon"></div>
-                                <div class="cat-desc"><span>Bags</span><span>620 Products</span></div>
-                            </a></li>
+                       
                         <li class="cat-item"><a class="cat-link" data-bs-toggle="tab" href="#tab-cat-4">
                                 <div class="cat-icons"><img class="cat-icon" src="assets/images/icons/cat_4.png"
                                         alt="cat-icon"><img class="cat-icon-hover" src="assets/images/icons/cat_4_1.png"
@@ -3315,188 +3169,7 @@
     </section>
     <!-- Feature & Special Section End -->
 
-    <!--  Top Vendor Section Start -->
-    <section class="section section-space-p" id="vendors">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <div class="section-title">
-                        <h2 class="ec-bg-title">Top Vendor</h2>
-                        <h2 class="ec-title">Top Vendor</h2>
-                        <p class="sub-title">Browse The Collection of <a href="catalog-multi-vendor.html">All
-                                Vendors.</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="row margin-minus-t-15 margin-minus-b-15">
-                <div class="col-sm-12 col-md-6 col-lg-3 ec_ven_content" data-animation="zoomIn">
-                    <div class="ec-vendor-card">
-                        <div class="ec-vendor-detail">
-                            <div class="ec-vendor-avtar">
-                                <img src="assets/images/vendor/2.jpg" alt="vendor img">
-                            </div>
-                            <div class="ec-vendor-info">
-                                <a href="catalog-single-vendor.html" class="name">Marvelus</a>
-                                <p class="prod-count">154 Products</p>
-                                <div class="ec-pro-rating">
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star"></i>
-                                </div>
-                                <div class="ec-sale">
-                                    <p title="Weekly sales">Sales 954</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="ec-vendor-prod">
-                            <div class="ec-prod-img">
-                                <a href="product-left-sidebar.html"><img src="assets/images/product-image/1_1.jpg"
-                                        alt="vendor img"></a>
-                            </div>
-                            <div class="ec-prod-img">
-                                <a href="product-left-sidebar.html"><img src="assets/images/product-image/2_1.jpg"
-                                        alt="vendor img"></a>
-                            </div>
-                            <div class="ec-prod-img">
-                                <a href="product-left-sidebar.html"><img src="assets/images/product-image/3_1.jpg"
-                                        alt="vendor img"></a>
-                            </div>
-                            <div class="ec-prod-img">
-                                <a href="product-left-sidebar.html"><img src="assets/images/product-image/4_1.jpg"
-                                        alt="vendor img"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-3 ec_ven_content" data-animation="zoomIn">
-                    <div class="ec-vendor-card">
-                        <div class="ec-vendor-detail">
-                            <div class="ec-vendor-avtar">
-                                <img src="assets/images/vendor/3.jpg" alt="vendor img">
-                            </div>
-                            <div class="ec-vendor-info">
-                                <a href="catalog-single-vendor.html" class="name">Oreva Fashion</a>
-                                <p class="prod-count">546 Products</p>
-                                <div class="ec-pro-rating">
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star fill"></i>
-                                </div>
-                                <div class="ec-sale">
-                                    <p title="Weekly sales">Sales 785</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="ec-vendor-prod">
-                            <div class="ec-prod-img">
-                                <a href="product-left-sidebar.html"><img src="assets/images/product-image/5_1.jpg"
-                                        alt="vendor img"></a>
-                            </div>
-                            <div class="ec-prod-img">
-                                <a href="product-left-sidebar.html"><img src="assets/images/product-image/6_1.jpg"
-                                        alt="vendor img"></a>
-                            </div>
-                            <div class="ec-prod-img">
-                                <a href="product-left-sidebar.html"><img src="assets/images/product-image/7_1.jpg"
-                                        alt="vendor img"></a>
-                            </div>
-                            <div class="ec-prod-img">
-                                <a href="product-left-sidebar.html"><img src="assets/images/product-image/8_1.jpg"
-                                        alt="vendor img"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-3 ec_ven_content" data-animation="zoomIn">
-                    <div class="ec-vendor-card">
-                        <div class="ec-vendor-detail">
-                            <div class="ec-vendor-avtar">
-                                <img src="assets/images/vendor/4.jpg" alt="vendor img">
-                            </div>
-                            <div class="ec-vendor-info">
-                                <a href="catalog-single-vendor.html" class="name">Cenva Art</a>
-                                <p class="prod-count">854 Products</p>
-                                <div class="ec-pro-rating">
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star"></i>
-                                    <i class="ecicon eci-star"></i>
-                                </div>
-                                <div class="ec-sale">
-                                    <p title="Weekly sales">Sales 587</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="ec-vendor-prod">
-                            <div class="ec-prod-img">
-                                <a href="product-left-sidebar.html"><img src="assets/images/product-image/9_1.jpg"
-                                        alt="vendor img"></a>
-                            </div>
-                            <div class="ec-prod-img">
-                                <a href="product-left-sidebar.html"><img src="assets/images/product-image/10_1.jpg"
-                                        alt="vendor img"></a>
-                            </div>
-                            <div class="ec-prod-img">
-                                <a href="product-left-sidebar.html"><img src="assets/images/product-image/11_1.jpg"
-                                        alt="vendor img"></a>
-                            </div>
-                            <div class="ec-prod-img">
-                                <a href="product-left-sidebar.html"><img src="assets/images/product-image/12_1.jpg"
-                                        alt="vendor img"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-3 ec_ven_content" data-animation="zoomIn">
-                    <div class="ec-vendor-card">
-                        <div class="ec-vendor-detail">
-                            <div class="ec-vendor-avtar">
-                                <img src="assets/images/vendor/5.jpg" alt="vendor img">
-                            </div>
-                            <div class="ec-vendor-info">
-                                <a href="catalog-single-vendor.html" class="name">Neon Fashion</a>
-                                <p class="prod-count">154 Products</p>
-                                <div class="ec-pro-rating">
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star fill"></i>
-                                </div>
-                                <div class="ec-sale">
-                                    <p title="Weekly sales">Sales 354</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="ec-vendor-prod">
-                            <div class="ec-prod-img">
-                                <a href="product-left-sidebar.html"><img src="assets/images/product-image/13_1.jpg"
-                                        alt="vendor img"></a>
-                            </div>
-                            <div class="ec-prod-img">
-                                <a href="product-left-sidebar.html"><img src="assets/images/product-image/14_1.jpg"
-                                        alt="vendor img"></a>
-                            </div>
-                            <div class="ec-prod-img">
-                                <a href="product-left-sidebar.html"><img src="assets/images/product-image/15_1.jpg"
-                                        alt="vendor img"></a>
-                            </div>
-                            <div class="ec-prod-img">
-                                <a href="product-left-sidebar.html"><img src="assets/images/product-image/16_1.jpg"
-                                        alt="vendor img"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--  Top Vendor Section End -->
+
 
     <!--  services Section Start -->
     <section class="section ec-services-section section-space-p" id="services">
@@ -3874,96 +3547,7 @@
     </section>
     <!-- New Product end -->
 
-    <!-- ec testmonial Start -->
-    <section class="section ec-test-section section-space-ptb-100 section-space-m" id="reviews">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <div class="section-title mb-0">
-                        <h2 class="ec-bg-title">Testimonial</h2>
-                        <h2 class="ec-title">Client Review</h2>
-                        <p class="sub-title mb-3">What say client about us</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="ec-test-outer">
-                    <ul id="ec-testimonial-slider">
-                        <li class="ec-test-item">
-                            <i class="fi-rr-quote-right top"></i>
-                            <div class="ec-test-inner">
-                                <div class="ec-test-img"><img alt="testimonial" title="testimonial"
-                                        src="assets/images/testimonial/1.jpg" /></div>
-                                <div class="ec-test-content">
-                                    <div class="ec-test-desc">Lorem Ipsum is simply dummy text of the printing and
-                                        typesetting industry. Lorem Ipsum has been the industry's standard dummy text
-                                        ever since the 1500s, when an unknown printer took a galley of type and
-                                        scrambled it to make a type specimen</div>
-                                    <div class="ec-test-name">John Doe</div>
-                                    <div class="ec-test-designation">General Manager</div>
-                                    <div class="ec-test-rating">
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <i class="fi-rr-quote-right bottom"></i>
-                        </li>
-                        <li class="ec-test-item ">
-                            <i class="fi-rr-quote-right top"></i>
-                            <div class="ec-test-inner">
-                                <div class="ec-test-img"><img alt="testimonial" title="testimonial"
-                                        src="assets/images/testimonial/2.jpg" /></div>
-                                <div class="ec-test-content">
-                                    <div class="ec-test-desc">Lorem Ipsum is simply dummy text of the printing and
-                                        typesetting industry. Lorem Ipsum has been the industry's standard dummy text
-                                        ever since the 1500s, when an unknown printer took a galley of type and
-                                        scrambled it to make a type specimen</div>
-                                    <div class="ec-test-name">John Doe</div>
-                                    <div class="ec-test-designation">General Manager</div>
-                                    <div class="ec-test-rating">
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <i class="fi-rr-quote-right bottom"></i>
-                        </li>
-                        <li class="ec-test-item">
-                            <i class="fi-rr-quote-right top"></i>
-                            <div class="ec-test-inner">
-                                <div class="ec-test-img"><img alt="testimonial" title="testimonial"
-                                        src="assets/images/testimonial/3.jpg" /></div>
-                                <div class="ec-test-content">
-                                    <div class="ec-test-desc">Lorem Ipsum is simply dummy text of the printing and
-                                        typesetting industry. Lorem Ipsum has been the industry's standard dummy text
-                                        ever since the 1500s, when an unknown printer took a galley of type and
-                                        scrambled it to make a type specimen</div>
-                                    <div class="ec-test-name">John Doe</div>
-                                    <div class="ec-test-designation">General Manager</div>
-                                    <div class="ec-test-rating">
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <i class="fi-rr-quote-right bottom"></i>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ec testmonial end -->
+    
 
     <!-- Ec Brand Section Start -->
     <section class="section ec-brand-area section-space-p">
@@ -4011,229 +3595,9 @@
     </section>
     <!-- Ec Brand Section End -->
 
-    <!-- Ec Instagram Start -->
-    <section class="section ec-instagram-section module section-space-p" id="insta">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <div class="section-title">
-                        <h2 class="ec-bg-title">Instagram Feed</h2>
-                        <h2 class="ec-title">Instagram Feed</h2>
-                        <p class="sub-title">Share your store with us</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="ec-insta-wrapper">
-            <div class="ec-insta-outer">
-                <div class="container" data-animation="fadeIn">
-                    <div class="insta-auto">
-                        <!-- instagram item -->
-                        <div class="ec-insta-item">
-                            <div class="ec-insta-inner">
-                                <a href="#" target="_blank"><img src="assets/images/instragram-image/1.jpg"
-                                        alt="insta"></a>
-                            </div>
-                        </div>
-                        <!-- instagram item -->
-                        <div class="ec-insta-item">
-                            <div class="ec-insta-inner">
-                                <a href="#" target="_blank"><img src="assets/images/instragram-image/2.jpg"
-                                        alt="insta"></a>
-                            </div>
-                        </div>
-                        <!-- instagram item -->
-                        <div class="ec-insta-item">
-                            <div class="ec-insta-inner">
-                                <a href="#" target="_blank"><img src="assets/images/instragram-image/3.jpg"
-                                        alt="insta"></a>
-                            </div>
-                        </div>
-                        <!-- instagram item -->
-                        <div class="ec-insta-item">
-                            <div class="ec-insta-inner">
-                                <a href="#" target="_blank"><img src="assets/images/instragram-image/4.jpg"
-                                        alt="insta"></a>
-                            </div>
-                        </div>
-                        <!-- instagram item -->
-                        <!-- instagram item -->
-                        <div class="ec-insta-item">
-                            <div class="ec-insta-inner">
-                                <a href="#" target="_blank"><img src="assets/images/instragram-image/5.jpg"
-                                        alt="insta"></a>
-                            </div>
-                        </div>
-                        <!-- instagram item -->
-                        <!-- instagram item -->
-                        <div class="ec-insta-item">
-                            <div class="ec-insta-inner">
-                                <a href="#" target="_blank"><img src="assets/images/instragram-image/6.jpg"
-                                        alt="insta"></a>
-                            </div>
-                        </div>
-                        <!-- instagram item -->
-                        <!-- instagram item -->
-                        <div class="ec-insta-item">
-                            <div class="ec-insta-inner">
-                                <a href="#" target="_blank"><img src="assets/images/instragram-image/7.jpg"
-                                        alt="insta"></a>
-                            </div>
-                        </div>
-                        <!-- instagram item -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Ec Instagram End -->
 
-    <!-- Footer Start -->
-    <footer class="ec-footer section-space-mt">
-        <div class="footer-container">
-            <div class="footer-offer">
-                <div class="container">
-                    <div class="row">
-                        <div class="text-center footer-off-msg">
-                            <span>Win a contest! Get this limited-editon</span><a href="#" target="_blank">View
-                                Detail</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-top section-space-footer-p">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12 col-lg-3 ec-footer-contact">
-                            <div class="ec-footer-widget">
-                                <div class="ec-footer-logo"><a href="#"><img src="assets/images/logo/logo1.png"
-                                            alt=""><img class="dark-footer-logo" src="assets/images/logo/logo1.png"
-                                            alt="Site Logo" style="display: none;" /></a></div>
-                                <h4 class="ec-footer-heading">Contact us</h4>
-                                <div class="ec-footer-links">
-                                    <ul class="align-items-center">
-                                        <li class="ec-footer-link">sdj international collage</li>
-                                        <li class="ec-footer-link"><span>Call Us:</span><a href="tel:+440123456789">+44
-                                                9824873685</a></li>
-                                        <li class="ec-footer-link"><span>Email:</span><a
-                                                href="mailto:example@ec-email.com">human@email.com</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-lg-2 ec-footer-info">
-                            <div class="ec-footer-widget">
-                                <h4 class="ec-footer-heading">Information</h4>
-                                <div class="ec-footer-links">
-                                    <ul class="align-items-center">
-                                        <li class="ec-footer-link"><a href="about-us.html">About us</a></li>
-                                        <li class="ec-footer-link"><a href="faq.html">FAQ</a></li>
-                                        <li class="ec-footer-link"><a href="track-order.html">Delivery Information</a>
-                                        </li>
-                                        <li class="ec-footer-link"><a href="contact-us.html">Contact us</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-lg-2 ec-footer-account">
-                            <div class="ec-footer-widget">
-                                <h4 class="ec-footer-heading">Account</h4>
-                                <div class="ec-footer-links">
-                                    <ul class="align-items-center">
-                                        <li class="ec-footer-link"><a href="user-profile.html">My Account</a></li>
-                                        <li class="ec-footer-link"><a href="track-order.html">Order History</a></li>
-                                        <li class="ec-footer-link"><a href="wishlist.html">Wish List</a></li>
-                                        <li class="ec-footer-link"><a href="offer.html">Specials</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-lg-2 ec-footer-service">
-                            <div class="ec-footer-widget">
-                                <h4 class="ec-footer-heading">Services</h4>
-                                <div class="ec-footer-links">
-                                    <ul class="align-items-center">
-                                        <li class="ec-footer-link"><a href="track-order.html">Discount Returns</a></li>
-                                        <li class="ec-footer-link"><a href="privacy-policy.html">Policy & policy </a>
-                                        </li>
-                                        <li class="ec-footer-link"><a href="terms-condition.html">Customer Service</a>
-                                        </li>
-                                        <li class="ec-footer-link"><a href="terms-condition.html">Term & condition</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-lg-3 ec-footer-news">
-                            <div class="ec-footer-widget">
-                                <h4 class="ec-footer-heading">Newsletter</h4>
-                                <div class="ec-footer-links">
-                                    <ul class="align-items-center">
-                                        <li class="ec-footer-link">Get instant updates about our new products and
-                                            special promos!</li>
-                                    </ul>
-                                    <div class="ec-subscribe-form">
-                                        <form id="ec-newsletter-form" name="ec-newsletter-form" method="post"
-                                            action="#">
-                                            <div id="ec_news_signup" class="ec-form">
-                                                <input class="ec-email" type="email" required=""
-                                                    placeholder="Enter your email here..." name="ec-email" value="" />
-                                                <button id="ec-news-btn" class="button btn-primary" type="submit"
-                                                    name="subscribe" value=""><i class="ecicon eci-paper-plane-o"
-                                                        aria-hidden="true"></i></button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <!-- Footer social Start -->
-                        <div class="col text-left footer-bottom-left">
-                            <div class="footer-bottom-social">
-                                <span class="social-text text-upper">Follow us on:</span>
-                                <ul class="mb-0">
-                                    <li class="list-inline-item"><a class="hdr-facebook" href="#"><i
-                                                class="ecicon eci-facebook"></i></a></li>
-                                    <li class="list-inline-item"><a class="hdr-twitter" href="#"><i
-                                                class="ecicon eci-twitter"></i></a></li>
-                                    <li class="list-inline-item"><a class="hdr-instagram" href="#"><i
-                                                class="ecicon eci-instagram"></i></a></li>
-                                    <li class="list-inline-item"><a class="hdr-linkedin" href="#"><i
-                                                class="ecicon eci-linkedin"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Footer social End -->
-                        <!-- Footer Copyright Start -->
-                        <div class="col text-center footer-copy">
-                            <div class="footer-bottom-copy ">
-                                <div class="ec-copy">Copyright © <span id="copyright_year"></span> <a class="site-name text-upper"
-                                        href="#">hu-Man<span>.</span></a>. All Rights Reserved</div>
-                            </div>
-                        </div>
-                        <!-- Footer Copyright End -->
-                        <!-- Footer payment -->
-                        <div class="col footer-bottom-right">
-                            <div class="footer-bottom-payment d-flex justify-content-end">
-                                <div class="payment-link">
-                                    <img src="assets/images/icons/payment.png" alt="">
-                                </div>
 
-                            </div>
-                        </div>
-                        <!-- Footer payment -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- Footer Area End -->
+    <?php require("components/footer.php") ?>
 
     <!-- Modal -->
     <div class="modal fade" id="ec_quickview_modal" tabindex="-1" role="dialog">
@@ -4343,27 +3707,7 @@
     </div>
     <!-- Modal end -->
 
-    <!-- Newsletter Modal Start -->
-    <div id="ec-popnews-bg"></div>
-    <div id="ec-popnews-box">
-        <div id="ec-popnews-close"><i class="ecicon eci-close"></i></div>
-        <div class="row">
-            <div class="col-md-6 disp-no-767">
-                <img src="assets/images/banner/newsletter.png" alt="newsletter">
-            </div>
-            <div class="col-md-6">
-                <div id="ec-popnews-box-content">
-                    <h2>Subscribe Newsletter</h2>
-                    <p>Subscribe the ekka ecommerce to get in touch and get the future update. </p>
-                    <form id="ec-popnews-form" action="#" method="post">
-                        <input type="email" name="newsemail" placeholder="Email Address" required />
-                        <button type="button" class="btn btn-primary" name="subscribe">Subscribe</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Newsletter Modal end -->
+    
 
     <!-- Footer navigation panel for responsive display -->
     <div class="ec-nav-toolbar">
@@ -4394,17 +3738,7 @@
     </div>
     <!-- Footer navigation panel for responsive display end -->
 
-    <!-- Recent Purchase Popup  -->
-    <div class="recent-purchase">
-        <img src="assets/images/product-image/1.jpg" alt="payment image">
-        <div class="detail">
-            <p>Someone in new just bought</p>
-            <h6>stylish baby shoes</h6>
-            <p>10 Minutes ago</p>
-        </div>
-        <a href="javascript:void(0)" class="icon-btn recent-close">×</a>
-    </div>
-    <!-- Recent Purchase Popup end -->
+   
 
     <!-- Cart Floating Button -->
     <div class="ec-cart-float">

@@ -29,7 +29,7 @@
 	<link href='assets/plugins/data-tables/responsive.datatables.min.css' rel='stylesheet'>
 
 	<!-- ekka CSS -->
-	<link id="ekka-css" rel="stylesheet" href="assets/css/ekka.css?v=<?php echo time(); ?>" />
+	<link id="ekka-css" rel="stylesheet" href="assets/css/style.css?v=<?php echo time(); ?>" />
 
 	<!-- FAVICON -->
 	<link href="assets/img/favicon.png" rel="shortcut icon" />

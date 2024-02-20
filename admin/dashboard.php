@@ -7,7 +7,7 @@
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="description" content="Ekka - Admin Dashboard eCommerce HTML Template.">
+	<meta name="description" content="hu-Man">
 	
 	<title>hu-MAN | Dashboard</title>
 
@@ -24,7 +24,7 @@
 	<link href="assets/plugins/simplebar/simplebar.css" rel="stylesheet" />
 
 	<!-- Ekka CSS -->
-	<link id="ekka-css" href="assets/css/ekka.css?v=<?php echo time(); ?>" rel="stylesheet" />
+	<link id="ekka-css" href="assets/css/style.css?v=<?php echo time(); ?>" rel="stylesheet" />
 
 	<!-- FAVICON -->
 	<link href="assets/img/logo.png" rel="shortcut icon" />

@@ -1064,17 +1064,17 @@ function ecCheckCookie() {
         });
     });
 
-    /*----------------------------- Load More Category -------------------------------- */
+    /*----------------------------- Load More size -------------------------------- */
     $(document).ready(function () {
         $(".ec-more-toggle").click(function () {
             var elem = $(".ec-more-toggle #ec-more-toggle").text();
-            if (elem == "More Categories") {
-                $(".ec-more-toggle #ec-more-toggle").text("Less Categories");
+            if (elem == "Shoes Size") {
+                $(".ec-more-toggle #ec-more-toggle").text("Less Size");
                 $(".ec-more-toggle").toggleClass('active');
                 $("#ec-more-toggle-content").slideDown();
             } else {
 
-                $(".ec-more-toggle  #ec-more-toggle").text("More Categories");
+                $(".ec-more-toggle  #ec-more-toggle").text("Shoes Size");
                 $(".ec-more-toggle").removeClass('active');
                 $("#ec-more-toggle-content").slideUp();
             }
