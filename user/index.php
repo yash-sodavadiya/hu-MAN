@@ -1,10 +1,4 @@
-<!--========================================================= 
-    Item Name: Ekka - Ecommerce HTML Template + Admin Dashboard.
-    Author: ashishmaraviya
-    Version: 3.7
-    Copyright 2024
-	Author URI: https://themeforest.net/user/ashishmaraviya
- ============================================================-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,14 +9,14 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 
-    <title>Ekka - Ecommerce HTML Template + Admin Dashboard.</title>
+    <title>hu-Man | Home</title>
     <meta name="keywords"
         content="apparel, catalog, clean, ecommerce, ecommerce HTML, electronics, fashion, html eCommerce, html store, minimal, multipurpose, multipurpose ecommerce, online store, responsive ecommerce template, shops" />
     <meta name="description" content="Best ecommerce html template for single and multi vendor store.">
     <meta name="author" content="ashishmaraviya">
 
     <!-- site Favicon -->
-    <link rel="icon" href="assets/images/favicon/favicon.png" sizes="32x32" />
+    <link rel="icon" href="assets/images/logo/logo1.png" sizes="32x32" />
     <link rel="apple-touch-icon" href="assets/images/favicon/favicon.png" />
     <meta name="msapplication-TileImage" content="assets/images/favicon/favicon.png" />
 
@@ -4112,17 +4106,17 @@
                     <div class="row">
                         <div class="col-sm-12 col-lg-3 ec-footer-contact">
                             <div class="ec-footer-widget">
-                                <div class="ec-footer-logo"><a href="#"><img src="assets/images/logo/footer-logo.png"
-                                            alt=""><img class="dark-footer-logo" src="assets/images/logo/dark-logo.png"
+                                <div class="ec-footer-logo"><a href="#"><img src="assets/images/logo/logo1.png"
+                                            alt=""><img class="dark-footer-logo" src="assets/images/logo/logo1.png"
                                             alt="Site Logo" style="display: none;" /></a></div>
                                 <h4 class="ec-footer-heading">Contact us</h4>
                                 <div class="ec-footer-links">
                                     <ul class="align-items-center">
-                                        <li class="ec-footer-link">71 Pilgrim Avenue Chevy Chase, east california.</li>
+                                        <li class="ec-footer-link">sdj international collage</li>
                                         <li class="ec-footer-link"><span>Call Us:</span><a href="tel:+440123456789">+44
-                                                0123 456 789</a></li>
+                                                9824873685</a></li>
                                         <li class="ec-footer-link"><span>Email:</span><a
-                                                href="mailto:example@ec-email.com">+example@ec-email.com</a></li>
+                                                href="mailto:example@ec-email.com">human@email.com</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -4220,7 +4214,7 @@
                         <div class="col text-center footer-copy">
                             <div class="footer-bottom-copy ">
                                 <div class="ec-copy">Copyright © <span id="copyright_year"></span> <a class="site-name text-upper"
-                                        href="#">ekka<span>.</span></a>. All Rights Reserved</div>
+                                        href="#">hu-Man<span>.</span></a>. All Rights Reserved</div>
                             </div>
                         </div>
                         <!-- Footer Copyright End -->
@@ -4436,7 +4430,7 @@
                 <ul>
                     <!-- Start Single Contact List -->
                     <li>
-                        <a class="ec-list" data-number="919824873685"
+                        <a class="ec-list" data-number="919427402273"
                             data-message="Please help me! I have got wrong product - ORDER ID is : #654321485">
                             <div class="d-flex bd-highlight">
                                 <!-- Profile Picture -->
