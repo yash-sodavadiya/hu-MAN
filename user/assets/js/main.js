@@ -1,19 +1,11 @@
-/**
-    Item Name: human - Ecommerce HTML Template.
-    Author: ashishmaraviya
-    Version: 3.7
-    Copyright 2024
-    Author URI: https://themeforest.net/user/ashishmaraviya
-**/
 
-// Function To Create New Cookie 
+
 function ecCreateCookie(cookieName, cookieValue, daysToExpire) {
     var date = new Date();
     date.setTime(date.getTime() + (daysToExpire * 24 * 60 * 60 * 1000));
     document.cookie = cookieName + "=" + cookieValue + "; expires=" + date.toGMTString();
 }
 
-// Function To Delete Existing Cookie
 function ecDeleteCookie(cookieName, cookieValue) {
     var date = new Date(0).toGMTString();
     document.cookie = cookieName + "=" + cookieValue + "; expires=" + date;

@@ -176,12 +176,18 @@
 											<input type="text" class="form-control" id="amount" name="amount" placeholder="Enter  Amount:">
 										</div>
 									</div>
+									<div class="col-lg-6">
+										<div class="form-group mb-4">
+											<label for="amount">Minimum Amount: </label>
+											<input type="text" class="form-control" id="mini_amount" name="mini_amount" placeholder="Enter  Amount:">
+										</div>
+									</div>
 
 									
 									<div class="col-lg-6">
 										<div class="form-group mb-4">
 											<label for="start_date">Start Date</label>
-											<input type="text"  class="form-control" id="start_date" name="start_date" value="<?php $currentDate = date("d-m-Y"); echo $currentDate;?>">
+											<input type="text"  class="form-control" disabled style="background-color:#fff;" id="start_date" name="start_date" value="<?php $currentDate = date("Y-m-d"); echo $currentDate;?>">
 										</div>
 									</div>
 
