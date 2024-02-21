@@ -5,7 +5,7 @@
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="description" content="Ekka - Admin Dashboard HTML Template.">
+	
 
 	<title>hu-MAN | Coupons </title>
 
@@ -29,8 +29,8 @@
 	<link href='assets/plugins/data-tables/datatables.bootstrap5.min.css' rel='stylesheet'>
 	<link href='assets/plugins/data-tables/responsive.datatables.min.css' rel='stylesheet'>
 
-	<!-- ekka CSS -->
-	<link id="ekka-css" rel="stylesheet" href="assets/css/ekka.css?v=<?php echo time(); ?>" />
+	<!-- human CSS -->
+	<link id="human-css" rel="stylesheet" href="assets/css/style.css?v=<?php echo time(); ?>" />
 
 	<!-- FAVICON -->
 	<link href="assets/img/logo.png" rel="shortcut icon" />
@@ -65,12 +65,13 @@
 									<thead>
 										<tr>
 											<th>Id</th>
+											<th>Image</th>
 											<th>Name</th>
 											<th>Code</th>
 											<th>Ammount</th>
 											<th>Status</th>
 											<th>Date</th>
-                                            <th>Used</th>
+                                
                                             <th>Action</th>
 										</tr>
 									</thead>
@@ -139,7 +140,20 @@
 							</div>
 
 							<div class="modal-body px-4">
-								
+							<div class="form-group row mb-6">
+									<label for="coverImage" class="col-sm-4 col-lg-2 col-form-label">Coupon
+										Image: </label>
+										
+
+									<div class="col-sm-8 col-lg-10">
+										<div class="custom-file mb-1">
+											<input type="file" class="custom-file-input" id="coverImage" name="c_img" required>
+											<label class="custom-file-label" for="coverImage">Choose file...</label>
+											<div class="invalid-feedback">Example invalid custom file feedback</div>
+										</div>
+									</div>
+								</div>
+
 
 								<div class="row mb-2">
 									<div class="col-lg-6">
@@ -209,10 +223,10 @@
 	<!-- Option Switcher -->
 	<script src="assets/plugins/options-sidebar/optionswitcher.js"></script>
 
-	<!-- Ekka Custom -->
-	<script src="assets/js/ekka.js"></script>
+	<!-- human Custom -->
+	<script src="assets/js/human.js"></script>
 </body>
 
-<!-- Mirrored from maraviyainfotech.com/projects/ekka/ekka-v37/ekka-admin/vendor-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 17 Jan 2024 06:15:52 GMT -->
+<!-- Mirrored from maraviyainfotech.com/projects/human/human-v37/human-admin/vendor-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 17 Jan 2024 06:15:52 GMT -->
 
 </html>

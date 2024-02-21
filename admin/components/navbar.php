@@ -6,7 +6,7 @@
 			<div id="sidebar" class="sidebar ec-sidebar-footer">
 
 				<div class="ec-brand">
-					<a href="index" title="Ekka">
+					<a href="index" title="human">
 						<img class="ec-brand-icon" src="assets/img/logo.png" alt="" />
 						<span class="ec-brand-name text-truncate">hu-MAN</span>
 					</a>

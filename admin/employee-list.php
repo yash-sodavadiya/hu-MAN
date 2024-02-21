@@ -2,13 +2,13 @@
 <html lang="en" dir="ltr">
 
 
-<!-- Mirrored from maraviyainfotech.com/projects/ekka/ekka-v37/ekka-admin/vendor-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 17 Jan 2024 06:15:51 GMT -->
+<!-- Mirrored from maraviyainfotech.com/projects/human/human-v37/human-admin/vendor-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 17 Jan 2024 06:15:51 GMT -->
 
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="description" content="Ekka - Admin Dashboard HTML Template.">
+	<meta name="description" content="human - Admin Dashboard HTML Template.">
 
 	<title>hu-MAN | Employee List</title>
 
@@ -32,8 +32,8 @@
 	<link href='assets/plugins/data-tables/datatables.bootstrap5.min.css' rel='stylesheet'>
 	<link href='assets/plugins/data-tables/responsive.datatables.min.css' rel='stylesheet'>
 
-	<!-- ekka CSS -->
-	<link id="ekka-css" rel="stylesheet" href="assets/css/style.css?v=<?php echo time(); ?>" />
+	<!-- human CSS -->
+	<link id="human-css" rel="stylesheet" href="assets/css/style.css?v=<?php echo time(); ?>" />
 
 	<!-- FAVICON -->
 	<link href="assets/img/logo.png" rel="shortcut icon" />
@@ -195,7 +195,7 @@
 									<div class="col-lg-6">
 										<div class="form-group mb-4">
 											<label for="DOJ">Date Of Join</label>
-											<input type="text"  class="form-control" id="DOJ" name="DOJ" value="<?php $currentDate = date("d-m-Y"); echo $currentDate;?>">
+											<input type="text"  class="form-control" id="DOJ" name="DOJ" value="<?php $currentDate = date("Y-m-d"); echo $currentDate;?>">
 										</div>
 									</div>
 
@@ -237,10 +237,10 @@
 	<!-- Option Switcher -->
 	<script src="assets/plugins/options-sidebar/optionswitcher.js"></script>
 
-	<!-- Ekka Custom -->
-	<script src="assets/js/ekka.js"></script>
+	<!-- human Custom -->
+	<script src="assets/js/human.js"></script>
 </body>
 
-<!-- Mirrored from maraviyainfotech.com/projects/ekka/ekka-v37/ekka-admin/vendor-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 17 Jan 2024 06:15:52 GMT -->
+<!-- Mirrored from maraviyainfotech.com/projects/human/human-v37/human-admin/vendor-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 17 Jan 2024 06:15:52 GMT -->
 
 </html>

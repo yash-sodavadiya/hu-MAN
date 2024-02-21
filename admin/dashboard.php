@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 
 
-<!-- Mirrored from maraviyainfotech.com/projects/ekka/ekka-v37/ekka-admin/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 17 Jan 2024 06:15:34 GMT -->
+<!-- Mirrored from maraviyainfotech.com/projects/human/human-v37/human-admin/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 17 Jan 2024 06:15:34 GMT -->
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -23,8 +23,8 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link href="assets/plugins/simplebar/simplebar.css" rel="stylesheet" />
 
-	<!-- Ekka CSS -->
-	<link id="ekka-css" href="assets/css/style.css?v=<?php echo time(); ?>" rel="stylesheet" />
+	<!-- human CSS -->
+	<link id="human-css" href="assets/css/style.css?v=<?php echo time(); ?>" rel="stylesheet" />
 
 	<!-- FAVICON -->
 	<link href="assets/img/logo.png" rel="shortcut icon" />
@@ -487,12 +487,12 @@
 	<!-- Option Switcher -->
 	<script src="assets/plugins/options-sidebar/optionswitcher.js"></script>
 
-	<!-- Ekka Custom -->
-	<script src="assets/js/ekka.js"></script>
+	<!-- human Custom -->
+	<script src="assets/js/human.js"></script>
 	<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 
 </body>
 
 
-<!-- Mirrored from maraviyainfotech.com/projects/ekka/ekka-v37/ekka-admin/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 17 Jan 2024 06:15:48 GMT -->
+<!-- Mirrored from maraviyainfotech.com/projects/human/human-v37/human-admin/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 17 Jan 2024 06:15:48 GMT -->
 </html>

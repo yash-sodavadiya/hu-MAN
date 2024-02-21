@@ -49,81 +49,7 @@
         </div>
     </div>
     <?Php require("components/navbar.php") ?>
-    <!-- ekka Cart Start -->
-    <div class="ec-side-cart-overlay"></div>
-    <div id="ec-side-cart" class="ec-side-cart">
-        <div class="ec-cart-inner">
-            <div class="ec-cart-top">
-                <div class="ec-cart-title">
-                    <span class="cart_title">My Cart</span>
-                    <button class="ec-close">×</button>
-                </div>
-                <ul class="eccart-pro-items">
-                    <li>
-                        <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
-                                src="assets/images/product-image/6_1.jpg" alt="product"></a>
-                        <div class="ec-pro-content">
-                            <a href="product-left-sidebar.html" class="cart_pro_title">T-shirt For Women</a>
-                            <span class="cart-price"><span>$76.00</span> x 1</span>
-                            <div class="qty-plus-minus">
-                                <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
-                            </div>
-                            <a href="javascript:void(0)" class="remove">×</a>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
-                                src="assets/images/product-image/12_1.jpg" alt="product"></a>
-                        <div class="ec-pro-content">
-                            <a href="product-left-sidebar.html" class="cart_pro_title">Women Leather Shoes</a>
-                            <span class="cart-price"><span>$64.00</span> x 1</span>
-                            <div class="qty-plus-minus">
-                                <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
-                            </div>
-                            <a href="javascript:void(0)" class="remove">×</a>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
-                                src="assets/images/product-image/3_1.jpg" alt="product"></a>
-                        <div class="ec-pro-content">
-                            <a href="product-left-sidebar.html" class="cart_pro_title">Girls Nylon Purse</a>
-                            <span class="cart-price"><span>$59.00</span> x 1</span>
-                            <div class="qty-plus-minus">
-                                <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
-                            </div>
-                            <a href="javascript:void(0)" class="remove">×</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="ec-cart-bottom">
-                <div class="cart-sub-total">
-                    <table class="table cart-table">
-                        <tbody>
-                            <tr>
-                                <td class="text-left">Sub-Total :</td>
-                                <td class="text-right">$300.00</td>
-                            </tr>
-                            <tr>
-                                <td class="text-left">VAT (20%) :</td>
-                                <td class="text-right">$60.00</td>
-                            </tr>
-                            <tr>
-                                <td class="text-left">Total :</td>
-                                <td class="text-right primary-color">$360.00</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="cart_btn">
-                    <a href="cart.html" class="btn btn-primary">View Cart</a>
-                    <a href="checkout.html" class="btn btn-secondary">Checkout</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ekka Cart End -->
+   
 
     <!-- Category Sidebar start -->
     <div class="ec-side-cat-overlay"></div>
@@ -226,7 +152,7 @@
                 <div class="ec-sb-pro-sl">
                     <div>
                         <div class="ec-sb-pro-sl-item">
-                            <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
+                            <a href="product-left-sidebar.html" class="sidhuman_pro_img"><img
                                     src="assets/images/product-image/1.jpg" alt="product" /></a>
                             <div class="ec-pro-content">
                                 <h5 class="ec-pro-title"><a href="product-left-sidebar.html">baby fabric shoes</a></h5>
@@ -246,7 +172,7 @@
                     </div>
                     <div>
                         <div class="ec-sb-pro-sl-item">
-                            <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
+                            <a href="product-left-sidebar.html" class="sidhuman_pro_img"><img
                                     src="assets/images/product-image/2.jpg" alt="product" /></a>
                             <div class="ec-pro-content">
                                 <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Men's hoodies t-shirt</a>
@@ -267,7 +193,7 @@
                     </div>
                     <div>
                         <div class="ec-sb-pro-sl-item">
-                            <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
+                            <a href="product-left-sidebar.html" class="sidhuman_pro_img"><img
                                     src="assets/images/product-image/3.jpg" alt="product" /></a>
                             <div class="ec-pro-content">
                                 <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Girls t-shirt</a></h5>
@@ -287,7 +213,7 @@
                     </div>
                     <div>
                         <div class="ec-sb-pro-sl-item">
-                            <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
+                            <a href="product-left-sidebar.html" class="sidhuman_pro_img"><img
                                     src="assets/images/product-image/4.jpg" alt="product" /></a>
                             <div class="ec-pro-content">
                                 <h5 class="ec-pro-title"><a href="product-left-sidebar.html">woolen hat for men</a></h5>
@@ -307,7 +233,7 @@
                     </div>
                     <div>
                         <div class="ec-sb-pro-sl-item">
-                            <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
+                            <a href="product-left-sidebar.html" class="sidhuman_pro_img"><img
                                     src="assets/images/product-image/5.jpg" alt="product" /></a>
                             <div class="ec-pro-content">
                                 <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Womens purse</a></h5>
@@ -327,7 +253,7 @@
                     </div>
                     <div>
                         <div class="ec-sb-pro-sl-item">
-                            <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
+                            <a href="product-left-sidebar.html" class="sidhuman_pro_img"><img
                                     src="assets/images/product-image/6.jpg" alt="product" /></a>
                             <div class="ec-pro-content">
                                 <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Baby toy doctor kit</a>
@@ -348,7 +274,7 @@
                     </div>
                     <div>
                         <div class="ec-sb-pro-sl-item">
-                            <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
+                            <a href="product-left-sidebar.html" class="sidhuman_pro_img"><img
                                     src="assets/images/product-image/7.jpg" alt="product" /></a>
                             <div class="ec-pro-content">
                                 <h5 class="ec-pro-title"><a href="product-left-sidebar.html">teddy bear baby toy</a>
@@ -369,7 +295,7 @@
                     </div>
                     <div>
                         <div class="ec-sb-pro-sl-item">
-                            <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
+                            <a href="product-left-sidebar.html" class="sidhuman_pro_img"><img
                                     src="assets/images/product-image/2.jpg" alt="product" /></a>
                             <div class="ec-pro-content">
                                 <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Mens hoodies blue</a></h5>
@@ -3964,5 +3890,5 @@
 </body>
 
 
-<!-- Mirrored from maraviyainfotech.com/projects/ekka/ekka-v37/ekka-html/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 18 Jan 2024 05:20:57 GMT -->
+<!-- Mirrored from maraviyainfotech.com/projects/human/human-v37/human-html/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 18 Jan 2024 05:20:57 GMT -->
 </html>

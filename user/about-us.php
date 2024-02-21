@@ -48,81 +48,7 @@
 
    <?php require("components/navbar.php") ?>
 
-    <!-- ekka Cart Start -->
-    <div class="ec-side-cart-overlay"></div>
-    <div id="ec-side-cart" class="ec-side-cart">
-        <div class="ec-cart-inner">
-            <div class="ec-cart-top">
-                <div class="ec-cart-title">
-                    <span class="cart_title">My Cart</span>
-                    <button class="ec-close">×</button>
-                </div>
-                <ul class="eccart-pro-items">
-                    <li>
-                        <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
-                                src="assets/images/product-image/6_1.jpg" alt="product"></a>
-                        <div class="ec-pro-content">
-                            <a href="product-left-sidebar.html" class="cart_pro_title">T-shirt For Women</a>
-                            <span class="cart-price"><span>$76.00</span> x 1</span>
-                            <div class="qty-plus-minus">
-                                <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
-                            </div>
-                            <a href="javascript:void(0)" class="remove">×</a>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
-                                src="assets/images/product-image/12_1.jpg" alt="product"></a>
-                        <div class="ec-pro-content">
-                            <a href="product-left-sidebar.html" class="cart_pro_title">Women Leather Shoes</a>
-                            <span class="cart-price"><span>$64.00</span> x 1</span>
-                            <div class="qty-plus-minus">
-                                <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
-                            </div>
-                            <a href="javascript:void(0)" class="remove">×</a>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
-                                src="assets/images/product-image/3_1.jpg" alt="product"></a>
-                        <div class="ec-pro-content">
-                            <a href="product-left-sidebar.html" class="cart_pro_title">Girls Nylon Purse</a>
-                            <span class="cart-price"><span>$59.00</span> x 1</span>
-                            <div class="qty-plus-minus">
-                                <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
-                            </div>
-                            <a href="javascript:void(0)" class="remove">×</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="ec-cart-bottom">
-                <div class="cart-sub-total">
-                    <table class="table cart-table">
-                        <tbody>
-                            <tr>
-                                <td class="text-left">Sub-Total :</td>
-                                <td class="text-right">$300.00</td>
-                            </tr>
-                            <tr>
-                                <td class="text-left">VAT (20%) :</td>
-                                <td class="text-right">$60.00</td>
-                            </tr>
-                            <tr>
-                                <td class="text-left">Total :</td>
-                                <td class="text-right primary-color">$360.00</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="cart_btn">
-                    <a href="cart.html" class="btn btn-primary">View Cart</a>
-                    <a href="checkout.html" class="btn btn-secondary">Checkout</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ekka Cart End -->
+    
 
     <!-- Ec breadcrumb start -->
     <div class="sticky-header-next-sec  ec-breadcrumb section-space-mb">
@@ -168,17 +94,12 @@
                         </div>
                         <div class="col-md-6 ec-cms-block ec-abcms-block text-center">
                             <div class="ec-cms-block-inner">
-                                <h3 class="ec-cms-block-title">What is the ekka?</h3>
-                                <p>Electronic typesetting text of the printing and typesetting industry. when an unknown printer took a galley of type
-                                    and scrambled it to make a type specimen book. Lorem Ipsum is
-                                    simply dutmmy text ever since the 1500s, It has survived not only,
-                                    but also the leap into electronic typesetting.</p>
-                                <p>Lorem Ipsum is simply dummy text of the printing. It has survived not only five centuries,
-                                    but also the leap into electronic typesetting.</p>
-                                <p>Also the leap into electronic typesetting printing and typesetting industry. It has survived not only five centuries,
-                                    but also the leap into electronic typesetting, when an unknown printer took a galley of type
-                                    and scrambled it to make a type specimen book. It has survived not only five centuries,
-                                    but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                                <h3 class="ec-cms-block-title">What is the hu-MAN?</h3>
+                                <p>hu-man is one of the biggest international fashion companies, and it belongs to Inditex, one of the world’s largest distribution groups</p>
+                                <p>hu-MAN has an ongoing commitment to its customers around the world in providing an excellent customer experience to all. As part of these efforts, we are committed to providing a website that is accessible to the widest possible audience, regardless of technology or ability. hu-MAN is committed to aligning its website and its operations in substantial conformance with generally-recognized and accepted guidelines and/or standards for website accessibility. To assist in these efforts, hu-MAN has partnered with experienced internationally reputable consultants and is working to increase the accessibility and usability of our website.</p>
+                                <p>The customer is at the heart of our unique business model, which includes design, production, distribution, and sales, through our extensive retail network.
+
+For more information, please visit the hu-man Group website: <a href="index"> www.hu_man.com </a>.</p>
                             </div>
                         </div>
                     </div>
@@ -194,8 +115,8 @@
                 <div class="col-md-12 text-center">
                     <div class="section-title mb-0">
                         <h2 class="ec-bg-title">Testimonial</h2>
-                        <h2 class="ec-title">Client Review</h2>
-                        <p class="sub-title mb-3">What say client about us</p>
+                        <h2 class="ec-title">Customer Review</h2>
+                        <p class="sub-title mb-3">What say Customer about us</p>
                     </div>
                 </div>
             </div>
@@ -212,8 +133,8 @@
                                         typesetting industry. Lorem Ipsum has been the industry's standard dummy text
                                         ever since the 1500s, when an unknown printer took a galley of type and
                                         scrambled it to make a type specimen</div>
-                                    <div class="ec-test-name">John Doe</div>
-                                    <div class="ec-test-designation">General Manager</div>
+                                    <div class="ec-test-name">Denish Kathiriya</div>
+                        
                                     <div class="ec-test-rating">
                                         <i class="ecicon eci-star fill"></i>
                                         <i class="ecicon eci-star fill"></i>
@@ -235,8 +156,7 @@
                                         typesetting industry. Lorem Ipsum has been the industry's standard dummy text
                                         ever since the 1500s, when an unknown printer took a galley of type and
                                         scrambled it to make a type specimen</div>
-                                    <div class="ec-test-name">John Doe</div>
-                                    <div class="ec-test-designation">General Manager</div>
+                                    <div class="ec-test-name">Jeel Katrodiya</div>
                                     <div class="ec-test-rating">
                                         <i class="ecicon eci-star fill"></i>
                                         <i class="ecicon eci-star fill"></i>
@@ -258,8 +178,8 @@
                                         typesetting industry. Lorem Ipsum has been the industry's standard dummy text
                                         ever since the 1500s, when an unknown printer took a galley of type and
                                         scrambled it to make a type specimen</div>
-                                    <div class="ec-test-name">John Doe</div>
-                                    <div class="ec-test-designation">General Manager</div>
+                                    <div class="ec-test-name">Meet Goti</div>
+            
                                     <div class="ec-test-rating">
                                         <i class="ecicon eci-star fill"></i>
                                         <i class="ecicon eci-star fill"></i>
@@ -290,7 +210,7 @@
                         </div>
                         <div class="ec-service-desc">
                             <h2>Free Shipping</h2>
-                            <p>Free shipping on all US order or order above $200</p>
+                            <p>Free shipping on all US order or order above ₹200</p>
                         </div>
                     </div>
                 </div>
@@ -602,5 +522,5 @@
 
 </body>
 
-<!-- Mirrored from maraviyainfotech.com/projects/ekka/ekka-v37/ekka-html/about-us.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 19 Feb 2024 04:59:15 GMT -->
+<!-- Mirrored from maraviyainfotech.com/projects/human/human-v37/human-html/about-us.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 19 Feb 2024 04:59:15 GMT -->
 </html>

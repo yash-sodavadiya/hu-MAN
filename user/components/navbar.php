@@ -147,16 +147,16 @@
                                         <li class="d-flex">
                                             <ul class="d-block">
                                                 <li class="menu_title"><a href="javascript:void(0)">Clothes</a></li>
-                                                <li><a href="shop-left-sidebar-col-3.html">Shirt</a>
+                                                <li><a href="shirt-shop">Shirt</a>
                                                 </li>
-                                                <li><a href="shop-left-sidebar-col-4.html">Pant</a>
+                                                <li><a href="pent-shop">Pent</a>
                                                 </li>
-                                                <li><a href="shop-right-sidebar-col-3.html">Suit</a>
+                                                <li><a href="suit-shop">Suit</a>
                                                 </li>
                                             </ul>
                                             <ul class="d-block">
                                                 <li class="menu_title"><a href="javascript:void(0)">Watches</a></li>
-                                                <li><a href="shop-banner-left-sidebar-col-3.html">Smart Watches</a></li>
+                                                <li><a href="#">Smart Watches</a></li>
                                                 <li><a href="shop-banner-left-sidebar-col-4.html">Casual Watches</a></li>
                                                 
                                             </ul>
@@ -208,7 +208,7 @@
             </div>
         </div>
         <!-- Ec Main Menu End -->
-        <!-- ekka Mobile Menu Start -->
+        <!-- human Mobile Menu Start -->
         <div id="ec-mobile-menu" class="ec-side-cart ec-mobile-menu">
             <div class="ec-menu-title">
                 <span class="menu_title">My Menu</span>
@@ -330,6 +330,8 @@
                 </div>
             </div>
         </div> 
-        <!-- ekka mobile Menu End -->
+        <!-- human mobile Menu End -->
     </header>
     <!-- Header End  -->
+
+    <?php require("components/cart-popup.php") ?>

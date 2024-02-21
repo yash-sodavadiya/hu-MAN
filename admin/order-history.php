@@ -2,12 +2,12 @@
 <html lang="en" dir="ltr">
 
 
-<!-- Mirrored from maraviyainfotech.com/projects/ekka/ekka-v37/ekka-admin/order-history.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 17 Jan 2024 06:16:04 GMT -->
+<!-- Mirrored from maraviyainfotech.com/projects/human/human-v37/human-admin/order-history.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 17 Jan 2024 06:16:04 GMT -->
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="description" content="Ekka - Admin Dashboard HTML Template.">
+	<meta name="description" content="human - Admin Dashboard HTML Template.">
 
 	<title>hu-MAN | Order-history</title>
 
@@ -27,8 +27,8 @@
 	<link href='assets/plugins/data-tables/datatables.bootstrap5.min.css' rel='stylesheet'>
 	<link href='assets/plugins/data-tables/responsive.datatables.min.css' rel='stylesheet'>
 
-	<!-- Ekka CSS -->
-	<link id="ekka-css" rel="stylesheet" href="assets/css/style.css?v=<?php echo time(); ?>" />
+	<!-- human CSS -->
+	<link id="human-css" rel="stylesheet" href="assets/css/style.css?v=<?php echo time(); ?>" />
 
 	<!-- FAVICON -->
 	<link href="assets/img/favicon.png" rel="shortcut icon" />
@@ -273,10 +273,10 @@
 	<!-- Option Switcher -->
 	<script src="assets/plugins/options-sidebar/optionswitcher.js"></script>
 
-	<!-- Ekka Custom -->
-	<script src="assets/js/ekka.js"></script>
+	<!-- human Custom -->
+	<script src="assets/js/human.js"></script>
 </body>
 
 
-<!-- Mirrored from maraviyainfotech.com/projects/ekka/ekka-v37/ekka-admin/order-history.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 17 Jan 2024 06:16:05 GMT -->
+<!-- Mirrored from maraviyainfotech.com/projects/human/human-v37/human-admin/order-history.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 17 Jan 2024 06:16:05 GMT -->
 </html>
