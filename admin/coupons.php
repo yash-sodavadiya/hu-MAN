@@ -51,7 +51,7 @@
 					</p>
 				</div>
 				<div>
-					<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addVendor">
+					<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add_employee">
 						Add Coupons
 					</button>
 				</div>
@@ -69,6 +69,7 @@
 											<th>Name</th>
 											<th>Code</th>
 											<th>Ammount</th>
+											<th>Minimum Ammount</th>
 											<th>Status</th>
 											<th>Date</th>
                                 
@@ -78,37 +79,60 @@
 
 									<tbody>
 										<?php
-										$sql = "SELECT * FROM emp_tbl ";
+										$sql = "SELECT * FROM coupon_tbl ";
 										$result = mysqli_query($conn, $sql);
 										foreach ($result as $row) { ?>
 											<tr>
+											<td>
+													<?php echo $row['c_id'] ?>
+												</td>
 												<td><img class="vendor-thumb"
-														src="./assets/img/user/<?php echo $row['emp_img'] ?>"
+														src="./assets/img/user/<?php echo $row['c_image'] ?>"
 														alt="vendor image" /></td>
 												<td>
-													<?php echo $row['emp_name'] ?>
+													<?php echo $row['c_name'] ?>
 												</td>
 												<td>
-													<?php echo $row['emp_email'] ?>
+													<?php echo $row['c_code'] ?>
 												</td>
 												<td>
-													<?php echo $row['role'] ?>
+													<?php echo $row['c_amount'] ?>
 												</td>
 												<td>
-													<?php echo $row['status'] ?>
+													<?php echo $row['mini_amount'] ?>
 												</td>
+												<?php if($row['c_status'] == "ACTIVE")
+												{ ?>
+												<td><span class="mb-2 mr-2 badge badge-success"><?php echo $row['c_status'] ?></span>
+													</td>
+												<?php }else{?>
+													<td><span class="mb-2 mr-2 badge badge-danger"><?php echo $row['c_status'] ?></span></td>
+												<?php }?>
 												<td>
-													<?php echo $row['DOJ'] ?>
+													<?php echo $row['c_date'] ?>
 												</td>
 												<td>
 													<div class="action-icon">
-														<div class="edit"><i class="fa-solid fa-pen"></i></div>
-														<form action="php/emp_delete.php" method="post">
+													       <div class="edit">
+															<button type="button"
+																class="fa-solid fa-pen"
+																data-bs-toggle="dropdown" aria-haspopup="true"
+																aria-expanded="false" data-display="static">
+															
+															</button>
+															<div class="dropdown-menu">
+																<a class="dropdown-item" href="#">Detail</a>
+																
+																<a class="dropdown-item" href="#">Cancel</a>
+												            </div>
+															</div>
+														
+														<form action="php/coupon_delete.php" method="post">
 														<?php
-														$eid = $row['emp_id'];
+														$eid = $row['c_id'];
 														?>
-														<input type="hidden" value="<?php echo $row['emp_id'] ?>"
-															name="eid">
+														<input type="hidden" value="<?php echo $row['c_id'] ?>"
+															name="cid">
 														
 
 															<!-- <div class="delete"><i class="fa-solid fa-trash"></i></div> -->
@@ -130,11 +154,11 @@
 				</div>
 			</div>
 			<!-- Add Vendor Modal  -->
-			<div class="modal fade modal-add-contact" id="addVendor" tabindex="-1" role="dialog"
+			<div class="modal fade modal-add-contact" id="add_employee" tabindex="-1" role="dialog"
 				aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 				<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
 					<div class="modal-content">
-						<form action="php/add_emp.php" method="post" enctype="multipart/form-data">
+						<form action="php/add_coupons.php" method="post" enctype="multipart/form-data">
 							<div class="modal-header px-4">
 								<h5 class="modal-title" id="exampleModalCenterTitle">Add New Coupon</h5>
 							</div>

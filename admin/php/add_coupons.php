@@ -13,7 +13,7 @@ if (isset($_POST['save'] ) && isset($_FILES['c_img']) ) {
     $result = mysqli_query($conn, $sql);
     if ($result) {
         echo "<script> alert('coupon Inserted') </script>";
-        header("location:../cloyee-list.php");
+        header("location:../coupons");
     }
     
 }

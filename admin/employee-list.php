@@ -95,21 +95,46 @@
 												<td>
 													<?php echo $row['role'] ?>
 												</td>
-												<td>
-													<?php echo $row['status'] ?>
-												</td>
+												<?php if($row['status'] == "ACTIVE")
+												{ ?>
+												<td><span class="mb-2 mr-2 badge badge-success"><?php echo $row['status'] ?></span>
+													</td>
+												<?php }else{?>
+													<td><span class="mb-2 mr-2 badge badge-danger"><?php echo $row['status'] ?></span></td>
+												<?php }?>
 												<td>
 													<?php echo $row['DOJ'] ?>
 												</td>
 												<td>
-													<div class="action-icon">
-														<div class="edit"><i class="fa-solid fa-pen"></i></div>
+													
+												
+														<div class="action-icon">
+														
+														<?php
+														$eid = $row['emp_id'];
+														?>
+														<input type="hidden" value="6"
+															name="eid" id="eid">
+													       <div class="edit">
+															<button type="button"
+																class="fa-solid fa-pen" 
+																data-bs-toggle="dropdown" aria-haspopup="true"
+																aria-expanded="false" data-display="static">
+															
+															</button>
+															<div class="dropdown-menu">
+																<button  name="update_submit" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#update_emp">Detail</button>
+																
+																<a class="dropdown-item" href="#">Deactive</a>
+												            </div>
+															</div>
+															</form>
 														<form action="php/emp_delete.php" method="post">
 														<?php
 														$eid = $row['emp_id'];
 														?>
 														<input type="hidden" value="<?php echo $row['emp_id'] ?>"
-															name="eid">
+															name="eid" >
 														
 
 															<!-- <div class="delete"><i class="fa-solid fa-trash"></i></div> -->
@@ -120,9 +145,23 @@
 													</form>													</div>
 												</td>
 											</tr>
+											
 										<?php } ?>
+										<input type="submit" onclick="myclick()">
+										<p id="demo"></p>
 										
+										<script>
+											function myclick(){
+												var eid = document.getElementById('eid').value;
+												document.getElementById("demo").innerHTML = eid;
+											}
+											
 
+</script>
+
+<?php
+echo "<script>document.getElementById('demo').value</script>";
+?>
 									</tbody>
 								</table>
 							</div>
@@ -213,6 +252,80 @@
 				</div>
 			</div>
 		</div> <!-- End Content -->
+		<!-- start update employee -->
+		<div class="modal fade modal-add-contact" id="update_emp" tabindex="-1" role="dialog"
+				aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+					<div class="modal-content">						
+						<form action="php/add_emp.php" method="post" enctype="multipart/form-data">
+							<div class="modal-header px-4">
+								<h5 class="modal-title" id="exampleModalCenterTitle">Update Employee</h5>
+							</div>
+
+							<div class="modal-body px-4">
+								<div class="form-group row mb-6">
+									<label for="coverImage" class="col-sm-4 col-lg-2 col-form-label">Employee
+										Image: </label>
+										
+
+									<div class="col-sm-8 col-lg-10">
+										<div class="custom-file mb-1">
+											<input type="file" class="custom-file-input" id="coverImage" name="emp_img" required>
+											<label class="custom-file-label" for="coverImage">Choose file...</label>
+											<div class="invalid-feedback">Example invalid custom file feedback</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="row mb-2">
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label for="emp_name">Employee name: </label>
+											<input type="text" class="form-control" name="emp_name" id="emp_name" placeholder="Enter Name:" >
+										</div>
+									</div>
+
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label for="emp_email">Email: </label>
+											<input type="text" class="form-control" id="emp_email" name="emp_email" placeholder="Enter email:">
+										</div>
+									</div>
+
+									<div class="col-lg-6">
+										<div class="form-group mb-4">
+											<label for="phone">Phone No.: </label>
+											<input type="text" class="form-control" id="phone" name="phone" placeholder="Enter Phone no:">
+										</div>
+									</div>
+
+									<div class="col-lg-6">
+										<div class="form-group mb-4">
+											<label for="designation">Designation</label>
+											<select name="designation" id="" class="form-control">
+												<option value="">Please select Designation...</option>
+												<option value="Manager">Manager</option>
+												<option value="Saleman">Saleman</option>
+												<option value="Accountant">Accountant</option>
+												<option value="Marketing Manager">Marketing Manager</option>
+												<option value="Business Analyst">Business Analyst</option>
+												<option value="Product Manager">Product Manager</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="modal-footer px-4">
+								<button type="button" class="btn btn-secondary btn-pill"
+									data-bs-dismiss="modal">Cancel</button>
+								<button type="submit" name="save" class="btn btn-primary btn-pill">Save</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<!-- end update employee -->
 	</div> <!-- End Content Wrapper -->
 
 	<!-- Footer -->

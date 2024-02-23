@@ -14,7 +14,7 @@ if (isset($_POST['save'] ) && isset($_FILES['emp_img']) ) {
     $result = mysqli_query($conn, $sql);
     if ($result) {
         echo "<script> alert('Employee Inserted') </script>";
-        header("location:../employee-list.php");
+        header("location:../employee-list");
     }
    
 }

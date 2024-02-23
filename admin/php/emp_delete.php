@@ -7,7 +7,7 @@
         if($result)
         {
             echo '<script>alert("employee Deleted")</script>';
-            header("location:../employee-list.php");
+            header("location:../employee-list");
         }
     }
 ?>
