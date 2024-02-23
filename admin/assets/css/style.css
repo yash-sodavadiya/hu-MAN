@@ -11650,18 +11650,18 @@ textarea.form-control-lg {
 .ec-vendor-uploads .ec-vendor-upload-detail .mb-25 {
   margin-bottom: 25px;
 }
-.ec-vendor-uploads .ec-vendor-upload-detail form label {
+.ec-vendor-uploads .ec-vendor-upload-detail .form label {
   width: 100%;
   text-transform: uppercase;
   font-weight: 500;
 }
-.ec-vendor-uploads .ec-vendor-upload-detail form label span {
+.ec-vendor-uploads .ec-vendor-upload-detail .form label span {
   font-size: 13px;
   color: #999;
   font-weight: 300;
   text-transform: none;
 }
-.ec-vendor-uploads .ec-vendor-upload-detail form input {
+.ec-vendor-uploads .ec-vendor-upload-detail .form input {
   width: 100%;
   margin-bottom: 30px;
   padding: 0 15px;
@@ -11672,7 +11672,7 @@ textarea.form-control-lg {
   line-height: 3;
   border-radius: 15px;
 }
-.ec-vendor-uploads .ec-vendor-upload-detail form textarea {
+.ec-vendor-uploads .ec-vendor-upload-detail .form textarea {
   width: 100%;
   margin-bottom: 30px;
   padding: 0 15px;
@@ -11683,7 +11683,7 @@ textarea.form-control-lg {
   padding: 15px;
   border-radius: 15px;
 }
-.ec-vendor-uploads .ec-vendor-upload-detail form select {
+.ec-vendor-uploads .ec-vendor-upload-detail .form select {
   width: 100%;
   height: 45px;
   margin-bottom: 30px;
@@ -11697,14 +11697,14 @@ textarea.form-control-lg {
   outline: none;
   border-radius: 15px;
 }
-.ec-vendor-uploads .ec-vendor-upload-detail form input[type=text] {
+.ec-vendor-uploads .ec-vendor-upload-detail .form input[type=text] {
   height: 45px;
   -webkit-box-shadow: none;
   box-shadow: none;
   outline: none;
   border-radius: 15px;
 }
-.ec-vendor-uploads .ec-vendor-upload-detail form input[type=color] {
+.ec-vendor-uploads .ec-vendor-upload-detail .form input[type=color] {
   width: 25px !important;
   height: 25px !important;
   padding: 0;
@@ -11716,15 +11716,15 @@ textarea.form-control-lg {
   margin: 4px;
   min-height: 25px;
 }
-.ec-vendor-uploads .ec-vendor-upload-detail form input[type=color] i {
+.ec-vendor-uploads .ec-vendor-upload-detail .form input[type=color] i {
   border-radius: 0;
 }
-.ec-vendor-uploads .ec-vendor-upload-detail form .form-checkbox-box {
+.ec-vendor-uploads .ec-vendor-upload-detail .form .form-checkbox-box {
   height: 30px;
   margin-top: 5px;
   display: inline-block;
 }
-.ec-vendor-uploads .ec-vendor-upload-detail form .form-check {
+.ec-vendor-uploads .ec-vendor-upload-detail .form .form-check {
   height: 20px;
   margin: 0 5px 0 0;
   padding: 0;
@@ -11735,12 +11735,12 @@ textarea.form-control-lg {
   -ms-flex-align: center;
   align-items: center;
 }
-.ec-vendor-uploads .ec-vendor-upload-detail form .form-check input {
+.ec-vendor-uploads .ec-vendor-upload-detail .form .form-check input {
   width: 35px !important;
   height: 100% !important;
   margin: 0;
 }
-.ec-vendor-uploads .ec-vendor-upload-detail form .form-check label {
+.ec-vendor-uploads .ec-vendor-upload-detail .form .form-check label {
   margin: 5px 5px 2px 7px;
   line-height: 11px;
   color: #999;

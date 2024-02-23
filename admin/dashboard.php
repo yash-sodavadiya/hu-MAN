@@ -457,7 +457,7 @@
 					</div>
 				</div> <!-- End Content -->
 			</div> <!-- End Content Wrapper -->
-
+<input type="hidden" name="abc" id="complated" value="<?php echo 5000; ?>">
 			<?php require("components/footer.php") ?>
 
 		</div> <!-- End Page Wrapper -->
@@ -472,7 +472,7 @@
 
 	<!-- Chart -->
 	<script src="assets/plugins/charts/Chart.min.js"></script>
-	<script src="assets/js/chart.js"></script>
+	<script src="assets/js/chart.js?v=<?php echo time(); ?>"></script>
 	<script src="assets/js/fontawsomekit.js"></script>
 
 	<!-- Google map chart -->

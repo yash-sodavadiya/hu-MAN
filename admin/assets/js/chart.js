@@ -850,6 +850,7 @@ $(document).ready(function() {
 
   /*======== 11. DOUGHNUT CHART ========*/
   var doughnut = document.getElementById("doChart");
+  var complated = document.getElementById("complated").value;
   if (doughnut !== null) {
     var myDoughnutChart = new Chart(doughnut, {
       type: "doughnut",
@@ -858,7 +859,7 @@ $(document).ready(function() {
         datasets: [
           {
             label: ["completed", "unpaid", "pending", "canceled", "returned", "Broken"],
-            data: [4100, 2500, 1800, 2300, 400, 150],
+            data: [complated, 2500, 1800, 2300, 400, 150],
             backgroundColor: ["#88aaf3", "#50d7ab", "#9586cd", "#f3d676", "#ed9090", "#a4d9e5"],
             borderWidth: 1
             // borderColor: ['#88aaf3','#29cc97','#8061ef','#fec402']
