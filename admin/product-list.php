@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
-
-<!-- Mirrored from maraviyainfotech.com/projects/human/human-v37/human-admin/product-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 17 Jan 2024 06:15:58 GMT -->
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -32,7 +29,7 @@
 	<link id="human-css" rel="stylesheet" href="assets/css/style.css?v=<?php echo time(); ?>" />
 
 	<!-- FAVICON -->
-	<link href="assets/img/favicon.png" rel="shortcut icon" />
+	<link href="assets/img/logo/logo1.png" rel="shortcut icon" />
 </head>
 
 <body class="ec-header-fixed ec-sidebar-fixed ec-sidebar-dark ec-header-light" id="body">
@@ -62,105 +59,83 @@
 												<tr>
 													<th>Product</th>
 													<th>Name</th>
-													<th>Price</th>
-													<th>Offer</th>
-													<th>Purchased</th>
+													<th>MRP</th>
+													<th>Final Price</th>
 													<th>Stock</th>
 													<th>Status</th>
-													<th>Date</th>
 													<th>Action</th>
 												</tr>
 											</thead>
 
 											<tbody>
+												<?php 
+													$sql = "SELECT * FROM `product_tbl`";
+													$result = mysqli_query($conn,$sql);
+													foreach($result as $row)
+													{
+														$tbl = $row['catagory_name'];
+														$pid = $row['product_id'];
+														$sql1 = "SELECT * FROM `$tbl` WHERE `p_id` = '$pid' ";
+														$result1 = mysqli_query($conn,$sql1);
+														foreach($result1 as $row1)
+														{ ?>
+															<tr>
+													<td><img class="tbl-thumb" src="assets/img/product/<?php echo $row1['p_image'] ?>" alt="Product Image" /></td>
+													<td><?php echo $row1['p_name'] ?></td>
+													<td><?php echo $row1['p_mrp'] ?></td>
+													<td><?php echo $row1['p_final_price'] ?></td>
+													<td><?php echo $row1['p_stock'] ?></td>
+													<td>ACTIVE</td>
+													<td>
+														<div class="action-icon">
+
+														<!-- edit button  -->
+														<form action="product-edit" method="post">
+														<?php
+														$pid = $row1['p_id'];
+														
+														?>
+														<input type="hidden" value="<?php echo $row1['p_id'] ?>"
+															name="pid">
+															<input type="hidden" value="<?php echo $tbl ?>"
+															name="tbl">
+															<a href=""> <button type="submit" id="edit" name="submit"
+																	value="edit" onClick=”window.location.reload(true)”> <i class="fa-solid fa-pen"></i> </button></i> </a>
+														
+													</form>	
+
+													<!-- edit button end  -->
+
+													<!-- delete button  -->
+
+														<form action="php/product_delete.php" method="post">
+														<?php
+														$pid = $row1['p_id'];
+														
+														?>
+														<input type="hidden" value="<?php echo $row1['p_id'] ?>"
+															name="pid">
+														<input type="hidden" value="<?php echo $tbl ?>"
+															name="tbl">
+														
+
+															<!-- <div class="delete"><i class="fa-solid fa-trash"></i></div> -->
+															<a href=""> <button type="submit" id="delete" name="submit"
+																	value="Delete" onClick=”window.location.reload(true)”><i
+																		class="fa-solid fa-trash"></button></i> </a>
+														
+													</form>	
+													<!-- delete button end  -->
+</div>
+													</td>
+												</tr>
+														<?php }
+													}
+													
+													?>
 												
-												<tr>
-													<td><img class="tbl-thumb" src="assets/img/products/p2.jpg" alt="Product Image" /></td>
-													<td>Full Sleeve Cap T-Shirt</td>
-													<td>₹1000</td>
-													<td>30% OFF</td>
-													<td>80</td>
-													<td>200</td>
-													<td>ACTIVE</td>
-													<td>01/01/2024/td>
-													<td>
-														<div class="action-icon">
-														<div class="edit"><i class="fa-solid fa-pen"></i></div>
-													<div class="delete"><i class="fa-solid fa-trash"></i></div>
-</div>
-													</td>
-												</tr>
-
-												<tr>
-													<td><img class="tbl-thumb" src="assets/img/products/p3.jpg" alt="Product Image" /></td>
-													<td>Full Sleeve T-Shirt</td>
-													<td>₹800</td>
-													<td>20% OFF</td>
-													<td>100</td>
-													<td>280</td>
-													<td>ACTIVE</td>
-													<td>01/01/2024</td>
-													<td>
-														<div class="action-icon">
-														<div class="edit"><i class="fa-solid fa-pen"></i></div>
-													<div class="delete"><i class="fa-solid fa-trash"></i></div>
-</div>
-													</td>
-												</tr>
 
 												
-
-												<tr>
-													<td><img class="tbl-thumb" src="assets/img/products/p7.jpg" alt="Product Image" /></td>
-													<td>Shirt For Men</td>
-													<td>₹1200</td>
-													<td>30% OFF</td>
-													<td>300</td>
-													<td>700</td>
-													<td>ACTIVE</td>
-													<td>01/01/2024</td>
-													<td>
-														<div class="action-icon">
-														<div class="edit"><i class="fa-solid fa-pen"></i></div>
-													<div class="delete"><i class="fa-solid fa-trash"></i></div>
-</div>
-													</td>
-												</tr>
-
-												<tr>
-													<td><img class="tbl-thumb" src="assets/img/products/p8.jpg" alt="Product Image" /></td>
-													<td>Digital Watch</td>
-													<td>₹5000</td>
-													<td>50% OFF</td>
-													<td>250</td>
-													<td>1000</td>
-													<td>ACTIVE</td>
-													<td>10/10/2024</td>
-													<td>
-														<div class="action-icon">
-														<div class="edit"><i class="fa-solid fa-pen"></i></div>
-													<div class="delete"><i class="fa-solid fa-trash"></i></div>
-</div>
-													</td>
-												</tr>
-
-												<tr>
-													<td><img class="tbl-thumb" src="assets/img/products/p10.jpg" alt="Product Image" /></td>
-													<td>Green shoes for Men</td>
-													<td>₹1500</td>
-													<td>40% OFF</td>
-													<td>350</td>
-													<td>200</td>
-													<td>ACTIVE</td>
-													<td>01/01/2024/td>
-													<td>
-														<div class="action-icon">
-														<div class="edit"><i class="fa-solid fa-pen"></i></div>
-													<div class="delete"><i class="fa-solid fa-trash"></i></div>
-</div>
-													</td>
-												</tr>
-
 												
 
 											</tbody>

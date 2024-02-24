@@ -48,7 +48,7 @@
 					</p>
 				</div>
 				<div>
-					<a href="product-list.html" class="btn btn-primary"> View All
+					<a href="product-list" class="btn btn-primary"> View All
 					</a>
 				</div>
 			</div>

@@ -55,8 +55,8 @@
        
        if($p_category == "shirt")
        {
-        $sql = "INSERT INTO `shirt_tbl` (`p_id`, `s_image`, `s_name`, `mrp`, `final_price`, `stock`, `c_pattern`, `s_material_type`, `c_sleeve_type`, `c_length`, `c_description1`, `c_description2`) VALUES ( '$p_id', '$p_img', ' $p_name', ' $p_mrp', '$p_final_price ', '   $p_stock', ' $c_pattern', '$s_material_type', ' $c_sleeve_type', '$c_length', '   $long_description', '  $short_description');";
-        $sql1 = "INSERT INTO `product_tbl` (`catagory_id`,`catagory_name`) VALUES ('$s_id','shirt_tbl')";
+        $sql = "INSERT INTO `shirt_tbl` (`p_id`, `p_image`, `p_name`, `p_mrp`, `p_final_price`, `p_stock`, `c_pattern`, `s_material_type`, `c_sleeve_type`, `c_length`, `c_description1`, `c_description2`) VALUES ( '$p_id', '$p_img', ' $p_name', ' $p_mrp', '$p_final_price ', '   $p_stock', ' $c_pattern', '$s_material_type', ' $c_sleeve_type', '$c_length', '   $long_description', '  $short_description');";
+        $sql1 = "INSERT INTO `product_tbl` (`product_id`,`catagory_id`,`catagory_name`) VALUES ('$p_id','$s_id','shirt_tbl')";
         $result1 = mysqli_query($conn, $sql1);
         $result = mysqli_query($conn, $sql);
         if ($result) {
@@ -66,7 +66,7 @@
     }else if($p_category == "pent"){
         $sql = "INSERT INTO `pent_tbl` (`p_id`, `p_image`, `p_name`, `p_mrp`, `p_final_price`, `p_stock`, `p_material_type`, `p_length`, `p_style`, `p_closure_type`, `p_description1`, `p_description2`) VALUES ( '$p_id', '$p_img', ' $p_name', ' $p_mrp', '$p_final_price ', '$p_stock', ' $p_material_type', '$p_length', ' $p_style', '$p_closure_type', '   $long_description', '  $short_description');";
         $result = mysqli_query($conn, $sql);
-        $sql1 = "INSERT INTO `product_tbl` (`catagory_id`,`catagory_name`) VALUES ('$s_id','pent_tbl')";
+        $sql1 = "INSERT INTO `product_tbl` (`product_id`,`catagory_id`,`catagory_name`) VALUES ('$p_id','$s_id','pent_tbl')";
         $result1 = mysqli_query($conn, $sql1);
         if ($result) {
             echo "<script> alert('Product Inserted') </script>";
