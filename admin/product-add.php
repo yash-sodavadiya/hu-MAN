@@ -245,23 +245,23 @@
 															<label class="form-label">Size</label>
 															<div class="form-checkbox-box">
 																<div class="form-check form-check-inline">
-																	<input type="checkbox" name="size1" value="size">
+																	<input type="checkbox" name="P_size1[]" value="S">
 																	<label>S</label>
 																</div>
 																<div class="form-check form-check-inline">
-																	<input type="checkbox" name="size1" value="size">
+																	<input type="checkbox" name="P_size1[]" value="M">
 																	<label>M</label>
 																</div>
 																<div class="form-check form-check-inline">
-																	<input type="checkbox" name="size1" value="size">
+																	<input type="checkbox" name="P_size1[]" value="L">
 																	<label>L</label>
 																</div>
 																<div class="form-check form-check-inline">
-																	<input type="checkbox" name="size1" value="size">
+																	<input type="checkbox" name="P_size1[]" value="XL">
 																	<label>XL</label>
 																</div>
 																<div class="form-check form-check-inline">
-																	<input type="checkbox" name="size1" value="size">
+																	<input type="checkbox" name="P_size1[]" value="XXL">
 																	<label>XXL</label>
 																</div>
 															</div>

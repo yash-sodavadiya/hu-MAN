@@ -66,14 +66,26 @@ if (isset($_POST['add_product']) && isset($_FILES['p_image'])) {
     $pp_id = $row['ss_id'] + 1;
 
     if ($p_category == "shirt") {
-        $sql = "INSERT INTO `shirt_tbl` (`p_id`, `p_image`, `p_name`, `p_mrp`, `p_final_price`, `p_stock`, `c_pattern`, `s_material_type`, `c_sleeve_type`, `c_length`, `c_description1`, `c_description2`) VALUES ( '$p_id', '$p_img', ' $p_name', ' $p_mrp', '$p_final_price ', '   $p_stock', ' $c_pattern', '$s_material_type', ' $c_sleeve_type', '$c_length', '   $long_description', '  $short_description');";
+        $sql = "INSERT INTO `shirt_tbl` (`p_id`, `p_image`, `p_name`, `p_mrp`, `p_final_price`, `p_stock`, `c_pattern`, `s_material_type`, `c_sleeve_type`, `c_length`, `p_description1`, `p_description2`) VALUES ( '$p_id', '$p_img', ' $p_name', ' $p_mrp', '$p_final_price ', '   $p_stock', ' $c_pattern', '$s_material_type', ' $c_sleeve_type', '$c_length', '   $long_description', '  $short_description');";
         $sql1 = "INSERT INTO `product_tbl` (`product_id`,`catagory_id`,`catagory_name`) VALUES ('$p_id','$s_id','shirt_tbl')";
         $result1 = mysqli_query($conn, $sql1);
         $result = mysqli_query($conn, $sql);
+        $checkbox_values = $_POST['P_size1'];
+
+    // Loop through each checkbox value and insert into the database
+    foreach($checkbox_values as $value) {
+        // Escape special characters to prevent SQL injection
+        $value = mysqli_real_escape_string($conn, $value);
+
+        // Insert data into database
+        $sql = "INSERT INTO `size_tbl` (`p_id`,`p_size`) VALUES ('$p_id','$value')";
+        $conn->query($sql);
+    }
         if ($result) {
             echo "<script> alert('Product Inserted') </script>";
             header("location:../product-add");
         }
+
     } else if ($p_category == "pent") {
         $sql = "INSERT INTO `pent_tbl` (`p_id`, `p_image`, `p_name`, `p_mrp`, `p_final_price`, `p_stock`, `p_material_type`, `p_length`, `p_style`, `p_closure_type`, `p_description1`, `p_description2`) VALUES ( '$p_id', '$p_img', ' $p_name', ' $p_mrp', '$p_final_price ', '$p_stock', ' $p_material_type', '$p_length', ' $p_style', '$p_closure_type', '   $long_description', '  $short_description');";
         $result = mysqli_query($conn, $sql);

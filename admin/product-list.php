@@ -65,6 +65,7 @@
 										<tr>
 											<th>Product</th>
 											<th>Name</th>
+											<th>Size</th>
 											<th>MRP</th>
 											<th>Final Price</th>
 											<th>Stock</th>
@@ -89,6 +90,38 @@
 															alt="Product Image" /></td>
 													<td>
 														<?php echo $row1['p_name'] ?>
+													</td>
+													<td>
+													<?php
+    $sql = "SELECT * FROM `size_tbl` WHERE `p_id` = 22";
+    $result = mysqli_query($conn, $sql);
+
+    $sizes = array(); // Initialize an array to store sizes
+
+    // Fetch sizes from the result set
+    while ($row = mysqli_fetch_assoc($result)) {
+        $sizes[] = $row['p_size']; // Add each size to the sizes array
+    }
+
+    // Check if there are any sizes
+    if (!empty($sizes)) {
+        // Get the last size
+        $last_size = end($sizes);
+        
+        // Remove the last size from the array
+        array_pop($sizes);
+        
+        // Output the sizes separated by a comma, except for the last one
+        foreach ($sizes as $size) {
+            echo $size . ', ';
+        }
+        
+        // Output the last size without a comma
+        echo $last_size;
+    }
+?>
+
+
 													</td>
 													<td>
 														<?php echo $row1['p_mrp'] ?>
