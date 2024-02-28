@@ -72,7 +72,7 @@
                                                         <div class="avatar-upload">
                                                             <div class="avatar-edit">
                                                                 <input type='file' id="imageUpload" class="ec-image-upload"
-                                                                    accept=".png, .jpg, .jpeg" name="p_image" />
+                                                                    accept=".png, .jpg, .jpeg" name="p_image" value="<?php echo $row['p_image'] ?>" />
                                                                 <label for="imageUpload"><img src="assets/img/icons/edit.svg"
                                                                         class="svg_img header_svg" alt="edit" /></label>
                                                             </div>
@@ -294,7 +294,49 @@
                                                             </div>
 
                                                             <!-- pent discription end  -->
-                                                            <?php }?>
+
+                                                            <!-- shoes discription start  -->
+                                                            <?php }
+                                                            else if($row['p_catagory'] == "shoes"){?>
+                                                            <div class="row">
+
+<div class="col-md-6">
+    <label class="form-label">Material type</label>
+    <input type="text" class="form-control" id="p_material_type"
+        name="s_material_type" value="<?php echo $row['s_material_type'] ?>">
+</div>
+<div class="col-md-6">
+    <label class="form-label">Closure Type</label>
+    <input type="text" class="form-control" id="p_pattern"
+        name="s_closure_type" value="<?php echo $row['s_closure_type'] ?>">
+</div>
+</div>
+<div class="row">
+<div class="col-md-6">
+    <label class="form-label">Heel Type</label>
+    <input type="text" class="form-control" id="p_style"
+        name="s_heel_type" value="<?php echo $row['s_heel_type'] ?>">
+</div>
+<div class="col-md-6">
+    <label class="form-label">Water resistance level</label>
+    <input type="text" class="form-control" id="p_closure_type"
+        name="s_w_r_l" value="<?php echo $row['s_w_r_l'] ?>">
+</div>
+</div>
+<div class="row">
+<div class="col-md-6">
+    <label class="form-label">Sole material</label>
+    <input type="text" class="form-control" id="p_style"
+        name="s_sole_material" value="<?php echo $row['s_sole_material'] ?>">
+</div>
+<div class="col-md-6">
+    <label class="form-label">Style</label>
+    <input type="text" class="form-control" id="p_closure_type"
+        name="s_style" value="<?php echo $row['s_style'] ?>">
+</div>
+</div>
+
+                                                           <?php }?>
                                                         </div>
                                                         <div class="col-md-12">
                                                             <label class="form-label">Sort Description</label>
@@ -306,11 +348,13 @@
                                                             <textarea class="form-control" rows="4" name="long_description"
                                                                 ><?php echo $row['p_description1'] ?></textarea>
                                                         </div>
-                                                        <!-- pent details end  -->
+                                                            <input type="hidden" name="p_catagory" value="<?php echo $row['p_catagory'] ?>">
+                                                            <input type="hidden" name="p_id" value="<?php echo $row['p_id'] ?>">
+                                                           
                                                         
                                                         <div class="col-md-12" style="margin:10px">
                                                             <button type="submit" class="btn btn-primary"
-                                                                name="add_product">Submit</button>
+                                                                name="edit_product">Save</button>
                                                         </div>
                                                     </div>
                                                 </div>
