@@ -9,14 +9,14 @@
 		<link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
 		
 		<!-- STYLE CSS -->
-		<link rel="stylesheet" href="assets/css/login.css">
+		<link rel="stylesheet" href="assets/css/login.css?v=<?php echo time(); ?>">
 	</head>
 
 	<body>
 
 		<div class="wrapper" style="background-image: url('assets/images/bg-registration-form-2.jpg');">
 			<div class="inner">
-				<img src="assets/images/registration-form-2.jpg" alt="" srcset="">
+				<!-- <img src="assets/images/registration-form-2.jpg" alt="" srcset=""> -->
 				<form action="">
 					<h3>Registration Form</h3>
 					<div class="form-group">

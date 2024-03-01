@@ -52,6 +52,7 @@ a:hover {
   margin: auto;
   padding-top: 68px;
   padding-bottom: 48px;
+  background: url(../images/registration-form.jpg);
   }
   .inner h3 {
     text-transform: uppercase;

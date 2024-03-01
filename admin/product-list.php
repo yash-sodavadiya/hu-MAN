@@ -136,7 +136,10 @@
 													<td>ACTIVE</td>
 													<td>
 														<div class="action-icon">
-
+                                                             
+														<!-- view detail  -->
+														<form><i class="fa-solid fa-eye"></i></form>
+														    
 															<!-- edit button  -->
 															<form action="product-edit" method="post">
 																<?php
