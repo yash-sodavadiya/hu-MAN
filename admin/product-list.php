@@ -93,7 +93,8 @@
 													</td>
 													<td>
 													<?php
-    $sql = "SELECT * FROM `size_tbl` WHERE `p_id` = 22";
+													$p_id = $row1['p_id'] ;
+    $sql = "SELECT * FROM `size_tbl` WHERE `p_id` = $p_id";
     $result = mysqli_query($conn, $sql);
 
     $sizes = array(); // Initialize an array to store sizes

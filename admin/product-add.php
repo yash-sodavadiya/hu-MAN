@@ -226,20 +226,23 @@
 												<!-- shirt details start  -->
 												<div id="shirt_output">
 													<div class="row">
+
 														<div class="col-md-4 mb-25">
+
 															<label class="form-label">Colors</label>
-															<input type="color" class="form-control form-control-color"
-																id="exampleColorInput1" value="#ff6191"
-																title="Choose your color">
-															<input type="color" class="form-control form-control-color"
-																id="exampleColorInput2" value="#33317d"
-																title="Choose your color">
-															<input type="color" class="form-control form-control-color"
-																id="exampleColorInput3" value="#56d4b7"
-																title="Choose your color">
-															<input type="color" class="form-control form-control-color"
-																id="exampleColorInput4" value="#009688"
-																title="Choose your color">
+															<select name="p_color" id="p_color" class="form-select">
+																<option value="">Select a color</option>
+																<option value="red">Red</option>
+																<option value="blue">Blue</option>
+																<option value="green">Green</option>
+																<option value="yellow">Yellow</option>
+																<option value="orange">Orange</option>
+																<option value="purple">Purple</option>
+																<option value="pink">Pink</option>
+																<option value="brown">Brown</option>
+																<option value="black">Black</option>
+																<option value="white">White</option>
+															</select>
 														</div>
 														<div class="col-md-8 mb-25">
 															<label class="form-label">Size</label>
@@ -302,49 +305,50 @@
 												<div id="pent_output" style="display:none;">
 													<div class="row">
 														<div class="col-md-4 mb-25">
-															<label class="form-label">Colors</label>
-															<input type="color" class="form-control form-control-color"
-																id="exampleColorInput1" value="#ff6191"
-																title="Choose your color">
-															<input type="color" class="form-control form-control-color"
-																id="exampleColorInput2" value="#33317d"
-																title="Choose your color">
-															<input type="color" class="form-control form-control-color"
-																id="exampleColorInput3" value="#56d4b7"
-																title="Choose your color">
-															<input type="color" class="form-control form-control-color"
-																id="exampleColorInput4" value="#009688"
-																title="Choose your color">
+														<label class="form-label">Colors</label>
+															<select name="p_color" id="p_color" class="form-select">
+																<option value="">Select a color</option>
+																<option value="red">Red</option>
+																<option value="blue">Blue</option>
+																<option value="green">Green</option>
+																<option value="yellow">Yellow</option>
+																<option value="orange">Orange</option>
+																<option value="purple">Purple</option>
+																<option value="pink">Pink</option>
+																<option value="brown">Brown</option>
+																<option value="black">Black</option>
+																<option value="white">White</option>
+															</select>
 														</div>
 														<div class="col-md-8 mb-25">
 															<label class="form-label">Size</label>
 															<div class="form-checkbox-box">
 																<div class="form-check form-check-inline">
-																	<input type="checkbox" name="size1" value="size">
+																	<input type="checkbox" name="p_size1[]" value="28">
 																	<label>28</label>
 																</div>
 																<div class="form-check form-check-inline">
-																	<input type="checkbox" name="size1" value="size">
+																	<input type="checkbox" name="p_size1[]" value="30">
 																	<label>30</label>
 																</div>
 																<div class="form-check form-check-inline">
-																	<input type="checkbox" name="size1" value="size">
+																	<input type="checkbox" name="p_size1[]" value="32">
 																	<label>32</label>
 																</div>
 																<div class="form-check form-check-inline">
-																	<input type="checkbox" name="size1" value="size">
+																	<input type="checkbox" name="p_size1[]" value="34">
 																	<label>34</label>
 																</div>
 																<div class="form-check form-check-inline">
-																	<input type="checkbox" name="size1" value="size">
+																	<input type="checkbox" name="p_size1[]" value="36">
 																	<label>36</label>
 																</div>
 																<div class="form-check form-check-inline">
-																	<input type="checkbox" name="size1" value="size">
+																	<input type="checkbox" name="p_size1[]" value="38">
 																	<label>38</label>
 																</div>
 																<div class="form-check form-check-inline">
-																	<input type="checkbox" name="size1" value="size">
+																	<input type="checkbox" name="p_size1[]" value="40">
 																	<label>40</label>
 																</div>
 															</div>
@@ -382,53 +386,54 @@
 												<div id="shoes_output" style="display:none;">
 													<div class="row">
 														<div class="col-md-4 mb-25">
-															<label class="form-label">Colors</label>
-															<input type="color" class="form-control form-control-color"
-																id="exampleColorInput1" value="#ff6191"
-																title="Choose your color">
-															<input type="color" class="form-control form-control-color"
-																id="exampleColorInput2" value="#33317d"
-																title="Choose your color">
-															<input type="color" class="form-control form-control-color"
-																id="exampleColorInput3" value="#56d4b7"
-																title="Choose your color">
-															<input type="color" class="form-control form-control-color"
-																id="exampleColorInput4" value="#009688"
-																title="Choose your color">
+														<label class="form-label">Colors</label>
+															<select name="p_color" id="p_color" class="form-select">
+																<option value="">Select a color</option>
+																<option value="red">Red</option>
+																<option value="blue">Blue</option>
+																<option value="green">Green</option>
+																<option value="yellow">Yellow</option>
+																<option value="orange">Orange</option>
+																<option value="purple">Purple</option>
+																<option value="pink">Pink</option>
+																<option value="brown">Brown</option>
+																<option value="black">Black</option>
+																<option value="white">White</option>
+															</select>
 														</div>
 														<div class="col-md-8 mb-25">
 															<label class="form-label">Size</label>
 															<div class="form-checkbox-box">
 																<div class="form-check form-check-inline">
-																	<input type="checkbox" name="size1" value="size">
+																	<input type="checkbox" name="p_size1[]" value="5">
 																	<label>5</label>
 																</div>
 																<div class="form-check form-check-inline">
-																	<input type="checkbox" name="size1" value="size">
+																	<input type="checkbox" name="p_size1[]" value="6">
 																	<label>6</label>
 																</div>
 																<div class="form-check form-check-inline">
-																	<input type="checkbox" name="size1" value="size">
+																	<input type="checkbox" name="p_size1[]" value="7">
 																	<label>7</label>
 																</div>
 																<div class="form-check form-check-inline">
-																	<input type="checkbox" name="size1" value="size">
+																	<input type="checkbox" name="p_size1[]" value="8">
 																	<label>8</label>
 																</div>
 																<div class="form-check form-check-inline">
-																	<input type="checkbox" name="size1" value="size">
+																	<input type="checkbox" name="p_size1[]" value="9">
 																	<label>9</label>
 																</div>
 																<div class="form-check form-check-inline">
-																	<input type="checkbox" name="size1" value="size">
+																	<input type="checkbox" name="p_size1[]" value="10">
 																	<label>10</label>
 																</div>
 																<div class="form-check form-check-inline">
-																	<input type="checkbox" name="size1" value="size">
+																	<input type="checkbox" name="p_size1[]" value="11">
 																	<label>11</label>
 																</div>
 																<div class="form-check form-check-inline">
-																	<input type="checkbox" name="size1" value="size">
+																	<input type="checkbox" name="p_size1[]" value="12">
 																	<label>12</label>
 																</div>
 															</div>
@@ -473,7 +478,7 @@
 													</div>
 
 												</div>
-													<!-- shoes discription end  -->
+												<!-- shoes discription end  -->
 
 												<div class="col-md-12">
 													<label class="form-label">Sort Description</label>
@@ -525,6 +530,7 @@
 	<!-- human Custom -->
 	<script src="assets/js/human.js"></script>
 
+	<!-- category drop down  -->
 	<script>
 		// Get reference to the dropdown
 		const dropdown = document.getElementById('Categories');
@@ -560,6 +566,9 @@
 			}
 		});
 	</script>
+
+
+
 
 </body>
 
