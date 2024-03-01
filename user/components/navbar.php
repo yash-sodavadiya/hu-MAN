@@ -10,9 +10,9 @@
                                 <button class="dropdown-toggle" data-bs-toggle="dropdown"><i
                                         class="fi-rr-user"></i></button>
                                 <ul class="dropdown-menu dropdown-menu-right">
-                                    <li><a class="dropdown-item" href="register.html">Register</a></li>
-                                    <li><a class="dropdown-item" href="checkout.html">Checkout</a></li>
+                                    <li><a class="dropdown-item" href="signup">Register</a></li>
                                     <li><a class="dropdown-item" href="login.html">Login</a></li>
+                                    <li><a class="dropdown-item" href="checkout.html">Checkout</a></li>
                                 </ul>
                             </div>
                             <!-- Header User End -->
@@ -77,9 +77,9 @@
                                     <button class="dropdown-toggle" data-bs-toggle="dropdown"><i
                                             class="fi-rr-user"></i></button>
                                     <ul class="dropdown-menu dropdown-menu-right">
-                                        <li><a class="dropdown-item" href="register.html">Register</a></li>
-                                        <li><a class="dropdown-item" href="checkout.html">Checkout</a></li>
+                                        <li><a class="dropdown-item" href="signup">Register</a></li>
                                         <li><a class="dropdown-item" href="login.html">Login</a></li>
+                                        <li><a class="dropdown-item" href="checkout.html">Checkout</a></li>
                                     </ul>
                                 </div>
                                 <!-- Header User End -->

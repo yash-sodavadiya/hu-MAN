@@ -63,6 +63,7 @@
                                     $tbl = $_POST['tbl'];
                                     $sql = "SELECT * FROM `$tbl` where `p_id` = $pid";
                                     $result = mysqli_query($conn, $sql);
+                                    
                                     foreach ($result as $row) { ?>
 
                                         <div class="row ec-vendor-uploads">
@@ -85,38 +86,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="thumb-upload-set colo-md-12">
-                                                            <div class="thumb-upload">
-                                                                <div class="thumb-edit">
-                                                                    <input type='file' id="thumbUpload01"
-                                                                        class="ec-image-upload" accept=".png, .jpg, .jpeg" />
-                                                                    <label for="imageUpload"><img
-                                                                            src="assets/img/icons/edit.svg"
-                                                                            class="svg_img header_svg" alt="edit" /></label>
-                                                                </div>
-                                                                <div class="thumb-preview ec-preview">
-                                                                    <div class="image-thumb-preview">
-                                                                        <img class="image-thumb-preview ec-image-preview"
-                                                                            src="assets/img/products/vender-upload-thumb-preview.jpg"
-                                                                            alt="edit" />
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="thumb-upload">
-                                                                <div class="thumb-edit">
-                                                                    <input type='file' id="thumbUpload02"
-                                                                        class="ec-image-upload" accept=".png, .jpg, .jpeg" />
-                                                                    <label for="imageUpload"><img
-                                                                            src="assets/img/icons/edit.svg"
-                                                                            class="svg_img header_svg" alt="edit" /></label>
-                                                                </div>
-                                                                <div class="thumb-preview ec-preview">
-                                                                    <div class="image-thumb-preview">
-                                                                        <img class="image-thumb-preview ec-image-preview"
-                                                                            src="assets/img/products/vender-upload-thumb-preview.jpg"
-                                                                            alt="edit" />
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                            
                                                             <div class="thumb-upload">
                                                                 <div class="thumb-edit">
                                                                     <input type='file' id="thumbUpload03"
@@ -128,7 +98,7 @@
                                                                 <div class="thumb-preview ec-preview">
                                                                     <div class="image-thumb-preview">
                                                                         <img class="image-thumb-preview ec-image-preview"
-                                                                            src="assets/img/products/vender-upload-thumb-preview.jpg"
+                                                                        src="assets/img/product/<?php echo $row['p_img1'] ?>"
                                                                             alt="edit" />
                                                                     </div>
                                                                 </div>
@@ -144,7 +114,7 @@
                                                                 <div class="thumb-preview ec-preview">
                                                                     <div class="image-thumb-preview">
                                                                         <img class="image-thumb-preview ec-image-preview"
-                                                                            src="assets/img/products/vender-upload-thumb-preview.jpg"
+                                                                        src="assets/img/product/<?php echo $row['p_img2'] ?>"
                                                                             alt="edit" />
                                                                     </div>
                                                                 </div>
@@ -160,7 +130,7 @@
                                                                 <div class="thumb-preview ec-preview">
                                                                     <div class="image-thumb-preview">
                                                                         <img class="image-thumb-preview ec-image-preview"
-                                                                            src="assets/img/products/vender-upload-thumb-preview.jpg"
+                                                                        src="assets/img/product/<?php echo $row['p_img3'] ?>"
                                                                             alt="edit" />
                                                                     </div>
                                                                 </div>
@@ -176,7 +146,7 @@
                                                                 <div class="thumb-preview ec-preview">
                                                                     <div class="image-thumb-preview">
                                                                         <img class="image-thumb-preview ec-image-preview"
-                                                                            src="assets/img/products/vender-upload-thumb-preview.jpg"
+                                                                        src="assets/img/product/<?php echo $row['p_img4'] ?>"
                                                                             alt="edit" />
                                                                     </div>
                                                                 </div>

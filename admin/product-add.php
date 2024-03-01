@@ -84,7 +84,7 @@
 													<div class="thumb-upload">
 														<div class="thumb-edit">
 															<input type='file' id="thumbUpload01"
-																class="ec-image-upload" accept=".png, .jpg, .jpeg" />
+																class="ec-image-upload" accept=".png, .jpg, .jpeg" name="t_image1"/>
 															<label for="imageUpload"><img
 																	src="assets/img/icons/edit.svg"
 																	class="svg_img header_svg" alt="edit" /></label>
@@ -100,7 +100,7 @@
 													<div class="thumb-upload">
 														<div class="thumb-edit">
 															<input type='file' id="thumbUpload02"
-																class="ec-image-upload" accept=".png, .jpg, .jpeg" />
+																class="ec-image-upload" accept=".png, .jpg, .jpeg" name="t_image2"/>
 															<label for="imageUpload"><img
 																	src="assets/img/icons/edit.svg"
 																	class="svg_img header_svg" alt="edit" /></label>
@@ -116,7 +116,7 @@
 													<div class="thumb-upload">
 														<div class="thumb-edit">
 															<input type='file' id="thumbUpload03"
-																class="ec-image-upload" accept=".png, .jpg, .jpeg" />
+																class="ec-image-upload" accept=".png, .jpg, .jpeg" name="t_image3"/>
 															<label for="imageUpload"><img
 																	src="assets/img/icons/edit.svg"
 																	class="svg_img header_svg" alt="edit" /></label>
@@ -132,7 +132,7 @@
 													<div class="thumb-upload">
 														<div class="thumb-edit">
 															<input type='file' id="thumbUpload04"
-																class="ec-image-upload" accept=".png, .jpg, .jpeg" />
+																class="ec-image-upload" accept=".png, .jpg, .jpeg" name="t_image4" />
 															<label for="imageUpload"><img
 																	src="assets/img/icons/edit.svg"
 																	class="svg_img header_svg" alt="edit" /></label>
@@ -145,38 +145,7 @@
 															</div>
 														</div>
 													</div>
-													<div class="thumb-upload">
-														<div class="thumb-edit">
-															<input type='file' id="thumbUpload05"
-																class="ec-image-upload" accept=".png, .jpg, .jpeg" />
-															<label for="imageUpload"><img
-																	src="assets/img/icons/edit.svg"
-																	class="svg_img header_svg" alt="edit" /></label>
-														</div>
-														<div class="thumb-preview ec-preview">
-															<div class="image-thumb-preview">
-																<img class="image-thumb-preview ec-image-preview"
-																	src="assets/img/products/vender-upload-thumb-preview.jpg"
-																	alt="edit" />
-															</div>
-														</div>
-													</div>
-													<div class="thumb-upload">
-														<div class="thumb-edit">
-															<input type='file' id="thumbUpload06"
-																class="ec-image-upload" accept=".png, .jpg, .jpeg" />
-															<label for="imageUpload"><img
-																	src="assets/img/icons/edit.svg"
-																	class="svg_img header_svg" alt="edit" /></label>
-														</div>
-														<div class="thumb-preview ec-preview">
-															<div class="image-thumb-preview">
-																<img class="image-thumb-preview ec-image-preview"
-																	src="assets/img/products/vender-upload-thumb-preview.jpg"
-																	alt="edit" />
-															</div>
-														</div>
-													</div>
+
 												</div>
 
 											</div>
