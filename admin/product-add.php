@@ -199,7 +199,7 @@
 														<div class="col-md-4 mb-25">
 
 															<label class="form-label">Colors</label>
-															<select name="p_color" id="p_color" class="form-select">
+															<select name="p_color_1" id="p_color_1" class="form-select">
 																<option value="">Select a color</option>
 																<option value="red">Red</option>
 																<option value="blue">Blue</option>
@@ -275,7 +275,7 @@
 													<div class="row">
 														<div class="col-md-4 mb-25">
 														<label class="form-label">Colors</label>
-															<select name="p_color" id="p_color" class="form-select">
+															<select name="p_color_2" id="p_color_2" class="form-select">
 																<option value="">Select a color</option>
 																<option value="red">Red</option>
 																<option value="blue">Blue</option>
@@ -354,9 +354,9 @@
 												<!-- shoes details start  -->
 												<div id="shoes_output" style="display:none;">
 													<div class="row">
-														<div class="col-md-4 mb-25">
+													<div class="col-md-4 mb-25">
 														<label class="form-label">Colors</label>
-															<select name="p_color" id="p_color" class="form-select">
+															<select name="p_color_3" id="p_color_3" class="form-select">
 																<option value="">Select a color</option>
 																<option value="red">Red</option>
 																<option value="blue">Blue</option>

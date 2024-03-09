@@ -334,4 +334,5 @@
     </header>
     <!-- Header End  -->
 
+    <?php require("database/config.php") ?>
     <?php require("components/cart-popup.php") ?>
