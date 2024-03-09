@@ -9,7 +9,6 @@ if (isset($_POST['add_product']) && isset($_FILES['p_image'])) {
     $p_mrp = $_POST['p_mrp'];
     $p_final_price = $_POST['p_final_price'];
     $p_stock = $_POST['p_stock'];
-    $p_color = $_POST['p_color'];
 
     // multiple image add 
     $t_img1 = $_FILES['t_image1']['name'];
@@ -87,7 +86,14 @@ if (isset($_POST['add_product']) && isset($_FILES['p_image'])) {
     
 
     if ($p_category == "shirt") {
-        $sql = "INSERT INTO `shirt_tbl` (`p_id`, `p_image`,`p_img1`,`p_img2`,`p_img3`,`p_img4`, `p_name`, `p_mrp`, `p_final_price`, `p_stock`,`p_color`, `c_pattern`, `s_material_type`, `c_sleeve_type`, `c_length`, `p_description1`, `p_description2`) VALUES ( '$p_id', '$p_img','$t_img1','$t_img2','$t_img3','$t_img4', ' $p_name', ' $p_mrp', '$p_final_price ', '   $p_stock','$p_color', ' $c_pattern', '$s_material_type', ' $c_sleeve_type', '$c_length', '   $long_description', '  $short_description');";
+        $p_color1 = $_POST['p_color_1'];
+    //    shirt disc 
+    $c_pattern = $_POST['c_pattern'];
+    $s_material_type = $_POST['s_material_type'];
+    $c_sleeve_type = $_POST['c_sleeve_type'];
+    $c_length = $_POST['c_length'];
+
+        $sql = "INSERT INTO `shirt_tbl` (`p_id`, `p_image`,`p_img1`,`p_img2`,`p_img3`,`p_img4`, `p_name`, `p_mrp`, `p_final_price`, `p_stock`,`p_color`, `c_pattern`, `s_material_type`, `c_sleeve_type`, `c_length`, `p_description1`, `p_description2`) VALUES ( '$p_id', '$p_img','$t_img1','$t_img2','$t_img3','$t_img4', ' $p_name', ' $p_mrp', '$p_final_price ', '   $p_stock','$p_color1', ' $c_pattern', '$s_material_type', ' $c_sleeve_type', '$c_length', '   $long_description', '  $short_description');";
         $sql1 = "INSERT INTO `product_tbl` (`product_id`,`catagory_id`,`catagory_name`) VALUES ('$p_id','$s_id','shirt_tbl')";
         $result1 = mysqli_query($conn, $sql1);
         $result = mysqli_query($conn, $sql);
@@ -108,6 +114,7 @@ if (isset($_POST['add_product']) && isset($_FILES['p_image'])) {
         }
 
     } else if ($p_category == "pent") {
+        $p_color = $_POST['p_color_2'];
         $sql = "INSERT INTO `pent_tbl` (`p_id`, `p_image`, `p_name`, `p_mrp`, `p_final_price`, `p_stock`,`p_color`, `p_material_type`, `p_length`, `p_style`, `p_closure_type`, `p_description1`, `p_description2`) VALUES ( '$p_id', '$p_img', ' $p_name', ' $p_mrp', '$p_final_price ', '$p_stock','$p_color', ' $p_material_type', '$p_length', ' $p_style', '$p_closure_type', '   $long_description', '  $short_description');";
         $result = mysqli_query($conn, $sql);
         $sql1 = "INSERT INTO `product_tbl` (`product_id`,`catagory_id`,`catagory_name`) VALUES ('$p_id','$pp_id','pent_tbl')";
@@ -130,6 +137,7 @@ if (isset($_POST['add_product']) && isset($_FILES['p_image'])) {
     }
     else if($p_category == 'shoes')
     {
+        $p_color = $_POST['p_color_3'];
         $s_material_type = $_POST['s_material_type'];
         $s_closure_type = $_POST['s_closure_type'];
         $s_heel_type = $_POST['s_heel_type'];

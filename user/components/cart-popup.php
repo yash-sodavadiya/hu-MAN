@@ -67,9 +67,38 @@
                 </div>
                 <div class="cart_btn">
                     <a href="cart.html" class="btn btn-primary">View Cart</a>
-                    <a href="checkout.html" class="btn btn-secondary">Checkout</a>
+                    <a href="checkout" class="btn btn-secondary">Checkout</a>
                 </div>
             </div>
         </div>
     </div>
     <!-- human Cart End -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const qtyInputs = document.querySelectorAll('.qty-input');
+        
+        qtyInputs.forEach(function(qtyInput) {
+            qtyInput.addEventListener('change', function() {
+                updateTotal();
+            });
+        });
+
+        function updateTotal() {
+            let subtotal = 0;
+            qtyInputs.forEach(function(qtyInput) {
+                const price = parseFloat(qtyInput.closest('li').querySelector('.cart-price span').textContent.slice(1)); // Extract price from DOM
+                const quantity = parseInt(qtyInput.value);
+                subtotal += price * quantity;
+            });
+
+            const vat = subtotal * 0.2;
+            const total = subtotal + vat;
+
+            document.querySelector('.cart-table tbody .subtotal').textContent = '$' + subtotal.toFixed(2);
+            document.querySelector('.cart-table tbody .vat').textContent = '$' + vat.toFixed(2);
+            document.querySelector('.cart-table tbody .total').textContent = '$' + total.toFixed(2);
+        }
+
+        updateTotal(); // Update total initially
+    });
+</script>
