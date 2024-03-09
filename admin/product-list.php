@@ -138,7 +138,7 @@
 														<div class="action-icon">
                                                              
 														<!-- view detail  -->
-														<form><i class="fa-solid fa-eye"></i></form>
+														<form><i class="fa-solid fa-eye"  style="color : #88aaf3;"></i></form>
 														    
 															<!-- edit button  -->
 															<form action="product-edit" method="post">
@@ -149,7 +149,7 @@
 																<input type="hidden" value="<?php echo $row1['p_id'] ?>"
 																	name="pid">
 																<input type="hidden" value="<?php echo $tbl ?>" name="tbl">
-																<a href=""> <button type="submit" id="edit" name="submit"
+																<a href=""> <button type="submit" id="edit" name="submit"  style="color : green;"
 																		value="edit" onClick=”window.location.reload(true)”> <i
 																			class="fa-solid fa-pen"></i> </button></i> </a>
 
@@ -170,7 +170,7 @@
 
 
 																<!-- <div class="delete"><i class="fa-solid fa-trash"></i></div> -->
-																<a href=""> <button type="submit" id="delete" name="submit"
+																<a href=""> <button type="submit" id="delete" name="submit" style="color : red;"
 																		value="Delete" onClick=”window.location.reload(true)”><i
 																			class="fa-solid fa-trash"></button></i> </a>
 

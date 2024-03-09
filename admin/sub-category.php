@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
-
-<!-- Mirrored from maraviyainfotech.com/projects/human/human-v37/human-admin/sub-category.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 17 Jan 2024 06:15:57 GMT -->
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -45,6 +43,11 @@
 						<h1>Sub Category</h1>
 						<p class="breadcrumbs"><span><a href="index.html">Home</a></span>
 							<span><i class="mdi mdi-chevron-right"></i></span>Sub Category</p>
+							<div>
+					<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add_sub_category">
+						Add sub_category
+					</button>
+				</div>
 					</div>
 					<div class="row">
 						
@@ -61,89 +64,67 @@
 													<th>Product</th>
 													<th>Total Sell</th>
 													<th>Status</th>
-													<th>Trending</th>
 													<th>Action</th>
 												</tr>
 											</thead>
 
 											<tbody>
-												<tr>
-													<td><img class="cat-thumb" src="assets/img/category/clothes.png" alt="product image"/></td>
-													<td>Winter Wear</td>
-													<td>
-														<span class="ec-sub-cat-list">
-															<span class="ec-sub-cat-tag">Clothes</span>
+												
+											<?php
+										$sql = "SELECT * FROM sub_category_tbl ";
+										$result = mysqli_query($conn, $sql);
+										foreach ($result as $row) { ?>
+											<tr>
+												<td><img class="cat-thumb"
+														src="./assets/img/user/<?php echo $row['s_c_img'] ?>"
+														alt="vendor image" /></td>
+												<td>
+													<?php echo $row['s_c_name'] ?>
+												</td>
+												<td>
+													<?php echo $row['s_c_main_category'] ?>
+												</td>
+												<td>
+													<?php echo $row['s_c_product'] ?>
+												</td>
+												<td>
+													<?php echo $row['s_c_product'] ?>
+												</td>
+												<?php if ($row['s_c_status'] == "ACTIVE") { ?>
+													<td><span class="mb-2 mr-2 badge badge-success">
+															<?php echo $row['s_c_status'] ?>
 														</span>
 													</td>
-													<td>28</td>
-													<td>2161</td>
-													<td>ACTIVE</td>
-													<td><span class="badge badge-success">Top</span></td>
-													<td>
+												<?php } else { ?>
+													<td><span class="mb-2 mr-2 badge badge-danger">
+															<?php echo $row['s_c_status'] ?>
+														</span></td>
+												<?php } ?>
+												<td> 
 														<div class="action-icon">
 														<div class="edit"><i class="fa-solid fa-pen"></i></div>
-													<div class="delete"><i class="fa-solid fa-trash"></i></div>
+												
+													<form action="php/sub_category_delete.php" method="post">
+														<?php
+														$cid = $row['s_c_id'];
+														?>
+														<input type="hidden" value="<?php echo $row['s_c_id'] ?>"
+															name="scid">
+														
+
+															<!-- <div class="delete"><i class="fa-solid fa-trash"></i></div> -->
+															<a href=""> <button type="submit" id="delete" name="submit" style="color : red"
+																	value="Delete" onClick=”window.location.reload(true)”><i
+																		class="fa-solid fa-trash"></button></i> </a>
+														
+													</form>	
 </div>
 													</td>
+												
+
 												</tr>
-												<tr>
-													<td><img class="cat-thumb" src="assets/img/category/footwear.png" alt="product image" /></td>
-													<td>Sport Shoes</td>
-													<td>
-														<span class="ec-sub-cat-list">
-															<span class="ec-sub-cat-tag">Footwear</span>
-														</span>
-													</td>
-													<td>68</td>
-													<td>5161</td>
-													<td>ACTIVE</td>
-													<td><span class="badge bg-primary">Medium</span></td>
-													<td>
-														<div class="action-icon">
-														<div class="edit"><i class="fa-solid fa-pen"></i></div>
-													<div class="delete"><i class="fa-solid fa-trash"></i></div>
-</div>
-													</td>
-												</tr>
-												<tr>
-													<td><img class="cat-thumb" src="assets/img/category/footwear.png" alt="product image" /></td>
-													<td>Casual Shoes</td>
-													<td>
-														<span class="ec-sub-cat-list">
-															<span class="ec-sub-cat-tag">Footwear</span>
-														</span>
-													</td>
-													<td>68</td>
-													<td>5161</td>
-													<td><span class="inactive">Inactive</span></td>
-													<td><span class="badge badge-success">Top</span></td>
-													<td>
-														<div class="action-icon">
-														<div class="edit"><i class="fa-solid fa-pen"></i></div>
-													<div class="delete"><i class="fa-solid fa-trash"></i></div>
-</div>
-													</td>
-												</tr>
-												<tr>
-													<td><img class="cat-thumb" src="assets/img/category/clothes.png" alt="product image" /></td>
-													<td>Jeans</td>
-													<td>
-														<span class="ec-sub-cat-list">
-															<span class="ec-sub-cat-tag">Clothes</span>
-														</span>
-													</td>
-													<td>38</td>
-													<td>1561</td>
-													<td>ACTIVE</td>
-													<td><span class="badge bg-primary">Medium</span></td>
-													<td>
-														<div class="action-icon">
-														<div class="edit"><i class="fa-solid fa-pen"></i></div>
-													<div class="delete"><i class="fa-solid fa-trash"></i></div>
-</div>
-													</td>
-												</tr>
-												<tr>
+												
+												<!-- <tr>
 													<td><img class="cat-thumb" src="assets/img/category/watch.jpg" alt="product image" /></td>
 													<td>smart watch</td>
 													<td>
@@ -153,16 +134,16 @@
 													</td>
 													<td>18</td>
 													<td>1000</td>
-													<td>ACTIVE</td>
-													<td><span class="badge bg-danger">Low</span></td>
-													<td>
+													
+													<td><span class="badge bg-success">ACTIVE</span></td>
+													<td> 
 														<div class="action-icon">
 														<div class="edit"><i class="fa-solid fa-pen"></i></div>
 													<div class="delete"><i class="fa-solid fa-trash"></i></div>
 </div>
 													</td>
-												</tr>
-												
+												</tr> -->
+												<?php } ?>
 											</tbody>
 										</table>
 									</div>
@@ -173,11 +154,85 @@
 				</div> <!-- End Content -->
 			</div> <!-- End Content Wrapper -->
 
+			
+				
+
 			<!-- Footer -->
 			<?php require("components/footer.php") ?>
 
 		</div> <!-- End Page Wrapper -->
+           <!-- Add sub_category Modal  -->
+<div class="modal fade modal-add-contact" id="add_sub_category" tabindex="-1" role="dialog"
+					aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+						<div class="modal-content">
+							<form action="php/add_sub_category.php" method="post" enctype="multipart/form-data">
+								<div class="modal-header px-4">
+									<h5 class="modal-title" id="exampleModalCenterTitle">Add New sub_category</h5>
+								</div>
 
+								<div class="modal-body px-4">
+									<div class="form-group row mb-6">
+										<label for="coverImage" class="col-sm-4 col-lg-2 col-form-label">sub_Category
+											Image: </label>
+
+
+										<div class="col-sm-8 col-lg-10">
+											<div class="custom-file mb-1">
+												<input type="file" class="custom-file-input" id="coverImage" name="cat_img" required>
+													<label class="custom-file-label" for="coverImage">Choose file...</label>
+													<div class="invalid-feedback">Example invalid custom file feedback</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="row mb-2">
+										<div class="col-lg-6">
+											<div class="form-group">
+												<label for=" cat_name">Category name: </label>
+												<input type="text" class="form-control" name="cat_name" id="cat_name" placeholder="Enter Name:">
+											</div>
+										</div>
+
+										<div class="col-lg-6">
+											<div class="form-group">
+												<label for="cat_product">Product: </label>
+												<input type="text" class="form-control" id="cat_product" name="cat_product" placeholder="Enter product number:">
+											</div>
+										</div>
+
+									
+
+										<div class="col-lg-12">
+											<div class="form-group mb-4">
+												<label for="main_category">main_category</label>
+												<select name="main_category" id="main_category" class="form-control">
+													<option value="">Please select main_category...</option>
+													<option value="Clothes">Clothes</option>
+													<option value="watch">watch</option>
+													<option value="Footwear">Footwear</option>
+													
+												</select>
+											</div>
+										</div>
+
+										
+
+
+									</div>
+								</div>
+
+								<div class="modal-footer px-4">
+									<button type="button" class="btn btn-secondary btn-pill"
+										data-bs-dismiss="modal">Cancel</button>
+									<button type="submit" name="save" class="btn btn-primary btn-pill">Save</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+		</div > 
+		<!-- < !--End Content-- > -->
 	</div> <!-- End Wrapper -->
 
 	<!-- Common Javascript -->
@@ -200,5 +255,4 @@
 	<script src="assets/js/human.js"></script>
 </body>
 
-<!-- Mirrored from maraviyainfotech.com/projects/human/human-v37/human-admin/sub-category.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 17 Jan 2024 06:15:58 GMT -->
 </html>

@@ -120,7 +120,7 @@
 															<input type="hidden" value="<?php echo $row['emp_id'] ?>"
 																name="emp_id">
 														<div class="edit">
-															<button type="button" class="fa-solid fa-pen"
+															<button type="button" class="fa-solid fa-pen" style="color : green;"
 																data-bs-toggle="dropdown" aria-haspopup="true"
 																aria-expanded="false" data-display="static">
 
@@ -142,7 +142,7 @@
 
 
 															<!-- <div class="delete"><i class="fa-solid fa-trash"></i></div> -->
-															<a href=""> <button type="submit" id="delete" name="submit"
+															<a href=""> <button type="submit" id="delete" name="submit" style="color : red"
 																	value="Delete" onClick=”window.location.reload(true)”><i
 																		class="fa-solid fa-trash"></button></i> </a>
 

@@ -66,7 +66,7 @@
                     </table>
                 </div>
                 <div class="cart_btn">
-                    <a href="cart.html" class="btn btn-primary">View Cart</a>
+                    <a href="cart.php" class="btn btn-primary">View Cart</a>
                     <a href="checkout.html" class="btn btn-secondary">Checkout</a>
                 </div>
             </div>

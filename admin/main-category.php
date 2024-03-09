@@ -60,35 +60,13 @@
 													<th>Product</th>
 													<th>Total Sell</th>
 													<th>Status</th>
-													<th>Trending</th>
+													
 													<th>Action</th>
 												</tr>
 											</thead>
 
 											<tbody>
-												<tr>
-													<td><img class="cat-thumb" src="assets/img/category/clothes.png" alt="Product Image" /></td>
-													<td>Clothes</td>
-													<td>
-														<span class="ec-sub-cat-list">
-														<span class="ec-sub-cat-count" title="Total Sub Categories">4</span>
-														<span class="ec-sub-cat-tag">suit</span>
-														<span class="ec-sub-cat-tag">Shirt</span>
-														<span class="ec-sub-cat-tag">Dress</span>
-														<span class="ec-sub-cat-tag">Jeans</span>
-														</span>
-													</td>
-													<td>25</td>
-													<td>200</td>
-													<td>ACTIVE</td>
-													<td><span class="badge badge-success">Top</span></td>
-													<td>
-													<div class="action-icon">
-														<div class="edit"><i class="fa-solid fa-pen"></i></div>
-													<div class="delete"><i class="fa-solid fa-trash"></i></div>
-</div>
-													</td>
-												</tr>
+												
 												<tr>
 													<td><img class="cat-thumb" src="assets/img/category/footwear.png" alt="Product Image" /></td>
 													<td>Footwear</td>
@@ -103,32 +81,9 @@
 													<td>30</td>
 													<td>1000</td>
 													<td>ACTIVE</td>
-													<td><span class="badge bg-primary">Medium</span></td>
+												
 													<td>
 													<div class="action-icon">
-														<div class="edit"><i class="fa-solid fa-pen"></i></div>
-													<div class="delete"><i class="fa-solid fa-trash"></i></div>
-</div>
-													</td>
-												</tr>
-												<tr>
-													<td><img class="cat-thumb" src="assets/img/category/watch.jpg" alt="Product Image" /></td>
-													<td>watch</td>
-													<td>
-														<span class="ec-sub-cat-list">
-															<span class="ec-sub-cat-count" title="Total Sub Categories">2</span>
-															<span class="ec-sub-cat-tag">smart</span>
-															<span class="ec-sub-cat-tag">tredition</span>
-															
-														
-														</span>
-													</td>
-													<td>18</td>
-													<td>1061</td>
-													<td>ACTIVE</td>
-													<td><span class="badge bg-danger">Low</span></td>
-													<td>
-														<div class="action-icon">
 														<div class="edit"><i class="fa-solid fa-pen"></i></div>
 													<div class="delete"><i class="fa-solid fa-trash"></i></div>
 </div>
