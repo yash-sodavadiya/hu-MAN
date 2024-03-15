@@ -1,5 +1,6 @@
-<?php require("../database/config.php"); ?>
+<?php require("../database/config.php"); session_start() ?>
 <?php
+$success_message = "";
     if (isset($_POST['submit'])) {
         $pid = $_POST['pid'];
         $tbl = $_POST['tbl'];
@@ -11,7 +12,8 @@
         $result2 = mysqli_query($conn, $sql2);
         if($result1)
         {
-            echo '<script>alert("User Deleted")</script>';
+            $success_message = 'Product is deleted successfully.';
+        $_SESSION['success_message'] = $success_message;
             header("location:../product-list");
         }
     }

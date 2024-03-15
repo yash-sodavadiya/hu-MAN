@@ -89,7 +89,7 @@
                                                             
                                                             <div class="thumb-upload">
                                                                 <div class="thumb-edit">
-                                                                    <input type='file' id="thumbUpload03"
+                                                                    <input type='file' id="thumbUpload03" name="t_img1"
                                                                         class="ec-image-upload" accept=".png, .jpg, .jpeg" />
                                                                     <label for="imageUpload"><img
                                                                             src="assets/img/icons/edit.svg"
@@ -105,7 +105,7 @@
                                                             </div>
                                                             <div class="thumb-upload">
                                                                 <div class="thumb-edit">
-                                                                    <input type='file' id="thumbUpload04"
+                                                                    <input type='file' id="thumbUpload04" name="t_img2"
                                                                         class="ec-image-upload" accept=".png, .jpg, .jpeg" />
                                                                     <label for="imageUpload"><img
                                                                             src="assets/img/icons/edit.svg"
@@ -121,7 +121,7 @@
                                                             </div>
                                                             <div class="thumb-upload">
                                                                 <div class="thumb-edit">
-                                                                    <input type='file' id="thumbUpload05"
+                                                                    <input type='file' id="thumbUpload05" name="t_img3"
                                                                         class="ec-image-upload" accept=".png, .jpg, .jpeg" />
                                                                     <label for="imageUpload"><img
                                                                             src="assets/img/icons/edit.svg"
@@ -137,7 +137,7 @@
                                                             </div>
                                                             <div class="thumb-upload">
                                                                 <div class="thumb-edit">
-                                                                    <input type='file' id="thumbUpload06"
+                                                                    <input type='file' id="thumbUpload06" name="t_img4"
                                                                         class="ec-image-upload" accept=".png, .jpg, .jpeg" />
                                                                     <label for="imageUpload"><img
                                                                             src="assets/img/icons/edit.svg"
@@ -306,7 +306,40 @@
 </div>
 </div>
 
-                                                           <?php }?>
+                                                           
+                                                           <?php }
+                                                            else if($row['p_catagory'] == "perfume")
+                                                            {?>
+                                                            <div class="row">
+
+                                                                <div class="col-md-6">
+                                                                    <label class="form-label">Brand</label>
+                                                                    <input type="text" class="form-control" id="p_brand"
+                                                                        name="p_brand"
+                                                                        value="<?php echo $row['p_brand'] ?>">
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <label class="form-label">Item Form</label>
+                                                                    <input type="text" class="form-control" id="p_item_form"
+                                                                        name="p_item_form" value="<?php echo $row['p_item_form'] ?>">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <label class="form-label">Item Volume</label>
+                                                                    <input type="text" class="form-control" id="p_item_volume"
+                                                                        name="p_item_volume" value="<?php echo $row['p_item_volume'] ?>">
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <label class="form-label">Scent</label>
+                                                                    <input type="text" class="form-control" id="p_scent"
+                                                                        name="p_scent"
+                                                                        value="<?php echo $row['p_scent'] ?>">
+                                                                </div>
+                                                            </div>
+
+                                                            <!-- perfume discription end  -->
+                                                            <?php } ?>
                                                         </div>
                                                         <div class="col-md-12">
                                                             <label class="form-label">Sort Description</label>

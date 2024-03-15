@@ -46,8 +46,49 @@
 								<span><i class="mdi mdi-chevron-right"></i></span>Main Category</p>
 					</div>
 					<div class="row">
-						
-						<div class="col-xl-12 col-lg-12">
+					<div class="col-xl-4 col-lg-12">
+							<div class="ec-cat-list card card-default mb-24px">
+								<div class="card-body">
+									<div class="ec-cat-form">
+										<h4>Add New Category</h4>
+
+										<form action="php/add_m_category.php" method="post" enctype="multipart/form-data">
+
+										<div class="form-group row mb-6">
+										<label for="coverImage" class="col-sm-4 col-lg-2 col-form-label">Main Category
+											Image: </label>
+
+
+										<div class="col-sm-8 col-lg-10">
+											<div class="custom-file mb-1">
+												<input type="file" class="custom-file-input" id="coverImage" name="m_c_img" required>
+													<label class="custom-file-label" for="coverImage">Choose file...</label>
+													<div class="invalid-feedback">Example invalid custom file feedback</div>
+											</div>
+										</div>
+									</div>
+											<div class="form-group row">
+												<label for="text" class="col-12 col-form-label">Main Category Name</label> 
+												<div class="col-12">
+													<input id="text" name="m_c_name" class="form-control here slug-title" type="text">
+												</div>
+											</div>
+
+											
+
+											<div class="row">
+												<div class="col-12">
+													<button name="submit" type="submit" class="btn btn-primary">Submit</button>
+												</div>
+											</div>
+
+										</form>
+
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-8 col-lg-12">
 							<div class="ec-cat-list card card-default">
 								<div class="card-body">
 									<div class="table-responsive">
@@ -58,7 +99,6 @@
 													<th>Name</th>
 													<th>Sub Categories</th>
 													<th>Product</th>
-													<th>Total Sell</th>
 													<th>Status</th>
 													
 													<th>Action</th>
@@ -66,29 +106,77 @@
 											</thead>
 
 											<tbody>
-												
-												<tr>
-													<td><img class="cat-thumb" src="assets/img/category/footwear.png" alt="Product Image" /></td>
-													<td>Footwear</td>
+												<?php
+													$sql = "SELECT * FROM `main_category_tbl`";
+													$result = mysqli_query($conn,$sql);
+													foreach($result as $row){ ?>
+
+														<tr>
+													<td><img class="cat-thumb" src="assets/img/category/<?php echo $row['m_c_img'] ?>" alt="Product Image" /></td>
+													<td><?php echo $row['m_c_name'] ?></td>
 													<td>
 														<span class="ec-sub-cat-list">
-															<span class="ec-sub-cat-count" title="Total Sub Categories">3</span>
-															<span class="ec-sub-cat-tag">Casual</span>
-															<span class="ec-sub-cat-tag">safety shoes </span>
-															<span class="ec-sub-cat-tag">formal</span>
+														<?php 
+    $m_c_name = $row['m_c_name'];
+    $sql2 = "SELECT COUNT(*) as count FROM `sub_category_tbl` WHERE `s_c_main_category` = '$m_c_name'";
+    $result2 = mysqli_query($conn, $sql2);
+
+    if ($result2) {
+        $row2 = mysqli_fetch_assoc($result2);
+        $rowcount = $row2['count'];
+        mysqli_free_result($result2); // Free the result set
+    } else {
+        // Handle query error
+        $rowcount = 0; // Set default count to 0
+    }
+?>
+<span class="ec-sub-cat-count" title="Total Sub Categories"><?php echo $rowcount; ?></span>
+
+															<?php
+															$main_category = $row['m_c_name'];
+$sql1 = "SELECT * FROM `sub_category_tbl` WHERE `s_c_main_category` = '$main_category'";
+$result1 = mysqli_query($conn, $sql1);
+foreach($result1 as $row1)
+{ ?>
+
+<span class="ec-sub-cat-tag"><?php echo $row1['s_c_name']; ?></span>
+<?php }
+
+
+
+?>
+
+															
 														</span>
 													</td>
 													<td>30</td>
-													<td>1000</td>
 													<td>ACTIVE</td>
 												
 													<td>
 													<div class="action-icon">
 														<div class="edit"><i class="fa-solid fa-pen"></i></div>
-													<div class="delete"><i class="fa-solid fa-trash"></i></div>
+														<form action="php/main_category_delete.php" method="post">
+														<?php
+														$cid = $row['m_c_id'];
+														?>
+														<input type="hidden" value="<?php echo $row['m_c_id'] ?>"
+															name="scid">
+														<input type="hidden" value="<?php echo $row['m_c_name'] ?>"
+															name="scname">
+														
+
+															<!-- <div class="delete"><i class="fa-solid fa-trash"></i></div> -->
+															<a href=""> <button type="submit" id="delete" name="submit" style="color : red"
+																	value="Delete" onClick=”window.location.reload(true)”><i
+																		class="fa-solid fa-trash"></button></i> </a>
+														
+													</form>	
 </div>
 													</td>
 												</tr>
+												<?php	}
+												?>
+												
 												
 											</tbody>
 										</table>
