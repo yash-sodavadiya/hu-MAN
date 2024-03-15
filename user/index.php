@@ -1,3 +1,4 @@
+<?php session_start()?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,6 +50,7 @@
         </div>
     </div> -->
     <?Php require("components/navbar.php") ?>
+    
    
 
     <!-- Category Sidebar start -->
@@ -3388,7 +3390,7 @@
     <script src="assets/js/vendor/bootstrap.min.js"></script>
     <script src="assets/js/vendor/jquery-migrate-3.3.0.min.js"></script>
     <script src="assets/js/vendor/modernizr-3.11.2.min.js"></script>
-    <script>(function(w, d) { w.CollectId = "65eff67656c8a5b9944e1394"; var h = d.head || d.getElementsByTagName("head")[0]; var s = d.createElement("script"); s.setAttribute("type", "text/javascript"); s.async=true; s.setAttribute("src", "https://collectcdn.com/launcher.js"); h.appendChild(s); })(window, document);</script>
+    
 
     <!--Plugins JS-->
     <script src="assets/js/plugins/swiper-bundle.min.js"></script>

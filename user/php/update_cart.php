@@ -1,21 +1,31 @@
 <?php
-// Assuming you have already established a database connection
-require("database/config.php");
-if(isset($_POST['productId']) && isset($_POST['newQuantity'])) {
-    $productId = $_POST['productId'];
-    $newQuantity = $_POST['newQuantity'];
+require("../database/config.php");
 
-    // Perform any necessary validation on $productId and $newQuantity
+// Check if productId and newQuantity are set
+if(isset($_POST['productId'], $_POST['newQuantity'])) {
+    // Sanitize input to prevent SQL injection
+    $productId = mysqli_real_escape_string($conn, $_POST['productId']);
+    $userId = mysqli_real_escape_string($conn, $_POST['userId']);
+    $newQuantity = mysqli_real_escape_string($conn, $_POST['newQuantity']);
+    $newPrice = mysqli_real_escape_string($conn, $_POST['newPrice']);
+    $newTotalCost = mysqli_real_escape_string($conn, $_POST['newTotalCost']);
+    echo '"<script>console.log(".$productId")"';
 
-    // Update the cart table with the new quantity
-    $sql = "UPDATE cart_tbl SET quantity = $newQuantity WHERE p_id = $productId";
+    // Update the quantity in the cart table
+    $sql = "UPDATE cart_tbl SET quantity = '$newQuantity' , sub_total = '$newPrice' WHERE p_id = '$productId'";
+    $result = mysqli_query($conn, $sql);
+    $sql1 = "UPDATE cart_total_tbl SET sub_total = '$newTotalCost'  WHERE u_id = '$userId'";
+    $result1 = mysqli_query($conn, $sql1);
 
-    if(mysqli_query($conn, $sql)) {
-        echo "Cart updated successfully";
+    if($result) {
+        // Quantity updated successfully
+        echo "Quantity updated successfully";
     } else {
-        echo "Error updating cart: " . mysqli_error($conn);
+        // Failed to update quantity
+        echo "Failed to update quantity";
     }
 } else {
-    echo "Invalid request parameters";
+    // Handle if productId or newQuantity is not set
+    echo "Product ID or new quantity is missing";
 }
 ?>
