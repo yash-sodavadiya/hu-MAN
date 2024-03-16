@@ -41,14 +41,14 @@
 </head>
 
 <body class="">
-    <!-- <div id="ec-overlay">
+    <div id="ec-overlay">
         <div class="ec-ellipsis">
             <div></div>
             <div></div>
             <div></div>
             <div></div>
         </div>
-    </div> -->
+    </div>
     <?Php require("components/navbar.php") ?>
     
    
