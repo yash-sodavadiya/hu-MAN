@@ -1,5 +1,7 @@
 <?php
 require('../database/config.php');
+session_start();
+$success_message = "";
 if (isset($_POST['add_product']) && isset($_FILES['p_image'])) {
     $p_img = $_FILES['p_image']['name'];
     $p_img_tmp = $_FILES['p_image']['tmp_name'];
@@ -10,19 +12,20 @@ if (isset($_POST['add_product']) && isset($_FILES['p_image'])) {
     $p_final_price = $_POST['p_final_price'];
     $p_stock = $_POST['p_stock'];
 
+
     // multiple image add 
     $t_img1 = $_FILES['t_image1']['name'];
     $t_img_tmp1 = $_FILES['t_image1']['tmp_name'];
     move_uploaded_file($t_img_tmp1, "../assets/img/product/" . $t_img1);
-    
+
     $t_img2 = $_FILES['t_image2']['name'];
     $t_img_tmp2 = $_FILES['t_image2']['tmp_name'];
     move_uploaded_file($t_img_tmp2, "../assets/img/product/" . $t_img2);
-    
+
     $t_img3 = $_FILES['t_image3']['name'];
     $t_img_tmp3 = $_FILES['t_image3']['tmp_name'];
     move_uploaded_file($t_img_tmp3, "../assets/img/product/" . $t_img3);
-    
+
     $t_img4 = $_FILES['t_image4']['name'];
     $t_img_tmp4 = $_FILES['t_image4']['tmp_name'];
     move_uploaded_file($t_img_tmp4, "../assets/img/product/" . $t_img4);
@@ -48,7 +51,7 @@ if (isset($_POST['add_product']) && isset($_FILES['p_image'])) {
     $s_sole_material = $_POST['s_sole_material'];
     $s_style = $_POST['s_style'];
 
-    
+
     $short_description = $_POST['short_description'];
     $long_description = $_POST['long_description'];
     $sql = "SELECT * FROM `product_tbl` ";
@@ -74,7 +77,7 @@ if (isset($_POST['add_product']) && isset($_FILES['p_image'])) {
 
     }
     $pp_id = $row['pp_id'] + 1;
-    
+
     // shoes id 
     $sql = "SELECT * FROM `shoes_tbl` ";
     $result = mysqli_query($conn, $sql);
@@ -82,61 +85,70 @@ if (isset($_POST['add_product']) && isset($_FILES['p_image'])) {
 
     }
     $pp_id = $row['ss_id'] + 1;
-
     
+    $sql = "SELECT * FROM `perfume_tbl` ";
+    $result = mysqli_query($conn, $sql);
+    foreach ($result as $row) {
+
+    }
+    $p_p_id = $row['p_p_id'] + 1;
+
+
 
     if ($p_category == "shirt") {
         $p_color1 = $_POST['p_color_1'];
-    //    shirt disc 
-    $c_pattern = $_POST['c_pattern'];
-    $s_material_type = $_POST['s_material_type'];
-    $c_sleeve_type = $_POST['c_sleeve_type'];
-    $c_length = $_POST['c_length'];
+        //    shirt disc 
+        $c_pattern = $_POST['c_pattern'];
+        $s_material_type = $_POST['s_material_type'];
+        $c_sleeve_type = $_POST['c_sleeve_type'];
+        $c_length = $_POST['c_length'];
 
-        $sql = "INSERT INTO `shirt_tbl` (`p_id`, `p_image`,`p_img1`,`p_img2`,`p_img3`,`p_img4`, `p_name`, `p_mrp`, `p_final_price`, `p_stock`,`p_color`, `c_pattern`, `s_material_type`, `c_sleeve_type`, `c_length`, `p_description1`, `p_description2`) VALUES ( '$p_id', '$p_img','$t_img1','$t_img2','$t_img3','$t_img4', ' $p_name', ' $p_mrp', '$p_final_price ', '   $p_stock','$p_color1', ' $c_pattern', '$s_material_type', ' $c_sleeve_type', '$c_length', '   $long_description', '  $short_description');";
+        $sql = "INSERT INTO `shirt_tbl` (`p_id`, `p_image`,`p_img1`,`p_img2`,`p_img3`,`p_img4`, `p_name`, `p_mrp`, `p_final_price`, `p_stock`,`p_color`,`p_catagory`, `c_pattern`, `s_material_type`, `c_sleeve_type`, `c_length`, `p_description1`, `p_description2`) VALUES ( '$p_id', '$p_img','$t_img1','$t_img2','$t_img3','$t_img4', ' $p_name', ' $p_mrp', '$p_final_price ', '   $p_stock','$p_color1','$p_category', ' $c_pattern', '$s_material_type', ' $c_sleeve_type', '$c_length', '   $long_description', '  $short_description');";
         $sql1 = "INSERT INTO `product_tbl` (`product_id`,`catagory_id`,`catagory_name`) VALUES ('$p_id','$s_id','shirt_tbl')";
         $result1 = mysqli_query($conn, $sql1);
         $result = mysqli_query($conn, $sql);
         $checkbox_values = $_POST['P_size1'];
 
-    // Loop through each checkbox value and insert into the database
-    foreach($checkbox_values as $value) {
-        // Escape special characters to prevent SQL injection
-        $value = mysqli_real_escape_string($conn, $value);
+        // Loop through each checkbox value and insert into the database
+        foreach ($checkbox_values as $value) {
+            // Escape special characters to prevent SQL injection
+            $value = mysqli_real_escape_string($conn, $value);
 
-        // Insert data into database
-        $sql = "INSERT INTO `size_tbl` (`p_id`,`p_size`) VALUES ('$p_id','$value')";
-        $conn->query($sql);
-    }
+            // Insert data into database
+            $sql = "INSERT INTO `size_tbl` (`p_id`,`p_size`) VALUES ('$p_id','$value')";
+            $conn->query($sql);
+        }
         if ($result) {
-            echo "<script> alert('Product Inserted') </script>";
+            $success_message = 'Product is inserted successfully.';
+            $_SESSION['success_message'] = $success_message;
             header("location:../product-add");
         }
 
     } else if ($p_category == "pent") {
         $p_color = $_POST['p_color_2'];
-        $sql = "INSERT INTO `pent_tbl` (`p_id`, `p_image`, `p_name`, `p_mrp`, `p_final_price`, `p_stock`,`p_color`, `p_material_type`, `p_length`, `p_style`, `p_closure_type`, `p_description1`, `p_description2`) VALUES ( '$p_id', '$p_img', ' $p_name', ' $p_mrp', '$p_final_price ', '$p_stock','$p_color', ' $p_material_type', '$p_length', ' $p_style', '$p_closure_type', '   $long_description', '  $short_description');";
+        $sql = "INSERT INTO `pent_tbl` (`p_id`, `p_image`, `p_name`, `p_mrp`, `p_final_price`, `p_stock`,`p_color`,`p_catagory`, `p_material_type`, `p_length`, `p_style`, `p_closure_type`, `p_description1`, `p_description2`) VALUES ( '$p_id', '$p_img', ' $p_name', ' $p_mrp', '$p_final_price ', '$p_stock','$p_color', ' $p_material_type', '$p_length', ' $p_style', '$p_closure_type', '   $long_description', '  $short_description');";
         $result = mysqli_query($conn, $sql);
         $sql1 = "INSERT INTO `product_tbl` (`product_id`,`catagory_id`,`catagory_name`) VALUES ('$p_id','$pp_id','pent_tbl')";
         $result1 = mysqli_query($conn, $sql1);
         $checkbox_values = $_POST['p_size1'];
         // Loop through each checkbox value and insert into the database
-    foreach($checkbox_values as $value) {
-        // Escape special characters to prevent SQL injection
-        $value = mysqli_real_escape_string($conn, $value);
+        foreach ($checkbox_values as $value) {
+            // Escape special characters to prevent SQL injection
+            $value = mysqli_real_escape_string($conn, $value);
 
-        // Insert data into database
-        $sql = "INSERT INTO `size_tbl` (`p_id`,`p_size`) VALUES ('$p_id','$value')";
-        $conn->query($sql);
-    }
-    if ($result) {
-        echo "<script> alert('Product Inserted') </script>";
-        header("location:../product-add");
-    }
+            // Insert data into database
+            $sql = "INSERT INTO `size_tbl` (`p_id`,`p_size`) VALUES ('$p_id','$value')";
+            $conn->query($sql);
+        }
+        if ($result) {
 
-    }
-    else if($p_category == 'shoes')
-    {
+            $success_message = 'Product is inserted successfully.';
+            $_SESSION['success_message'] = $success_message;
+
+            header("location:../product-add");
+        }
+
+    } else if ($p_category == 'shoes') {
         $p_color = $_POST['p_color_3'];
         $s_material_type = $_POST['s_material_type'];
         $s_closure_type = $_POST['s_closure_type'];
@@ -151,21 +163,38 @@ if (isset($_POST['add_product']) && isset($_FILES['p_image'])) {
         $result1 = mysqli_query($conn, $sql1);
         $checkbox_values = $_POST['p_size1'];
         // Loop through each checkbox value and insert into the database
-    foreach($checkbox_values as $value) {
-        // Escape special characters to prevent SQL injection
-        $value = mysqli_real_escape_string($conn, $value);
+        foreach ($checkbox_values as $value) {
+            // Escape special characters to prevent SQL injection
+            $value = mysqli_real_escape_string($conn, $value);
 
-        // Insert data into database
-        $sql = "INSERT INTO `size_tbl` (`p_id`,`p_size`) VALUES ('$p_id','$value')";
-        $conn->query($sql);
-    }
-    if ($result) {
-        echo "<script> alert('Product Inserted') </script>";
-        header("location:../product-add");
-    }
+            // Insert data into database
+            $sql = "INSERT INTO `size_tbl` (`p_id`,`p_size`) VALUES ('$p_id','$value')";
+            $conn->query($sql);
+        }
+        if ($result) {
+            $success_message = 'Product is inserted successfully.';
+            $_SESSION['success_message'] = $success_message;
+            header("location:../product-add");
+        }
+    } else if ($p_category == 'perfume') {
+        $p_brand = $_POST['p_brand'];
+        $p_item_form = $_POST['p_item_form'];
+        $p_item_volume = $_POST['p_item_volume'];
+        $p_scent = $_POST['p_scent'];
+
+        $sql = "INSERT INTO `perfume_tbl` (`p_id`, `p_image`, `p_img1`, `p_img2`, `p_img3`, `p_img4`, `p_name`, `p_mrp`, `p_final_price`, `p_stock`, `p_catagory`, `p_brand`, `p_item_form`, `p_item_volume`, `p_scent`,`p_description1`,`p_description2`) VALUES ('$p_id', '$p_img', '$t_img1', '$t_img2', '$t_img3', '$t_img4', '$p_name', '$p_mrp', '$p_final_price', '$p_stock', '$p_catagory', '$p_brand', '$p_item_form ', '$p_item_volume', '$p_scent ','$long_description','$short_description')";
+        $result = mysqli_query($conn,$sql);
+        $sql1 = "INSERT INTO `product_tbl` (`product_id`,`catagory_id`,`catagory_name`) VALUES ('$p_id','$p_p_id','perfume_tbl')";
+        $result1 = mysqli_query($conn, $sql1);
+        if ($result) {
+            $success_message = 'Product is inserted successfully.';
+            $_SESSION['success_message'] = $success_message;
+            header("location:../product-add");
+        }
     }
 
 
 
 }
+
 ?>

@@ -1,3 +1,4 @@
+<?php session_start()?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,7 +31,7 @@
     <link rel="stylesheet" href="assets/css/plugins/bootstrap.css" />
 
     <!-- Main Style -->
-    <link rel="stylesheet" href="assets/css/demo1.css" />
+    <link rel="stylesheet" href="assets/css/demo1.css?v=<?php echo time(); ?>" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
     <link rel="stylesheet" href="assets/css/dark.css" />
@@ -40,15 +41,16 @@
 </head>
 
 <body class="">
-    <!-- <div id="ec-overlay">
+    <div id="ec-overlay">
         <div class="ec-ellipsis">
             <div></div>
             <div></div>
             <div></div>
             <div></div>
         </div>
-    </div> -->
+    </div>
     <?Php require("components/navbar.php") ?>
+    
    
 
     <!-- Category Sidebar start -->
@@ -421,8 +423,18 @@
                                                 <div class="ec-pro-actions">
                                                     <a href="compare.html" class="ec-btn-group compare"
                                                         title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
-                                                    <button title="Add To Cart" class="add-to-cart"><i
+
+
+                                                        <!-- form tag for add cart item  -->
+
+                                                        <form action="php/add_cart.php" method="post" enctype="multipart/form-data">
+                                                            <input type="hidden" name="p_id" value="<?php echo $row1['p_id'];?>">
+                                                            <input type="hidden" name="quantity" value="1">
+                                                           
+                                                            <input type="hidden" name="sub_total" value="<?php echo $row1['p_final_price'];?>">
+                                                            <button title="Add To Cart" name="add_cart" class="add-to-cart"><i
                                                             class="fi-rr-shopping-basket"></i> Add To Cart</button>
+                                                        </form>
                                                     <a class="ec-btn-group wishlist" title="Wishlist"><i
                                                             class="fi-rr-heart"></i></a>
                                                 </div>
@@ -3378,6 +3390,7 @@
     <script src="assets/js/vendor/bootstrap.min.js"></script>
     <script src="assets/js/vendor/jquery-migrate-3.3.0.min.js"></script>
     <script src="assets/js/vendor/modernizr-3.11.2.min.js"></script>
+    
 
     <!--Plugins JS-->
     <script src="assets/js/plugins/swiper-bundle.min.js"></script>

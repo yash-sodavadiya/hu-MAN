@@ -38,14 +38,14 @@
  </head>
 
 <body class="cart_page">
-    <div id="ec-overlay">
+    <!-- <div id="ec-overlay">
         <div class="ec-ellipsis">
             <div></div>
             <div></div>
             <div></div>
             <div></div>
         </div>
-    </div>
+    </div> -->
 
     <?php require("components/navbar.php") ?>
     <!-- human Cart Start -->
@@ -159,7 +159,7 @@
                             <div class="row">
                                 <form action="#">
                                     <div class="table-content cart-table-content">
-                                        <table>
+                                        <table id="cart-table">
                                             <thead>
                                                 <tr>
                                                     <th>Product</th>
@@ -170,72 +170,56 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td data-label="Product" class="ec-cart-pro-name"><a
-                                                            href="product-left-sidebar.html"><img
-                                                                class="ec-cart-pro-img mr-4"
-                                                                src="assets/images/product-image/1.jpg" alt="" />Stylish
-                                                            Baby Shoes</a></td>
-                                                    <td data-label="Price" class="ec-cart-pro-price"><span
-                                                            class="amount">$56.00</span></td>
-                                                    <!-- Inside the table row for each product -->
+                                                <?php 
+                                                $sql = "SELECT * FROM `cart_tbl`";
+                                                $result = mysqli_query($conn,$sql);
+                                                foreach($result as $row)
+                                                {
+                                                    $p_id = $row['p_id'];
+                                                    $sql1 = "SELECT * FROM `product_tbl` WHERE `product_id` = $p_id";
+                                                    $result1 = mysqli_query($conn,$sql1);
+                                                    foreach($result1 as $row1)
+                                                    {
+                                                        $category = $row1['catagory_name'];
+                                                        $sql2 = "SELECT * FROM `$category` WHERE `p_id` = $p_id";
+                                                        $result2 = mysqli_query($conn,$sql2);
+                                                        foreach($result2 as $row2)
+                                                        { ?>
+
+                                                            <tr>
+                                                            <td data-label="Product" class="ec-cart-pro-name"><a
+                                                                    href="product-left-sidebar.html"><img
+                                                                        class="ec-cart-pro-img mr-4"
+                                                                        src="../admin/assets/img/product/<?php echo $row2['p_image']?>" alt="" /><?php echo $row2['p_name']?>
+                                                                    </a></td>
+                                                            <td data-label="Price" class="ec-cart-pro-price"><span
+                                                                    class="amount">₹<?php echo $row2['p_final_price']?>.00</span></td>
+                                                                   <input type="hidden" name="product-id" class="product-id" value="<?php echo $row['p_id'] ?>">                                                    <!-- Inside the table row for each product -->
+                                                                   <input type="hidden" name="user-id" class="user-id" value="<?php echo $row['user_id'] ?>">                                                    <!-- Inside the table row for each product -->
 <td data-label="Quantity" class="ec-cart-pro-qty" style="text-align: center;">
     <div class="cart-qty-plus-minus">
         <button class="cart-plus">+</button>
-        <input class="qty-input" type="text" name="cartqtybutton" value="1" />
+        <input class="qty-input" type="text" name="cartqtybutton" value="<?php echo $row['quantity']?>" />
         <button class="cart-minus">-</button>
     </div>
 </td>
 
-                                                    <td data-label="Total" class="ec-cart-pro-subtotal">$56.00</td>
+                                                    <td data-label="Total" class="ec-cart-pro-subtotal">₹<?php echo $row['sub_total']; ?>.00</td>
                                                     <td data-label="Remove" class="ec-cart-pro-remove">
-                                                        <a href="#"><i class="ecicon eci-trash-o"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td data-label="Product" class="ec-cart-pro-name"><a
-                                                            href="product-left-sidebar.html"><img
-                                                                class="ec-cart-pro-img mr-4"
-                                                                src="assets/images/product-image/1.jpg" alt="" />Stylish
-                                                            Baby Shoes</a></td>
-                                                    <td data-label="Price" class="ec-cart-pro-price"><span
-                                                            class="amount">$56.00</span></td>
-                                                    <!-- Inside the table row for each product -->
-<td data-label="Quantity" class="ec-cart-pro-qty" style="text-align: center;">
-    <div class="cart-qty-plus-minus">
-        <button class="cart-plus">+</button>
-        <input class="qty-input" type="text" name="cartqtybutton" value="1" />
-        <button class="cart-minus">-</button>
-    </div>
-</td>
+                                                        
 
-                                                    <td data-label="Total" class="ec-cart-pro-subtotal">$56.00</td>
-                                                    <td data-label="Remove" class="ec-cart-pro-remove">
-                                                        <a href="#"><i class="ecicon eci-trash-o"></i></a>
+                                                            <a href="php/delete_cart.php?c_id=<?php echo $row['cart_id'] ?>&u_id=<?php echo $row['user_id'] ?>"><i class="ecicon eci-trash-o"></i></a>
+                                                        
                                                     </td>
                                                 </tr>
-                                                <tr>
-                                                    <td data-label="Product" class="ec-cart-pro-name"><a
-                                                            href="product-left-sidebar.html"><img
-                                                                class="ec-cart-pro-img mr-4"
-                                                                src="assets/images/product-image/1.jpg" alt="" />Stylish
-                                                            Baby Shoes</a></td>
-                                                    <td data-label="Price" class="ec-cart-pro-price"><span
-                                                            class="amount">$56.00</span></td>
-                                                    <!-- Inside the table row for each product -->
-<td data-label="Quantity" class="ec-cart-pro-qty" style="text-align: center;">
-    <div class="cart-qty-plus-minus">
-        <button class="cart-plus">+</button>
-        <input class="qty-input" type="text" name="cartqtybutton" value="1" />
-        <button class="cart-minus">-</button>
-    </div>
-</td>
-
-                                                    <td data-label="Total" class="ec-cart-pro-subtotal">$56.00</td>
-                                                    <td data-label="Remove" class="ec-cart-pro-remove">
-                                                        <a href="#"><i class="ecicon eci-trash-o"></i></a>
-                                                    </td>
-                                                </tr>
+                                                
+                                                        <?php }
+                                                    }
+                                                }?>
+ 
+                                               
+                                                
+                                                
                                      
                                                 
                                             </tbody>
@@ -257,7 +241,10 @@
                     <!--cart content End -->
                 </div>
                
-                <div class="ec-sidebar-wrap">
+                
+                        <!-- Sidebar Area Start -->
+                <div class="ec-cart-rightside col-lg-4 col-md-12">
+                    <div class="ec-sidebar-wrap">
                         <!-- Sidebar Summary Block -->
                         <div class="ec-sidebar-block">
                             <div class="ec-sb-title">
@@ -265,61 +252,37 @@
                             </div>
                             <div class="ec-sb-block-content">
                                 <h4 class="ec-ship-title">Estimate Shipping</h4>
-                                <div class="ec-cart-form">
-                                    <p>Enter your destination to get a shipping estimate</p>
-                                    <form action="#" method="post">
-                                        <span class="ec-cart-wrap">
-                                            <label>Country *</label>
-                                            <span class="ec-cart-select-inner">
-                                                <select name="ec_cart_country" id="ec-cart-select-country"
-                                                    class="ec-cart-select">
-                                                    <option selected="" disabled="">United States</option>
-                                                    <option value="1">Country 1</option>
-                                                    <option value="2">Country 2</option>
-                                                    <option value="3">Country 3</option>
-                                                    <option value="4">Country 4</option>
-                                                    <option value="5">Country 5</option>
-                                                </select>
-                                            </span>
-                                        </span>
-                                        <span class="ec-cart-wrap">
-                                            <label>State/Province</label>
-                                            <span class="ec-cart-select-inner">
-                                                <select name="ec_cart_state" id="ec-cart-select-state"
-                                                    class="ec-cart-select">
-                                                    <option selected="" disabled="">Please Select a region, state
-                                                    </option>
-                                                    <option value="1">Region/State 1</option>
-                                                    <option value="2">Region/State 2</option>
-                                                    <option value="3">Region/State 3</option>
-                                                    <option value="4">Region/State 4</option>
-                                                    <option value="5">Region/State 5</option>
-                                                </select>
-                                            </span>
-                                        </span>
-                                        <span class="ec-cart-wrap">
-                                            <label>Zip/Postal Code</label>
-                                            <input type="text" name="postalcode" placeholder="Zip/Postal Code">
-                                        </span>p
-                                    </form>
-                                </div>
+                                
                             </div>
 
                             <div class="ec-sb-block-content">
                                 <div class="ec-cart-summary-bottom">
                                     <div class="ec-cart-summary">
                                         <div>
-                                            <span class="text-left" >Sub-Total</span>
-                                            <span class="text-right" id="total_cost">$80.00</span>
+                                            <?php 
+                                            $sql = "SELECT * FROM `cart_total_tbl` WHERE u_id=1";
+                                            $result = mysqli_query($conn,$sql);
+                                            foreach($result as $row)
+                                            {
+                                            ?>
+                                            <span class="text-left">Sub-Total</span>
+                                            <span class="text-right" id="total_cost">₹<?php echo $row['sub_total'];?>.00</span>
+                                            <?php }?>
                                         </div>
                                         <div>
-                                            <span class="text-left">Delivery Charges</span>
-                                            <span class="text-right">$80.00</span>
+                                            <span class="text-left"> + Delivery Charges</span>
+                                            <span class="text-right">₹0.00</span>
+                                        </div>
+                                        <div>
+                                            <span class="text-left"> - Discount</span>
+                                            <span class="text-right">₹0.00</span>
                                         </div>
                                         <div>
                                             <span class="text-left">Coupan Discount</span>
                                             <span class="text-right"><a class="ec-cart-coupan">Apply Coupan</a></span>
                                         </div>
+                                        
+                                       
                                         <div class="ec-cart-coupan-content">
                                             <form class="ec-cart-coupan-form" name="ec-cart-coupan-form" method="post"
                                                 action="#">
@@ -338,10 +301,17 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Sidebar Summary Block -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
    
 
-   
+   <?php require("components/footer.php") ?>
 
     <!-- Vendor JS -->
     <script src="assets/js/vendor/jquery-3.5.1.min.js"></script>
@@ -363,51 +333,84 @@
     <!-- Main Js -->
     <script src="assets/js/vendor/index.js"></script>
     <script src="assets/js/main.js"></script>
-   
-    <script>
+
+
+<script>
 $(document).ready(function(){
     $('.cart-plus').click(function(event) {
-        event.preventDefault(); // Prevent form submission
+        event.preventDefault(); // Prevent the default behavior
         var input = $(this).closest('.cart-qty-plus-minus').find('.qty-input');
+        var productId = $(this).closest('tr').find('.product-id').val();
+        var userId = $(this).closest('tr').find('.user-id').val();
         var quantity = parseInt(input.val());
         input.val(quantity + 1);
-        updateTotal(input);
+        updateTotal(input)
+        updateQuantity(productId, quantity + 1,input,userId);
     });
-
     $('.cart-minus').click(function(event) {
-        event.preventDefault(); // Prevent form submission
-        var input = $(this).closest('.cart-qty-plus-minus').find('.qty-input');
-        var quantity = parseInt(input.val());
-        if (quantity > 1) {
-            input.val(quantity - 1);
-            updateTotal(input);
-        }
-    });
-
-    $('.qty-input').on('input', function() {
-        updateTotal($(this));
-    });
-
-    function updateTotal(input) {
-        var quantity = parseInt(input.val());
-        var price = parseFloat(input.closest('tr').find('.ec-cart-pro-price .amount').text().replace('$', ''));
-        var total = price * quantity;
-        input.closest('tr').find('.ec-cart-pro-subtotal').text('$' + total.toFixed(2));
-
-        // Update the total cost
-        var totalCost = 0;
-        $('.ec-cart-pro-subtotal').each(function() {
-            totalCost += parseFloat($(this).text().replace('$', ''));
+            event.preventDefault(); // Prevent the default behavior
+            var input = $(this).closest('.cart-qty-plus-minus').find('.qty-input');
+            var quantity = parseInt(input.val());
+            var productId = $(this).closest('tr').find('.product-id').val();
+            var userId = $(this).closest('tr').find('.user-id').val();
+            if (quantity > 1) {
+                input.val(quantity - 1);
+                updateTotal(input);
+                updateQuantity(productId,quantity -1,input,userId);
+            }
         });
-        $('#total_cost').text('$' + totalCost.toFixed(2));
+
+    
+    function updateTotal(input) {
+            var quantity = parseInt(input.val());
+            var price = parseFloat(input.closest('tr').find('.ec-cart-pro-price .amount').text().replace('₹', ''));
+        
+            var total = price * quantity;
+            input.closest('tr').find('.ec-cart-pro-subtotal').text('₹' + total.toFixed(2));
+
+            // Update the total cost
+            var totalCost = 0;
+            $('.ec-cart-pro-subtotal').each(function() {
+                totalCost += parseFloat($(this).text().replace('₹', ''));
+            });
+            $('#total_cost').text('₹' + totalCost.toFixed(2));
+        }
+
+        function updateQuantity(productId, newQuantity , input,userId) {
+            var quantity = newQuantity;
+            var price = parseFloat(input.closest('tr').find('.ec-cart-pro-price .amount').text().replace('₹', ''));
+        
+            var total = price * quantity;
+            var totalCost = 0;
+            $('.ec-cart-pro-subtotal').each(function() {
+                totalCost += parseFloat($(this).text().replace('₹', ''));
+            });
+
+        $.ajax({
+            url: 'php/update_cart.php',
+            method: 'POST',
+            data: {productId: productId, newQuantity: newQuantity ,newPrice:total,userId: userId , newTotalCost: totalCost},
+            success: function(response){
+                // Handle success if needed
+                console.log(response); // Log response for debugging
+                // You can update the UI here if required
+            },
+            error: function(xhr, status, error) {
+                // Handle error if needed
+                console.error(error);
+            }
+        });
     }
+
 });
 
+
+
 </script>
+
 
 
 </body>
 
 
-<!-- Mirrored from maraviyainfotech.com/projects/human/human-v37/human-html/cart.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 19 Feb 2024 04:59:15 GMT -->
 </html>
