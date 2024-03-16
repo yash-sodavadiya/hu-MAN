@@ -48,7 +48,6 @@ if (isset($_POST['signin'])) {
 
 }
 ?>
-skjgfhgd
 
 
 <div class="wrapper" style="background-image: url('images/bg-registration-form-1.jpg');">
