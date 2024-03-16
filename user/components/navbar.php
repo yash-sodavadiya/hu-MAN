@@ -151,27 +151,27 @@
                                                 </li>
                                                 <li><a href="pent-shop">Pent</a>
                                                 </li>
-                                                <li><a href="suit-shop">Suit</a>
+                                                <li><a href="T-shirt-shop">T-shirt</a>
                                                 </li>
                                             </ul>
                                             <ul class="d-block">
                                                 <li class="menu_title"><a href="javascript:void(0)">Watches</a></li>
                                                 <li><a href="#">Smart Watches</a></li>
-                                                <li><a href="shop-banner-left-sidebar-col-4.html">Casual Watches</a></li>
+                                                <li><a href="#">Casual Watches</a></li>
                                                 
                                             </ul>
                                             <ul class="d-block">
                                                 <li class="menu_title"><a href="javascript:void(0)">Shoes</a></li>
-                                                <li><a href="shop-full-width-col-3.html">Sport Shoes</a></li>
-                                                <li><a href="shop-full-width-col-4.html">Formal Shoes</a></li>
-                                                <li><a href="shop-full-width-col-5.html">Casual Shoes</a></li>
+                                                <li><a href="#">Sport Shoes</a></li>
+                                                <li><a href="#">Formal Shoes</a></li>
+                                                <li><a href="#">Casual Shoes</a></li>
                     
                                             </ul>
                                             
                                             <ul class="d-block">
-                                            <li class="menu_title"><a href="javascript:void(0)">Shoes</a></li>
+                                            <li class="menu_title"><a href="javascript:void(0)">perfume</a></li>
 
-                                                <img src="assets/images/banner/2.jpg" alt="">
+                                            <li><a href="#"></a>perfume</li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -221,107 +221,45 @@
                         <li><a href="javascript:void(0)">Categories</a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="javascript:void(0)">Classic Variation</a>
+                                    <a href="javascript:void(0)">Clothes</a>
                                     <ul class="sub-menu">
-                                        <li><a href="shop-left-sidebar-col-3.html">Left sidebar 3 column</a></li>
-                                        <li><a href="shop-left-sidebar-col-4.html">Left sidebar 4 column</a></li>
-                                        <li><a href="shop-right-sidebar-col-3.html">Right sidebar 3 column</a></li>
-                                        <li><a href="shop-right-sidebar-col-4.html">Right sidebar 4 column</a></li>
-                                        <li><a href="shop-full-width.html">Full width 4 column</a></li>
+                                        <li><a href="shirt-shop">Shirt</a></li>
+                                        <li><a href="pent-shop">Pent</a></li>
+                                        <li><a href="T-shirt-shop">T-shirt</a></li>
+                                        
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)">Classic Variation</a>
+                                    <a href="javascript:void(0)">Watches</a>
                                     <ul class="sub-menu">
-                                        <li><a href="shop-banner-left-sidebar-col-3.html">Banner left sidebar 3
-                                                column</a></li>
-                                        <li><a href="shop-banner-left-sidebar-col-4.html">Banner left sidebar 4
-                                                column</a></li>
-                                        <li><a href="shop-banner-right-sidebar-col-3.html">Banner right sidebar 3
-                                                column</a></li>
-                                        <li><a href="shop-banner-right-sidebar-col-4.html">Banner right sidebar 4
-                                                column</a></li>
-                                        <li><a href="shop-banner-full-width.html">Banner Full width 4 column</a></li>
+                                     
+                                                <li><a href="#">Smart Watches</a></li>
+                                                <li><a href="#">Casual Watches</a></li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)">Columns Variation</a>
+                                    <a href="javascript:void(0)">Shoes</a>
                                     <ul class="sub-menu">
-                                        <li><a href="shop-full-width-col-3.html">3 Columns full width</a></li>
-                                        <li><a href="shop-full-width-col-4.html">4 Columns full width</a></li>
-                                        <li><a href="shop-full-width-col-5.html">5 Columns full width</a></li>
-                                        <li><a href="shop-full-width-col-6.html">6 Columns full width</a></li>
-                                        <li><a href="shop-banner-full-width-col-3.html">Banner 3 Columns</a></li>
-                                    </ul>
+                                    <li><a href="shop-full-width-col-3.html">Sport Shoes</a></li>
+                                                <li><a href="shop-full-width-col-4.html">Formal Shoes</a></li>
+                                                <li><a href="shop-full-width-col-5.html">Casual Shoes</a></li>
+                      </ul>
                                 </li>
-                                <li>
-                                    <a href="javascript:void(0)">List Variation</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="shop-list-left-sidebar.html">Shop left sidebar</a></li>
-                                        <li><a href="shop-list-right-sidebar.html">Shop right sidebar</a></li>
-                                        <li><a href="shop-list-banner-left-sidebar.html">Banner left sidebar</a></li>
-                                        <li><a href="shop-list-banner-right-sidebar.html">Banner right sidebar</a></li>
-                                        <li><a href="shop-list-full-col-2.html">Full width 2 columns</a></li>
-                                    </ul>
-                                </li>
-                                <li><a class="p-0" href="shop-left-sidebar-col-3.html"><img class="img-responsive"
-                                            src="assets/images/menu-banner/1.jpg" alt=""></a>
-                                </li>
+                                <li><a href="javascript:void(0)">perfume</a></li>
+                                
                             </ul>
                         </li>
-                        <li><a href="javascript:void(0)">Products</a>
-                            <ul class="sub-menu">
-                                <li><a href="javascript:void(0)">Product page</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="product-left-sidebar.html">Product left sidebar</a></li>
-                                        <li><a href="product-right-sidebar.html">Product right sidebar</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="javascript:void(0)">Product 360</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="product-360-left-sidebar.html">360 left sidebar</a></li>
-                                        <li><a href="product-360-right-sidebar.html">360 right sidebar</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="javascript:void(0)">Product vodeo</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="product-video-left-sidebar.html">vodeo left sidebar</a></li>
-                                        <li><a href="product-video-right-sidebar.html">vodeo right sidebar</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="javascript:void(0)">Product gallery</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="product-gallery-left-sidebar.html">Gallery left sidebar</a></li>
-                                        <li><a href="product-gallery-right-sidebar.html">Gallery right sidebar</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="product-full-width.html">Product full width</a></li>
-                                <li><a href="product-360-full-width.html">360 full width</a></li>
-                                <li><a href="product-video-full-width.html">Video full width</a></li>
-                                <li><a href="product-gallery-full-width.html">Gallery full width</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="shop">Shop</a></li>
+                                
+                                
+                            <li><a href="offer.html">Hot Offers</a></li>
                        
-                        <li><a href="javascript:void(0)">Pages</a>
-                            <ul class="sub-menu">
-                                <li><a href="about-us.html">About Us</a></li>
-                                <li><a href="contact-us.html">Contact Us</a></li>
-                                <li><a href="cart.html">Cart</a></li>
-                                <li><a href="checkout.html">Checkout</a></li>
-                                <li><a href="compare.html">Compare</a></li>
-                                <li><a href="faq.html">FAQ</a></li>
-                                <li><a href="login.html">Login</a></li>
-                                <li><a href="register.html">Register</a></li>
-                                <li><a href="track-order.html">Track Order</a></li>
-                                <li><a href="terms-condition.html">Terms Condition</a></li>
-                                <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                            </ul>
-                        </li>
+                            <li><a href="about-us">About Us</a></li>
+                                <li><a href="contact-us">Contact Us</a></li>
+                                <li><a href="index.html">FAQs</a></li>
                        
                        
-                        <li><a href="offer.html">Hot Offers</a></li>
-                        <li><a href="offer.html">About Us</a></li>
-                        <li><a href="offer.html">Contect Us</a></li>
+                   
                     </ul>
                       </div>
                 
