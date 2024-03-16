@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
  <html lang="en">
  
  
@@ -7,7 +7,7 @@
      <meta http-equiv="x-ua-compatible" content="ie=edge" />
      <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
  
-     <title>hu-MAN | Checkout</title>
+     <title>hu-MAN | Payment</title>
      <meta name="keywords"
          content="apparel, catalog, clean, ecommerce, ecommerce HTML, electronics, fashion, html eCommerce, html store, minimal, multipurpose, multipurpose ecommerce, online store, responsive ecommerce template, shops" />
      <meta name="description" content="Best ecommerce html template for single and multi vendor store.">
@@ -35,6 +35,11 @@
  
      <!-- Background css -->
      <link rel="stylesheet" id="bg-switcher-css" href="assets/css/backgrounds/bg-4.css">
+     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet">
+<style>
+    body{background: #f5f5f5}.rounded{border-radius: 1rem}.nav-pills .nav-link{color: #555}.nav-pills .nav-link.active{color: white}input[type="radio"]{margin-right: 5px}.bold{font-weight:bold}
+</style>
  </head>
 <body class="checkout_page">
     <div id="ec-overlay">
@@ -131,13 +136,13 @@
                 <div class="col-12">
                     <div class="row ec_breadcrumb_inner">
                         <div class="col-md-6 col-sm-12">
-                            <h2 class="ec-breadcrumb-title">Checkout</h2>
+                            <h2 class="ec-breadcrumb-title">Payment</h2>
                         </div>
                         <div class="col-md-6 col-sm-12">
                             <!-- ec-breadcrumb-list start -->
                             <ul class="ec-breadcrumb-list">
                                 <li class="ec-breadcrumb-item"><a href="index.html">Home</a></li>
-                                <li class="ec-breadcrumb-item active">Checkout</li>
+                                <li class="ec-breadcrumb-item active">Payment</li>
                             </ul>
                             <!-- ec-breadcrumb-list end -->
                         </div>
@@ -147,308 +152,93 @@
         </div>
     </div>
     <!-- Ec breadcrumb end -->
-
-    <!-- Ec checkout page -->
-    <section class="ec-page-content section-space-p">
-        <div class="container">
-            <div class="row">
-                <div class="ec-checkout-leftside col-lg-8 col-md-12 ">
-                    <!-- checkout content Start -->
-                    <div class="ec-checkout-content">
-                        <div class="ec-checkout-inner">
-                            
-                           
-                            <div class="ec-checkout-wrap margin-bottom-30 padding-bottom-3">
-                                <div class="ec-checkout-block ec-check-bill">
-                                    <h3 class="ec-checkout-title">Billing Details</h3>
-                                    <div class="ec-bl-block-content">
-                                       
-                                       
-                                        <div class="ec-check-bill-form">
-                                            <form action="#" method="post">
-                                                <span class="ec-bill-wrap ec-bill-half">
-                                                    <label>First Name*</label>
-                                                    <input type="text" name="firstname"
-                                                        placeholder="Enter your first name" required />
-                                                </span>
-                                                <span class="ec-bill-wrap ec-bill-half">
-                                                    <label>Last Name*</label>
-                                                    <input type="text" name="lastname"
-                                                        placeholder="Enter your last name" required />
-                                                </span>
-                                                <span class="ec-bill-wrap ec-bill-half">
-                                                    <label>Phone number</label>
-                                                    <input type="text" name="phoneno" placeholder="phone number" />
-                                                </span>
-                                                <span class="ec-bill-wrap ec-bill-half">
-                                                    <label>Email</label>
-                                                    <input type="text" name="email" placeholder="email" />
-                                                </span>
-                                                <span class="ec-bill-wrap">
-                                                    <label>Address</label>
-                                                    <input type="text" name="address" placeholder="Address Line 1" />
-                                                </span>
-                                                <span class="ec-bill-wrap ec-bill-half">
-                                                    <label>City *</label>
-                                                    <span class="ec-bl-select-inner">
-                                                        <select name="ec_select_city" id="ec-select-city"
-                                                            class="ec-bill-select">
-                                                            <option selected disabled>City</option>
-                                                            <option value="1">City 1</option>
-                                                            <option value="2">City 2</option>
-                                                            <option value="3">City 3</option>
-                                                            <option value="4">City 4</option>
-                                                            <option value="5">City 5</option>
-                                                        </select>
-                                                    </span>
-                                                </span>
-                                                <span class="ec-bill-wrap ec-bill-half">
-                                                    <label>Post Code</label>
-                                                    <input type="text" name="postalcode" placeholder="Post Code" />
-                                                </span>
-                                                <span class="ec-bill-wrap ec-bill-half">
-                                                    <label>Country *</label>
-                                                    <span class="ec-bl-select-inner">
-                                                        <select name="ec_select_country" id="ec-select-country"
-                                                            class="ec-bill-select">
-                                                            <option selected disabled>Country</option>
-                                                            <option value="1">Country 1</option>
-                                                            <option value="2">Country 2</option>
-                                                            <option value="3">Country 3</option>
-                                                            <option value="4">Country 4</option>
-                                                            <option value="5">Country 5</option>
-                                                        </select>
-                                                    </span>
-                                                </span>
-                                                <span class="ec-bill-wrap ec-bill-half">
-                                                    <label>Region State</label>
-                                                    <span class="ec-bl-select-inner">
-                                                        <select name="ec_select_state" id="ec-select-state"
-                                                            class="ec-bill-select">
-                                                            <option selected disabled>Region/State</option>
-                                                            <option value="1">Region/State 1</option>
-                                                            <option value="2">Region/State 2</option>
-                                                            <option value="3">Region/State 3</option>
-                                                            <option value="4">Region/State 4</option>
-                                                            <option value="5">Region/State 5</option>
-                                                        </select>
-                                                    </span>
-                                                </span>
-                                            </form>
+    <div class="container py-5">
+        <!-- For demo purpose -->
+        <div class="row mb-4">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1 class="display-6">Payment Forms</h1>
+            </div>
+        </div> <!-- End -->
+        <div class="row">
+            <div class="col-lg-6 mx-auto">
+                <div class="card ">
+                    <div class="card-header">
+                        <div class="bg-white shadow-sm pt-4 pl-2 pr-2 pb-2">
+                            <!-- Credit card form tabs -->
+                            <ul role="tablist" class="nav bg-light nav-pills rounded nav-fill mb-3">
+                                <li class="nav-item"> <a data-toggle="pill" href="#credit-card" class="nav-link active "> <i class="fas fa-credit-card mr-2"></i> Credit Card </a> </li>
+                                <li class="nav-item"> <a data-toggle="pill" href="#paypal" class="nav-link "> <i class="fab fa-paypal mr-2"></i> Paypal </a> </li>
+                                <li class="nav-item"> <a data-toggle="pill" href="#net-banking" class="nav-link "> <i class="fas fa-mobile-alt mr-2"></i> Net Banking </a> </li>
+                            </ul>
+                        </div> <!-- End -->
+                        <!-- Credit card form content -->
+                        <div class="tab-content">
+                            <!-- credit card info-->
+                            <div id="credit-card" class="tab-pane fade show active pt-3">
+                                <form role="form" onsubmit="event.preventDefault()">
+                                    <div class="form-group"> <label for="username">
+                                            <h6>Card Owner</h6>
+                                        </label> <input type="text" name="username" placeholder="Card Owner Name" required class="form-control "> </div>
+                                    <div class="form-group"> <label for="cardNumber">
+                                            <h6>Card number</h6>
+                                        </label>
+                                        <div class="input-group"> <input type="text" name="cardNumber" placeholder="Valid card number" class="form-control " required>
+                                            <div class="input-group-append"> <span class="input-group-text text-muted"> <i class="fab fa-cc-visa mx-1"></i> <i class="fab fa-cc-mastercard mx-1"></i> <i class="fab fa-cc-amex mx-1"></i> </span> </div>
                                         </div>
-
                                     </div>
-                                </div>
-
+                                    <div class="row">
+                                        <div class="col-sm-8">
+                                            <div class="form-group"> <label><span class="hidden-xs">
+                                                        <h6>Expiration Date</h6>
+                                                    </span></label>
+                                                <div class="input-group"> <input type="number" placeholder="MM" name="" class="form-control" required> <input type="number" placeholder="YY" name="" class="form-control" required> </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group mb-4"> <label data-toggle="tooltip" title="Three digit CV code on the back of your card">
+                                                    <h6>CVV <i class="fa fa-question-circle d-inline"></i></h6>
+                                                </label> <input type="text" required class="form-control"> </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer"> <button type="button" class="subscribe btn btn-primary btn-block shadow-sm"> Confirm Payment </button>
+                                </form>
                             </div>
-                            <!-- <span class="ec-check-order-btn">
-                                <a class="btn btn-denger" href="#">Cancel</a>
-                            </span> -->
-                            <span class="ec-check-order-btn">
-                            
-
-                                <a class="btn btn-denger" href="#" style=" margin-right: 25px; background-color: red; color: white;">Cancel</a>
-                                <a class="btn btn-primary" href="#">payment</a>
-                            </span>
-                        </div>
+                        </div> <!-- End -->
+                        <!-- Paypal info -->
+                        <div id="paypal" class="tab-pane fade pt-3">
+                            <h6 class="pb-2">Select your paypal account type</h6>
+                            <div class="form-group "> <label class="radio-inline"> <input type="radio" name="optradio" checked> Domestic </label> <label class="radio-inline"> <input type="radio" name="optradio" class="ml-5">International </label></div>
+                            <p> <button type="button" class="btn btn-primary "><i class="fab fa-paypal mr-2"></i> Log into my Paypal</button> </p>
+                            <p class="text-muted"> Note: After clicking on the button, you will be directed to a secure gateway for payment. After completing the payment process, you will be redirected back to the website to view details of your order. </p>
+                        </div> <!-- End -->
+                        <!-- bank transfer info -->
+                        <div id="net-banking" class="tab-pane fade pt-3">
+                            <div class="form-group "> <label for="Select Your Bank">
+                                    <h6>Select your Bank</h6>
+                                </label> <select class="form-control" id="ccmonth">
+                                    <option value="" selected disabled>--Please select your Bank--</option>
+                                    <option>Bank 1</option>
+                                    <option>Bank 2</option>
+                                    <option>Bank 3</option>
+                                    <option>Bank 4</option>
+                                    <option>Bank 5</option>
+                                    <option>Bank 6</option>
+                                    <option>Bank 7</option>
+                                    <option>Bank 8</option>
+                                    <option>Bank 9</option>
+                                    <option>Bank 10</option>
+                                </select> </div>
+                            <div class="form-group">
+                                <p> <button type="button" class="btn btn-primary "><i class="fas fa-mobile-alt mr-2"></i> Proceed Payment</button> </p>
+                            </div>
+                            <p class="text-muted">Note: After clicking on the button, you will be directed to a secure gateway for payment. After completing the payment process, you will be redirected back to the website to view details of your order. </p>
+                        </div> <!-- End -->
+                        <!-- End -->
                     </div>
-                    <!--cart content End -->
-                </div>
-                <!-- Sidebar Area Start -->
-                <div class="ec-checkout-rightside col-lg-4 col-md-12">
-                    <div class="ec-sidebar-wrap">
-                        <!-- Sidebar Summary Block -->
-                        <div class="ec-sidebar-block">
-                            <div class="ec-sb-title">
-                                <h3 class="ec-sidebar-title">Summary</h3>
-                            </div>
-                            <div class="ec-sb-block-content">
-                                <div class="ec-checkout-summary">
-                                    <div>
-                                        <span class="text-left">Sub-Total</span>
-                                        <span class="text-right">$80.00</span>
-                                    </div>
-                                    <div>
-                                        <span class="text-left">Delivery Charges</span>
-                                        <span class="text-right">$80.00</span>
-                                    </div>
-                                    <div>
-                                        <span class="text-left">Coupan Discount</span>
-                                        <span class="text-right"><a class="ec-checkout-coupan">Apply Coupan</a></span>
-                                    </div>
-                                    <div class="ec-checkout-coupan-content">
-                                        <form class="ec-checkout-coupan-form" name="ec-checkout-coupan-form"
-                                            method="post" action="#">
-                                            <input class="ec-coupan" type="text" required=""
-                                                placeholder="Enter Your Coupan Code" name="ec-coupan" value="">
-                                            <button class="ec-coupan-btn button btn-primary" type="submit"
-                                                name="subscribe" value="">Apply</button>
-                                        </form>
-                                    </div>
-                                    <div class="ec-checkout-summary-total">
-                                        <span class="text-left">Total Amount</span>
-                                        <span class="text-right">$80.00</span>
-                                    </div>
-                                </div>
-                                <div class="ec-checkout-pro">
-                                    <div class="col-sm-12 mb-6">
-                                        <div class="ec-product-inner">
-                                            <div class="ec-pro-image-outer">
-                                                <div class="ec-pro-image">
-                                                    <a href="product-left-sidebar.html" class="image">
-                                                        <img class="main-image"
-                                                            src="assets/images/product-image/1_1.jpg"
-                                                            alt="Product" />
-                                                        <img class="hover-image"
-                                                            src="assets/images/product-image/1_2.jpg"
-                                                            alt="Product" />
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="ec-pro-content">
-                                                <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Baby toy teddy bear</a></h5>
-                                                <div class="ec-pro-rating">
-                                                    <i class="ecicon eci-star fill"></i>
-                                                    <i class="ecicon eci-star fill"></i>
-                                                    <i class="ecicon eci-star fill"></i>
-                                                    <i class="ecicon eci-star fill"></i>
-                                                    <i class="ecicon eci-star"></i>
-                                                </div>
-                                                <span class="ec-price">
-                                                    <span class="old-price">$95.00</span>
-                                                    <span class="new-price">$79.00</span>
-                                                </span>
-                                                <div class="ec-pro-option">
-                                                    <div class="ec-pro-color">
-                                                        <span class="ec-pro-opt-label">Color</span>
-                                                        <ul class="ec-opt-swatch ec-change-img">
-                                                            <li class="active"><a href="#" class="ec-opt-clr-img"
-                                                                    data-src="assets/images/product-image/1_1.jpg"
-                                                                    data-src-hover="assets/images/product-image/1_1.jpg"
-                                                                    data-tooltip="Gray"><span
-                                                                        style="background-color:#6d4c36;"></span></a>
-                                                            </li>
-                                                            <li><a href="#" class="ec-opt-clr-img"
-                                                                    data-src="assets/images/product-image/1_2.jpg"
-                                                                    data-src-hover="assets/images/product-image/1_2.jpg"
-                                                                    data-tooltip="Orange"><span
-                                                                        style="background-color:#ffb0e1;"></span></a>
-                                                            </li>
-                                                            <li><a href="#" class="ec-opt-clr-img"
-                                                                    data-src="assets/images/product-image/1_3.jpg"
-                                                                    data-src-hover="assets/images/product-image/1_3.jpg"
-                                                                    data-tooltip="Green"><span
-                                                                        style="background-color:#8beeff;"></span></a>
-                                                            </li>
-                                                            <li><a href="#" class="ec-opt-clr-img"
-                                                                    data-src="assets/images/product-image/1_4.jpg"
-                                                                    data-src-hover="assets/images/product-image/1_4.jpg"
-                                                                    data-tooltip="Sky Blue"><span
-                                                                        style="background-color:#74f8d1;"></span></a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="ec-pro-size">
-                                                        <span class="ec-pro-opt-label">Size</span>
-                                                        <ul class="ec-opt-size">
-                                                            <li class="active"><a href="#" class="ec-opt-sz"
-                                                                    data-old="$95.00" data-new="$79.00"
-                                                                    data-tooltip="Small">S</a></li>
-                                                            <li><a href="#" class="ec-opt-sz" data-old="$90.00"
-                                                                    data-new="$70.00" data-tooltip="Medium">M</a></li>
-                                                            <li><a href="#" class="ec-opt-sz" data-old="$80.00"
-                                                                    data-new="$60.00" data-tooltip="Large">X</a></li>
-                                                            <li><a href="#" class="ec-opt-sz" data-old="$70.00"
-                                                                    data-new="$50.00" data-tooltip="Extra Large">XL</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 mb-0">
-                                        <div class="ec-product-inner">
-                                            <div class="ec-pro-image-outer">
-                                                <div class="ec-pro-image">
-                                                    <a href="product-left-sidebar.html" class="image">
-                                                        <img class="main-image"
-                                                            src="assets/images/product-image/8_1.jpg"
-                                                            alt="Product" />
-                                                        <img class="hover-image"
-                                                            src="assets/images/product-image/8_2.jpg"
-                                                            alt="Product" />
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="ec-pro-content">
-                                                <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Smart I watch 2GB</a></h5>
-                                                <div class="ec-pro-rating">
-                                                    <i class="ecicon eci-star fill"></i>
-                                                    <i class="ecicon eci-star fill"></i>
-                                                    <i class="ecicon eci-star fill"></i>
-                                                    <i class="ecicon eci-star fill"></i>
-                                                    <i class="ecicon eci-star"></i>
-                                                </div>
-                                                <span class="ec-price">
-                                                    <span class="old-price">$58.00</span>
-                                                    <span class="new-price">$45.00</span>
-                                                </span>
-                                                <div class="ec-pro-option">
-                                                    <div class="ec-pro-color">
-                                                        <span class="ec-pro-opt-label">Color</span>
-                                                        <ul class="ec-opt-swatch ec-change-img">
-                                                            <li class="active"><a href="#" class="ec-opt-clr-img"
-                                                                    data-src="assets/images/product-image/8_2.jpg"
-                                                                    data-src-hover="assets/images/product-image/8_2.jpg"
-                                                                    data-tooltip="Gray"><span
-                                                                        style="background-color:#f3f3f3;"></span></a>
-                                                            </li>
-                                                            <li><a href="#" class="ec-opt-clr-img"
-                                                                    data-src="assets/images/product-image/8_3.jpg"
-                                                                    data-src-hover="assets/images/product-image/8_3.jpg"
-                                                                    data-tooltip="Orange"><span
-                                                                        style="background-color:#fac7f3;"></span></a>
-                                                            </li>
-                                                            <li><a href="#" class="ec-opt-clr-img"
-                                                                    data-src="assets/images/product-image/8_4.jpg"
-                                                                    data-src-hover="assets/images/product-image/8_4.jpg"
-                                                                    data-tooltip="Green"><span
-                                                                        style="background-color:#c5f1ff;"></span></a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="ec-pro-size">
-                                                        <span class="ec-pro-opt-label">Size</span>
-                                                        <ul class="ec-opt-size">
-                                                            <li class="active"><a href="#" class="ec-opt-sz"
-                                                                    data-old="$48.00" data-new="$45.00"
-                                                                    data-tooltip="Small">S</a></li>
-                                                            <li><a href="#" class="ec-opt-sz" data-old="$90.00"
-                                                                    data-new="$70.00" data-tooltip="Medium">M</a></li>
-                                                            <li><a href="#" class="ec-opt-sz" data-old="$80.00"
-                                                                    data-new="$60.00" data-tooltip="Large">X</a></li>
-                                                            <li><a href="#" class="ec-opt-sz" data-old="$70.00"
-                                                                    data-new="$50.00" data-tooltip="Extra Large">XL</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Sidebar Summary Block -->
-                    </div>
-                    
-                    
-                    
                 </div>
             </div>
         </div>
-    </section>
+   
  <?php require("components/footer.php") ?>
     <!-- Modal -->
     <div class="modal fade" id="ec_quickview_modal" tabindex="-1" role="dialog">
@@ -797,7 +587,13 @@
         </div>
     </div>
     <!-- Feature tools end -->
-
+    <script>
+        $(function() {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+        </script>
+        	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>         
     <!-- Vendor JS -->
     <script src="assets/js/vendor/jquery-3.5.1.min.js"></script>
     <script src="assets/js/vendor/popper.min.js"></script>
