@@ -36,15 +36,16 @@ if (isset($_POST['signin'])) {
     {
         $tbl_email = $row['email_id'];
         $tbl_password = $row['password'];
-    }
-    if($email_id == $tbl_email && $password == $tbl_password)
+        if($email_id == $tbl_email && $password == $tbl_password)
     {
-        $_SESSION['user_id'] = 
+        $userid = $row['user_id'];
+        $_SESSION['user_id'] = $userid;
         header("location:index");
     }
-    else{
-        $login_error = "Invalid Email and password";
     }
+ 
+        $login_error = "Invalid Email and password";
+    
 
 }
 ?>

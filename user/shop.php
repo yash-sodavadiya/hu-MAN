@@ -38,14 +38,16 @@
      <link rel="stylesheet" id="bg-switcher-css" href="assets/css/backgrounds/bg-4.css">
  </head>
 <body class="shop_page">
-    <div id="ec-overlay">
+    <!-- <div id="ec-overlay">
         <div class="ec-ellipsis">
             <div></div>
             <div></div>
             <div></div>
             <div></div>
         </div>
-    </div>
+    </div> -->
+
+    
 
     <?php require("components/navbar.php") ?>
    
@@ -132,7 +134,6 @@
             foreach($result as $row) {
                 $catagory = $row['catagory_name'];
                 $p_id = $row['product_id'];
-
                 $sql1 = "SELECT * FROM `$catagory` WHERE `p_id` = $p_id";
                 $result1 = mysqli_query($conn, $sql1);
                 foreach($result1 as $row1) { ?>
@@ -147,14 +148,18 @@
                                                         alt="Product" />
                                                 </a>
                                                 <span class="percentage">20%</span>
-                                                <a href="#" class="quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#ec_quickview_modal"><i class="fi-rr-eye"></i></a>
+                                                <a href="" class="quickview" data-tooltip="<?php echo $row1['p_id']?>" ><i class="fi-rr-eye"></i></a>
                                                 <div class="ec-pro-actions">
                                                     <a href="compare.html" class="ec-btn-group compare"
                                                         title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
-                                                    <button title="Add To Cart" class="add-to-cart"><i
+                                                        <form action="php/add_cart.php" method="post" enctype="multipart/form-data">
+                                                            <input type="hidden" name="p_id" value="<?php echo $row1['p_id'];?>">
+                                                            <input type="hidden" name="quantity" value="1">
+                                                           
+                                                            <input type="hidden" name="sub_total" value="<?php echo $row1['p_final_price'];?>">
+                                                            <button title="Add To Cart" name="add_cart" class="add-to-cart"><i
                                                             class="fi-rr-shopping-basket"></i> Add To Cart</button>
+                                                        </form>
                                                     <a class="ec-btn-group wishlist" title="Wishlist"><i
                                                             class="fi-rr-heart"></i></a>
                                                 </div>
@@ -209,6 +214,7 @@
                                 
                             </div>
                         </div>
+                        
                         <!-- Ec Pagination Start -->
                         <div class="ec-pro-pagination pagination" id="pagination">
                         
@@ -244,7 +250,7 @@
                                     <ul>
                                         <li>
                                             <div class="ec-sidebar-block-item">
-                                                <input type="checkbox" checked /> <a href="#">clothes</a><span
+                                                <input type="checkbox" /> <a href="#">clothes</a><span
                                                     class="checked"></span>
                                             </div>
                                         </li>
@@ -275,7 +281,7 @@
                                     <ul>
                                         <li>
                                             <div class="ec-sidebar-block-item">
-                                                <input type="checkbox" value="" checked /><a href="#">S</a><span
+                                                <input type="checkbox" value=""  /><a href="#">S</a><span
                                                     class="checked"></span>
                                             </div>
                                         </li>
@@ -445,111 +451,17 @@
    
     <?php require("components/footer.php") ?>
 
-    <!-- Modal -->
-    <div class="modal fade" id="ec_quickview_modal" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <button type="button" class="btn-close qty_close" data-bs-dismiss="modal" aria-label="Close"></button>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-5 col-sm-12 col-xs-12">
-                            <!-- Swiper -->
-                            <div class="qty-product-cover">
-                                <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_1.jpg" alt="">
-                                </div>
-                                <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_2.jpg" alt="">
-                                </div>
-                                <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_3.jpg" alt="">
-                                </div>
-                                <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_4.jpg" alt="">
-                                </div>
-                                <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_5.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="qty-nav-thumb">
-                                <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_1.jpg" alt="">
-                                </div>
-                                <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_2.jpg" alt="">
-                                </div>
-                                <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_3.jpg" alt="">
-                                </div>
-                                <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_4.jpg" alt="">
-                                </div>
-                                <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_5.jpg" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-7 col-sm-12 col-xs-12">
-                            <div class="quickview-pro-content">
-                                <h5 class="ec-quick-title"><a href="product-left-sidebar.html">Handbag leather purse for women</a>
-                                </h5>
-                                <div class="ec-quickview-rating">
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star"></i>
-                                </div>
+    <div id="popupModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+        <button type="button" class="btn-close qty_close" data-bs-dismiss="modal" aria-label="Close"></button>
 
-                                <div class="ec-quickview-desc">Lorem Ipsum is simply dummy text of the printing and
-                                    typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
-                                    since the 1500s,</div>
-                                <div class="ec-quickview-price">
-                                    <span class="old-price">$100.00</span>
-                                    <span class="new-price">$80.00</span>
-                                </div>
+            <div class="modal-body" id="popupContent">
 
-                                <div class="ec-pro-variation">
-                                    <div class="ec-pro-variation-inner ec-pro-variation-color">
-                                        <span>Color</span>
-                                        <div class="ec-pro-color">
-                                            <ul class="ec-opt-swatch">
-                                                <li><span style="background-color:#696d62;"></span></li>
-                                                <li><span style="background-color:#d73808;"></span></li>
-                                                <li><span style="background-color:#577023;"></span></li>
-                                                <li><span style="background-color:#2ea1cd;"></span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="ec-pro-variation-inner ec-pro-variation-size ec-pro-size">
-                                        <span>Size</span>
-                                        <div class="ec-pro-variation-content">
-                                            <ul class="ec-opt-size">
-                                                <li class="active"><a href="#" class="ec-opt-sz"
-                                                        data-tooltip="Small">S</a></li>
-                                                <li><a href="#" class="ec-opt-sz" data-tooltip="Medium">M</a></li>
-                                                <li><a href="#" class="ec-opt-sz" data-tooltip="Large">X</a></li>
-                                                <li><a href="#" class="ec-opt-sz" data-tooltip="Extra Large">XL</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="ec-quickview-qty">
-                                    <div class="qty-plus-minus">
-                                        <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
-                                    </div>
-                                    <div class="ec-quickview-cart ">
-                                        <button class="btn btn-primary"><i class="fi-rr-shopping-basket"></i> Add To Cart</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
-    <!-- Modal end -->
+</div>
 
     <!-- Footer navigation panel for responsive display -->
     <div class="ec-nav-toolbar">
@@ -839,7 +751,63 @@
     
     setupPagination(totalPages, currentPage);
 </script>
+<script>
+      $(document).ready(function() {
+        $('.quickview').click(function(e) {
+            e.preventDefault(); // Prevent default behavior of anchor tag
 
+            var p_id = $(this).data('tooltip'); // Get the size from data-tooltip attribute
+            $.ajax({
+                url: 'php/get_data.php',
+                method: 'GET',
+                data: { p_id: p_id }, // Send the size as data to PHP
+                success: function(response) {
+                    $('#popupContent').html(response);
+                    $('#popupModal').modal('show');
+                },
+                error: function(xhr, status, error) {
+                    console.error(xhr.responseText);
+                    // Handle error here
+                }
+            });
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function(){
+    // Function to fetch data based on checked checkboxes
+    function fetchData() {
+        var checkedItems = 'shirt_tbl';
+        $("input[type='checkbox']:checked").each(function(){
+            checkedItems.push($(this).next('a').text());
+          
+        });
+        // AJAX request to send checked items to server
+        $.ajax({
+            url: 'php/fetch_data.php', // Replace with your server-side script URL
+            type: 'POST',
+            data: {items: checkedItems},
+            success: function(response) {
+                // Handle the response from server
+                console.log(response);
+                // Display the data retrieved from database
+                $('#result').html(response);
+            },
+            error: function(xhr, status, error) {
+                // Handle errors
+                console.error(xhr.responseText);
+            }
+        });
+    }
+
+    // Call fetchData function when a checkbox is checked or unchecked
+    $("input[type='checkbox']").change(fetchData);
+
+    // Initial data fetch when page loads
+    fetchData();
+});
+</script>
 
 
 </body>

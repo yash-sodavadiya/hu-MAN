@@ -2,7 +2,6 @@
  <html lang="en">
  
  
-<!-- Mirrored from maraviyainfotech.com/projects/human/human-v37/human-html/shop-banner-left-sidebar-col-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 19 Feb 2024 04:59:04 GMT -->
 <head>
      <meta charset="UTF-8">
      <meta http-equiv="x-ua-compatible" content="ie=edge" />
@@ -39,14 +38,14 @@
      <link rel="stylesheet" id="bg-switcher-css" href="assets/css/backgrounds/bg-4.css">
  </head>
 <body class="shop_page">
-    <div id="ec-overlay">
+    <!-- <div id="ec-overlay">
         <div class="ec-ellipsis">
             <div></div>
             <div></div>
             <div></div>
             <div></div>
         </div>
-    </div>
+    </div> -->
 
     <?php require("components/navbar.php") ?>
    
@@ -119,22 +118,28 @@
 
                     <!-- Shop content Start -->
                     <div class="shop-pro-content">
-                        <div class="shop-pro-inner">
-                            <div class="row"> 
-                                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 mb-6 pro-gl-content">
-                                    <div class="ec-product-inner">
+    <div class="shop-pro-inner">
+        <div class="row" id="recordsContainer">
+            <?php 
+            // Assuming $conn is your database connection
+                require('php/catagory.php');
+                $result1 = mysqli_query($conn, $sql1);
+                foreach($result1 as $row1) { ?>
+                                    
+                                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 mb-6  ec-product-content"
+                                    data-animation="fadeIn" id="records"  style = "padding-top:10px;">
+                                    <div class="ec-product-inner" style = "box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; padding:13px; margin-left: 2px;">
                                         <div class="ec-pro-image-outer">
-                                            <div class="ec-pro-image">
+                                            <div class="ec-pro-image" style="height: 295px;">
                                                 <a href="product-left-sidebar.html" class="image">
-                                                    <img class="main-image"
-                                                        src="assets/images/product-image/6_1.jpg" alt="Product" />
-                                                    <img class="hover-image"
-                                                        src="assets/images/product-image/6_2.jpg" alt="Product" />
+                                                    <img class="main-image" src="../admin/assets/img/product/<?php echo $row1['p_image'];?>"
+                                                        alt="Product" />
                                                 </a>
                                                 <span class="percentage">20%</span>
-                                                <a href="#" class="quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#ec_quickview_modal"><i class="fi-rr-eye"></i></a>
+                                                <!-- <a href="#" class="quickview" data-link-action="quickview"
+                                                    title="Quick view" data-bs-toggle="modal" onclick="openPopup()"
+                                                    data-bs-target="#ec_quickview_modal"><i class="fi-rr-eye"></i></a> -->
+                                                    <a href="" class="quickview" data-tooltip="<?php echo $row1['p_id']?>" ><i class="fi-rr-eye"></i></a>
                                                 <div class="ec-pro-actions">
                                                     <a href="compare.html" class="ec-btn-group compare"
                                                         title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
@@ -146,197 +151,43 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Round Neck T-Shirt</a></h5>
-                                            <div class="ec-pro-rating">
-                                                <i class="ecicon eci-star fill"></i>
-                                                <i class="ecicon eci-star fill"></i>
-                                                <i class="ecicon eci-star fill"></i>
-                                                <i class="ecicon eci-star fill"></i>
-                                                <i class="ecicon eci-star"></i>
-                                            </div>
-                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dutmmy text ever since the 1500s, when an unknown printer took a galley.</div>
+                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html"><?php echo $row1['p_name'];?></a></h5>
+                                           
                                             <span class="ec-price">
-                                                <span class="old-price">$27.00</span>
-                                                <span class="new-price">$22.00</span>
+                                                <span class="old-price">₹<?php echo $row1['p_mrp'];?></span>
+                                                <span class="new-price">₹<?php echo $row1['p_final_price'];?></span>
                                             </span>
                                             <div class="ec-pro-option">
                                                 <div class="ec-pro-color">
                                                     <span class="ec-pro-opt-label">Color</span>
-                                                    <ul class="ec-opt-swatch ec-change-img">
-                                                        <li class="active"><a href="#" class="ec-opt-clr-img"
-                                                                data-src="assets/images/product-image/6_1.jpg"
-                                                                data-src-hover="assets/images/product-image/6_1.jpg"
-                                                                data-tooltip="Gray"><span
-                                                                    style="background-color:#e8c2ff;"></span></a></li>
-                                                        <li><a href="#" class="ec-opt-clr-img"
-                                                                data-src="assets/images/product-image/6_2.jpg"
-                                                                data-src-hover="assets/images/product-image/6_2.jpg"
-                                                                data-tooltip="Orange"><span
-                                                                    style="background-color:#9cfdd5;"></span></a></li>
+                                                    <?php 
+                                                        if($_GET['catagory'] == "perfume_tbl")
+                                                        {
+                                                            echo "";
+                                                        }
+                                                        else{
+                                                    ?>
+                                                    <ul class="ec-opt-swatch ">
+                                                        <li class="active"><span
+                                                                    style="background-color:<?php echo $row1['p_color'];?>;"></span></li>
+                                                      
                                                     </ul>
+                                                        <?php } ?>
                                                 </div>
                                                 <div class="ec-pro-size">
                                                     <span class="ec-pro-opt-label">Size</span>
                                                     <ul class="ec-opt-size">
-                                                        <li class="active"><a href="#" class="ec-opt-sz"
+                                                    <?php
+													$p_id = $row1['p_id'] ;
+    $sql = "SELECT * FROM `size_tbl` WHERE `p_id` = $p_id";
+    $result = mysqli_query($conn, $sql);
+    foreach($result as $row){ ?>
+<li class="active"><a href="#" class="ec-opt-sz"
                                                                 data-old="$25.00" data-new="$20.00"
-                                                                data-tooltip="Small">S</a></li>
-                                                        <li><a href="#" class="ec-opt-sz" data-old="$27.00"
-                                                                data-new="$22.00" data-tooltip="Medium">M</a></li>
-                                                        <li><a href="#" class="ec-opt-sz" data-old="$30.00"
-                                                                data-new="$25.00" data-tooltip="Large">X</a></li>
-                                                        <li><a href="#" class="ec-opt-sz" data-old="$35.00"
-                                                                data-new="$30.00" data-tooltip="Extra Large">XL</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 mb-6 pro-gl-content">
-                                    <div class="ec-product-inner">
-                                        <div class="ec-pro-image-outer">
-                                            <div class="ec-pro-image">
-                                                <a href="product-left-sidebar.html" class="image">
-                                                    <img class="main-image"
-                                                        src="assets/images/product-image/7_1.jpg" alt="Product" />
-                                                    <img class="hover-image"
-                                                        src="assets/images/product-image/7_2.jpg" alt="Product" />
-                                                </a>
-                                                <span class="percentage">20%</span>
-                                                <span class="flags">
-                                                    <span class="sale">Sale</span>
-                                                </span>
-                                                <a href="#" class="quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#ec_quickview_modal"><i class="fi-rr-eye"></i></a>
-                                                <div class="ec-pro-actions">
-                                                    <a href="compare.html" class="ec-btn-group compare"
-                                                        title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
-                                                    <button title="Add To Cart" class="add-to-cart"><i
-                                                            class="fi-rr-shopping-basket"></i> Add To Cart</button>
-                                                    <a class="ec-btn-group wishlist" title="Wishlist"><i
-                                                            class="fi-rr-heart"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Full Sleeve Shirt</a></h5>
-                                            <div class="ec-pro-rating">
-                                                <i class="ecicon eci-star fill"></i>
-                                                <i class="ecicon eci-star fill"></i>
-                                                <i class="ecicon eci-star fill"></i>
-                                                <i class="ecicon eci-star fill"></i>
-                                                <i class="ecicon eci-star"></i>
-                                            </div>
-                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dutmmy text ever since the 1500s, when an unknown printer took a galley.</div>
-                                            <span class="ec-price">
-                                                <span class="old-price">$12.00</span>
-                                                <span class="new-price">$10.00</span>
-                                            </span>
-                                            <div class="ec-pro-option">
-                                                <div class="ec-pro-color">
-                                                    <span class="ec-pro-opt-label">Color</span>
-                                                    <ul class="ec-opt-swatch ec-change-img">
-                                                        <li class="active"><a href="#" class="ec-opt-clr-img"
-                                                                data-src="assets/images/product-image/7_1.jpg"
-                                                                data-src-hover="assets/images/product-image/7_1.jpg"
-                                                                data-tooltip="Gray"><span
-                                                                    style="background-color:#01f1f1;"></span></a></li>
-                                                        <li><a href="#" class="ec-opt-clr-img"
-                                                                data-src="assets/images/product-image/7_2.jpg"
-                                                                data-src-hover="assets/images/product-image/7_2.jpg"
-                                                                data-tooltip="Orange"><span
-                                                                    style="background-color:#b89df8;"></span></a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="ec-pro-size">
-                                                    <span class="ec-pro-opt-label">Size</span>
-                                                    <ul class="ec-opt-size">
-                                                        <li class="active"><a href="#" class="ec-opt-sz"
-                                                                data-old="$12.00" data-new="$10.00"
-                                                                data-tooltip="Small">S</a></li>
-                                                        <li><a href="#" class="ec-opt-sz" data-old="$15.00"
-                                                                data-new="$12.00" data-tooltip="Medium">M</a></li>
-                                                        <li><a href="#" class="ec-opt-sz" data-old="$18.00"
-                                                                data-new="$15.00" data-tooltip="Large">X</a></li>
-                                                        <li><a href="#" class="ec-opt-sz" data-old="$20.00"
-                                                                data-new="$17.00" data-tooltip="Extra Large">XL</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 mb-6 pro-gl-content">
-                                    <div class="ec-product-inner">
-                                        <div class="ec-pro-image-outer">
-                                            <div class="ec-pro-image">
-                                                <a href="product-left-sidebar.html" class="image">
-                                                    <img class="main-image"
-                                                        src="assets/images/product-image/7_1.jpg" alt="Product" />
-                                                    <img class="hover-image"
-                                                        src="assets/images/product-image/7_2.jpg" alt="Product" />
-                                                </a>
-                                                <span class="percentage">20%</span>
-                                                <span class="flags">
-                                                    <span class="sale">Sale</span>
-                                                </span>
-                                                <a href="#" class="quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#ec_quickview_modal"><i class="fi-rr-eye"></i></a>
-                                                <div class="ec-pro-actions">
-                                                    <a href="compare.html" class="ec-btn-group compare"
-                                                        title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
-                                                    <button title="Add To Cart" class="add-to-cart"><i
-                                                            class="fi-rr-shopping-basket"></i> Add To Cart</button>
-                                                    <a class="ec-btn-group wishlist" title="Wishlist"><i
-                                                            class="fi-rr-heart"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Full Sleeve Shirt</a></h5>
-                                            <div class="ec-pro-rating">
-                                                <i class="ecicon eci-star fill"></i>
-                                                <i class="ecicon eci-star fill"></i>
-                                                <i class="ecicon eci-star fill"></i>
-                                                <i class="ecicon eci-star fill"></i>
-                                                <i class="ecicon eci-star"></i>
-                                            </div>
-                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dutmmy text ever since the 1500s, when an unknown printer took a galley.</div>
-                                            <span class="ec-price">
-                                                <span class="old-price">$12.00</span>
-                                                <span class="new-price">$10.00</span>
-                                            </span>
-                                            <div class="ec-pro-option">
-                                                <div class="ec-pro-color">
-                                                    <span class="ec-pro-opt-label">Color</span>
-                                                    <ul class="ec-opt-swatch ec-change-img">
-                                                        <li class="active"><a href="#" class="ec-opt-clr-img"
-                                                                data-src="assets/images/product-image/7_1.jpg"
-                                                                data-src-hover="assets/images/product-image/7_1.jpg"
-                                                                data-tooltip="Gray"><span
-                                                                    style="background-color:#01f1f1;"></span></a></li>
-                                                        <li><a href="#" class="ec-opt-clr-img"
-                                                                data-src="assets/images/product-image/7_2.jpg"
-                                                                data-src-hover="assets/images/product-image/7_2.jpg"
-                                                                data-tooltip="Orange"><span
-                                                                    style="background-color:#b89df8;"></span></a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="ec-pro-size">
-                                                    <span class="ec-pro-opt-label">Size</span>
-                                                    <ul class="ec-opt-size">
-                                                        <li class="active"><a href="#" class="ec-opt-sz"
-                                                                data-old="$12.00" data-new="$10.00"
-                                                                data-tooltip="Small">S</a></li>
-                                                        <li><a href="#" class="ec-opt-sz" data-old="$15.00"
-                                                                data-new="$12.00" data-tooltip="Medium">M</a></li>
-                                                        <li><a href="#" class="ec-opt-sz" data-old="$18.00"
-                                                                data-new="$15.00" data-tooltip="Large">X</a></li>
-                                                        <li><a href="#" class="ec-opt-sz" data-old="$20.00"
-                                                                data-new="$17.00" data-tooltip="Extra Large">XL</a></li>
+                                                                data-tooltip="Small"><?php echo $row['p_size'];?></a></li>
+   <?php  } ?>
+                                                        
+                                                        
                                                     </ul>
                                                 </div>
                                             </div>
@@ -344,20 +195,27 @@
                                     </div>
                                 </div>
                                 
+                                    
+                                <?php } 
+            ?>
+                                
                             </div>
                         </div>
                         <!-- Ec Pagination Start -->
-                        <div class="ec-pro-pagination">
-                            <span>Showing 1-12 of 21 item(s)</span>
-                            <ul class="ec-pro-pagination-inner">
-                                <li><a class="active" href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
+                        <div class="ec-pro-pagination pagination" id="pagination">
+                        
+
+<span></span>
+
+                        <ul class="ec-pro-pagination-inner">
+                                <li><a class="active" href="?page=1">1</a></li>
+                                <li><a href="?page=2">2</a></li>
+                                <li><a href="?page=3">3</a></li>
+                                <li><a href="?page=4">4</a></li>
                                 <li><a href="#">5</a></li>
                                 <li><a class="next" href="#">Next <i class="ecicon eci-angle-right"></i></a></li>
                             </ul>
-                        </div>
+        </div>
                         <!-- Ec Pagination End -->
                     </div>
                     <!--Shop content End -->
@@ -369,9 +227,38 @@
                             <h1>Filter Products By</h1>
                         </div>
                         <div class="ec-sidebar-wrap">
-                            
-                               
-                    <!-- Sidebar Size Block -->
+                            <!-- Sidebar Category Block -->
+                            <div class="ec-sidebar-block">
+                                <div class="ec-sb-title">
+                                    <h3 class="ec-sidebar-title">Category</h3>
+                                </div>
+                                <div class="ec-sb-block-content">
+                                    <ul>
+                                        <li>
+                                            <div class="ec-sidebar-block-item">
+                                                <input type="checkbox" checked /> <a href="#">clothes</a><span
+                                                    class="checked"></span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="ec-sidebar-block-item">
+                                                <input type="checkbox" /> <a href="#">Watches</a><span
+                                                    class="checked"></span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="ec-sidebar-block-item">
+                                                <input type="checkbox" /> <a href="#">Shoes</a><span
+                                                    class="checked"></span>
+                                            </div>
+                                        </li>
+                                        
+                                        
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Sidebar Size Block -->
                             <div class="ec-sidebar-block">
                                 <div class="ec-sb-title">
                                     <h3 class="ec-sidebar-title">Size</h3>
@@ -408,9 +295,63 @@
                                                     class="checked"></span>
                                             </div>
                                         </li>
-                                       
-                                          
-                                     
+                                        <li id="ec-more-toggle-content" style="padding: 0; display: none;">
+                                            <ul style="display:none;">
+                                                <li>
+                                                    <div class="ec-sidebar-block-item">
+                                                        <input type="checkbox" /> <a href="#">5</a><span
+                                                            class="checked"></span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="ec-sidebar-block-item">
+                                                        <input type="checkbox" /> <a href="#">6</a><span
+                                                            class="checked"></span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="ec-sidebar-block-item">
+                                                        <input type="checkbox" /> <a href="#">7</a><span
+                                                            class="checked"></span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="ec-sidebar-block-item">
+                                                        <input type="checkbox" /> <a href="#">8</a><span
+                                                            class="checked"></span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="ec-sidebar-block-item">
+                                                        <input type="checkbox" /> <a href="#">9</a><span
+                                                            class="checked"></span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="ec-sidebar-block-item">
+                                                        <input type="checkbox" /> <a href="#">10</a><span
+                                                            class="checked"></span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="ec-sidebar-block-item">
+                                                        <input type="checkbox" /> <a href="#">11</a><span
+                                                            class="checked"></span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="ec-sidebar-block-item">
+                                                        <input type="checkbox" /> <a href="#">12</a><span
+                                                            class="checked"></span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <div class="ec-sidebar-block-item ec-more-toggle">
+                                                <span class="checked"></span><span id="ec-more-toggle">Shoes Size</span>
+                                            </div>
+                                        </li>
                                     </ul>
                                 </div>
                                 
@@ -497,14 +438,14 @@
     <?php require("components/footer.php") ?>
 
     <!-- Modal -->
-    <div class="modal fade" id="ec_quickview_modal" tabindex="-1" role="dialog">
+    <!-- <div class="modal fade" id="ec_quickview_modal" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <button type="button" class="btn-close qty_close" data-bs-dismiss="modal" aria-label="Close"></button>
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-5 col-sm-12 col-xs-12">
-                            <!-- Swiper -->
+                            Swiper 
                             <div class="qty-product-cover">
                                 <div class="qty-slide">
                                     <img class="img-responsive" src="assets/images/product-image/3_1.jpg" alt="">
@@ -599,8 +540,20 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Modal end -->
+    <!-- Modal -->
+<div id="popupModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+        <button type="button" class="btn-close qty_close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+            <div class="modal-body" id="popupContent">
+
+            </div>
+        </div>
+    </div>
+</div>
 
     <!-- Footer navigation panel for responsive display -->
     <div class="ec-nav-toolbar">
@@ -855,8 +808,67 @@
     <!-- Main Js -->
     <script src="assets/js/vendor/index.js"></script>
     <script src="assets/js/main.js?v=<?php echo time(); ?>"></script>
+    <script>
+    function displayRecords(page) {
+        const urlParams = new URLSearchParams(window.location.search);
+        urlParams.set('page', page);
+        window.location.search = urlParams.toString();
+    }
+
+    function setupPagination(totalPages, currentPage) {
+        const paginationContainer = document.getElementById('pagination');
+        paginationContainer.innerHTML = '';
+
+        for (let i = 1; i <= totalPages; i++) {
+            const link = document.createElement('a');
+            link.href = '#';
+            link.textContent = i;
+
+            if (i == currentPage) {
+                link.classList.add('active');
+            }
+
+            link.addEventListener('click', () => {
+                displayRecords(i);
+            });
+
+            paginationContainer.appendChild(link);
+        }
+    }
+
+    // Assuming you have a PHP variable $totalRecords representing the total number of records
+    
+    const totalPages = Math.ceil(<?php echo $totalRecords; ?> / <?php echo $recordsPerPage; ?>);
+    const currentPage = <?php echo $currentPage; ?>;
+    
+    setupPagination(totalPages, currentPage);
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.quickview').click(function(e) {
+            e.preventDefault(); // Prevent default behavior of anchor tag
+
+            var p_id = $(this).data('tooltip'); // Get the size from data-tooltip attribute
+            $.ajax({
+                url: 'php/get_data.php',
+                method: 'GET',
+                data: { p_id: p_id }, // Send the size as data to PHP
+                success: function(response) {
+                    $('#popupContent').html(response);
+                    $('#popupModal').modal('show');
+                },
+                error: function(xhr, status, error) {
+                    console.error(xhr.responseText);
+                    // Handle error here
+                }
+            });
+        });
+    });
+</script>
+
+
 
 </body>
 
-<!-- Mirrored from maraviyainfotech.com/projects/human/human-v37/human-html/shop-banner-left-sidebar-col-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 19 Feb 2024 04:59:04 GMT -->
 </html>

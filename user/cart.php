@@ -1,3 +1,4 @@
+ <?php session_start();?>
  <!DOCTYPE html>
  <html lang="en">
  
@@ -171,7 +172,8 @@
                                             </thead>
                                             <tbody>
                                                 <?php 
-                                                $sql = "SELECT * FROM `cart_tbl`";
+                                                $user_id = $_SESSION['user_id'];
+                                                $sql = "SELECT * FROM `cart_tbl` WHERE `user_id` = '$user_id' ";
                                                 $result = mysqli_query($conn,$sql);
                                                 foreach($result as $row)
                                                 {
@@ -230,7 +232,7 @@
                                         <div class="col-lg-12">
                                             <div class="ec-cart-update-bottom">
                                                 <a href="#">Continue Shopping</a>
-                                                <button class="btn btn-primary">Check Out</button>
+                                                <a href="checkout">Check Out</a>
                                             </div>
                                         </div>
                                     </div>
@@ -260,7 +262,8 @@
                                     <div class="ec-cart-summary">
                                         <div>
                                             <?php 
-                                            $sql = "SELECT * FROM `cart_total_tbl` WHERE u_id=1";
+                                            $user_id = $_SESSION['user_id'];
+                                            $sql = "SELECT * FROM `cart_total_tbl` WHERE u_id= '$user_id' ";
                                             $result = mysqli_query($conn,$sql);
                                             foreach($result as $row)
                                             {
@@ -293,8 +296,16 @@
                                             </form>
                                         </div>
                                         <div class="ec-cart-summary-total">
+                                        <?php 
+                                            $user_id = $_SESSION['user_id'];
+                                            $sql = "SELECT * FROM `cart_total_tbl` WHERE u_id= '$user_id' ";
+                                            $result = mysqli_query($conn,$sql);
+                                            foreach($result as $row)
+                                            {
+                                            ?>
                                             <span class="text-left">Total Amount</span>
-                                            <span class="text-right">$80.00</span>
+                                            <span class="text-right" id="final_cost">₹<?php echo $row['sub_total'];?>.00</span>
+                                            <?php }?>
                                         </div>
                                     </div>
 
@@ -374,6 +385,8 @@ $(document).ready(function(){
                 totalCost += parseFloat($(this).text().replace('₹', ''));
             });
             $('#total_cost').text('₹' + totalCost.toFixed(2));
+            $('#final_cost').text('₹' + totalCost.toFixed(2));
+           
         }
 
         function updateQuantity(productId, newQuantity , input,userId) {

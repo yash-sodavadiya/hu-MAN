@@ -67,178 +67,80 @@
 											</thead>
 
 											<tbody>
-												<tr>
-													<td>101</td>
-													<td>yash sodvadiya</td>
-													<td>yash@gmail.com</td>
-													<td>3</td>
-													<td>₹4000</td>
-													<td>PAID</td>
-													<td><span class="mb-2 mr-2 badge badge-secondary">Cancel</span></td>
-													<td>01/01/2024</td>
-													<td>
-														<div class="btn-group mb-1">
-															<button type="button"
-																class="btn btn-outline-success">Info</button>
-															<button type="button"
-																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
-																data-bs-toggle="dropdown" aria-haspopup="true"
-																aria-expanded="false" data-display="static">
-																<span class="sr-only">Info</span>
-															</button>
+											<?php
 
-															<div class="dropdown-menu">
-																<a class="dropdown-item" href="#">Detail</a>
-																<a class="dropdown-item" href="#">Track</a>
-																<a class="dropdown-item" href="#">Cancel</a>
-															</div>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td>102</td>
-													<td>zeel vaghani</td>
-													<td>zeel12@gmail.com</td>
-													<td>10</td>
-													<td>₹20000</td>
-													<td>COD</td>
-													<td><span class="mb-2 mr-2 badge badge-warning">Return</span></td>
-													<td>01/01/2024</td>
-													<td>
-														<div class="btn-group mb-1">
-															<button type="button"
-																class="btn btn-outline-success">Info</button>
-															<button type="button"
-																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
-																data-bs-toggle="dropdown" aria-haspopup="true"
-																aria-expanded="false" data-display="static">
-																<span class="sr-only">Info</span>
-															</button>
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
-															<div class="dropdown-menu">
-																<a class="dropdown-item" href="#">Detail</a>
-																<a class="dropdown-item" href="#">Track</a>
-																<a class="dropdown-item" href="#">Cancel</a>
-															</div>
-														</div>
-													</td>
-												</tr>
-												
-												<tr>
-													<td>104</td>
-													<td>smit ranpariya</td>
-													<td>smit@gmail.com</td>
-													<td>3</td>
-													<td>₹2355</td>
-													<td>PAID</td>
-													<td><span class="mb-2 mr-2 badge badge-success">Delivered</span>
-													</td>
-													<td>10/10/2024</td>
-													<td>
-														<div class="btn-group mb-1">
-															<button type="button"
-																class="btn btn-outline-success">Info</button>
-															<button type="button"
-																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
-																data-bs-toggle="dropdown" aria-haspopup="true"
-																aria-expanded="false" data-display="static">
-																<span class="sr-only">Info</span>
-															</button>
+// SQL query to fetch data
+$sql = "SELECT * FROM order_tbl";
+$result = $conn->query($sql);
 
-															<div class="dropdown-menu">
-																<a class="dropdown-item" href="#">Detail</a>
-																<a class="dropdown-item" href="#">Track</a>
-																<a class="dropdown-item" href="#">Cancel</a>
-															</div>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td>105</td>
-													<td>divyang savliya</td>
-													<td>divyang@gmail.com</td>
-													<td>5</td>
-													<td>₹2325</td>
-													<td>PAID</td>
-													<td><span class="mb-2 mr-2 badge badge-secondary">Cancel</span></td>
-													<td>01/01/2024</td>
-													<td>
-														<div class="btn-group mb-1">
-															<button type="button"
-																class="btn btn-outline-success">Info</button>
-															<button type="button"
-																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
-																data-bs-toggle="dropdown" aria-haspopup="true"
-																aria-expanded="false" data-display="static">
-																<span class="sr-only">Info</span>
-															</button>
+// Array to store orders with their quantities and total prices
+$orders = array();
 
-															<div class="dropdown-menu">
-																<a class="dropdown-item" href="#">Detail</a>
-																<a class="dropdown-item" href="#">Track</a>
-																<a class="dropdown-item" href="#">Cancel</a>
-															</div>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td>106</td>
-													<td>raj shah</td>
-													<td>raj134@gmail.com</td>
-													<td>10</td>
-													<td>₹28000</td>
-													<td>COD</td>
-													<td><span class="mb-2 mr-2 badge badge-warning">Return</span></td>
-													<td>02/02/2024</td>
-													<td>
-														<div class="btn-group mb-1">
-															<button type="button"
-																class="btn btn-outline-success">Info</button>
-															<button type="button"
-																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
-																data-bs-toggle="dropdown" aria-haspopup="true"
-																aria-expanded="false" data-display="static">
-																<span class="sr-only">Info</span>
-															</button>
+// Check if there are any rows returned
+if ($result->num_rows > 0) {
+    // Output data of each row
+    while($row = $result->fetch_assoc()) {
+        $order_id = $row["order_id"];
+        $product_price = $row["price"];
+        // If order_id exists in the array, update the quantity and total price
+        if (array_key_exists($order_id, $orders)) {
+            $orders[$order_id]["quantity"] += 1;
+            $orders[$order_id]["total_price"] += $product_price;
+        } else {
+            // Otherwise, add the order to the array
+            $orders[$order_id] = array(
+                "ID" => $row["ID"],
+                "customer_name" => $row["customer_name"],
+                "customer_email" => $row["customer_email"],
+                "quantity" => 1, // Start counting quantity from 1
+                "total_price" => $product_price,
+                "payment" => $row["payment"],
+                "status" => $row["status"],
+                "order_date" => $row["order_date"]
+            );
+        }
+    }
+    
+    // Output data of each order
+    foreach ($orders as $order) {
+        echo '<tr>
+                <td>' . $order["ID"] . '</td>
+                <td>' . $order["customer_name"] . '</td>
+                <td>' . $order["customer_email"] . '</td>
+                <td>' . $order["quantity"] . '</td>
+                <td>' . $order["total_price"] . '</td>
+                <td>' . $order["payment"] . '</td>
+                <td><span class="mb-2 mr-2 badge badge-success">' . $order["status"] . '</span></td>
+                <td>' . $order["order_date"] . '</td>
+                <td>
+                    <div class="btn-group mb-1">
+                        <button type="button" class="btn btn-outline-success">Info</button>
+                        <button type="button" class="btn btn-outline-success dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+                            <span class="sr-only">Info</span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Detail</a>
+                            <a class="dropdown-item" href="#">Track</a>
+                            <a class="dropdown-item" href="#">Cancel</a>
+                        </div>
+                    </div>
+                </td>
+            </tr>';
+    }
+} else {
+    echo "0 results";
+}
+$conn->close();
+?>
 
-															<div class="dropdown-menu">
-																<a class="dropdown-item" href="#">Detail</a>
-																<a class="dropdown-item" href="#">Track</a>
-																<a class="dropdown-item" href="#">Cancel</a>
-															</div>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td>107</td>
-													<td>mehul boghara</td>
-													<td>mehul@gmail.com</td>
-													<td>5</td>
-													<td>₹3500</td>
-													<td>COD</td>
-													<td><span class="mb-2 mr-2 badge badge-success">Delivered</span>
-													</td>
-													<td>01/01/2024</td>
-													<td>
-														<div class="btn-group mb-1">
-															<button type="button"
-																class="btn btn-outline-success">Info</button>
-															<button type="button"
-																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
-																data-bs-toggle="dropdown" aria-haspopup="true"
-																aria-expanded="false" data-display="static">
-																<span class="sr-only">Info</span>
-															</button>
 
-															<div class="dropdown-menu">
-																<a class="dropdown-item" href="#">Detail</a>
-																<a class="dropdown-item" href="#">Track</a>
-																<a class="dropdown-item" href="#">Cancel</a>
-															</div>
-														</div>
-													</td>
-												</tr>
-												
+
+
 
 											</tbody>
 										</table>

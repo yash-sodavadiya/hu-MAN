@@ -21,7 +21,7 @@
         move_uploaded_file($p_img_tmp, "../assets/img/product/" . $p_img);
     } else {
         // If no new image is uploaded, retain the previous image
-        $sql_select_img = "SELECT p_image FROM perfume_tbl WHERE p_id=?";
+        $sql_select_img = "SELECT p_image FROM shirt_tbl WHERE p_id=?";
         $stmt_select_img = $conn->prepare($sql_select_img);
         $stmt_select_img->bind_param("i", $p_id);
         $stmt_select_img->execute();
@@ -37,7 +37,7 @@
         move_uploaded_file($t_img1_tmp, "../assets/img/product/" . $t_img1);
     } else {
         // If no new image is uploaded, retain the previous image
-        $sql_select_img = "SELECT p_img1 FROM perfume_tbl WHERE p_id=?";
+        $sql_select_img = "SELECT p_img1 FROM shirt_tbl WHERE p_id=?";
         $stmt_select_img = $conn->prepare($sql_select_img);
         $stmt_select_img->bind_param("i", $p_id);
         $stmt_select_img->execute();
@@ -52,7 +52,7 @@
         move_uploaded_file($t_img2_tmp, "../assets/img/product/" . $t_img2);
     } else {
         // If no new image is uploaded, retain the previous image
-        $sql_select_img = "SELECT p_img2 FROM perfume_tbl WHERE p_id=?";
+        $sql_select_img = "SELECT p_img2 FROM shirt_tbl WHERE p_id=?";
         $stmt_select_img = $conn->prepare($sql_select_img);
         $stmt_select_img->bind_param("i", $p_id);
         $stmt_select_img->execute();
@@ -66,7 +66,7 @@
         move_uploaded_file($t_img3_tmp, "../assets/img/product/" . $t_img3);
     } else {
         // If no new image is uploaded, retain the previous image
-        $sql_select_img = "SELECT p_img3 FROM perfume_tbl WHERE p_id=?";
+        $sql_select_img = "SELECT p_img3 FROM shirt_tbl WHERE p_id=?";
         $stmt_select_img = $conn->prepare($sql_select_img);
         $stmt_select_img->bind_param("i", $p_id);
         $stmt_select_img->execute();
@@ -80,7 +80,7 @@
         move_uploaded_file($t_img4_tmp, "../assets/img/product/" . $t_img4);
     } else {
         // If no new image is uploaded, retain the previous image
-        $sql_select_img = "SELECT p_img4 FROM perfume_tbl WHERE p_id=?";
+        $sql_select_img = "SELECT p_img4 FROM shirt_tbl WHERE p_id=?";
         $stmt_select_img = $conn->prepare($sql_select_img);
         $stmt_select_img->bind_param("i", $p_id);
         $stmt_select_img->execute();
@@ -96,7 +96,7 @@
         $s_material_type = $_POST['s_material_type'];
         $c_sleeve_type = $_POST['c_sleeve_type'];
         $c_length = $_POST['c_length'];
-        $sql = "UPDATE `shirt_tbl` SET `p_image` = '$p_img', `p_name` = '$p_name', `p_mrp` = '$p_mrp', `p_final_price` = '$p_final_price', `p_stock` = '$p_stock', `c_pattern` = ' $c_pattern', `s_material_type` = '$s_material_type', `c_sleeve_type` = '$c_sleeve_type', `c_length` = '$c_length', `p_description1` = '$long_description', `p_description2` = '$short_description' WHERE `shirt_tbl`.`p_id` ='$p_id' ";
+        $sql = "UPDATE `shirt_tbl` SET `p_image` = '$p_img', `p_img1` = '$t_img1',`p_img2` = '$t_img2' ,`p_img3` = '$t_img3', `p_name` = '$p_name', `p_mrp` = '$p_mrp', `p_final_price` = '$p_final_price', `p_stock` = '$p_stock', `c_pattern` = ' $c_pattern', `s_material_type` = '$s_material_type', `c_sleeve_type` = '$c_sleeve_type', `c_length` = '$c_length', `p_description1` = '$long_description', `p_description2` = '$short_description' WHERE `shirt_tbl`.`p_id` ='$p_id' ";
         $result = mysqli_query($conn, $sql);
         if ($result) {
             $success_message = 'Product is updated successfully.';

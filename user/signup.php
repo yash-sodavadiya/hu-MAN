@@ -81,7 +81,7 @@ if (isset($_POST['signup'])) {
         $sql = "INSERT INTO `user_tbl` (`f_name`, `l_name`, `username`, `email_id`, `phone_no`, `password`) VALUE  ('$fname', '$lname', '$username', '$email_id', '$phone', '$password')";
         $result = mysqli_query($conn,$sql);
         if($result) {
-            header("location:sigin");
+            header("location:signin");
         }
     }
 }

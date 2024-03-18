@@ -14,7 +14,7 @@ if(isset($_POST['productId'], $_POST['newQuantity'])) {
     // Update the quantity in the cart table
     $sql = "UPDATE cart_tbl SET quantity = '$newQuantity' , sub_total = '$newPrice' WHERE p_id = '$productId'";
     $result = mysqli_query($conn, $sql);
-    $sql1 = "UPDATE cart_total_tbl SET sub_total = '$newTotalCost'  WHERE u_id = '$userId'";
+    $sql1 = "UPDATE cart_total_tbl SET sub_total = '$newTotalCost' , final_total = '$newTotalCost'  WHERE u_id = '$userId'";
     $result1 = mysqli_query($conn, $sql1);
 
     if($result) {

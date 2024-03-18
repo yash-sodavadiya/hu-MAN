@@ -73,15 +73,39 @@
                             <div class="ec-header-bottons">
 
                                 <!-- Header User Start -->
+                                <?php 
+                                   
+                                    if(isset($_SESSION['user_id']))
+                                    { 
+                                        require("database/config.php");
+                                        $user_id = $_SESSION['user_id'];
+                                        $sql = "SELECT * FROM `user_tbl` WHERE `user_id` = '$user_id' ";
+                                        $result = mysqli_query($conn,$sql);
+                                        foreach($result as $row)
+                                        {
+                                        ?>
+                                        <div class="ec-header-user dropdown">
+                                        
+                                        <button class="dropdown-toggle" data-bs-toggle="dropdown">Welcome, <?php echo $row['f_name'] . " " . $row['l_name'] ?> <i
+                                                class="fi-rr-user"></i> </button>
+                                        <ul class="dropdown-menu dropdown-menu-right">
+                                            <li><a class="dropdown-item" href="signup">My Profile</a></li>
+                                            <li><a class="dropdown-item" href="php/logout">Log out</a></li>
+                                            <li><a class="dropdown-item" href="order_history">Order History</a></li>
+                                        </ul>
+                                    </div>
+                                    <?php } }
+                                    else{
+                                ?>
                                 <div class="ec-header-user dropdown">
                                     <button class="dropdown-toggle" data-bs-toggle="dropdown"><i
                                             class="fi-rr-user"></i></button>
                                     <ul class="dropdown-menu dropdown-menu-right">
                                         <li><a class="dropdown-item" href="signup">Register</a></li>
                                         <li><a class="dropdown-item" href="signin">Login</a></li>
-                                        <li><a class="dropdown-item" href="checkout.html">Checkout</a></li>
                                     </ul>
                                 </div>
+                                   <?php } ?>
                                 <!-- Header User End -->
                                 <!-- Header wishlist Start -->
                                 <a href="wishlist" class="ec-header-btn ec-header-wishlist">
@@ -147,11 +171,11 @@
                                         <li class="d-flex">
                                             <ul class="d-block">
                                                 <li class="menu_title"><a href="javascript:void(0)">Clothes</a></li>
-                                                <li><a href="shirt-shop">Shirt</a>
+                                                <li><a href="shop2?catagory=shirt_tbl">Shirt</a>
                                                 </li>
-                                                <li><a href="pent-shop">Pent</a>
+                                                <li><a href="shop2?catagory=pent_tbl">Pent</a>
                                                 </li>
-                                                <li><a href="T-shirt-shop">T-shirt</a>
+                                                <li><a href="shop2?catagory=shirt_tbl">T-shirt</a>
                                                 </li>
                                             </ul>
                                             <ul class="d-block">
@@ -161,6 +185,11 @@
                                                 
                                             </ul>
                                             <ul class="d-block">
+                                            <li class="menu_title"><a href="javascript:void(0)">perfume</a></li>
+
+                                            <li><a href="shop2.php?catagory=perfume_tbl"></a>perfume</li>
+                                            </ul>
+                                            <ul class="d-block">
                                                 <li class="menu_title"><a href="javascript:void(0)">Shoes</a></li>
                                                 <li><a href="#">Sport Shoes</a></li>
                                                 <li><a href="#">Formal Shoes</a></li>
@@ -168,11 +197,6 @@
                     
                                             </ul>
                                             
-                                            <ul class="d-block">
-                                            <li class="menu_title"><a href="javascript:void(0)">perfume</a></li>
-
-                                            <li><a href="#"></a>perfume</li>
-                                            </ul>
                                         </li>
                                     </ul>
                                 </li>

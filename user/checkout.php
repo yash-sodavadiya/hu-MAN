@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 
 
@@ -170,8 +171,8 @@
     </div>
   </div>
   <div class="bs-stepper-content border-top">
-    <form id="wizard-checkout-form" onSubmit="return false">
-
+    <!-- <form id="wizard-checkout-form" onSubmit="return false"> -->
+    <div id="wizard-checkout-form" >
       <!-- Cart -->
       <div id="checkout-cart" class="content">
         <div class="row">
@@ -303,7 +304,7 @@
               </dl>
             </div>
             <div class="d-grid">
-              <button class="btn btn-primary btn-next">Place Order</button>
+              <button class="btn btn-primary " id="btn-pay">Place Order</button>
             </div>
           </div>
         </div>
@@ -318,8 +319,8 @@
             <div class="row mb-3">
             <!-- Select address -->
             <?php 
-            
-              $sql = "SELECT * FROM `address_tbl` WHERE `user_id` = 6";
+            $user_id = $_SESSION['user_id'];
+              $sql = "SELECT * FROM `address_tbl` WHERE `user_id` = $user_id";
               $result = mysqli_query($conn,$sql);
               foreach ($result as $row) { ?>
                 
@@ -380,24 +381,36 @@
               <!-- Estimated Delivery -->
               <h6>Estimated Delivery Date</h6>
               <ul class="list-unstyled">
+              <?php 
+                                                $user_id = $_SESSION['user_id'];
+                                                $sql = "SELECT * FROM `cart_tbl` WHERE `user_id` = '$user_id' ";
+                                                $result = mysqli_query($conn,$sql);
+                                                foreach($result as $row)
+                                                {
+                                                    $p_id = $row['p_id'];
+                                                    $sql1 = "SELECT * FROM `product_tbl` WHERE `product_id` = $p_id";
+                                                    $result1 = mysqli_query($conn,$sql1);
+                                                    foreach($result1 as $row1)
+                                                    {
+                                                        $category = $row1['catagory_name'];
+                                                        $sql2 = "SELECT * FROM `$category` WHERE `p_id` = $p_id";
+                                                        $result2 = mysqli_query($conn,$sql2);
+                                                        foreach($result2 as $row2)
+                                                        { ?>
                 <li class="d-flex gap-3 align-items-center">
                   <div class="flex-shrink-0">
-                    <img src="../../assets/img/products/1.png" alt="google home" class="w-px-50">
+                    <img src="../admin/assets/img/product/<?php echo $row2['p_image']?>" alt="google home" class="w-px-50">
                   </div>
                   <div class="flex-grow-1">
-                    <p class="mb-0"><a class="text-body" href="javascript:void(0)">Google - Google Home - White</a></p>
-                    <p class="fw-medium">18th Nov 2021</p>
+                    <p class="mb-0"><a class="text-body" href="javascript:void(0)"><?php echo $row2['p_name']?></a></p>
+                    <p class="fw-medium"><?php echo $row['sub_total']?></p>
                   </div>
                 </li>
-                <li class="d-flex gap-3 align-items-center">
-                  <div class="flex-shrink-0">
-                    <img src="../../assets/img/products/2.png" alt="google home" class="w-px-50">
-                  </div>
-                  <div class="flex-grow-1">
-                    <p class="mb-0"><a class="text-body" href="javascript:void(0)">Apple iPhone 11 (64GB, Black)</a></p>
-                    <p class="fw-medium">20th Nov 2021</p>
-                  </div>
-                </li>
+               
+                <?php }
+                                                    }
+                                                }?>
+ 
               </ul>
 
               <hr class="mx-n4">
@@ -405,19 +418,30 @@
               <!-- Price Details -->
               <h6>Price Details</h6>
               <dl class="row mb-0">
+                <?php 
+                
+                  $sql = "SELECT * FROM `cart_total_tbl` where u_id = '$user_id'";
+                  $result = mysqli_query($conn,$sql);
+                  foreach($result as $row)
+                  { ?>
+                    <dt class="col-6 fw-normal">Order Total</dt>
+                    <dd class="col-6 text-end">₹<?php echo $row['final_total']?>.00</dd>
 
-                <dt class="col-6 fw-normal">Order Total</dt>
-                <dd class="col-6 text-end">$1198.00</dd>
-
+                    
                 <dt class="col-6 fw-normal">Delivery Charges</dt>
-                <dd class="col-6 text-end"><s class="text-muted">$5.00</s> <span class="badge bg-label-success ms-1">Free</span></dd>
+                <dd class="col-6 text-end"><s class="text-muted"></s> <span class="badge bg-label-success ms-1">Free</span></dd>
 
               </dl>
               <hr class="mx-n4">
               <dl class="row mb-0">
                 <dt class="col-6">Total</dt>
-                <dd class="col-6 fw-medium text-end mb-0">$1198.00</dd>
+                <dd class="col-6 fw-medium text-end mb-0">₹<?php echo $row['final_total']?>.00</dd>
               </dl>
+                  <?php }
+
+                ?>
+                
+
             </div>
             <div class="d-grid">
               <button class="btn btn-primary btn-next">Place Order</button>
@@ -495,8 +519,46 @@
                       </label>
                     </div>
                     <div class="col-12">
-                      <button type="button" class="btn btn-primary btn-next me-sm-3 me-1">Submit</button>
+                      <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+                      <?php 
+                                                $user_id = $_SESSION['user_id'];
+                                                $sql = "SELECT * FROM `cart_tbl` WHERE `user_id` = '$user_id' ";
+                                                $result = mysqli_query($conn,$sql);
+                                                foreach($result as $row)
+                                                {
+                                                    $p_id = $row['p_id'];
+                                                    $sql1 = "SELECT * FROM `product_tbl` WHERE `product_id` = $p_id";
+                                                    $result1 = mysqli_query($conn,$sql1);
+                                                    foreach($result1 as $row1)
+                                                    {
+                                                        $category = $row1['catagory_name'];
+                                                        $sql2 = "SELECT * FROM `$category` WHERE `p_id` = $p_id";
+                                                        $result2 = mysqli_query($conn,$sql2);
+                                                        foreach($result2 as $row2)
+                                                        {  ?>
+                                                        
+                      <input type="hidden" name="p_name[]" value="<?php echo $row2['p_name'] ?>">
+                      <input type="hidden" name="p_img[]" value="<?php echo $row2['p_image'] ?>">
+                      <input type="hidden" name="quantity[]" value="<?php echo $row['quantity'] ?>">
+                      <input type="hidden" name="sub_total[]" value="<?php echo $row['sub_total'] ?>">
+                      <input type="hidden" name="payment" value="Cradit Card">
+                      <?php } } }?>
+                      <?php 
+                        $user_id = $_SESSION['user_id'];
+                        $sql3 = "SELECT * FROM `user_tbl` where `user_id` = '$user_id' ";
+                        $result3 = mysqli_query($conn,$sql3);
+                        foreach($result3 as $row3)
+                        { ?>
+                            <input type="hidden" name="address" value="<?php echo $row3['address'] ?>">
+                            <input type="hidden" name="f_name" value="<?php echo $row3['f_name'] ?>">
+                            <input type="hidden" name="email" value="<?php echo $row3['email_id'] ?>">
+                            <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id'] ?>">
+                        <?php } 
+                      ?>
+
+                      <button type="submit" class="btn btn-primary btn-next me-sm-3 me-1" name="check_submit">Save</button>
                       <button type="reset" class="btn btn-label-secondary">Cancel</button>
+                    </form>
                     </div>
                   </div>
                 </div>
@@ -504,7 +566,44 @@
                 <!-- COD -->
                 <div class="tab-pane fade" id="pills-cod" role="tabpanel" aria-labelledby="pills-cod-tab">
                   <p>Cash on Delivery is a type of payment method where the recipient make payment for the order at the time of delivery rather than in advance.</p>
-                  <button type="button" class="btn btn-primary btn-next">Pay On Delivery</button>
+                  <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+                  <?php 
+                                                $user_id = $_SESSION['user_id'];
+                                                $sql = "SELECT * FROM `cart_tbl` WHERE `user_id` = '$user_id' ";
+                                                $result = mysqli_query($conn,$sql);
+                                                foreach($result as $row)
+                                                {
+                                                    $p_id = $row['p_id'];
+                                                    $sql1 = "SELECT * FROM `product_tbl` WHERE `product_id` = $p_id";
+                                                    $result1 = mysqli_query($conn,$sql1);
+                                                    foreach($result1 as $row1)
+                                                    {
+                                                        $category = $row1['catagory_name'];
+                                                        $sql2 = "SELECT * FROM `$category` WHERE `p_id` = $p_id";
+                                                        $result2 = mysqli_query($conn,$sql2);
+                                                        foreach($result2 as $row2)
+                                                        {  ?>
+                                                        
+                      <input type="hidden" name="p_name[]" value="<?php echo $row2['p_name'] ?>">
+                      <input type="hidden" name="p_img[]" value="<?php echo $row2['p_image'] ?>">
+                      <input type="hidden" name="quantity[]" value="<?php echo $row['quantity'] ?>">
+                      <input type="hidden" name="sub_total[]" value="<?php echo $row['sub_total'] ?>">
+                      <input type="hidden" name="payment" value="COD">
+                      <?php } } }?>
+                      <?php 
+                        $user_id = $_SESSION['user_id'];
+                        $sql3 = "SELECT * FROM `user_tbl` where `user_id` = '$user_id' ";
+                        $result3 = mysqli_query($conn,$sql3);
+                        foreach($result3 as $row3)
+                        { ?>
+                            <input type="hidden" name="address" value="<?php echo $row3['address'] ?>">
+                            <input type="hidden" name="f_name" value="<?php echo $row3['f_name'] ?>">
+                            <input type="hidden" name="email" value="<?php echo $row3['email_id'] ?>">
+                            <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id'] ?>">
+                        <?php } 
+                      ?>
+                  <button type="submit" class="btn btn-primary btn-next" name="cod">Pay On Delivery</button>
+                        </form>
                 </div>
 
                 <!-- Gift card -->
@@ -681,7 +780,8 @@
           </div>
         </div>
       </div>
-    </form>
+    <!-- </form> -->
+    </div>
   </div>
 </div>
 <!--/ Checkout Wizard -->
@@ -698,7 +798,7 @@
           <h3 class="address-title">Add New Address</h3>
           <p class="address-subtitle">Add new address for express delivery</p>
         </div>
-        <form id="addNewAddressForm" class="row g-3" onsubmit="return false">
+        <!-- <form id="addNewAddressForm" class="row g-3" onsubmit="return false"> -->
 
           <div class="col-12">
             <div class="row">
@@ -804,7 +904,7 @@
             <button type="submit" class="btn btn-primary me-sm-3 me-1">Submit</button>
             <button type="reset" class="btn btn-label-secondary" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
           </div>
-        </form>
+        <!-- </form> -->
       </div>
     </div>
   </div>
@@ -866,9 +966,80 @@
     <!-- Main Js -->
     <script src="assets/js/vendor/index.js"></script>
     <script src="assets/js/main.js"></script>
+
+
+   
   
 </body>
 
+<?php 
+  if(isset($_POST['check_submit']))
+  {
+
+    
+    $fetchOrderId = "SELECT * FROM `order_tbl`";
+    $fetchResult = mysqli_query($conn,$fetchOrderId);
+    foreach($fetchResult as $fetchRow)
+    {
+      
+    }
+    $order_id = $fetchRow['order_id'] + 1;
+
+    foreach($_POST['p_name'] as $key => $p_name) {
+    $quantity = $_POST['quantity'][$key];
+    $sub_total = $_POST['sub_total'][$key];
+    $payment = $_POST['payment'];
+    $user_id = $_POST['user_id'];
+    $address = $_POST['address'];
+    $p_img = $_POST['p_img'][$key];
+    $f_name = $_POST['f_name'];
+    $email = $_POST['email'];
+    date_default_timezone_set('Asia/Kolkata');
+    $currentDate = date("Y-m-d H:i:s");
+    $sql = "INSERT INTO `order_tbl` (`order_id`, `p_img`,  `p_name`,`user_id`, `customer_name`, `customer_email`, `quantity`, `price`, `payment`, `status`, `order_date`, `customer_address`, `payment_details`) VALUES ('$order_id', '$p_img', '$p_name', '$user_id','$f_name', '$email', '$quantity', '$sub_total', '$payment', 'Pending', '$currentDate', '$address', '$payment')";
+    $result = mysqli_query($conn,$sql);
+      $sql1 = "DELETE * FROM `cart_tbl` WHERE `user_id` = '$user_id' ";
+      $result1 = mysqli_query($conn,$sql2);
+      $sql2 = "DELETE * FROM `cart_total_tbl` WHERE `u_id` = '$user_id' ";
+      $result2 = mysqli_query($conn,$sql2);
+    
+    }
+  }
+
+  if(isset($_POST['cod']))
+  {
+
+    
+    $fetchOrderId = "SELECT * FROM `order_tbl`";
+    $fetchResult = mysqli_query($conn,$fetchOrderId);
+    foreach($fetchResult as $fetchRow)
+    {
+      
+    }
+    $order_id = $fetchRow['order_id'] + 1;
+
+    foreach($_POST['p_name'] as $key => $p_name) {
+    $quantity = $_POST['quantity'][$key];
+    $sub_total = $_POST['sub_total'][$key];
+    $payment = $_POST['payment'];
+    $user_id = $_POST['user_id'];
+    $address = $_POST['address'];
+    $p_img = $_POST['p_img'][$key];
+    $f_name = $_POST['f_name'];
+    $email = $_POST['email'];
+    date_default_timezone_set('Asia/Kolkata');
+    $currentDate = date("Y-m-d H:i:s");
+    $sql = "INSERT INTO `order_tbl` (`order_id`, `p_img`,  `p_name`,`user_id`, `customer_name`, `customer_email`, `quantity`, `price`, `payment`, `status`, `order_date`, `customer_address`, `payment_details`) VALUES ('$order_id', '$p_img', '$p_name', '$user_id','$f_name', '$email', '$quantity', '$sub_total', '$payment', 'Pending', '$currentDate', '$address', '$payment')";
+    $result = mysqli_query($conn,$sql);
+    
+      $sql1 = "DELETE * FROM `cart_tbl` WHERE `user_id` = '$user_id' ";
+      $result1 = mysqli_query($conn,$sql2);
+      $sql2 = "DELETE * FROM `cart_total_tbl` WHERE `u_id` = '$user_id' ";
+      $result2 = mysqli_query($conn,$sql2);
+    
+    }
+  }
+?>
 
 </html>
 

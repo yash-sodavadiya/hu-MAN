@@ -32,6 +32,21 @@
 
 	<!-- FAVICON -->
 	<link href="assets/img/favicon.png" rel="shortcut icon" />
+	<style>
+		/* CSS */
+.badge-pending {
+    background-color:black;
+}
+
+.badge-ready-to-ship {
+    background-color: darkorange;
+}
+
+.badge-delivered {
+    background-color: green;
+}
+
+	</style>
 </head>
 
 <body class="ec-header-fixed ec-sidebar-fixed ec-sidebar-dark ec-header-light" id="body">
@@ -56,9 +71,7 @@
 											<thead>
 												<tr>
 													<th>ID</th>
-													<th>Item</th>
-													<th>Name</th>
-													<th>Customer</th>
+													<th>customer Name</th>
 													<th>Items</th>
 													<th>Price</th>
 													<th>Payment</th>
@@ -70,170 +83,99 @@
 
 											<tbody>
 												
-												<tr>
-													<td>01</td>
-													<td><img class="product-img tbl-img" src="assets/img/products/p2.jpg" alt="product"></td>
-													<td>Tee-Shirt For Men</td>
-													<td><strong>smit ranpariya</strong><br>
-														smit4@gmai.com
-													</td>
-													<td>1</td>
-													<td>₹1000</td>
-													<td>COD</td>
-													<td><span class="mb-2 mr-2 badge badge-warning">Redy To Ship</span>
-													</td>
-													<td>01/01/2024</td>
-													<td>
-														<div class="btn-group mb-1">
-															<button type="button"
-																class="btn btn-outline-success">Info</button>
-															<button type="button"
-																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
-																data-bs-toggle="dropdown" aria-haspopup="true"
-																aria-expanded="false" data-display="static">
-																<span class="sr-only">Info</span>
-															</button>
+											<?php
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
-															<div class="dropdown-menu">
-																<a class="dropdown-item" href="#">Detail</a>
-																<a class="dropdown-item" href="#">Track</a>
-																<a class="dropdown-item" href="#">Cancel</a>
-															</div>
-														</div>
-													</td>
-												</tr>
+// SQL query to fetch data
+$sql = "SELECT * FROM order_tbl";
+$result = $conn->query($sql);
+
+// Array to store orders grouped by ID
+$orders = array();
+
+// Check if there are any rows returned
+if ($result->num_rows > 0) {
+    // Output data of each row
+    while($row = $result->fetch_assoc()) {
+        $order_id = $row["order_id"];
+        // If order_id exists in the array, update the quantity and total price
+        if (array_key_exists($order_id, $orders)) {
+            $orders[$order_id]["quantity"] += 1;
+            $orders[$order_id]["total_price"] += $row["price"];
+			
+        } else {
+            // Otherwise, add the order to the array
+            $orders[$order_id] = array(
+                "ID" => $order_id,
+                "customer_name" => $row["customer_name"],
+                "customer_email" => $row["customer_email"],
+                "quantity" => 1, // Start counting quantity from 1
+                "total_price" => $row["price"],
+                "payment" => $row["payment"],
+                "status" => $row["status"],
+                "order_date" => $row["order_date"]
+            );
+        }
+    }
+    
+    // Reverse the order of the array
+    $orders = array_reverse($orders);
+    
+    // Output data of each order
+    foreach ($orders as $order) {
+        // Set the action button based on the status
+        $actionButton = '';
+        $cancelButton = '';
+        if ($order["status"] == "Pending") {
+            $actionButton = '<button type="submit" class="btn btn-primary btn-sm">Ready to Ship</button>';
+            $cancelButton = '<button type="button" class="btn btn-danger btn-sm">Cancel</button>';
+        } elseif ($order["status"] == "ready-to-ship") {
+            $actionButton = '<button type="submit" class="btn btn-success btn-sm">Delivery</button>';
+        } else {
+            // Add condition for other statuses if needed
+        }
+
+        // Set status class for styling
+        $statusClass = strtolower(str_replace(" ", "-", $order["status"]));
+
+        echo '<tr>
+                <td>' . $order["ID"] . '</td>
+                <td><strong>' . $order["customer_name"] . '</strong><br>' . $order["customer_email"] . '</td>
+                <td>' . $order["quantity"] . '</td>
+                <td>₹' . $order["total_price"] . '</td>
+                <td>' . $order["payment"] . '</td>
+                <td><span class="mb-2 mr-2 badge badge-' . $statusClass . '">' . $order["status"] . '</span></td>
+                <td>' . $order["order_date"] . '</td>
+                <td style="display:flex; justify-content:space-between;">
+                    <a><i class="fa-solid fa-eye"  style="color : #88aaf3;"></i></a>
+                    <form action="php/update_status.php" method="post">
+                        <input type="hidden" value="'.$order['ID'].'" name="order_id">
+						<input type="hidden" value="'.$order['status'].'" name="order_status">
+                        <div class="edit">' . $actionButton . '</div>
+                    </form>
+                    <div class="cancel">' . $cancelButton. '</div>
+                </td>
+            </tr>';
+    }
+
+} else {
+    echo "0 results";
+}
+$conn->close();
+?>
+
+
+
+
+
+
+
 												
 												
 												
-												
-												<tr>
-													<td>02</td>
-													<td><img class="product-img tbl-img" src="assets/img/products/p7.jpg" alt="product"></td>
-													<td>Mens Shirt</td>
-													<td><strong>meet goti</strong><br>
-														meet23224@gmail.com
-													</td>
-													<td>10</td>
-													<td>₹20000</td>
-													<td>COD</td>
-													<td><span class="mb-2 mr-2 badge badge-warning">Redy To Ship</span>
-													</td>
-													<td>10/10/2024</td>
-													<td>
-														<div class="btn-group mb-1">
-															<button type="button"
-																class="btn btn-outline-success">Info</button>
-															<button type="button"
-																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
-																data-bs-toggle="dropdown" aria-haspopup="true"
-																aria-expanded="false" data-display="static">
-																<span class="sr-only">Info</span>
-															</button>
-
-															<div class="dropdown-menu">
-																<a class="dropdown-item" href="#">Detail</a>
-																<a class="dropdown-item" href="#">Track</a>
-																<a class="dropdown-item" href="#">Cancel</a>
-															</div>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td>03</td>
-													<td><img class="product-img tbl-img" src="assets/img/products/p8.jpg" alt="product"></td>
-													<td>Smart Watch</td>
-													<td><strong>raj shsh</strong><br>
-														raj@gmail.com
-													</td>
-													<td>10</td>
-													<td>₹12456</td>
-													<td>COD</td>
-													<td><span class="mb-2 mr-2 badge badge-warning">Redy To Ship</span>
-													</td>
-													<td01/>01/2024</td>
-													<td>
-														<div class="btn-group mb-1">
-															<button type="button"
-																class="btn btn-outline-success">Info</button>
-															<button type="button"
-																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
-																data-bs-toggle="dropdown" aria-haspopup="true"
-																aria-expanded="false" data-display="static">
-																<span class="sr-only">Info</span>
-															</button>
-
-															<div class="dropdown-menu">
-																<a class="dropdown-item" href="#">Detail</a>
-																<a class="dropdown-item" href="#">Track</a>
-																<a class="dropdown-item" href="#">Cancel</a>
-															</div>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td>04</td>
-													<td><img class="product-img tbl-img" src="assets/img/products/p9.jpg" alt="product"></td>
-													<td>Tee-Shirt For Men</td>
-													<td><strong>Hardik Patel</strong><br>
-														patel000777@gmail.com
-													</td>
-													<td>2</td>
-													<td>₹4000</td>
-													<td>PAID</td>
-													<td><span class="mb-2 mr-2 badge badge-info">On The Way</span>
-													</td>
-													<td>10/10/2024</td>
-													<td>
-														<div class="btn-group mb-1">
-															<button type="button"
-																class="btn btn-outline-success">Info</button>
-															<button type="button"
-																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
-																data-bs-toggle="dropdown" aria-haspopup="true"
-																aria-expanded="false" data-display="static">
-																<span class="sr-only">Info</span>
-															</button>
-
-															<div class="dropdown-menu">
-																<a class="dropdown-item" href="#">Detail</a>
-																<a class="dropdown-item" href="#">Track</a>
-																<a class="dropdown-item" href="#">Cancel</a>
-															</div>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td>05</td>
-													<td><img class="product-img tbl-img" src="assets/img/products/p10.jpg" alt="product"></td>
-													<td>Men casual shoes</td>
-													<td><strong>smit</strong><br>
-														smit@gmail.com
-													</td>
-													<td>5</td>
-													<td>₹2355</td>
-													<td>COD</td>
-													<td><span class="mb-2 mr-2 badge badge-success">Delivered</span>
-													</td>
-													<td>0/10/2024</td>
-													<td>
-														<div class="btn-group mb-1">
-															<button type="button"
-																class="btn btn-outline-success">Info</button>
-															<button type="button"
-																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
-																data-bs-toggle="dropdown" aria-haspopup="true"
-																aria-expanded="false" data-display="static">
-																<span class="sr-only">Info</span>
-															</button>
-
-															<div class="dropdown-menu">
-																<a class="dropdown-item" href="#">Detail</a>
-																<a class="dropdown-item" href="#">Track</a>
-																<a class="dropdown-item" href="#">Cancel</a>
-															</div>
-														</div>
-													</td>
-												</tr>
 											</tbody>
 										</table>
 									</div>
@@ -256,7 +198,7 @@
 	<script src="assets/plugins/simplebar/simplebar.min.js"></script>
 	<script src="assets/plugins/jquery-zoom/jquery.zoom.min.js"></script>
 	<script src="assets/plugins/slick/slick.min.js"></script>
-
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<!-- Data-Tables -->
 	<script src='assets/plugins/data-tables/jquery.datatables.min.js'></script>
 	<script src='assets/plugins/data-tables/datatables.bootstrap5.min.js'></script>
@@ -267,8 +209,8 @@
 
 	<!-- human Custom -->
 	<script src="assets/js/human.js"></script>
+	
 </body>
 
 
-<!-- Mirrored from maraviyainfotech.com/projects/human/human-v37/human-admin/new-order.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 17 Jan 2024 06:16:04 GMT -->
 </html>
