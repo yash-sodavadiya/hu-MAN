@@ -17,7 +17,7 @@
 					<!-- sidebar menu -->
 					<ul class="nav sidebar-inner" id="sidebar-menu">
 						<!-- Dashboard -->
-						<li class="active">
+						<li class="<?php if(basename($_SERVER['PHP_SELF']) == 'dashboard.php') { echo 'active'; } else{echo '';}  ?>">
 							<a class="sidenav-item-link" href="dashboard">
 								<i class="fa-solid fa-border-all"></i>
 								<span class="nav-text">Dashboard</span>
@@ -27,7 +27,7 @@
 
 						
 						<!-- Category -->
-						<li class="has-sub">
+						<!-- <li class="<?php if( basename($_SERVER['PHP_SELF']) == 'index.php') { echo 'active'; } else{echo '';}  ?>">
 							<a class="sidenav-item-link" href="javascript:void(0)">
 							<i class="fa-solid fa-layer-group"></i>
 								<span class="nav-text">Categories</span> <i class="fa-solid fa-angle-right"></i>
@@ -46,10 +46,10 @@
 									</li>
 								</ul>
 							</div>
-						</li>
+						</li> -->
 
 						<!-- Products -->
-						<li class="has-sub">
+						<li class="has-sub <?php if( basename($_SERVER['PHP_SELF']) == 'product-add.php'||basename($_SERVER['PHP_SELF']) == 'product-list.php'  ) { echo 'active'; } else{echo '';}  ?>">
 							<a class="sidenav-item-link" href="javascript:void(0)">
 							<!-- <i class="fa-solid fa-truck-fast"></i> -->
 							<i class="fas fa-tshirt"></i>
@@ -73,7 +73,7 @@
 						</li>
 
 						<!-- Orders -->
-						<li class="has-sub">
+						<li class="has-sub <?php if( basename($_SERVER['PHP_SELF']) == 'pending-order.php'||basename($_SERVER['PHP_SELF']) == 'order-history.php'  ) { echo 'active'; } else{echo '';}  ?>">
 							<a class="sidenav-item-link" href="javascript:void(0)">
 							<i class="fa-solid fa-cart-shopping"></i>
 								<span class="nav-text">Orders</span> <i class="fa-solid fa-angle-right"></i>
@@ -81,16 +81,26 @@
 							<div class="collapse">
 								<ul class="sub-menu" id="orders" data-parent="#sidebar-menu">
 									<li class="">
-										<a class="sidenav-item-link" href="new-order">
-											<span class="nav-text">New Order</span>
+										<a class="sidenav-item-link" href="pending-order">
+											<span class="nav-text">Pending Order</span>
+										</a>
+									</li>
+									<li class="">
+										<a class="sidenav-item-link" href="ready-to-ship">
+											<span class="nav-text">Ready To ship Order</span>
 										</a>
 									</li>
 									<li class="">
 										<a class="sidenav-item-link" href="order-history">
-											<span class="nav-text">Order History</span>
+											<span class="nav-text">Delivered Order</span>
 										</a>
 									</li>
 									<li class="">
+										<a class="sidenav-item-link" href="cancle-order">
+											<span class="nav-text">Cancled Order</span>
+										</a>
+									</li>
+									<!-- <li class="">
 										<a class="sidenav-item-link" href="order-detail">
 											<span class="nav-text">Order Detail</span>
 										</a>
@@ -99,13 +109,13 @@
 										<a class="sidenav-item-link" href="invoice">
 											<span class="nav-text">Invoice</span>
 										</a>
-									</li>
+									</li> -->
 								</ul>
 							</div>
 						</li>
 
 						<!-- employee -->
-						<li >
+						<li class="<?php if( basename($_SERVER['PHP_SELF']) == 'employee-list.php' ) { echo 'active'; } else{echo '';}  ?>" >
 							<a class="sidenav-item-link" href="employee-list">
 								<i class="fa-solid fa-user"></i>
 								<span class="nav-text">Employee</span>
@@ -114,7 +124,7 @@
 						</li>
 
 						<!-- Users -->
-						<li >
+						<li class="<?php if( basename($_SERVER['PHP_SELF']) == 'user-list.php' ) { echo 'active'; } else{echo '';}  ?>" >
 							<a class="sidenav-item-link" href="user-list">
 								<i class="fa-solid fa-user"></i>
 								<span class="nav-text">User</span>
@@ -123,7 +133,7 @@
 						</li>
 
                         <!-- Coupons -->
-                        <li >
+                        <li class="<?php if( basename($_SERVER['PHP_SELF']) == 'coupons.php' ) { echo 'active'; } else{echo '';}  ?>" >
 							<a class="sidenav-item-link" href="coupons">
 							<i class="fa-solid fa-ticket"></i>
 								<span class="nav-text">Coupons</span>
@@ -132,25 +142,13 @@
 						</li>
 						
 						<!-- Authentication -->
-						<li class="has-sub">
-							<a class="sidenav-item-link" href="javascript:void(0)">
+						
+						<li class="" >
+							<a class="sidenav-item-link" href="logout">
 							<i class="fa-solid fa-right-to-bracket"></i>
-								<span class="nav-text">Authentication</span> <i class="fa-solid fa-angle-right"></i>
+								<span class="nav-text">Log Out</span>
 							</a>
-							<div class="collapse">
-								<ul class="sub-menu" id="authentication" data-parent="#sidebar-menu">
-									<li class="">
-										<a href="sign-in">
-											<span class="nav-text">Sign In</span>
-										</a>
-									</li>
-									<li class="">
-										<a href="sign-up">
-											<span class="nav-text">Sign Up</span>
-										</a>
-									</li>
-								</ul>
-							</div>
+							
 						</li>
 
 						

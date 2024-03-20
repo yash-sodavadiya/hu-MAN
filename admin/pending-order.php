@@ -90,7 +90,7 @@ if ($conn->connect_error) {
 }
 
 // SQL query to fetch data
-$sql = "SELECT * FROM order_tbl WHERE `status` = 'delivered' ORDER BY `order_id` DESC ";
+$sql = "SELECT * FROM order_tbl WHERE `status` = 'Pending' ";
 $result = $conn->query($sql);
 
 // Array to store orders grouped by ID
@@ -131,7 +131,7 @@ if ($result->num_rows > 0) {
         $cancelButton = '';
         if ($order["status"] == "Pending") {
             $actionButton = '<button type="submit" class="btn btn-primary btn-sm">Ready to Ship</button>';
-            $cancelButton = '<button type="button" class="btn btn-danger btn-sm">Cancel</button>';
+            $cancelButton = '<button type="submit" class="btn btn-danger btn-sm">Cancel</button>';
         } elseif ($order["status"] == "ready-to-ship") {
             $actionButton = '<button type="submit" class="btn btn-success btn-sm">Delivery</button>';
         } else {
@@ -155,8 +155,15 @@ if ($result->num_rows > 0) {
                         <input type="hidden" value="'.$order['ID'].'" name="order_id">
 						<input type="hidden" value="'.$order['status'].'" name="order_status">
                         <div class="edit">' . $actionButton . '</div>
+						
                     </form>
-                    <div class="cancel">' . $cancelButton. '</div>
+					<form action="php/cancle-order.php" method="post">
+                        <input type="hidden" value="'.$order['ID'].'" name="order_id">
+					<div class="cancel" >' . $cancelButton. '</div>
+					</form>
+				
+				
+			
                 </td>
             </tr>';
     }

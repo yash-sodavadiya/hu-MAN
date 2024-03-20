@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php session_start() ?>
 <!DOCTYPE html>
 
 
@@ -6,7 +6,6 @@
 <html lang="en" class="light-style layout-navbar-fixed layout-wide " dir="ltr" data-theme="theme-default" data-assets-path="../../assets/" data-template="front-pages">
 
   
-<!-- Mirrored from demos.themeselection.com/sneat-bootstrap-html-admin-template/html/front-pages/checkout-page.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 15 Mar 2024 15:58:56 GMT -->
 <head>
 <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
@@ -479,7 +478,7 @@
                   <button class="nav-link" id="pills-cod-tab" data-bs-toggle="pill" data-bs-target="#pills-cod" type="button" role="tab" aria-controls="pills-cod" aria-selected="false">Cash On Delivery</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                  <button class="nav-link" id="pills-gift-card-tab" data-bs-toggle="pill" data-bs-target="#pills-gift-card" type="button" role="tab" aria-controls="pills-gift-card" aria-selected="false">Gift Card</button>
+                  <button class="nav-link" id="pills-gift-card-tab" data-bs-toggle="pill" data-bs-target="#pills-gift-card" type="button" role="tab" aria-controls="pills-gift-card" aria-selected="false">UPI</button>
                 </li>
               </ul>
               <div class="tab-content px-0 border-0" id="paymentTabsContent">
@@ -602,24 +601,21 @@
                             <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id'] ?>">
                         <?php } 
                       ?>
-                  <button type="submit" class="btn btn-primary btn-next" name="cod">Pay On Delivery</button>
+                  <button type="submit" class="btn btn-primary btn-next" name="COD">Pay On Delivery</button>
                         </form>
                 </div>
 
                 <!-- Gift card -->
                 <div class="tab-pane fade" id="pills-gift-card" role="tabpanel" aria-labelledby="pills-gift-card-tab">
-                  <h6>Enter Gift Card Details</h6>
+                  <h6>Enter UPI Details</h6>
                   <div class="row g-3">
                     <div class="col-12">
-                      <label for="giftCardNumber" class="form-label">Gift card number</label>
-                      <input type="number" class="form-control" id="giftCardNumber" placeholder="Gift card number">
+                      <label for="giftCardNumber" class="form-label">UPI Id</label>
+                      <input type="text" class="form-control" id="giftCardNumber" placeholder="UPI id">
                     </div>
+                    
                     <div class="col-12">
-                      <label for="giftCardPin" class="form-label">Gift card pin</label>
-                      <input type="number" class="form-control" id="giftCardPin" placeholder="Gift card pin">
-                    </div>
-                    <div class="col-12">
-                      <button type="button" class="btn btn-primary btn-next">Redeem Gift Card</button>
+                      <button type="button" class="btn btn-primary btn-next">Place Order</button>
                     </div>
                   </div>
                 </div>
@@ -998,15 +994,20 @@
     $currentDate = date("Y-m-d H:i:s");
     $sql = "INSERT INTO `order_tbl` (`order_id`, `p_img`,  `p_name`,`user_id`, `customer_name`, `customer_email`, `quantity`, `price`, `payment`, `status`, `order_date`, `customer_address`, `payment_details`) VALUES ('$order_id', '$p_img', '$p_name', '$user_id','$f_name', '$email', '$quantity', '$sub_total', '$payment', 'Pending', '$currentDate', '$address', '$payment')";
     $result = mysqli_query($conn,$sql);
-      $sql1 = "DELETE * FROM `cart_tbl` WHERE `user_id` = '$user_id' ";
-      $result1 = mysqli_query($conn,$sql2);
-      $sql2 = "DELETE * FROM `cart_total_tbl` WHERE `u_id` = '$user_id' ";
-      $result2 = mysqli_query($conn,$sql2);
     
     }
+    $sql1 = "DELETE FROM `cart_tbl` WHERE `user_id` = '$user_id' ";
+      $result1 = mysqli_query($conn,$sql1);
+      if($result1)
+      {
+      $sql2 = "DELETE  FROM `cart_total_tbl` WHERE `u_id` = '$user_id' ";
+      $result2 = mysqli_query($conn,$sql2);
+      
+      }
+      header("location:index");
   }
 
-  if(isset($_POST['cod']))
+  if(isset($_POST['COD']))
   {
 
     
@@ -1032,12 +1033,16 @@
     $sql = "INSERT INTO `order_tbl` (`order_id`, `p_img`,  `p_name`,`user_id`, `customer_name`, `customer_email`, `quantity`, `price`, `payment`, `status`, `order_date`, `customer_address`, `payment_details`) VALUES ('$order_id', '$p_img', '$p_name', '$user_id','$f_name', '$email', '$quantity', '$sub_total', '$payment', 'Pending', '$currentDate', '$address', '$payment')";
     $result = mysqli_query($conn,$sql);
     
-      $sql1 = "DELETE * FROM `cart_tbl` WHERE `user_id` = '$user_id' ";
-      $result1 = mysqli_query($conn,$sql2);
-      $sql2 = "DELETE * FROM `cart_total_tbl` WHERE `u_id` = '$user_id' ";
-      $result2 = mysqli_query($conn,$sql2);
+  }
+  $sql1 = "DELETE FROM `cart_tbl` WHERE `user_id` = '$user_id' ";
+  $result1 = mysqli_query($conn,$sql1);
+  if($result1)
+  {
+    $sql2 = "DELETE  FROM `cart_total_tbl` WHERE `u_id` = '$user_id' ";
+    $result2 = mysqli_query($conn,$sql2);
     
-    }
+  }
+  header("location:index");
   }
 ?>
 

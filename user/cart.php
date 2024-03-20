@@ -1,7 +1,9 @@
  <?php session_start();?>
  <!DOCTYPE html>
  <html lang="en">
- 
+ <?php
+ if(isset($_SESSION["user_id"]))
+{ ?>
  
 <head>
      <meta charset="UTF-8">
@@ -427,3 +429,8 @@ $(document).ready(function(){
 
 
 </html>
+<?php } 
+    else{
+        header("location:signin.php");
+    }
+?>

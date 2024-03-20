@@ -81,12 +81,14 @@ if ($result && mysqli_num_rows($result) > 0) {
                                 </div>
                                     <?php }?>
                                 <div class="ec-quickview-qty">
-                                    <div class="qty-plus-minus">
-                                        <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
-                                    </div>
-                                    <div class="ec-quickview-cart ">
-                                        <button class="btn btn-primary"><i class="fi-rr-shopping-basket"></i> Add To Cart</button>
-                                    </div>
+
+                                    <form action="php/add_cart.php" method="post" enctype="multipart/form-data">
+                                                            <input type="hidden" name="p_id" value="<?php echo $row1['p_id'];?>">
+                                                            <input type="hidden" name="quantity" value="1">
+                                                           
+                                                            <input type="hidden" name="sub_total" value="<?php echo $row1['p_final_price'];?>">
+                                        <button class="btn btn-primary" name="add_cart"><i class="fi-rr-shopping-basket"></i> Add To Cart</button>
+                                        </form>
                                 </div>
                             </div>
                         </div>

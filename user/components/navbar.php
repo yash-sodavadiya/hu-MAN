@@ -1,3 +1,4 @@
+
 <!-- Header start  -->
 <header class="ec-header">
         <!--Ec Header Top Start -->
@@ -23,9 +24,32 @@
                             </a>
                             <!-- Header Cart End -->
                             <!-- Header Cart Start -->
-                            <a href="#ec-side-cart" class="ec-header-btn ec-side-toggle">
+                            <a href="cart" >
                                 <div class="header-icon"><i class="fi-rr-shopping-bag"></i></div>
-                                <span class="ec-header-count cart-count-lable">3</span>
+
+                                <?php
+                                if(isset($_SESSION['user_id']))
+                                {
+                                    $user_id = $_SESSION['user_id'];
+                                    require("database/config.php");
+									$sql = "SELECT COUNT(*) AS total_product FROM cart_tbl WHERE `user_id` = $user_id";
+									$result = $conn->query($sql);
+									
+									if ($result->num_rows > 0) {
+										// Output data of each row
+										while ($row = $result->fetch_assoc()) {
+											$totalProduct = $row["total_product"];
+											
+										}?>
+                                        <span class="ec-header-count cart-count-lable"><?php echo $totalProduct; ?></span>
+								<?php	} else { ?>
+                                    <span class="ec-header-count cart-count-lable">0</span>
+								<?php	}}
+									?>
+                                
+                                   
+
+
                             </a>
                             <!-- Header Cart End -->
                             <a href="javascript:void(0)" class="ec-header-btn ec-sidebar-toggle">
@@ -89,7 +113,7 @@
                                         <button class="dropdown-toggle" data-bs-toggle="dropdown">Welcome, <?php echo $row['f_name'] . " " . $row['l_name'] ?> <i
                                                 class="fi-rr-user"></i> </button>
                                         <ul class="dropdown-menu dropdown-menu-right">
-                                            <li><a class="dropdown-item" href="signup">My Profile</a></li>
+                                            <li><a class="dropdown-item" href="profile">My Profile</a></li>
                                             <li><a class="dropdown-item" href="php/logout">Log out</a></li>
                                             <li><a class="dropdown-item" href="order_history">Order History</a></li>
                                         </ul>
@@ -114,9 +138,27 @@
                                 </a>
                                 <!-- Header wishlist End -->
                                 <!-- Header Cart Start -->
-                                <a href="#ec-side-cart" class="ec-header-btn ec-side-toggle">
+                                <a href="cart" class="ec-header-btn ">
                                     <div class="header-icon"><i class="fi-rr-shopping-bag"></i></div>
-                                    <span class="ec-header-count cart-count-lable">3</span>
+                                    <?php
+                                if(isset($_SESSION['user_id']))
+                                {
+                                    $user_id = $_SESSION['user_id'];
+                                    require("database/config.php");
+									$sql = "SELECT COUNT(*) AS total_product FROM cart_tbl WHERE `user_id` = $user_id";
+									$result = $conn->query($sql);
+									
+									if ($result->num_rows > 0) {
+										// Output data of each row
+										while ($row = $result->fetch_assoc()) {
+											$totalProduct = $row["total_product"];
+											
+										}?>
+                                        <span class="ec-header-count cart-count-lable"><?php echo $totalProduct; ?></span>
+								<?php	} else { ?>
+                                    <span class="ec-header-count cart-count-lable">0</span>
+								<?php	}}
+									?>
                                 </a>
                                 <!-- Header Cart End -->
                             </div>
@@ -175,25 +217,17 @@
                                                 </li>
                                                 <li><a href="shop2?catagory=pent_tbl">Pent</a>
                                                 </li>
-                                                <li><a href="shop2?catagory=shirt_tbl">T-shirt</a>
-                                                </li>
+                                              
                                             </ul>
-                                            <ul class="d-block">
-                                                <li class="menu_title"><a href="javascript:void(0)">Watches</a></li>
-                                                <li><a href="#">Smart Watches</a></li>
-                                                <li><a href="#">Casual Watches</a></li>
-                                                
-                                            </ul>
+                                           
                                             <ul class="d-block">
                                             <li class="menu_title"><a href="javascript:void(0)">perfume</a></li>
-
                                             <li><a href="shop2.php?catagory=perfume_tbl"></a>perfume</li>
                                             </ul>
                                             <ul class="d-block">
                                                 <li class="menu_title"><a href="javascript:void(0)">Shoes</a></li>
-                                                <li><a href="#">Sport Shoes</a></li>
-                                                <li><a href="#">Formal Shoes</a></li>
-                                                <li><a href="#">Casual Shoes</a></li>
+                                                <li><a href="shop2?catagory=shoes_tbl">Shoes</a></li>
+                                               
                     
                                             </ul>
                                             
@@ -203,11 +237,11 @@
                                 <li><a href="shop">Shop</a></li>
                                 
                                 
-                                <li><a href="offer.html">Hot Offers</a></li>
+                                <li><a href="hot-offer">Hot Offers</a></li>
                                 
                         <li><a href="about-us">About Us</a></li>
                                 <li><a href="contact-us">Contact Us</a></li>
-                                <li><a href="index.html">FAQs</a></li>
+                                <li><a href="faq">FAQs</a></li>
                                 <li class="dropdown scroll-to"><a href="javascript:void(0)"><i
                                             class="fi fi-rr-sort-amount-down-alt"></i></a>
                                     <ul class="sub-menu">
@@ -233,7 +267,7 @@
         </div>
         <!-- Ec Main Menu End -->
         <!-- human Mobile Menu Start -->
-        <div id="ec-mobile-menu" class="ec-side-cart ec-mobile-menu">
+        <!-- <div id="ec-mobile-menu" class="ec-side-cart ec-mobile-menu">
             <div class="ec-menu-title">
                 <span class="menu_title">My Menu</span>
                 <button class="ec-close">×</button>
@@ -291,7 +325,7 @@
                 
                 </div>
             </div>
-        </div> 
+        </div>  -->
         <!-- human mobile Menu End -->
     </header>
     <!-- Header End  -->

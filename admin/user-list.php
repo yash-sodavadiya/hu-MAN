@@ -52,11 +52,7 @@
 						<span><i class="mdi mdi-chevron-right"></i></span>User
 					</p>
 				</div>
-				<div>
-					<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addUser"> Add
-						User
-					</button>
-				</div>
+				
 			</div>
 			<div class="row">
 				<div class="col-12">
@@ -70,7 +66,7 @@
 											<th>Name</th>
 											<th>Email</th>
 											<th>Phone</th>
-											<th>Join On</th>
+											<th>Address</th>
 											<th>Action</th>
 										</tr>
 									</thead>
@@ -85,16 +81,16 @@
 														src="assets/img/vendor/<?php echo $row['profile_img'] ?>"
 														alt="user profile" /></td>
 												<td>
-													<?php echo $row['user_name'] ?>
+													<?php echo $row['f_name'] ?>
 												</td>
 												<td>
-													<?php echo $row['email'] ?>
+													<?php echo $row['email_id'] ?>
 												</td>
 												<td>
 													<?php echo $row['phone_no'] ?>
 												</td>
 												<td>
-													<?php echo $row['DOJ'] ?>
+													<?php echo $row['address'] ?>
 												</td>
 												<td>
 													<form action="php/user_delete.php" method="post">

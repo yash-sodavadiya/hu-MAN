@@ -45,6 +45,9 @@
 .badge-delivered {
     background-color: green;
 }
+.badge-cancle{
+    background-color: red;
+}
 
 	</style>
 </head>
@@ -90,7 +93,7 @@ if ($conn->connect_error) {
 }
 
 // SQL query to fetch data
-$sql = "SELECT * FROM order_tbl";
+$sql = "SELECT * FROM order_tbl WHERE `status` = 'cancle' ";
 $result = $conn->query($sql);
 
 // Array to store orders grouped by ID

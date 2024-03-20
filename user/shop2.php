@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!DOCTYPE html>
  <html lang="en">
  
@@ -143,15 +144,21 @@
                                                 <div class="ec-pro-actions">
                                                     <a href="compare.html" class="ec-btn-group compare"
                                                         title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
-                                                    <button title="Add To Cart" class="add-to-cart"><i
+                                                        <form action="php/add_cart.php" method="post" enctype="multipart/form-data">
+                                                            <input type="hidden" name="p_id" value="<?php echo $row1['p_id'];?>">
+                                                            <input type="hidden" name="quantity" value="1">
+                                                           
+                                                            <input type="hidden" name="sub_total" value="<?php echo $row1['p_final_price'];?>">
+                                                            <button title="Add To Cart" name="add_cart" class="add-to-cart"><i
                                                             class="fi-rr-shopping-basket"></i> Add To Cart</button>
+                                                        </form>
                                                     <a class="ec-btn-group wishlist" title="Wishlist"><i
                                                             class="fi-rr-heart"></i></a>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html"><?php echo $row1['p_name'];?></a></h5>
+                                            <h5 class="ec-pro-title"><a href="product-details?p_id=<?php echo $row1['p_id'];?>"><?php echo $row1['p_name'];?></a></h5>
                                            
                                             <span class="ec-price">
                                                 <span class="old-price">₹<?php echo $row1['p_mrp'];?></span>
@@ -364,46 +371,19 @@
                                 </div>
                                 <div class="ec-sb-block-content">
                                     <ul>
-                                        <li>
-                                            <div class="ec-sidebar-block-item"><span
-                                                    style="background-color:#c4d6f9;"></span></div>
-                                        </li>
-                                        <li>
-                                            <div class="ec-sidebar-block-item"><span
-                                                    style="background-color:#ff748b;"></span></div>
-                                        </li>
-                                        <li>
-                                            <div class="ec-sidebar-block-item"><span
-                                                    style="background-color:#000000;"></span></div>
-                                        </li>
-                                        <li class="active">
-                                            <div class="ec-sidebar-block-item"><span
-                                                    style="background-color:#2bff4a;"></span></div>
-                                        </li>
-                                        <li>
-                                            <div class="ec-sidebar-block-item"><span
-                                                    style="background-color:#ff7c5e;"></span></div>
-                                        </li>
-                                        <li>
-                                            <div class="ec-sidebar-block-item"><span
-                                                    style="background-color:#f155ff;"></span></div>
-                                        </li>
-                                        <li>
-                                            <div class="ec-sidebar-block-item"><span
-                                                    style="background-color:#ffef00;"></span></div>
-                                        </li>
-                                        <li>
-                                            <div class="ec-sidebar-block-item"><span
-                                                    style="background-color:#c89fff;"></span></div>
-                                        </li>
-                                        <li>
-                                            <div class="ec-sidebar-block-item"><span
-                                                    style="background-color:#7bfffa;"></span></div>
-                                        </li>
-                                        <li>
-                                            <div class="ec-sidebar-block-item"><span
-                                                    style="background-color:#56ffc1;"></span></div>
-                                        </li>
+                                    <?php 
+                                                        if($_GET['catagory'] == "perfume_tbl")
+                                                        {
+                                                            echo "";
+                                                        }
+                                                        else{
+                                                    ?>
+                                                    <ul class="ec-opt-swatch ">
+                                                        <li class="active"><span
+                                                                    style="background-color:<?php echo $row1['p_color'];?>;"></span></li>
+                                                      
+                                                    </ul>
+                                                        <?php } ?>
                                     </ul>
                                 </div>
                             </div>
@@ -709,13 +689,7 @@
         </div>
         <!--/ End Floating Panel Container -->
         <!-- Start Right Floating Button-->
-        <div class="ec-right-bottom">
-            <div class="ec-box">
-                <div class="ec-button rotateBackward">
-                    <img class="whatsapp" src="assets/images/common/whatsapp.png" alt="whatsapp icon" />
-                </div>
-            </div>
-        </div>
+        <?php require("components/whatsapp.php") ?>
         <!--/ End Right Floating Button-->
     </div>
     <!-- Whatsapp end -->

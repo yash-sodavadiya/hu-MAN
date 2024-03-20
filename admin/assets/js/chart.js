@@ -849,7 +849,7 @@ $(document).ready(function() {
   }
 
   /*======== 11. DOUGHNUT CHART ========*/
-  var doughnut = document.getElementById("doChart");
+  var doughnut = document.getElementById("doChart"); 
   var complated = document.getElementById("complated").value;
   if (doughnut !== null) {
     var myDoughnutChart = new Chart(doughnut, {

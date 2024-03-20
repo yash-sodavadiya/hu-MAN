@@ -1,19 +1,23 @@
-<?php session_start() ?>
+ <?php session_start()?>
  <!DOCTYPE html>
  <html lang="en">
  
  
-<!-- Mirrored from maraviyainfotech.com/projects/human/human-v37/human-html/contact-us.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 19 Feb 2024 04:59:15 GMT -->
 <head>
      <meta charset="UTF-8">
      <meta http-equiv="x-ua-compatible" content="ie=edge" />
      <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
  
-     <title>hu-Man | Contact Us</title>
+     <title>hu-MAN | F&Q </title>
+     <meta name="keywords"
+         content="apparel, catalog, clean, ecommerce, ecommerce HTML, electronics, fashion, html eCommerce, html store, minimal, multipurpose, multipurpose ecommerce, online store, responsive ecommerce template, shops" />
+     <meta name="description" content="Best ecommerce html template for single and multi vendor store.">
+     <meta name="author" content="ashishmaraviya">
  
      <!-- site Favicon -->
-     <link rel="icon" href="assets/images/logo/logo1.png" sizes="32x32" />
-     
+     <link rel="icon" href="assets/images/favicon/favicon.png" sizes="32x32" />
+     <link rel="apple-touch-icon" href="assets/images/favicon/favicon.png" />
+     <meta name="msapplication-TileImage" content="assets/images/favicon/favicon.png" />
  
      <!-- css Icon Font -->
      <link rel="stylesheet" href="assets/css/vendor/ecicons.min.css" />
@@ -33,19 +37,94 @@
      <!-- Background css -->
      <link rel="stylesheet" id="bg-switcher-css" href="assets/css/backgrounds/bg-4.css">
  </head>
-<body class="contact_us_page">
-    <div id="ec-overlay">
+<body>
+    <!-- <div id="ec-overlay">
         <div class="ec-ellipsis">
             <div></div>
             <div></div>
             <div></div>
             <div></div>
         </div>
-    </div>
+    </div> -->
 
-    <?php require("components/navbar.php") ?>
-    
-   
+    <?php require('components/navbar.php') ?>
+    <!-- Header End  -->
+
+    <!-- human Cart Start -->
+    <div class="ec-side-cart-overlay"></div>
+    <div id="ec-side-cart" class="ec-side-cart">
+        <div class="ec-cart-inner">
+            <div class="ec-cart-top">
+                <div class="ec-cart-title">
+                    <span class="cart_title">My Cart</span>
+                    <button class="ec-close">×</button>
+                </div>
+                <ul class="eccart-pro-items">
+                    <li>
+                        <a href="product-left-sidebar.html" class="sidhuman_pro_img"><img
+                                src="assets/images/product-image/6_1.jpg" alt="product"></a>
+                        <div class="ec-pro-content">
+                            <a href="product-left-sidebar.html" class="cart_pro_title">T-shirt For Women</a>
+                            <span class="cart-price"><span>$76.00</span> x 1</span>
+                            <div class="qty-plus-minus">
+                                <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
+                            </div>
+                            <a href="javascript:void(0)" class="remove">×</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="product-left-sidebar.html" class="sidhuman_pro_img"><img
+                                src="assets/images/product-image/12_1.jpg" alt="product"></a>
+                        <div class="ec-pro-content">
+                            <a href="product-left-sidebar.html" class="cart_pro_title">Women Leather Shoes</a>
+                            <span class="cart-price"><span>$64.00</span> x 1</span>
+                            <div class="qty-plus-minus">
+                                <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
+                            </div>
+                            <a href="javascript:void(0)" class="remove">×</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="product-left-sidebar.html" class="sidhuman_pro_img"><img
+                                src="assets/images/product-image/3_1.jpg" alt="product"></a>
+                        <div class="ec-pro-content">
+                            <a href="product-left-sidebar.html" class="cart_pro_title">Girls Nylon Purse</a>
+                            <span class="cart-price"><span>$59.00</span> x 1</span>
+                            <div class="qty-plus-minus">
+                                <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
+                            </div>
+                            <a href="javascript:void(0)" class="remove">×</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="ec-cart-bottom">
+                <div class="cart-sub-total">
+                    <table class="table cart-table">
+                        <tbody>
+                            <tr>
+                                <td class="text-left">Sub-Total :</td>
+                                <td class="text-right">$300.00</td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">VAT (20%) :</td>
+                                <td class="text-right">$60.00</td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">Total :</td>
+                                <td class="text-right primary-color">$360.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="cart_btn">
+                    <a href="cart.html" class="btn btn-primary">View Cart</a>
+                    <a href="checkout.html" class="btn btn-secondary">Checkout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- human Cart End -->
 
     <!-- Ec breadcrumb start -->
     <div class="sticky-header-next-sec  ec-breadcrumb section-space-mb">
@@ -54,13 +133,13 @@
                 <div class="col-12">
                     <div class="row ec_breadcrumb_inner">
                         <div class="col-md-6 col-sm-12">
-                            <h2 class="ec-breadcrumb-title">Contact Us</h2>
+                            <h2 class="ec-breadcrumb-title">FAQ</h2>
                         </div>
                         <div class="col-md-6 col-sm-12">
                             <!-- ec-breadcrumb-list start -->
                             <ul class="ec-breadcrumb-list">
                                 <li class="ec-breadcrumb-item"><a href="index.html">Home</a></li>
-                                <li class="ec-breadcrumb-item active">Contact Us</li>
+                                <li class="ec-breadcrumb-item active">FAQ</li>
                             </ul>
                             <!-- ec-breadcrumb-list end -->
                         </div>
@@ -71,75 +150,71 @@
     </div>
     <!-- Ec breadcrumb end -->
 
-    <!-- Ec Contact Us page -->
+    <!-- Ec FAQ page -->
     <section class="ec-page-content section-space-p">
         <div class="container">
             <div class="row">
-                <div class="ec-common-wrapper">
-                    <div class="ec-contact-leftside">
-                        <div class="ec-contact-container">
-                            <div class="ec-contact-form">
-                                <form action="#" method="post">
-                                    <span class="ec-contact-wrap">
-                                        <label>First Name*</label>
-                                        <input type="text" name="firstname" placeholder="Enter your first name"
-                                            required />
-                                    </span>
-                                    <span class="ec-contact-wrap">
-                                        <label>Last Name*</label>
-                                        <input type="text" name="lastname" placeholder="Enter your last name"
-                                            required />
-                                    </span>
-                                    <span class="ec-contact-wrap">
-                                        <label>Email*</label>
-                                        <input type="email" name="email" placeholder="Enter your email address"
-                                            required />
-                                    </span>
-                                    <span class="ec-contact-wrap">
-                                        <label>Phone Number*</label>
-                                        <input type="text" name="phonenumber" placeholder="Enter your phone number"
-                                            required />
-                                    </span>
-                                    <span class="ec-contact-wrap">
-                                        <label>Comments/Questions*</label>
-                                        <textarea name="address"
-                                            placeholder="Please leave your comments here.."></textarea>
-                                    </span>
-                                    <span class="ec-contact-wrap ec-recaptcha">
-                                        <span class="g-recaptcha"
-                                            data-sitekey="6LfKURIUAAAAAO50vlwWZkyK_G2ywqE52NU7YO0S"
-                                            data-callback="verifyRecaptchaCallback"
-                                            data-expired-callback="expiredRecaptchaCallback"></span>
-                                        <input class="form-control d-none" data-recaptcha="true" required
-                                            data-error="Please complete the Captcha">
-                                        <span class="help-block with-errors"></span>
-                                    </span>
-                                    <span class="ec-contact-wrap ec-contact-btn">
-                                        <button class="btn btn-primary" type="submit">Submit</button>
-                                    </span>
-                                </form>
-                            </div>
-                        </div>
+                <div class="col-md-12 text-center">
+                    <div class="section-title">
+                        <h2 class="ec-bg-title">FAQ</h2>
+                        <h2 class="ec-title">FAQ</h2>
+                        <p class="sub-title mb-3">Customer service management</p>
                     </div>
-                    <div class="ec-contact-rightside">
-                        <div class="ec_contact_map">
-                            <div class="ec_map_canvas">
-                                <iframe id="ec_map_canvas"
-                                    src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d71263.65594328841!2d144.93151478652146!3d-37.8734290780509!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1615963387757!5m2!1sen!2sus"></iframe>
-                                <a href="https://sites.google.com/view/maps-api-v2/mapv2"></a>
+                </div>
+                <div class="ec-faq-wrapper">
+                    <div class="ec-faq-container">
+                        <h2 class="ec-faq-heading">What is human services?</h2>
+                        <div id="ec-faq">
+                            <div class="col-sm-12 ec-faq-block">
+                                <h4 class="ec-faq-title">What is the multi vendor services?</h4>
+                                <div class="ec-faq-content">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                                        unknown printer took a galley of type and scrambled it to make a type specimen
+                                        book. It has survived not only five centuries, but also the leap into electronic
+                                        typesetting, remaining essentially unchanged. </p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="ec_contact_info">
-                            <h1 class="ec_contact_info_head">Contact us</h1>
-                            <ul class="align-items-center">
-                                <li class="ec-contact-item"><i class="ecicon eci-map-marker"
-                                        aria-hidden="true"></i><span>Address :</span>SDJ Internation collage, vesu, surat,Gujarat-395006</li>
-                                <li class="ec-contact-item align-items-center"><i class="ecicon eci-phone"
-                                        aria-hidden="true"></i><span>Call Us :</span><a href="tel:+440123456789">+91 9824873685</a></li>
-                                <li class="ec-contact-item align-items-center"><i class="ecicon eci-envelope"
-                                        aria-hidden="true"></i><span>Email :</span><a
-                                        href="mailto:example@ec-email.com">humaemail.com</a></li>
-                            </ul>
+                            <div class="col-sm-12 ec-faq-block">
+                                <h4 class="ec-faq-title">How to buy many products at a time?</h4>
+                                <div class="ec-faq-content">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                                        unknown printer took a galley of type and scrambled it to make a type specimen
+                                        book. It has survived not only five centuries, but also the leap into electronic
+                                        typesetting, remaining essentially unchanged. </p>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 ec-faq-block">
+                                <h4 class="ec-faq-title">Refund policy for customer</h4>
+                                <div class="ec-faq-content">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                                        unknown printer took a galley of type and scrambled it to make a type specimen
+                                        book. It has survived not only five centuries, but also the leap into electronic
+                                        typesetting, remaining essentially unchanged. </p>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 ec-faq-block">
+                                <h4 class="ec-faq-title">Exchange policy for customer</h4>
+                                <div class="ec-faq-content">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                                        unknown printer took a galley of type and scrambled it to make a type specimen
+                                        book. It has survived not only five centuries, but also the leap into electronic
+                                        typesetting, remaining essentially unchanged. </p>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 ec-faq-block">
+                                <h4 class="ec-faq-title">Give a way products available</h4>
+                                <div class="ec-faq-content">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                                        unknown printer took a galley of type and scrambled it to make a type specimen
+                                        book. It has survived not only five centuries, but also the leap into electronic
+                                        typesetting, remaining essentially unchanged. </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -147,7 +222,7 @@
         </div>
     </section>
 
-    <?php require("components/footer.php") ?>
+   <?php require("components/footer.php")?>
 
     <!-- Footer navigation panel for responsive display -->
     <div class="ec-nav-toolbar">
@@ -178,7 +253,8 @@
     </div>
     <!-- Footer navigation panel for responsive display end -->
 
-   
+
+
     <!-- Cart Floating Button -->
     <div class="ec-cart-float">
         <a href="#ec-side-cart" class="ec-header-btn ec-side-toggle">
@@ -390,12 +466,12 @@
     <script src="assets/js/plugins/infiniteslidev2.js"></script>
     <script src="assets/js/vendor/jquery.magnific-popup.min.js"></script>
     <script src="assets/js/plugins/jquery.sticky-sidebar.js"></script>
-
+    
     <!-- Main Js -->
     <script src="assets/js/vendor/index.js"></script>
     <script src="assets/js/main.js"></script>
 
 </body>
 
-<!-- Mirrored from maraviyainfotech.com/projects/human/human-v37/human-html/contact-us.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 19 Feb 2024 04:59:15 GMT -->
+<!-- Mirrored from maraviyainfotech.com/projects/human/human-v37/human-html/faq.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 19 Feb 2024 04:59:15 GMT -->
 </html>

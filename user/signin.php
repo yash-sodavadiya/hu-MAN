@@ -51,7 +51,7 @@ if (isset($_POST['signin'])) {
 ?>
 
 
-<div class="wrapper" style="background-image: url('images/bg-registration-form-1.jpg');">
+<div class="wrapper" style="background-image: url('images/registration-form-12.jpg');">
     <div class="inner">
        
 		
@@ -77,7 +77,7 @@ if (isset($_POST['signin'])) {
     margin-left: 20px;">If you don't have account then <a href="signup">register</a></div>
         </form>
         <div class="image-holder">
-            <img src="images/registration-form-1.jpg" alt="">
+            <img src="images/bg-registration-form-12.jpg" alt="" style="height:520px">
         </div>
     </div>
 </div>

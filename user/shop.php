@@ -1,3 +1,4 @@
+<?php session_start()?>
  <!DOCTYPE html>
  <html lang="en">
  
@@ -142,7 +143,7 @@
                                     data-animation="fadeIn" id="records"  style = "padding-top:10px;">
                                     <div class="ec-product-inner" style = "box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; padding:13px; margin-left: 2px;">
                                         <div class="ec-pro-image-outer">
-                                            <div class="ec-pro-image" style="height: 295px;">
+                                            <div class="ec-pro-image" style="height: 295px; display:flex; align-items:center;">
                                                 <a href="product-left-sidebar.html" class="image">
                                                     <img class="main-image" src="../admin/assets/img/product/<?php echo $row1['p_image'];?>"
                                                         alt="Product" />
@@ -166,7 +167,7 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html"><?php echo $row1['p_name'];?></a></h5>
+                                            <h5 class="ec-pro-title"><a href="product-details?p_id=<?php echo $row1['p_id'];?>"><?php echo $row1['p_name'];?></a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -181,11 +182,19 @@
                                             <div class="ec-pro-option">
                                                 <div class="ec-pro-color">
                                                     <span class="ec-pro-opt-label">Color</span>
+                                                    <?php 
+                                                        if($row1['p_catagory'] == "perfume")
+                                                        {
+                                                            echo "";
+                                                        }
+                                                        else{
+                                                    ?>
                                                     <ul class="ec-opt-swatch ">
                                                         <li class="active"><span
                                                                     style="background-color:<?php echo $row1['p_color'];?>;"></span></li>
                                                       
                                                     </ul>
+                                                        <?php } ?>
                                                 </div>
                                                 <div class="ec-pro-size">
                                                     <span class="ec-pro-opt-label">Size</span>
@@ -590,7 +599,7 @@
                     <!--/ End Single Contact List -->
                     <!-- Start Single Contact List -->
                     <li>
-                        <a class="ec-list" data-number="918866774266"
+                        <a class="ec-list" data-number="919328327998"
                             data-message="Please help me! I have got wrong product - ORDER ID is : #654321485">
                             <div class="d-flex bd-highlight">
                                 <!-- Profile Picture -->
@@ -617,13 +626,8 @@
         </div>
         <!--/ End Floating Panel Container -->
         <!-- Start Right Floating Button-->
-        <div class="ec-right-bottom">
-            <div class="ec-box">
-                <div class="ec-button rotateBackward">
-                    <img class="whatsapp" src="assets/images/common/whatsapp.png" alt="whatsapp icon" />
-                </div>
-            </div>
-        </div>
+      <?php require("components/whatsapp.php") ?>
+        
         <!--/ End Right Floating Button-->
     </div>
     <!-- Whatsapp end -->

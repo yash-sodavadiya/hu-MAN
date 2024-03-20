@@ -88,10 +88,10 @@ if (isset($_POST['signup'])) {
 ?>
 
 
-<div class="wrapper" style="background-image: url('images/bg-registration-form-1.jpg');">
+<div class="wrapper" style="background-image: url('images/registration-form-12.jpg');">
     <div class="inner">
         <div class="image-holder">
-            <img src="images/registration-form-1.jpg" alt="">
+        <img src="images/bg-registration-form-12.jpg" alt="" style="height:520px">
         </div>
 		
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
@@ -142,7 +142,7 @@ if (isset($_POST['signup'])) {
                 <!-- Error message for confirm password -->
             </div>
             <button type="submit" name="signup">Register <i class="zmdi zmdi-arrow-right"></i></button>
-            I Have already account <a href="">Login</a>
+            I Have already account <a href="signin">Login</a>
         </form>
     </div>
 </div>

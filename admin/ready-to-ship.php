@@ -90,7 +90,7 @@ if ($conn->connect_error) {
 }
 
 // SQL query to fetch data
-$sql = "SELECT * FROM order_tbl WHERE `status` = 'delivered' ORDER BY `order_id` DESC ";
+$sql = "SELECT * FROM order_tbl WHERE `status` = 'ready-to-ship' ORDER BY order_id DESC ";
 $result = $conn->query($sql);
 
 // Array to store orders grouped by ID

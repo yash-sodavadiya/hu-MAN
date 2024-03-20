@@ -18,5 +18,9 @@
     {
         $sql1 = "SELECT * FROM `perfume_tbl`";
     }
+    if($category == 'shoes_tbl')
+    {
+        $sql1 = "SELECT * FROM `shoes_tbl`";
+    }
    
 ?>

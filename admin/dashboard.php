@@ -29,6 +29,22 @@
 	<!-- FAVICON -->
 	<link href="assets/img/logo.png" rel="shortcut icon" />
 
+	<style>
+		/* CSS */
+.badge-pending {
+    background-color:black;
+}
+
+.badge-ready-to-ship {
+    background-color: darkorange;
+}
+
+.badge-delivered {
+    background-color: green;
+}
+
+	</style>
+
 </head>
 
 <body class="ec-header-fixed ec-sidebar-fixed ec-sidebar-light ec-header-light" id="body">
@@ -42,7 +58,20 @@
 						<div class="col-xl-3 col-sm-6 p-b-15 lbl-card">
 							<div class="card card-mini dash-card card-1">
 								<div class="card-body">
-									<h2 class="mb-1">1,000</h2>
+									<?php
+									$sql = "SELECT COUNT(*) AS user_count FROM user_tbl";
+									$result = $conn->query($sql); 
+										if ($result->num_rows > 0) {
+											// Output data of each row
+											while ($row = $result->fetch_assoc()) { 
+												$userCount = $row["user_count"];
+												
+											} ?>
+											<h2 class="mb-1"><?php echo $userCount?></h2>	
+										<?php }  else { ?>
+										<h2 class="mb-1">0</h2>
+								<?php	}
+									?>
 									<p>Users</p>
 									<span><i class="fa-solid fa-user" style="font-size:20px;"></i></span>
 								</div>
@@ -51,7 +80,22 @@
 						<div class="col-xl-3 col-sm-6 p-b-15 lbl-card">
 							<div class="card card-mini dash-card card-2">
 								<div class="card-body">
-									<h2 class="mb-1">150+</h2>
+									<?php
+									$sql = "SELECT COUNT(*) AS product_count FROM product_tbl";
+									$result = $conn->query($sql);
+									
+									if ($result->num_rows > 0) {
+										// Output data of each row
+										while ($row = $result->fetch_assoc()) {
+											$productCount = $row["product_count"];
+											
+										} ?>
+										<h2 class="mb-1"><?php echo $productCount; ?></h2>
+									<?php }  else { ?>
+										<h2 class="mb-1">0</h2>
+								<?php	}
+									?>
+									
 									<p>Product</p>
 									<span><i class="fa-solid fa-box" style="font-size:20px;"></i></span>
 								</div>
@@ -60,7 +104,21 @@
 						<div class="col-xl-3 col-sm-6 p-b-15 lbl-card">
 							<div class="card card-mini dash-card card-3">
 								<div class="card-body">
-									<h2 class="mb-1">15,000</h2>
+								<?php
+									$sql = "SELECT COUNT(*) AS order_count FROM order_tbl";
+									$result = $conn->query($sql);
+									
+									if ($result->num_rows > 0) {
+										// Output data of each row
+										while ($row = $result->fetch_assoc()) {
+											$orderCount = $row["order_count"];
+											
+										} ?>
+										<h2 class="mb-1"><?php echo $orderCount; ?></h2>
+									<?php }  else { ?>
+										<h2 class="mb-1">0</h2>
+								<?php	}
+									?>
 									<p> Order</p>
 									<span><i class="fa-solid fa-cart-shopping" style="font-size:20px;"></i></span>
 								</div>
@@ -69,7 +127,21 @@
 						<div class="col-xl-3 col-sm-6 p-b-15 lbl-card">
 							<div class="card card-mini dash-card card-4">
 								<div class="card-body">
-									<h2 class="mb-1">₹ 5M+</h2>
+									<?php
+									$sql = "SELECT SUM(price) AS total_revenue FROM order_tbl WHERE `status` = 'delivered' ";
+									$result = $conn->query($sql);
+									
+									if ($result->num_rows > 0) {
+										// Output data of each row
+										while ($row = $result->fetch_assoc()) {
+											$totalRevenue = $row["total_revenue"];
+											
+										}?>
+										<h2 class="mb-1">₹ <?php echo $totalRevenue; ?>.00</h2>
+								<?php	} else { ?>
+										<h2 class="mb-1">₹ 0.00</h2>
+								<?php	}
+									?>
 									<p>Revenue</p>
 									<span ><i class="fa-solid fa-indian-rupee-sign" style="font-size:20px;"></i></span>
 								</div>
@@ -153,46 +225,7 @@
 						</div>
 					</div>
 
-					<div class="row">
-						<div class="col-xl-8 col-md-12 p-b-15">
-							<!-- User activity statistics -->
-							<div class="card card-default" id="user-activity">
-								<div class="no-gutters">
-									<div>
-										<div class="card-header justify-content-between">
-											<h2>User Activity</h2>
-											<div class="date-range-report ">
-												<span></span>
-											</div>
-										</div>
-										<div class="card-body">
-											<div class="tab-content" id="userActivityContent"> 
-												<div class="tab-pane fade show active" id="user" role="tabpanel">
-													<canvas id="activity" class="chartjs"></canvas>
-												</div>
-											</div>
-										</div>
-										<div class="card-footer d-flex flex-wrap bg-white border-top">
-											<a href="#" class="text-uppercase py-3">In-Detail Overview</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-4 col-md-12 p-b-15">
-							<div class="card card-default">
-								<div class="card-header flex-column align-items-start">
-									<h2>Current Users</h2>
-								</div>
-								<div class="card-body">
-									<canvas id="currentUser" class="chartjs"></canvas>
-								</div>
-								<div class="card-footer d-flex flex-wrap bg-white border-top">
-									<a href="#" class="text-uppercase py-3">In-Detail Overview</a>
-								</div>
-							</div>
-						</div>
-					</div>
+					
 
 					
 					<div class="row">
@@ -220,19 +253,29 @@
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
-												<td>01</td>
+											<?php
+												$sql = "SELECT * FROM order_tbl ORDER BY order_date DESC LIMIT 5 ";
+											$result = mysqli_query($conn,$sql);
+											foreach($result as $row)
+											{ ?>
+												<tr>
+												
+												<td><?php echo $row['order_id'] ?></td>
 												<td>
-													<a class="text-dark" href="#">black suit</a>
+													<a class="text-dark" href="#"><?php echo $row['p_name'] ?></a>
 												</td>
-												<td class="d-none d-lg-table-cell">1</td>
-												<td class="d-none d-lg-table-cell">01/01/2024</td>
-												<td class="d-none d-lg-table-cell">₹ 3000</td>
+												<td class="d-none d-lg-table-cell"><?php echo $row['quantity'] ?></td>
+												<td class="d-none d-lg-table-cell"><?php echo $row['order_date'] ?></td>
+												<td class="d-none d-lg-table-cell">₹ <?php echo $row['price'] ?></td>
 												<td>
-													<span class="badge badge-success">Completed</span>
+													<span class="badge badge-success"><?php echo $row['status'] ?></span>
 												</td>
 												
 											</tr>
+											<?php }
+											?>
+											
+											
 											<tr>
 												<td>02</td>
 												<td>
@@ -457,7 +500,22 @@
 					</div>
 				</div> <!-- End Content -->
 			</div> <!-- End Content Wrapper -->
-<input type="hidden" name="abc" id="complated" value="<?php echo 5000; ?>">
+<?php
+	$sql = "SELECT COUNT(*) AS product_count FROM order_tbl WHERE `status` = 'delivered' ";
+	$result = $conn->query($sql);
+	
+	if ($result->num_rows > 0) {
+		// Output data of each row
+		while ($row = $result->fetch_assoc()) {
+			$complateCount = $row["product_count"];
+			
+		}?>
+	<input type="hidden" name="abc" id="complated" value="<?php echo $complateCount; ?>">
+<?php	} else { ?>
+	<input type="hidden" name="abc" id="complated" value="<?php echo 0; ?>">
+	<?php }
+
+?>
 			<?php require("components/footer.php") ?>
 
 		</div> <!-- End Page Wrapper -->

@@ -15,9 +15,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     {
     $updateSql = "UPDATE `order_tbl` SET `status`='delivered' WHERE `order_id`=$orderId";
     }
+    else
+    {
+        $updateSql = "UPDATE `order_tbl` SET `status`='cancle' WHERE `order_id`=$orderId";
+
+    }
+    
 
     if ($conn->query($updateSql) === TRUE) {
-        header("location:../new-order");
+        if($order_status == 'Pending')
+        {
+        header("location:../pending-order");
+        }
+        if($order_status == 'ready-to-ship')
+        {
+        header("location:../ready-to-ship");
+        }
+        else{
+            header("location:../pending-order");
+        }
     } else {
         echo "Error updating status: " . $conn->error;
     }
