@@ -20,7 +20,25 @@
                             <!-- Header Cart Start -->
                             <a href="wishlist" class="ec-header-btn ec-header-wishlist">
                                 <div class="header-icon"><i class="fi-rr-heart"></i></div>
-                                <span class="ec-header-count">4</span>
+                                <?php
+                                if(isset($_SESSION['user_id']))
+                                {
+                                    $user_id = $_SESSION['user_id'];
+                                    require("database/config.php");
+									$sql = "SELECT COUNT(*) AS total_product FROM wishlist_tbl WHERE `user_id` = $user_id";
+									$result = $conn->query($sql);
+									
+									if ($result->num_rows > 0) {
+										// Output data of each row
+										while ($row = $result->fetch_assoc()) {
+											$totalProduct = $row["total_product"];
+											
+										}?>
+                                        <span class="ec-header-count cart-count-lable"><?php echo $totalProduct; ?></span>
+								<?php	} else { ?>
+                                    <span class="ec-header-count cart-count-lable">0</span>
+								<?php	}}
+									?>
                             </a>
                             <!-- Header Cart End -->
                             <!-- Header Cart Start -->
@@ -134,7 +152,25 @@
                                 <!-- Header wishlist Start -->
                                 <a href="wishlist" class="ec-header-btn ec-header-wishlist">
                                     <div class="header-icon"><i class="fi-rr-heart"></i></div>
-                                    <span class="ec-header-count">4</span>
+                                    <?php
+                                if(isset($_SESSION['user_id']))
+                                {
+                                    $user_id = $_SESSION['user_id'];
+                                    require("database/config.php");
+									$sql = "SELECT COUNT(*) AS total_product FROM wishlist_tbl WHERE `user_id` = $user_id";
+									$result = $conn->query($sql);
+									
+									if ($result->num_rows > 0) {
+										// Output data of each row
+										while ($row = $result->fetch_assoc()) {
+											$totalProduct = $row["total_product"];
+											
+										}?>
+                                        <span class="ec-header-count cart-count-lable"><?php echo $totalProduct; ?></span>
+								<?php	} else { ?>
+                                    <span class="ec-header-count cart-count-lable">0</span>
+								<?php	}}
+									?>
                                 </a>
                                 <!-- Header wishlist End -->
                                 <!-- Header Cart Start -->

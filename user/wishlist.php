@@ -1,6 +1,10 @@
+ <?php session_start(); ?>
  <!DOCTYPE html>
  <html lang="en">
- 
+ <?php 
+    if(isset($_SESSION['user_id']))
+    {
+ ?>
  
 <head>
      <meta charset="UTF-8">
@@ -37,14 +41,14 @@
      <link rel="stylesheet" id="bg-switcher-css" href="assets/css/backgrounds/bg-4.css">
  </head>
 <body class="shop_page">
-    <div id="ec-overlay">
+    <!-- <div id="ec-overlay">
         <div class="ec-ellipsis">
             <div></div>
             <div></div>
             <div></div>
             <div></div>
         </div>
-    </div>
+    </div> -->
 
     <?php require("components/navbar.php") ?>
 
@@ -84,299 +88,126 @@
                     <div class="ec-compare-content">
                         <div class="ec-compare-inner">
                             <div class="row margin-minus-b-30">
-                                
+                            <?php 
+                                $user_id = $_SESSION['user_id'];
+                                    $sql_wish = "SELECT * FROM `wishlist_tbl` WHERE `user_id` = '$user_id' ";
+                                    $result_wish = mysqli_query($conn,$sql_wish);
+                                    foreach($result_wish as $row_wish)
+                                    {
+                                        $p_id = $row_wish['p_id'];
+                                    $sql = "SELECT * FROM `product_tbl` WHERE `product_id` = '$p_id' ";
+                                    $result = mysqli_query($conn,$sql);
+                                    foreach($result as $row)
+                                    {
+                                        $catagory = $row['catagory_name'];
+                                        $p_id = $row['product_id'];
+
+                                        $sql1 = "SELECT * FROM `$catagory` WHERE `p_id` = $p_id";
+                                        $result1 = mysqli_query($conn,$sql1);
+                                        foreach($result1 as $row1)
+                                    { ?>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 mb-6 pro-gl-content">
                                     <div class="ec-product-inner">
-                                        <div class="ec-pro-image-outer">
-                                            <div class="ec-pro-image">
+                                        <div class="ec-pro-image-outer" >
+                                            <div class="ec-pro-image" style="height: 295px;">
                                                 <a href="product-left-sidebar.html" class="image">
-                                                    <img class="main-image" src="assets/images/product-image/7_1.jpg"
-                                                        alt="Product" />
-                                                    <img class="hover-image" src="assets/images/product-image/7_2.jpg"
+                                                    <img class="main-image" src="../admin/assets/img/product/<?php echo $row1['p_image'];?>"
                                                         alt="Product" />
                                                 </a>
                                                 <span class="ec-com-remove ec-remove-wish"><a
-                                                        href="javascript:void(0)">×</a></span>
+                                                        href="javascript:void(0)" onclick="removeToWishlist('<?php echo $p_id ?>')">×</a></span>
                                                 <span class="percentage">20%</span>
-                                                <a href="#" class="quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#ec_quickview_modal"><i class="fi-rr-eye"></i></a>
+                                                <a href="" class="quickview" data-tooltip="<?php echo $row1['p_id']?>" ><i class="fi-rr-eye"></i></a>
                                                 <div class="ec-pro-actions">
-                                                    <a href="compare.html" class="ec-btn-group compare"
+                                                        <!-- form tag for add cart item  -->
+                                                        <a href="compare.html" class="ec-btn-group compare"
                                                         title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
-                                                    <button title="Add To Cart" class="add-to-cart"><i
+
+                                                        <form action="php/add_cart.php" method="post" enctype="multipart/form-data">
+                                                            <input type="hidden" name="p_id" value="<?php echo $row1['p_id'];?>">
+                                                            <input type="hidden" name="quantity" value="1">
+                                                           
+                                                            <input type="hidden" name="sub_total" value="<?php echo $row1['p_final_price'];?>">
+                                                            <button title="Add To Cart" name="add_cart" class="add-to-cart" onclick="removeToWishlist('<?php echo $p_id ?>')"><i
                                                             class="fi-rr-shopping-basket"></i> Add To Cart</button>
-                                                    <a class="ec-btn-group wishlist" title="Wishlist"><i
-                                                            class="fi-rr-heart"></i></a>
+                                                        </form> 
+                                                        <?php 
+$sql4 = "SELECT * FROM `wishlist_tbl`";
+$result4 = mysqli_query($conn, $sql4);
+$inWishlist = false; // Initialize a flag to track if the product is in the wishlist
+
+// Check if the product is in the wishlist
+while ($row4 = mysqli_fetch_assoc($result4)) {
+    if ($row4['p_id'] == $p_id) {
+        $inWishlist = true;
+        break; // No need to continue checking once we found the product in the wishlist
+    }
+}
+
+// Display the heart icon accordingly
+if ($inWishlist) {
+    ?>
+    <a class="ec-btn-group wishlist active" title="Wishlist" onclick="removeToWishlist('<?php echo $p_id ?>')"><i class="fi-rr-heart"></i></a>
+    <?php
+} else {
+    ?>
+    <a class="ec-btn-group wishlist" title="Wishlist" onclick="addToWishlist('<?php echo $p_id ?>')"><i class="fi-rr-heart"></i></a>
+    <?php
+}
+?>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Full Sleeve
-                                                    Shirt</a></h5>
-                                            <div class="ec-pro-rating">
-                                                <i class="ecicon eci-star fill"></i>
-                                                <i class="ecicon eci-star fill"></i>
-                                                <i class="ecicon eci-star fill"></i>
-                                                <i class="ecicon eci-star fill"></i>
-                                                <i class="ecicon eci-star"></i>
-                                            </div>
+                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html"><?php echo $row1['p_name'] ?></a></h5>
+                                            
                                             <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the
                                                 printing and typesetting industry. Lorem Ipsum is simply dutmmy text
                                                 ever since the 1500s, when an unknown printer took a galley.</div>
                                             <span class="ec-price">
-                                                <span class="old-price">$12.00</span>
-                                                <span class="new-price">$10.00</span>
+                                                <span class="old-price">₹<?php echo $row1['p_mrp'] ?></span>
+                                                <span class="new-price">₹<?php echo $row1['p_final_price'] ?></span>
                                             </span>
                                             <div class="ec-pro-option">
                                                 <div class="ec-pro-color">
                                                     <span class="ec-pro-opt-label">Color</span>
-                                                    <ul class="ec-opt-swatch ec-change-img">
-                                                        <li class="active"><a href="#" class="ec-opt-clr-img"
-                                                                data-src="assets/images/product-image/7_1.jpg"
-                                                                data-src-hover="assets/images/product-image/7_1.jpg"
-                                                                data-tooltip="Gray"><span
-                                                                    style="background-color:#01f1f1;"></span></a></li>
-                                                        <li><a href="#" class="ec-opt-clr-img"
-                                                                data-src="assets/images/product-image/7_2.jpg"
-                                                                data-src-hover="assets/images/product-image/7_2.jpg"
-                                                                data-tooltip="Orange"><span
-                                                                    style="background-color:#b89df8;"></span></a></li>
+                                                    <?php 
+                                                        if($row1['p_catagory'] == "perfume")
+                                                        {
+                                                            echo "";
+                                                        }
+                                                        else{
+                                                    ?>
+                                                    <ul class="ec-opt-swatch ">
+                                                        <li class="active"><span
+                                                                    style="background-color:<?php echo $row1['p_color'];?>;"></span></li>
+                                                      
                                                     </ul>
+                                                        <?php } ?>
                                                 </div>
                                                 <div class="ec-pro-size">
                                                     <span class="ec-pro-opt-label">Size</span>
                                                     <ul class="ec-opt-size">
-                                                        <li class="active"><a href="#" class="ec-opt-sz"
-                                                                data-old="$12.00" data-new="$10.00"
-                                                                data-tooltip="Small">S</a></li>
-                                                        <li><a href="#" class="ec-opt-sz" data-old="$15.00"
-                                                                data-new="$12.00" data-tooltip="Medium">M</a></li>
-                                                        <li><a href="#" class="ec-opt-sz" data-old="$20.00"
-                                                                data-new="$17.00" data-tooltip="Extra Large">XL</a></li>
+                                                    <?php
+													$p_id = $row1['p_id'] ;
+    $sql = "SELECT * FROM `size_tbl` WHERE `p_id` = $p_id";
+    $result = mysqli_query($conn, $sql);
+    foreach($result as $row){ ?>
+<li class="active"><a href="#" class="ec-opt-sz"><?php echo $row['p_size'];?></a></li>
+   <?php  } ?>
                                                     </ul>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 mb-6 pro-gl-content">
-                                    <div class="ec-product-inner">
-                                        <div class="ec-pro-image-outer">
-                                            <div class="ec-pro-image">
-                                                <a href="product-left-sidebar.html" class="image">
-                                                    <img class="main-image" src="assets/images/product-image/1_1.jpg"
-                                                        alt="Product" />
-                                                    <img class="hover-image" src="assets/images/product-image/1_2.jpg"
-                                                        alt="Product" />
-                                                </a>
-                                                <span class="ec-com-remove ec-remove-wish"><a
-                                                        href="javascript:void(0)">×</a></span>
-                                                <span class="percentage">20%</span>
-                                                <a href="#" class="quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#ec_quickview_modal"><i class="fi-rr-eye"></i></a>
-                                                <div class="ec-pro-actions">
-                                                    <a href="compare.html" class="ec-btn-group compare"
-                                                        title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
-                                                    <button title="Add To Cart" class="add-to-cart"><i
-                                                            class="fi-rr-shopping-basket"></i> Add To Cart</button>
-                                                    <a class="ec-btn-group wishlist" title="Wishlist"><i
-                                                            class="fi-rr-heart"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Cute Baby
-                                                    Toy's</a></h5>
-                                            <div class="ec-pro-rating">
-                                                <i class="ecicon eci-star fill"></i>
-                                                <i class="ecicon eci-star fill"></i>
-                                                <i class="ecicon eci-star fill"></i>
-                                                <i class="ecicon eci-star fill"></i>
-                                                <i class="ecicon eci-star"></i>
-                                            </div>
-                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the
-                                                printing and typesetting industry. Lorem Ipsum is simply dutmmy text
-                                                ever since the 1500s, when an unknown printer took a galley.</div>
-                                            <span class="ec-price">
-                                                <span class="old-price">$40.00</span>
-                                                <span class="new-price">$30.00</span>
-                                            </span>
-                                            <div class="ec-pro-option">
-                                                <div class="ec-pro-color">
-                                                    <span class="ec-pro-opt-label">Color</span>
-                                                    <ul class="ec-opt-swatch ec-change-img">
-                                                        <li class="active"><a href="#" class="ec-opt-clr-img"
-                                                                data-src="assets/images/product-image/1_1.jpg"
-                                                                data-src-hover="assets/images/product-image/1_1.jpg"
-                                                                data-tooltip="Gray"><span
-                                                                    style="background-color:#90cdf7;"></span></a></li>
-                                                        <li><a href="#" class="ec-opt-clr-img"
-                                                                data-src="assets/images/product-image/1_2.jpg"
-                                                                data-src-hover="assets/images/product-image/1_2.jpg"
-                                                                data-tooltip="Orange"><span
-                                                                    style="background-color:#ff3b66;"></span></a></li>
-                                                        <li><a href="#" class="ec-opt-clr-img"
-                                                                data-src="assets/images/product-image/1_3.jpg"
-                                                                data-src-hover="assets/images/product-image/1_3.jpg"
-                                                                data-tooltip="Green"><span
-                                                                    style="background-color:#ffc476;"></span></a></li>
-                                                        <li><a href="#" class="ec-opt-clr-img"
-                                                                data-src="assets/images/product-image/1_4.jpg"
-                                                                data-src-hover="assets/images/product-image/1_4.jpg"
-                                                                data-tooltip="Sky Blue"><span
-                                                                    style="background-color:#1af0ba;"></span></a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="ec-pro-size">
-                                                    <span class="ec-pro-opt-label">Size</span>
-                                                    <ul class="ec-opt-size">
-                                                        <li class="active"><a href="#" class="ec-opt-sz"
-                                                                data-old="$40.00" data-new="$30.00"
-                                                                data-tooltip="Small">S</a></li>
-                                                        <li><a href="#" class="ec-opt-sz" data-old="$50.00"
-                                                                data-new="$40.00" data-tooltip="Medium">M</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 mb-6 pro-gl-content">
-                                    <div class="ec-product-inner">
-                                        <div class="ec-pro-image-outer">
-                                            <div class="ec-pro-image">
-                                                <a href="product-left-sidebar.html" class="image">
-                                                    <img class="main-image" src="assets/images/product-image/2_1.jpg"
-                                                        alt="Product" />
-                                                    <img class="hover-image" src="assets/images/product-image/2_2.jpg"
-                                                        alt="Product" />
-                                                </a>
-                                                <span class="ec-com-remove ec-remove-wish"><a
-                                                        href="javascript:void(0)">×</a></span>
-                                                <span class="percentage">20%</span>
-                                                <a href="#" class="quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#ec_quickview_modal"><i class="fi-rr-eye"></i></a>
-                                                <div class="ec-pro-actions">
-                                                    <a href="compare.html" class="ec-btn-group compare"
-                                                        title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
-                                                    <button title="Add To Cart" class="add-to-cart"><i
-                                                            class="fi-rr-shopping-basket"></i> Add To Cart</button>
-                                                    <a class="ec-btn-group wishlist" title="Wishlist"><i
-                                                            class="fi-rr-heart"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">Jumbo Carry
-                                                    Bag</a></h5>
-                                            <div class="ec-pro-rating">
-                                                <i class="ecicon eci-star fill"></i>
-                                                <i class="ecicon eci-star fill"></i>
-                                                <i class="ecicon eci-star fill"></i>
-                                                <i class="ecicon eci-star fill"></i>
-                                                <i class="ecicon eci-star"></i>
-                                            </div>
-                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the
-                                                printing and typesetting industry. Lorem Ipsum is simply dutmmy text
-                                                ever since the 1500s, when an unknown printer took a galley.</div>
-                                            <span class="ec-price">
-                                                <span class="old-price">$50.00</span>
-                                                <span class="new-price">$40.00</span>
-                                            </span>
-                                            <div class="ec-pro-option">
-                                                <div class="ec-pro-color">
-                                                    <span class="ec-pro-opt-label">Color</span>
-                                                    <ul class="ec-opt-swatch ec-change-img">
-                                                        <li class="active"><a href="#" class="ec-opt-clr-img"
-                                                                data-src="assets/images/product-image/2_1.jpg"
-                                                                data-src-hover="assets/images/product-image/2_2.jpg"
-                                                                data-tooltip="Gray"><span
-                                                                    style="background-color:#fdbf04;"></span></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 mb-6 pro-gl-content">
-                                    <div class="ec-product-inner">
-                                        <div class="ec-pro-image-outer">
-                                            <div class="ec-pro-image">
-                                                <a href="product-left-sidebar.html" class="image">
-                                                    <img class="main-image" src="assets/images/product-image/8_1.jpg"
-                                                        alt="Product" />
-                                                    <img class="hover-image" src="assets/images/product-image/8_2.jpg"
-                                                        alt="Product" />
-                                                </a>
-                                                <span class="ec-com-remove ec-remove-wish"><a
-                                                        href="javascript:void(0)">×</a></span>
-                                                <span class="percentage">20%</span>
-                                                <a href="#" class="quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#ec_quickview_modal"><i class="fi-rr-eye"></i></a>
-                                                <div class="ec-pro-actions">
-                                                    <a href="compare.html" class="ec-btn-group compare"
-                                                        title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
-                                                    <button title="Add To Cart" class="add-to-cart"><i
-                                                            class="fi-rr-shopping-basket"></i> Add To Cart</button>
-                                                    <a class="ec-btn-group wishlist" title="Wishlist"><i
-                                                            class="fi-rr-heart"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-left-sidebar.html">I smart watch
-                                                    6gb</a></h5>
-                                            <div class="ec-pro-rating">
-                                                <i class="ecicon eci-star fill"></i>
-                                                <i class="ecicon eci-star fill"></i>
-                                                <i class="ecicon eci-star fill"></i>
-                                                <i class="ecicon eci-star fill"></i>
-                                                <i class="ecicon eci-star"></i>
-                                            </div>
-                                            <div class="ec-pro-list-desc">Lorem Ipsum is simply dummy text of the
-                                                printing and typesetting industry. Lorem Ipsum is simply dutmmy text
-                                                ever since the 1500s, when an unknown printer took a galley.</div>
-                                            <span class="ec-price">
-                                                <span class="old-price">$12.00</span>
-                                                <span class="new-price">$10.00</span>
-                                            </span>
-                                            <div class="ec-pro-option">
-                                                <div class="ec-pro-color">
-                                                    <span class="ec-pro-opt-label">Color</span>
-                                                    <ul class="ec-opt-swatch ec-change-img">
-                                                        <li class="active"><a href="#" class="ec-opt-clr-img"
-                                                                data-src="assets/images/product-image/8_1.jpg"
-                                                                data-src-hover="assets/images/product-image/8_1.jpg"
-                                                                data-tooltip="Gray"><span
-                                                                    style="background-color:#e2e2e2;"></span></a></li>
-                                                        <li><a href="#" class="ec-opt-clr-img"
-                                                                data-src="assets/images/product-image/8_3.jpg"
-                                                                data-src-hover="assets/images/product-image/8_3.jpg"
-                                                                data-tooltip="Orange"><span
-                                                                    style="background-color:#ffcef7;"></span></a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="ec-pro-size">
-                                                    <span class="ec-pro-opt-label">Size</span>
-                                                    <ul class="ec-opt-size">
-                                                        <li class="active"><a href="#" class="ec-opt-sz"
-                                                                data-old="$12.00" data-new="$10.00"
-                                                                data-tooltip="Small">S</a></li>
-                                                        <li><a href="#" class="ec-opt-sz" data-old="$15.00"
-                                                                data-new="$12.00" data-tooltip="Medium">M</a></li>
-                                                        <li><a href="#" class="ec-opt-sz" data-old="$20.00"
-                                                                data-new="$17.00" data-tooltip="Extra Large">XL</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                       
+                                <?php }
+                                    }  }
+                                ?>
+                                
+                                
                             </div>
                         </div>
                     </div>
@@ -387,253 +218,16 @@
         </div>
     </section>
 
-    <!-- Footer Start -->
-    <footer class="ec-footer section-space-mt">
-        <div class="footer-container">
-            <div class="footer-offer">
-                <div class="container">
-                    <div class="row">
-                        <div class="text-center footer-off-msg">
-                            <span>Win a contest! Get this limited-editon</span><a href="#" target="_blank">View
-                                Detail</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-top section-space-footer-p">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12 col-lg-3 ec-footer-contact">
-                            <div class="ec-footer-widget">
-                                <div class="ec-footer-logo"><a href="#"><img src="assets/images/logo/footer-logo.png"
-                                            alt=""><img class="dark-footer-logo" src="assets/images/logo/dark-logo.png"
-                                            alt="Site Logo" style="display: none;" /></a></div>
-                                <h4 class="ec-footer-heading">Contact us</h4>
-                                <div class="ec-footer-links">
-                                    <ul class="align-items-center">
-                                        <li class="ec-footer-link">71 Pilgrim Avenue Chevy Chase, east california.</li>
-                                        <li class="ec-footer-link"><span>Call Us:</span><a href="tel:+440123456789">+44
-                                                0123 456 789</a></li>
-                                        <li class="ec-footer-link"><span>Email:</span><a
-                                                href="mailto:example@ec-email.com">+example@ec-email.com</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-lg-2 ec-footer-info">
-                            <div class="ec-footer-widget">
-                                <h4 class="ec-footer-heading">Information</h4>
-                                <div class="ec-footer-links">
-                                    <ul class="align-items-center">
-                                        <li class="ec-footer-link"><a href="about-us.html">About us</a></li>
-                                        <li class="ec-footer-link"><a href="faq.html">FAQ</a></li>
-                                        <li class="ec-footer-link"><a href="#">Delivery Information</a></li>
-                                        <li class="ec-footer-link"><a href="contact-us.html">Contact us</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-lg-2 ec-footer-account">
-                            <div class="ec-footer-widget">
-                                <h4 class="ec-footer-heading">Account</h4>
-                                <div class="ec-footer-links">
-                                    <ul class="align-items-center">
-                                        <li class="ec-footer-link"><a href="#">My Account</a></li>
-                                        <li class="ec-footer-link"><a href="track-order.html">Order History</a></li>
-                                        <li class="ec-footer-link"><a href="#">Wish List</a></li>
-                                        <li class="ec-footer-link"><a href="#">Specials</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-lg-2 ec-footer-service">
-                            <div class="ec-footer-widget">
-                                <h4 class="ec-footer-heading">Services</h4>
-                                <div class="ec-footer-links">
-                                    <ul class="align-items-center">
-                                        <li class="ec-footer-link"><a href="#">Discount Returns</a></li>
-                                        <li class="ec-footer-link"><a href="#">Policy & policy </a></li>
-                                        <li class="ec-footer-link"><a href="#">Customer Service</a></li>
-                                        <li class="ec-footer-link"><a href="terms-condition.html">Term & condition</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-lg-3 ec-footer-news">
-                            <div class="ec-footer-widget">
-                                <h4 class="ec-footer-heading">Newsletter</h4>
-                                <div class="ec-footer-links">
-                                    <ul class="align-items-center">
-                                        <li class="ec-footer-link">Get instant updates about our new products and
-                                            special promos!</li>
-                                    </ul>
-                                    <div class="ec-subscribe-form">
-                                        <form id="ec-newsletter-form" name="ec-newsletter-form" method="post"
-                                            action="#">
-                                            <div id="ec_news_signup" class="ec-form">
-                                                <input class="ec-email" type="email" required=""
-                                                    placeholder="Enter your email here..." name="ec-email" value="" />
-                                                <button id="ec-news-btn" class="button btn-primary" type="submit"
-                                                    name="subscribe" value=""><i class="ecicon eci-paper-plane-o"
-                                                        aria-hidden="true"></i></button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <!-- Footer social Start -->
-                        <div class="col text-left footer-bottom-left">
-                            <div class="footer-bottom-social">
-                                <span class="social-text text-upper">Follow us on:</span>
-                                <ul class="mb-0">
-                                    <li class="list-inline-item"><a class="hdr-facebook" href="#"><i
-                                                class="ecicon eci-facebook"></i></a></li>
-                                    <li class="list-inline-item"><a class="hdr-twitter" href="#"><i
-                                                class="ecicon eci-twitter"></i></a></li>
-                                    <li class="list-inline-item"><a class="hdr-instagram" href="#"><i
-                                                class="ecicon eci-instagram"></i></a></li>
-                                    <li class="list-inline-item"><a class="hdr-linkedin" href="#"><i
-                                                class="ecicon eci-linkedin"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Footer social End -->
-                        <!-- Footer Copyright Start -->
-                        <div class="col text-center footer-copy">
-                            <div class="footer-bottom-copy ">
-                                <div class="ec-copy">Copyright © <span id="copyright_year"></span> <a class="site-name text-upper"
-                                        href="#">human<span>.</span></a>. All Rights Reserved</div>
-                            </div>
-                        </div>
-                        <!-- Footer Copyright End -->
-                        <!-- Footer payment -->
-                        <div class="col footer-bottom-right">
-                            <div class="footer-bottom-payment d-flex justify-content-end">
-                                <div class="payment-link">
-                                    <img src="assets/images/icons/payment.png" alt="">
-                                </div>
-
-                            </div>
-                        </div>
-                        <!-- Footer payment -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- Footer Area End -->
+    <?php require("components/footer.php") ?>
 
     <!-- Modal -->
-    <div class="modal fade" id="ec_quickview_modal" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <button type="button" class="btn-close qty_close" data-bs-dismiss="modal" aria-label="Close"></button>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-5 col-sm-12 col-xs-12">
-                            <!-- Swiper -->
-                            <div class="qty-product-cover">
-                                <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_1.jpg" alt="">
-                                </div>
-                                <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_2.jpg" alt="">
-                                </div>
-                                <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_3.jpg" alt="">
-                                </div>
-                                <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_4.jpg" alt="">
-                                </div>
-                                <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_5.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="qty-nav-thumb">
-                                <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_1.jpg" alt="">
-                                </div>
-                                <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_2.jpg" alt="">
-                                </div>
-                                <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_3.jpg" alt="">
-                                </div>
-                                <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_4.jpg" alt="">
-                                </div>
-                                <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_5.jpg" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-7 col-sm-12 col-xs-12">
-                            <div class="quickview-pro-content">
-                                <h5 class="ec-quick-title"><a href="product-left-sidebar.html">Handbag leather purse for
-                                        women</a>
-                                </h5>
-                                <div class="ec-quickview-rating">
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star fill"></i>
-                                    <i class="ecicon eci-star"></i>
-                                </div>
+    <div id="popupModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+        <button type="button" class="btn-close qty_close" data-bs-dismiss="modal" aria-label="Close"></button>
 
-                                <div class="ec-quickview-desc">Lorem Ipsum is simply dummy text of the printing and
-                                    typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
-                                    since the 1500s,</div>
-                                <div class="ec-quickview-price">
-                                    <span class="old-price">$100.00</span>
-                                    <span class="new-price">$80.00</span>
-                                </div>
+            <div class="modal-body" id="popupContent">
 
-                                <div class="ec-pro-variation">
-                                    <div class="ec-pro-variation-inner ec-pro-variation-color">
-                                        <span>Color</span>
-                                        <div class="ec-pro-color">
-                                            <ul class="ec-opt-swatch">
-                                                <li><span style="background-color:#696d62;"></span></li>
-                                                <li><span style="background-color:#d73808;"></span></li>
-                                                <li><span style="background-color:#577023;"></span></li>
-                                                <li><span style="background-color:#2ea1cd;"></span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="ec-pro-variation-inner ec-pro-variation-size ec-pro-size">
-                                        <span>Size</span>
-                                        <div class="ec-pro-variation-content">
-                                            <ul class="ec-opt-size">
-                                                <li class="active"><a href="#" class="ec-opt-sz"
-                                                        data-tooltip="Small">S</a></li>
-                                                <li><a href="#" class="ec-opt-sz" data-tooltip="Medium">M</a></li>
-                                                <li><a href="#" class="ec-opt-sz" data-tooltip="Large">X</a></li>
-                                                <li><a href="#" class="ec-opt-sz" data-tooltip="Extra Large">XL</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="ec-quickview-qty">
-                                    <div class="qty-plus-minus">
-                                        <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
-                                    </div>
-                                    <div class="ec-quickview-cart ">
-                                        <button class="btn btn-primary"><i class="fi-rr-shopping-basket"></i> Add To
-                                            Cart</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -903,8 +497,74 @@
     <script src="assets/js/vendor/index.js"></script>
     <script src="assets/js/main.js"></script>
 
+    <script>
+      $(document).ready(function() {
+        $('.quickview').click(function(e) {
+            e.preventDefault(); // Prevent default behavior of anchor tag
+
+            var p_id = $(this).data('tooltip'); // Get the size from data-tooltip attribute
+            $.ajax({
+                url: 'php/get_data.php',
+                method: 'GET',
+                data: { p_id: p_id }, // Send the size as data to PHP
+                success: function(response) {
+                    $('#popupContent').html(response);
+                    $('#popupModal').modal('show');
+                },
+                error: function(xhr, status, error) {
+                    console.error(xhr.responseText);
+                    // Handle error here
+                }
+            });
+        });
+    });
+</script>
+
+<!-- add wishlist script -->
+<script>
+function addToWishlist(productId) {
+    // Assuming you have an AJAX request to send the product ID to the backend
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "php/wishlist.php", true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            // Handle response from the backend if needed
+            console.log("Product added to wishlist!");
+            window.location.reload();
+        }
+    };
+    var data = JSON.stringify({ productId: productId });
+    xhr.send(data);
+}
+
+
+</script>
+<script>
+    // remove to wish lost 
+function removeToWishlist(productId) {
+    // Assuming you have an AJAX request to send the product ID to the backend
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "php/remove_wishlist.php", true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            // Handle response from the backend if needed
+            console.log("Product remove to wishlist!");
+            window.location.reload();
+        }
+    };
+    var data = JSON.stringify({ productId: productId });
+    xhr.send(data);
+}
+
+</script>
+
 </body>
+<?php } 
+    else{
+        header("location:signin");
+    }
+?>
 
-
-<!-- Mirrored from maraviyainfotech.com/projects/human/human-v37/human-html/wishlist.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 19 Feb 2024 04:59:03 GMT -->
 </html>

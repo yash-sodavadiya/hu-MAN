@@ -13,14 +13,13 @@
         content="apparel, catalog, clean, ecommerce, ecommerce HTML, electronics, fashion, html eCommerce, html store, minimal, multipurpose, multipurpose ecommerce, online store, responsive ecommerce template, shops" />
     <meta name="description" content="Best ecommerce html template for single and multi vendor store.">
     <meta name="author" content="ashishmaraviya">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-     <!-- chatboat  -->
-     <link rel="stylesheet" href="assets/style.css?v=<?php echo time(); ?>" />
+    <!-- chatboat  -->
+    <link rel="stylesheet" href="assets/style.css?v=<?php echo time(); ?>" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700,300">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.1.2/css/material-design-iconic-font.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400&family=Finger+Paint&display=swap">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
 
     <!-- site Favicon -->
     <link rel="icon" href="assets/images/logo/logo1.png" sizes="32x32" />
@@ -442,32 +441,10 @@
                                                             <button title="Add To Cart" name="add_cart" class="add-to-cart"><i
                                                             class="fi-rr-shopping-basket"></i> Add To Cart</button>
                                                         </form>
-
-                                                        <?php 
-$sql4 = "SELECT * FROM `wishlist_tbl`";
-$result4 = mysqli_query($conn, $sql4);
-$inWishlist = false; // Initialize a flag to track if the product is in the wishlist
-
-// Check if the product is in the wishlist
-while ($row4 = mysqli_fetch_assoc($result4)) {
-    if ($row4['p_id'] == $p_id) {
-        $inWishlist = true;
-        break; // No need to continue checking once we found the product in the wishlist
-    }
-}
-
-// Display the heart icon accordingly
-if ($inWishlist) {
-    ?>
-    <a class="ec-btn-group wishlist active" title="Wishlist" onclick="removeToWishlist('<?php echo $p_id ?>')"><i class="fi-rr-heart"></i></a>
-    <?php
-} else {
-    ?>
-    <a class="ec-btn-group wishlist" title="Wishlist" onclick="addToWishlist('<?php echo $p_id ?>')"><i class="fi-rr-heart"></i></a>
-    <?php
-}
-?>
-          </div>
+                                                       
+                                                    <a class="ec-btn-group wishlist" title="Wishlist" onclick="addToWishlist('<?php echo $p_id ?>')"><i
+                                                            class="fi-rr-heart"></i></a>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
@@ -2543,7 +2520,7 @@ if ($inWishlist) {
             <div class="row">
                 <!-- New Product Content -->
                 <?php 
-                                    $sql = "SELECT * FROM `product_tbl` ORDER BY product_id DESC LIMIT 4";
+                                    $sql = "SELECT * FROM `product_tbl` ORDER BY product_id DESC LIMIT 7";
                                     $result = mysqli_query($conn,$sql);
                                     foreach($result as $row)
                                     {
@@ -2709,35 +2686,8 @@ if ($inWishlist) {
             </div>
         </div>
     </div>
-                                </div>
     <!-- Modal end -->
 
-    <div class="popup" id="popup">
-  <div class="card">
-    <div id="header">
-      <h3 style="color:#fff; margin-left:10px; ">hu-MAN</h3>
-      <p style="color:#fff; margin-left:10px; margin-top:0px;">How Can I Help You?</p>
-      <label for="popup-toggle" class="close-popup" onclick="closePopup(event)">
-        <i class="fa-solid fa-times"></i>
-      </label>
-    </div>
-    <div id="message-section">
-      <div class="message" id="bot"><span id="bot-response">Welcome hu-MAN🤣🤣...</span></div>
-    </div>
-    <div id="input-section">
-      <input id="input" type="text" placeholder="Type a message" autocomplete="off" autofocus="autofocus" style="font-size:15px;">
-      <button class="send" onclick="sendMessage()">
-        <div class="circle"><i class="zmdi zmdi-mail-send" style="color:#3474d4"></i></div>
-      </button>
-    </div>
-  </div>
-</div>
-
-
-
-<div class="chat-btn">
-<button class="toggle-popup" onclick="togglePopup()" ><i class="fa-solid fa-comment"></i></button>
-</div>
     
 
     <!-- Footer navigation panel for responsive display -->
@@ -2767,94 +2717,47 @@ if ($inWishlist) {
             </div>
         </div>
     </div>
-    </div>
+                                </div>
     <!-- Footer navigation panel for responsive display end -->
 
-   
-
- 
-    <!-- Cart Floating Button end -->
-
-  <!-- human Cart Start -->
-<div class="ec-side-cart-overlay"></div>
-    <div id="ec-side-cart" class="ec-side-cart">
-        <div class="ec-cart-inner">
-            <div class="ec-cart-top">
-                <div class="ec-cart-title">
-                    <span class="cart_title">My Cart</span>
-                    <button class="ec-close">×</button>
-                </div>
-                <ul class="eccart-pro-items">
-                    <li>
-                        <a href="product-left-sidebar.html" class="sidhuman_pro_img"><img
-                                src="assets/images/product-image/6_1.jpg" alt="product"></a>
-                        <div class="ec-pro-content">
-                            <a href="product-left-sidebar.html" class="cart_pro_title">T-shirt For Women</a>
-                            <span class="cart-price"><span>$76.00</span> x 1</span>
-                            <div class="qty-plus-minus">
-                                <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
-                            </div>
-                            <a href="javascript:void(0)" class="remove">×</a>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="product-left-sidebar.html" class="sidhuman_pro_img"><img
-                                src="assets/images/product-image/12_1.jpg" alt="product"></a>
-                        <div class="ec-pro-content">
-                            <a href="product-left-sidebar.html" class="cart_pro_title">Women Leather Shoes</a>
-                            <span class="cart-price"><span>$64.00</span> x 1</span>
-                            <div class="qty-plus-minus">
-                                <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
-                            </div>
-                            <a href="javascript:void(0)" class="remove">×</a>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="product-left-sidebar.html" class="sidhuman_pro_img"><img
-                                src="assets/images/product-image/3_1.jpg" alt="product"></a>
-                        <div class="ec-pro-content">
-                            <a href="product-left-sidebar.html" class="cart_pro_title">Girls Nylon Purse</a>
-                            <span class="cart-price"><span>$59.00</span> x 1</span>
-                            <div class="qty-plus-minus">
-                                <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
-                            </div>
-                            <a href="javascript:void(0)" class="remove">×</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="ec-cart-bottom">
-                <div class="cart-sub-total">
-                    <table class="table cart-table">
-                        <tbody>
-                            <tr>
-                                <td class="text-left">Sub-Total :</td>
-                                <td class="text-right">$300.00</td>
-                            </tr>
-                            <tr>
-                                <td class="text-left">VAT (20%) :</td>
-                                <td class="text-right">$60.00</td>
-                            </tr>
-                            <tr>
-                                <td class="text-left">Total :</td>
-                                <td class="text-right primary-color">$360.00</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="cart_btn">
-
-                    <a href="cart" class="btn btn-primary">View Cart</a>
-                    <a href="checkout" class="btn btn-secondary">Checkout</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- human Cart End -->
-
-
-
+  
     
+           
+ 
+    <!-- <input type="checkbox" id="popup-toggle" class="popup-toggle">
+<label for="popup-toggle" class="chat-btn">
+  <i class="fa-solid fa-comment"></i>
+</label> -->
+
+<div class="popup" id="popup">
+  <div class="card">
+    <div id="header">
+      <h1>Chatter box!</h1>
+      <label for="popup-toggle" class="close-popup" onclick="closePopup(event)">
+        <i class="fa-solid fa-times"></i>
+      </label>
+    </div>
+    <div id="message-section">
+      <div class="message" id="bot"><span id="bot-response">Welcome hu-MAN🤣🤣...</span></div>
+    </div>
+    <div id="input-section">
+      <input id="input" type="text" placeholder="Type a message" autocomplete="off" autofocus="autofocus" style="font-size:15px;">
+      <button class="send" onclick="sendMessage()">
+        <div class="circle"><i class="zmdi zmdi-mail-send" style="color:#3474d4"></i></div>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="chat-btn">
+<button class="toggle-popup" onclick="togglePopup()" ><i class="fa-solid fa-comment"></i></button>
+</div>
+
+
+
+  <script src="assets/script.js"></script>
 
     <!-- Vendor JS -->
     <script src="assets/js/vendor/jquery-3.5.1.min.js"></script>
@@ -2877,7 +2780,6 @@ if ($inWishlist) {
     <!-- Main Js -->
     <script src="assets/js/vendor/index.js"></script>
     <script src="assets/js/main.js"></script>
-    <script src="assets/script.js?v=<?php echo time(); ?>"></script>
 
     <script>
       $(document).ready(function() {
@@ -2913,33 +2815,11 @@ function addToWishlist(productId) {
         if (xhr.readyState === 4 && xhr.status === 200) {
             // Handle response from the backend if needed
             console.log("Product added to wishlist!");
-            window.location.reload();
         }
     };
     var data = JSON.stringify({ productId: productId });
     xhr.send(data);
 }
-
-
-</script>
-<script>
-    // remove to wish lost 
-function removeToWishlist(productId) {
-    // Assuming you have an AJAX request to send the product ID to the backend
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "php/remove_wishlist.php", true);
-    xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            // Handle response from the backend if needed
-            console.log("Product remove to wishlist!");
-            window.location.reload();
-        }
-    };
-    var data = JSON.stringify({ productId: productId });
-    xhr.send(data);
-}
-
 </script>
 
 <!-- chat bot </script> -->
@@ -2972,6 +2852,8 @@ function togglePopup() {
 function sendMessage() {
   // Add your sendMessage logic here
 }
+
+
 </script>
 
 </body>

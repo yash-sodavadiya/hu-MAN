@@ -14,6 +14,14 @@
      <meta name="description" content="Best ecommerce html template for single and multi vendor store.">
      <meta name="author" content="ashishmaraviya">
  
+      <!-- chatboat  -->
+      <link rel="stylesheet" href="assets/style.css?v=<?php echo time(); ?>" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700,300">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.1.2/css/material-design-iconic-font.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400&family=Finger+Paint&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
      <!-- site Favicon -->
      <link rel="icon" href="assets/images/logo/logo1.png" sizes="32x32" />
      <link rel="apple-touch-icon" href="assets/images/favicon/favicon.png" />
@@ -152,8 +160,30 @@
                                                             <button title="Add To Cart" name="add_cart" class="add-to-cart"><i
                                                             class="fi-rr-shopping-basket"></i> Add To Cart</button>
                                                         </form>
-                                                    <a class="ec-btn-group wishlist" title="Wishlist"><i
-                                                            class="fi-rr-heart"></i></a>
+                                                        <?php 
+$sql4 = "SELECT * FROM `wishlist_tbl`";
+$result4 = mysqli_query($conn, $sql4);
+$inWishlist = false; // Initialize a flag to track if the product is in the wishlist
+
+// Check if the product is in the wishlist
+while ($row4 = mysqli_fetch_assoc($result4)) {
+    if ($row4['p_id'] == $row1['p_id']) {
+        $inWishlist = true;
+        break; // No need to continue checking once we found the product in the wishlist
+    }
+}
+
+// Display the heart icon accordingly
+if ($inWishlist) {
+    ?>
+    <a class="ec-btn-group wishlist active" title="Wishlist" onclick="removeToWishlist('<?php echo $p_id ?>')"><i class="fi-rr-heart"></i></a>
+    <?php
+} else {
+    ?>
+    <a class="ec-btn-group wishlist" title="Wishlist" onclick="addToWishlist('<?php echo $p_id ?>')"><i class="fi-rr-heart"></i></a>
+    <?php
+}
+?>
                                                 </div>
                                             </div>
                                         </div>
@@ -566,200 +596,7 @@
 
 
 
-    <!-- Cart Floating Button -->
-    <div class="ec-cart-float">
-        <a href="#ec-side-cart" class="ec-header-btn ec-side-toggle">
-            <div class="header-icon"><i class="fi-rr-shopping-basket"></i>
-            </div>
-            <span class="ec-cart-count cart-count-lable">3</span>
-        </a>
-    </div>
-    <!-- Cart Floating Button end -->
-
-    <!-- Whatsapp -->
-    <div class="ec-style ec-right-bottom">
-        <!-- Start Floating Panel Container -->
-        <div class="ec-panel">
-            <!-- Panel Header -->
-            <div class="ec-header">
-                <strong>Need Help?</strong>
-                <p>Chat with us on WhatsApp</p>
-            </div>
-            <!-- Panel Content -->
-            <div class="ec-body">
-                <ul>
-                    <!-- Start Single Contact List -->
-                    <li>
-                        <a class="ec-list" data-number="918866774266"
-                            data-message="Please help me! I have got wrong product - ORDER ID is : #654321485">
-                            <div class="d-flex bd-highlight">
-                                <!-- Profile Picture -->
-                                <div class="ec-img-cont">
-                                    <img src="assets/images/whatsapp/profile_01.jpg" class="ec-user-img"
-                                        alt="Profile image">
-                                    <span class="ec-status-icon"></span>
-                                </div>
-                                <!-- Display Name & Last Seen -->
-                                <div class="ec-user-info">
-                                    <span>Sahar Darya</span>
-                                    <p>Sahar left 7 mins ago</p>
-                                </div>
-                                <!-- Chat iCon -->
-                                <div class="ec-chat-icon">
-                                    <i class="fa fa-whatsapp"></i>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <!--/ End Single Contact List -->
-                    <!-- Start Single Contact List -->
-                    <li>
-                        <a class="ec-list" data-number="918866774266"
-                            data-message="Please help me! I have got wrong product - ORDER ID is : #654321485">
-                            <div class="d-flex bd-highlight">
-                                <!-- Profile Picture -->
-                                <div class="ec-img-cont">
-                                    <img src="assets/images/whatsapp/profile_02.jpg" class="ec-user-img"
-                                        alt="Profile image">
-                                    <span class="ec-status-icon ec-online"></span>
-                                </div>
-                                <!-- Display Name & Last Seen -->
-                                <div class="ec-user-info">
-                                    <span>Yolduz Rafi</span>
-                                    <p>Yolduz is online</p>
-                                </div>
-                                <!-- Chat iCon -->
-                                <div class="ec-chat-icon">
-                                    <i class="fa fa-whatsapp"></i>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <!--/ End Single Contact List -->
-                    <!-- Start Single Contact List -->
-                    <li>
-                        <a class="ec-list" data-number="918866774266"
-                            data-message="Please help me! I have got wrong product - ORDER ID is : #654321485">
-                            <div class="d-flex bd-highlight">
-                                <!-- Profile Picture -->
-                                <div class="ec-img-cont">
-                                    <img src="assets/images/whatsapp/profile_03.jpg" class="ec-user-img"
-                                        alt="Profile image">
-                                    <span class="ec-status-icon ec-offline"></span>
-                                </div>
-                                <!-- Display Name & Last Seen -->
-                                <div class="ec-user-info">
-                                    <span>Nargis Hawa</span>
-                                    <p>Nargis left 30 mins ago</p>
-                                </div>
-                                <!-- Chat iCon -->
-                                <div class="ec-chat-icon">
-                                    <i class="fa fa-whatsapp"></i>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <!--/ End Single Contact List -->
-                    <!-- Start Single Contact List -->
-                    <li>
-                        <a class="ec-list" data-number="918866774266"
-                            data-message="Please help me! I have got wrong product - ORDER ID is : #654321485">
-                            <div class="d-flex bd-highlight">
-                                <!-- Profile Picture -->
-                                <div class="ec-img-cont">
-                                    <img src="assets/images/whatsapp/profile_04.jpg" class="ec-user-img"
-                                        alt="Profile image">
-                                    <span class="ec-status-icon ec-offline"></span>
-                                </div>
-                                <!-- Display Name & Last Seen -->
-                                <div class="ec-user-info">
-                                    <span>Khadija Mehr</span>
-                                    <p>Khadija left 50 mins ago</p>
-                                </div>
-                                <!-- Chat iCon -->
-                                <div class="ec-chat-icon">
-                                    <i class="fa fa-whatsapp"></i>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <!--/ End Single Contact List -->
-                </ul>
-            </div>
-        </div>
-        <!--/ End Floating Panel Container -->
-        <!-- Start Right Floating Button-->
-        <?php require("components/whatsapp.php") ?>
-        <!--/ End Right Floating Button-->
-    </div>
-    <!-- Whatsapp end -->
-
-    <!-- Feature tools -->
-    <div class="ec-tools-sidebar-overlay"></div>
-    <div class="ec-tools-sidebar">
-        <div class="tool-title">
-            <h3>Features</h3>
-        </div>
-        <a href="#" class="ec-tools-sidebar-toggle in-out">
-            <img alt="icon" src="assets/images/common/settings.png" />
-        </a>
-        <div class="ec-tools-detail">
-            <div class="ec-tools-sidebar-content ec-change-color ec-color-desc">
-                <h3>Color Scheme</h3>
-                <ul class="bg-panel">
-                    <li class="active" data-color="01"><a href="#" class="colorcode1"></a></li>
-                    <li data-color="02"><a href="#" class="colorcode2"></a></li>
-                    <li data-color="03"><a href="#" class="colorcode3"></a></li>
-                    <li data-color="04"><a href="#" class="colorcode4"></a></li>
-                    <li data-color="05"><a href="#" class="colorcode5"></a></li>
-                </ul>
-            </div>
-            <div class="ec-tools-sidebar-content">
-                <h3>Backgrounds</h3>
-                <ul class="bg-panel">
-                    <li class="bg"><a class="back-bg-1" id="bg-1">Background-1</a></li>
-                    <li class="bg"><a class="back-bg-2" id="bg-2">Background-2</a></li>
-                    <li class="bg"><a class="back-bg-3" id="bg-3">Background-3</a></li>
-                    <li class="bg"><a class="back-bg-4" id="bg-4">Default</a></li>
-                </ul>
-            </div>
-            <div class="ec-tools-sidebar-content">
-                <h3>Full Screen mode</h3>
-                <div class="ec-fullscreen-mode">
-                    <div class="ec-fullscreen-switch">
-                        <div class="ec-fullscreen-btn">Mode</div>
-                        <div class="ec-fullscreen-on">On</div>
-                        <div class="ec-fullscreen-off">Off</div>
-                    </div>
-                </div>
-            </div>
-            <div class="ec-tools-sidebar-content">
-                <h3>Dark mode</h3>
-                <div class="ec-change-mode">
-                    <div class="ec-mode-switch">
-                        <div class="ec-mode-btn">Mode</div>
-                        <div class="ec-mode-on">On</div>
-                        <div class="ec-mode-off">Off</div>
-                    </div>
-                </div>
-            </div>
-            <div class="ec-tools-sidebar-content">
-                <h3>RTL mode</h3>
-                <div class="ec-change-rtl">
-                    <div class="ec-rtl-switch">
-                        <div class="ec-rtl-btn">Rtl</div>
-                        <div class="ec-rtl-on">On</div>
-                        <div class="ec-rtl-off">Off</div>
-                    </div>
-                </div>
-            </div>
-            <div class="ec-tools-sidebar-content">
-                <h3>Clear local storage</h3>
-                <a class="clear-cach" href="javascript:void(0)">Clear Cache & Default</a>
-            </div>
-        </div>
-    </div>
-    <!-- Feature tools end -->
+    <?php require("components/chat-bot.php") ?>
 
     <!-- Vendor JS -->
     <script src="assets/js/vendor/jquery-3.5.1.min.js"></script>
@@ -839,6 +676,79 @@
             });
         });
     });
+</script>
+<script>
+function addToWishlist(productId) {
+    // Assuming you have an AJAX request to send the product ID to the backend
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "php/wishlist.php", true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            // Handle response from the backend if needed
+            console.log("Product added to wishlist!");
+            window.location.reload();
+        }
+    };
+    var data = JSON.stringify({ productId: productId });
+    xhr.send(data);
+}
+
+
+</script>
+<script>
+    // remove to wish lost 
+function removeToWishlist(productId) {
+    // Assuming you have an AJAX request to send the product ID to the backend
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "php/remove_wishlist.php", true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            // Handle response from the backend if needed
+            console.log("Product remove to wishlist!");
+            window.location.reload();
+        }
+    };
+    var data = JSON.stringify({ productId: productId });
+    xhr.send(data);
+}
+
+</script>
+
+<script src="assets/script.js"></script>
+
+
+
+<script>
+document.addEventListener('click', function(event) {
+  var popup = document.getElementById('popup');
+  var chatBtn = document.querySelector('.toggle-popup');
+
+  // Check if the click event occurred inside the popup or on the chat button
+  var isClickInsidePopup = popup.contains(event.target);
+  var isClickOnChatBtn = chatBtn.contains(event.target);
+
+  // If the click is outside the popup and not on the chat button, close the popup
+  if (!isClickInsidePopup && !isClickOnChatBtn) {
+    closePopup();
+  }
+});
+
+function togglePopup() {
+  var popup = document.getElementById("popup");
+  popup.style.display = (popup.style.display === "block") ? "none" : "block";
+}
+
+ function closePopup(event) {
+    event.stopPropagation();
+    var popup = document.getElementById("popup");
+    popup.style.display = "none";
+  }
+
+function sendMessage() {
+  // Add your sendMessage logic here
+}
 </script>
 
 

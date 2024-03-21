@@ -1,9 +1,5 @@
 <?php
 // Assuming this is wishlist.php
-session_start();
-
-if(isset($_SESSION['user_id']))
-{
 
 // Check if the request method is POST
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -22,14 +18,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         }
-        $user_id = $_SESSION['user_id'];
+
         // Prepare the SQL statement to insert the product ID into wishlist_tbl
         $productId = $data['productId'];
-        $sql = "INSERT INTO wishlist_tbl (p_id,user_id) VALUES ('$productId','$user_id')";
+        $sql = "DELETE FROM `wishlist_tbl` WHERE `p_id` = '$productId'";
 
         // Execute the SQL statement
         if ($conn->query($sql) === TRUE) {
             echo "Product added to wishlist successfully!";
+            
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
@@ -43,8 +40,5 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 } else {
     // If the request method is not POST
     echo "Invalid request method.";
-}}
-else{
-    header("location:../signin");
 }
 ?>
