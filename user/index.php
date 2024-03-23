@@ -444,7 +444,10 @@
                                                         </form>
 
                                                         <?php 
-$sql4 = "SELECT * FROM `wishlist_tbl`";
+                                                        if(isset($_SESSION['user_id']))
+                                                        {
+                                                        $user_id = $_SESSION['user_id'];
+$sql4 = "SELECT * FROM `wishlist_tbl` where `user_id` = '$user_id'";
 $result4 = mysqli_query($conn, $sql4);
 $inWishlist = false; // Initialize a flag to track if the product is in the wishlist
 
@@ -466,6 +469,11 @@ if ($inWishlist) {
     <a class="ec-btn-group wishlist" title="Wishlist" onclick="addToWishlist('<?php echo $p_id ?>')"><i class="fi-rr-heart"></i></a>
     <?php
 }
+                                                        }
+                                                        else{?>
+    <a class="ec-btn-group wishlist" title="Wishlist" onclick="addToWishlist('<?php echo $p_id ?>')"><i class="fi-rr-heart"></i></a>
+
+                                                        <?php }
 ?>
           </div>
                                             </div>

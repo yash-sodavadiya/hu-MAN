@@ -1,8 +1,8 @@
 <?php
 // Assuming this is wishlist.php
-
+session_start();
 // Check if the request method is POST
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
+if ($_SERVER["REQUEST_METHOD"] === "POST" AND $_SESSION['user_id']) {
     // Get the JSON data sent in the request body
     $json_data = file_get_contents("php://input");
     
@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (isset($data['productId'])) {
         // Connect to your database (replace these values with your actual database credentials)
        require("../database/config.php");
-
+        $user_id = $_SESSION['user_id'];
         // Check connection
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         // Prepare the SQL statement to insert the product ID into wishlist_tbl
         $productId = $data['productId'];
-        $sql = "DELETE FROM `wishlist_tbl` WHERE `p_id` = '$productId'";
+        $sql = "DELETE FROM `wishlist_tbl` WHERE `p_id` = '$productId' AND `user_id` = '$user_id' ";
 
         // Execute the SQL statement
         if ($conn->query($sql) === TRUE) {

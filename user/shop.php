@@ -128,145 +128,17 @@
 
                     <!-- Shop content Start -->
                     <div class="shop-pro-content">
-    <div class="shop-pro-inner">
-        <div class="row" id="recordsContainer">
-            <?php 
-            // Assuming $conn is your database connection
-            $recordsPerPage = 10;
-            $currentPage = isset($_GET['page']) ? $_GET['page'] : 1;
-            $offset = ($currentPage - 1) * $recordsPerPage;
-
-            $sql = "SELECT * FROM `product_tbl` LIMIT $offset, $recordsPerPage";
-            $result = mysqli_query($conn, $sql);
-
-            foreach($result as $row) {
-                $catagory = $row['catagory_name'];
-                $p_id = $row['product_id'];
-                $sql1 = "SELECT * FROM `$catagory` WHERE `p_id` = $p_id";
-                $result1 = mysqli_query($conn, $sql1);
-                foreach($result1 as $row1) { ?>
-                                    
-                                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 mb-6  ec-product-content"
-                                    data-animation="fadeIn" id="records"  style = "padding-top:10px;">
-                                    <div class="ec-product-inner" style = "box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; padding:13px; margin-left: 2px;">
-                                        <div class="ec-pro-image-outer">
-                                            <div class="ec-pro-image" style="height: 295px; display:flex; align-items:center;">
-                                                <a href="product-left-sidebar.html" class="image">
-                                                    <img class="main-image" src="../admin/assets/img/product/<?php echo $row1['p_image'];?>"
-                                                        alt="Product" />
-                                                </a>
-                                                <span class="percentage">20%</span>
-                                                <a href="" class="quickview" data-tooltip="<?php echo $row1['p_id']?>" ><i class="fi-rr-eye"></i></a>
-                                                <div class="ec-pro-actions">
-                                                    <a href="compare.html" class="ec-btn-group compare"
-                                                        title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
-                                                        <form action="php/add_cart.php" method="post" enctype="multipart/form-data">
-                                                            <input type="hidden" name="p_id" value="<?php echo $row1['p_id'];?>">
-                                                            <input type="hidden" name="quantity" value="1">
-                                                           
-                                                            <input type="hidden" name="sub_total" value="<?php echo $row1['p_final_price'];?>">
-                                                            <button title="Add To Cart" name="add_cart" class="add-to-cart"><i
-                                                            class="fi-rr-shopping-basket"></i> Add To Cart</button>
-                                                        </form>
-                                                        <?php 
-$sql4 = "SELECT * FROM `wishlist_tbl`";
-$result4 = mysqli_query($conn, $sql4);
-$inWishlist = false; // Initialize a flag to track if the product is in the wishlist
-
-// Check if the product is in the wishlist
-while ($row4 = mysqli_fetch_assoc($result4)) {
-    if ($row4['p_id'] == $p_id) {
-        $inWishlist = true;
-        break; // No need to continue checking once we found the product in the wishlist
-    }
-}
-
-// Display the heart icon accordingly
-if ($inWishlist) {
-    ?>
-    <a class="ec-btn-group wishlist active" title="Wishlist" onclick="removeToWishlist('<?php echo $p_id ?>')"><i class="fi-rr-heart"></i></a>
-    <?php
-} else {
-    ?>
-    <a class="ec-btn-group wishlist" title="Wishlist" onclick="addToWishlist('<?php echo $p_id ?>')"><i class="fi-rr-heart"></i></a>
-    <?php
-}
-?>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="product-details?p_id=<?php echo $row1['p_id'];?>"><?php echo $row1['p_name'];?></a></h5>
-                                            <div class="ec-pro-rating">
-                                                <i class="ecicon eci-star fill"></i>
-                                                <i class="ecicon eci-star fill"></i>
-                                                <i class="ecicon eci-star fill"></i>
-                                                <i class="ecicon eci-star fill"></i>
-                                                <i class="ecicon eci-star"></i>
-                                            </div>
-                                            <span class="ec-price">
-                                                <span class="old-price">₹<?php echo $row1['p_mrp'];?></span>
-                                                <span class="new-price">₹<?php echo $row1['p_final_price'];?></span>
-                                            </span>
-                                            <div class="ec-pro-option">
-                                                <div class="ec-pro-color">
-                                                    <span class="ec-pro-opt-label">Color</span>
-                                                    <?php 
-                                                        if($row1['p_catagory'] == "perfume")
-                                                        {
-                                                            echo "";
-                                                        }
-                                                        else{
-                                                    ?>
-                                                    <ul class="ec-opt-swatch ">
-                                                        <li class="active"><span
-                                                                    style="background-color:<?php echo $row1['p_color'];?>;"></span></li>
-                                                      
-                                                    </ul>
-                                                        <?php } ?>
-                                                </div>
-                                                <div class="ec-pro-size">
-                                                    <span class="ec-pro-opt-label">Size</span>
-                                                    <ul class="ec-opt-size">
-                                                    <?php
-													$p_id = $row1['p_id'] ;
-    $sql = "SELECT * FROM `size_tbl` WHERE `p_id` = $p_id";
-    $result = mysqli_query($conn, $sql);
-    foreach($result as $row){ ?>
-<li class="active"><a href="#" class="ec-opt-sz"><?php echo $row['p_size'];?></a></li>
-   <?php  } ?>
-                                                        
-                                                        
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                    
-                                <?php } 
-            } ?>
-                                
-                            </div>
+   
+                        
+                        <div class="shop-pro-inner">
+        <div class="row" id="recordsContainer" style="opacity:1 !important">
+        
+        </div>
                         </div>
                         
-                        <!-- Ec Pagination Start -->
-                        <div class="ec-pro-pagination pagination" id="pagination">
                         
-
-<span></span>
-
-                        <ul class="ec-pro-pagination-inner">
-                                <li><a class="active" href="?page=1">1</a></li>
-                                <li><a href="?page=2">2</a></li>
-                                <li><a href="?page=3">3</a></li>
-                                <li><a href="?page=4">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li><a class="next" href="#">Next <i class="ecicon eci-angle-right"></i></a></li>
-                            </ul>
-        </div>
-                        <!-- Ec Pagination End -->
+                      
+                    
                     </div>
                     <!--Shop content End -->
                 </div>
@@ -286,19 +158,19 @@ if ($inWishlist) {
                                     <ul>
                                         <li>
                                             <div class="ec-sidebar-block-item">
-                                                <input type="checkbox" /> <a href="#">clothes</a><span
+                                                <input type="checkbox" value="shirt_tbl" class="category-checkbox"/> <a href="#">Shirt</a><span
                                                     class="checked"></span>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="ec-sidebar-block-item">
-                                                <input type="checkbox" /> <a href="#">Watches</a><span
+                                                <input type="checkbox" value="pent_tbl" class="category-checkbox"/> <a href="#">Pent</a><span
                                                     class="checked"></span>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="ec-sidebar-block-item">
-                                                <input type="checkbox" /> <a href="#">Shoes</a><span
+                                                <input type="checkbox" value="shoes_tbl" class="category-checkbox"/> <a href="#">Shoes</a><span
                                                     class="checked"></span>
                                             </div>
                                         </li>
@@ -317,31 +189,31 @@ if ($inWishlist) {
                                     <ul>
                                         <li>
                                             <div class="ec-sidebar-block-item">
-                                                <input type="checkbox" value=""  /><a href="#">S</a><span
+                                                <input type="checkbox" value="S" class="size-checkbox" /><a href="#">S</a><span
                                                     class="checked"></span>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="ec-sidebar-block-item">
-                                                <input type="checkbox" value="" /><a href="#">M</a><span
+                                                <input type="checkbox" value="M" class="size-checkbox"/><a href="#">M</a><span
                                                     class="checked"></span>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="ec-sidebar-block-item">
-                                                <input type="checkbox" value="" /> <a href="#">L</a><span
+                                                <input type="checkbox" value="L" class="size-checkbox"/> <a href="#">L</a><span
                                                     class="checked"></span>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="ec-sidebar-block-item">
-                                                <input type="checkbox" value="" /><a href="#">XL</a><span
+                                                <input type="checkbox" value="XL" class="size-checkbox"/><a href="#">XL</a><span
                                                     class="checked"></span>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="ec-sidebar-block-item">
-                                                <input type="checkbox" value="" /><a href="#">XXL</a><span
+                                                <input type="checkbox" value="XXL" class="size-checkbox"/><a href="#">XXL</a><span
                                                     class="checked"></span>
                                             </div>
                                         </li>
@@ -349,49 +221,49 @@ if ($inWishlist) {
                                             <ul style="display:none;">
                                                 <li>
                                                     <div class="ec-sidebar-block-item">
-                                                        <input type="checkbox" /> <a href="#">5</a><span
+                                                        <input type="checkbox" value="5" class="size-checkbox"/> <a href="#">5</a><span
                                                             class="checked"></span>
                                                     </div>
                                                 </li>
                                                 <li>
                                                     <div class="ec-sidebar-block-item">
-                                                        <input type="checkbox" /> <a href="#">6</a><span
+                                                        <input type="checkbox" value="6" class="size-checkbox"/> <a href="#">6</a><span
                                                             class="checked"></span>
                                                     </div>
                                                 </li>
                                                 <li>
                                                     <div class="ec-sidebar-block-item">
-                                                        <input type="checkbox" /> <a href="#">7</a><span
+                                                        <input type="checkbox" value="7" class="size-checkbox"/> <a href="#">7</a><span
                                                             class="checked"></span>
                                                     </div>
                                                 </li>
                                                 <li>
                                                     <div class="ec-sidebar-block-item">
-                                                        <input type="checkbox" /> <a href="#">8</a><span
+                                                        <input type="checkbox" value="8" class="size-checkbox"/> <a href="#">8</a><span
                                                             class="checked"></span>
                                                     </div>
                                                 </li>
                                                 <li>
                                                     <div class="ec-sidebar-block-item">
-                                                        <input type="checkbox" /> <a href="#">9</a><span
+                                                        <input type="checkbox" value="9" class="size-checkbox"/> <a href="#">9</a><span
                                                             class="checked"></span>
                                                     </div>
                                                 </li>
                                                 <li>
                                                     <div class="ec-sidebar-block-item">
-                                                        <input type="checkbox" /> <a href="#">10</a><span
+                                                        <input type="checkbox" value="10" class="size-checkbox"/> <a href="#">10</a><span
                                                             class="checked"></span>
                                                     </div>
                                                 </li>
                                                 <li>
                                                     <div class="ec-sidebar-block-item">
-                                                        <input type="checkbox" /> <a href="#">11</a><span
+                                                        <input type="checkbox" value="11" class="size-checkbox"/> <a href="#">11</a><span
                                                             class="checked"></span>
                                                     </div>
                                                 </li>
                                                 <li>
                                                     <div class="ec-sidebar-block-item">
-                                                        <input type="checkbox" /> <a href="#">12</a><span
+                                                        <input type="checkbox" value="12" class="size-checkbox"/> <a href="#">12</a><span
                                                             class="checked"></span>
                                                     </div>
                                                 </li>
@@ -563,41 +435,7 @@ if ($inWishlist) {
     <script src="assets/js/vendor/index.js"></script>
     <script src="assets/js/main.js?v=<?php echo time(); ?>"></script>
     <script src="assets/script.js"></script>
-    <script>
-    function displayRecords(page) {
-        const urlParams = new URLSearchParams(window.location.search);
-        urlParams.set('page', page);
-        window.location.search = urlParams.toString();
-    }
-
-    function setupPagination(totalPages, currentPage) {
-        const paginationContainer = document.getElementById('pagination');
-        paginationContainer.innerHTML = '';
-
-        for (let i = 1; i <= totalPages; i++) {
-            const link = document.createElement('a');
-            link.href = '#';
-            link.textContent = i;
-
-            if (i == currentPage) {
-                link.classList.add('active');
-            }
-
-            link.addEventListener('click', () => {
-                displayRecords(i);
-            });
-
-            paginationContainer.appendChild(link);
-        }
-    }
-
-    // Assuming you have a PHP variable $totalRecords representing the total number of records
     
-    const totalPages = Math.ceil(<?php echo $totalRecords; ?> / <?php echo $recordsPerPage; ?>);
-    const currentPage = <?php echo $currentPage; ?>;
-    
-    setupPagination(totalPages, currentPage);
-</script>
 <script>
       $(document).ready(function() {
         $('.quickview').click(function(e) {
@@ -622,24 +460,25 @@ if ($inWishlist) {
 </script>
 
 <script>
-    $(document).ready(function(){
+   $(document).ready(function(){
     // Function to fetch data based on checked checkboxes
     function fetchData() {
-        var checkedItems = 'shirt_tbl';
+        var checkedCategories = []; 
         $("input[type='checkbox']:checked").each(function(){
-            checkedItems.push($(this).next('a').text());
-          
+          if ($(this).hasClass('category-checkbox')) {
+                checkedCategories.push($(this).val()); // Collect the value of the category checkbox
+          }
         });
         // AJAX request to send checked items to server
         $.ajax({
             url: 'php/fetch_data.php', // Replace with your server-side script URL
             type: 'POST',
-            data: {items: checkedItems},
+            data: {items: checkedCategories},
             success: function(response) {
                 // Handle the response from server
                 console.log(response);
                 // Display the data retrieved from database
-                $('#result').html(response);
+                $('#recordsContainer').html(response);
             },
             error: function(xhr, status, error) {
                 // Handle errors
@@ -649,11 +488,50 @@ if ($inWishlist) {
     }
 
     // Call fetchData function when a checkbox is checked or unchecked
-    $("input[type='checkbox']").change(fetchData);
+    $("input[type='checkbox'][value!='']").change(fetchData);
 
     // Initial data fetch when page loads
     fetchData();
 });
+
+
+</script>
+<script>
+   $(document).ready(function(){
+    // Function to fetch data based on checked checkboxes
+    function fetchData() {
+        var checkedSizes = [];
+        $("input[type='checkbox']:checked").each(function(){
+            if ($(this).hasClass('size-checkbox')) {
+                checkedSizes.push($(this).val()); // Collect the value of the category checkbox
+            }
+        });
+        // AJAX request to send checked items to server
+        $.ajax({
+            url: 'php/fetch_data_size.php', // Replace with your server-side script URL
+            type: 'POST',
+            data: {sizes:checkedSizes},
+            success: function(response) {
+                // Handle the response from server
+                console.log(response);
+                // Display the data retrieved from database
+                $('#recordsContainer').html(response);
+            },
+            error: function(xhr, status, error) {
+                // Handle errors
+                console.error(xhr.responseText);
+            }
+        });
+    }
+
+    // Call fetchData function when a checkbox is checked or unchecked
+    $("input[type='checkbox'][value!='']").change(fetchData);
+
+    // Initial data fetch when page loads
+    fetchData();
+});
+
+
 </script>
 <script>
 function addToWishlist(productId) {
@@ -716,7 +594,7 @@ function togglePopup() {
 }
 
  function closePopup(event) {
-    event.stopPropagation();
+    // event.stopPropagation();
     var popup = document.getElementById("popup");
     popup.style.display = "none";
   }
